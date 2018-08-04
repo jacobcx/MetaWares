@@ -1,0 +1,1974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-2-1.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="8cee9c5d-2127-4c54-903f-5db50d968cf9">
+      <SHORT-NAME>Mcl</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="7854ef85-b378-4bed-8c62-887f8baf1ca8">
+          <SHORT-NAME>Mcl</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="MGC">
+                <SD GID="isStub">false</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/TS_T2D34M10I2R0/Mcl</DEFINITION-REF>
+          <ECUC-DEF-EDITION>1.0.0</ECUC-DEF-EDITION>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-POST-BUILD</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/Mcl_T2D34M10I2R0/Implementations/BswImplementation_0</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="7fa6faed-4705-43de-8de6-cba8badb6cc1">
+              <SHORT-NAME>MclGeneral</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="MclDisableDemReportErrorStatus">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="MclDevErrorDetect">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="MclDmaNotificationSupported">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="MclErrorChecking">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="Mcl_VersionInfoApi">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="Mcl_DmaGetChannelErrorStatusApi">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="Mcl_DmaGetGlobalErrorStatusApi">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="Mcl_DeInitApi">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="EnableDMA">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="MclEnableCrossbarSwitch">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="MclEnableUserModeSupport">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="MclErrorNotificationDma0">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclDisableDemReportErrorStatus</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclDevErrorDetect</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclDmaNotificationSupported</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclErrorChecking</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/Mcl_VersionInfoApi</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/Mcl_DmaGetChannelErrorStatusApi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/Mcl_DmaGetGlobalErrorStatusApi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/Mcl_DeInitApi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/EnableDMA</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclEnableCrossbarSwitch</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclEnableUserModeSupport</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclErrorNotificationDma0</DEFINITION-REF>
+                  <VALUE>NULL_PTR</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="64994b61-1b91-4566-8cbd-cfad2a7625cb">
+                  <SHORT-NAME>MclIsrAvailable</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="669e38c9-7379-4cae-9ec9-0aa849f7b29f">
+                  <SHORT-NAME>MclIsrAvailable1</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="e13b9794-771f-4e27-8d43-66a58f56048c">
+                  <SHORT-NAME>MclIsrAvailable2</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="50c9e65f-b93f-493f-9dd4-81cd8a2bce12">
+                  <SHORT-NAME>MclIsrAvailable3</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="5d292aa5-6b06-4e2a-a178-5fcfb8b72d5a">
+                  <SHORT-NAME>MclIsrAvailable4</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="545db63e-fb65-4330-a41f-613243d78dd3">
+                  <SHORT-NAME>MclIsrAvailable5</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="ea6e810e-6590-47e4-adf4-6ad8850753fc">
+                  <SHORT-NAME>MclIsrAvailable6</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="81424cdc-6b8e-4cc6-81d1-ae3dec13d101">
+                  <SHORT-NAME>MclIsrAvailable7</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="5667d740-d8e9-42d2-aeb0-51575c0d1860">
+                  <SHORT-NAME>MclIsrAvailable8</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="fbe09f56-ea2f-44e9-b417-f459ff33ca47">
+                  <SHORT-NAME>MclIsrAvailable9</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="0c47be80-b05d-42be-ada7-ae5ff76edd38">
+                  <SHORT-NAME>MclIsrAvailable10</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="1909dcb0-f3b8-4a4b-b628-c80f19ba5771">
+                  <SHORT-NAME>MclIsrAvailable11</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="b022dd9e-5a60-4530-9397-fcbf8f6ea507">
+                  <SHORT-NAME>MclIsrAvailable12</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="3062d43e-100f-4a2d-93fa-909f495321a5">
+                  <SHORT-NAME>MclIsrAvailable13</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="c467c59d-b957-45fc-8ff7-f38ce8c576d3">
+                  <SHORT-NAME>MclIsrAvailable14</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="4405dadc-d71a-4feb-853d-2da7dbd27487">
+                  <SHORT-NAME>MclIsrAvailable15</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="1ca819bf-cbfa-42e0-8a6d-af7c7649c5be">
+                  <SHORT-NAME>MclIsrAvailable16</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="04a611bb-2176-4fcb-a079-41b9320d6849">
+                  <SHORT-NAME>MclIsrAvailable17</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="a9a101cd-ba1d-4e3c-9946-e5b19eda8b53">
+                  <SHORT-NAME>MclIsrAvailable18</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="7612f40e-9dd2-4d40-8fcd-ee5df22e93a6">
+                  <SHORT-NAME>MclIsrAvailable19</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="8d59fd66-e430-47d5-b2d8-2a5f0cc5551c">
+                  <SHORT-NAME>MclIsrAvailable20</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="2c8b461d-4434-4c1c-abf6-c39c68dc8c1b">
+                  <SHORT-NAME>MclIsrAvailable21</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="65c4e898-f030-432c-9139-7e5709308956">
+                  <SHORT-NAME>MclIsrAvailable22</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="80b23339-10f0-466b-8ace-cc223958b943">
+                  <SHORT-NAME>MclIsrAvailable23</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="58d65382-a8f5-4d07-9ad8-a3efae2d28df">
+                  <SHORT-NAME>MclIsrAvailable24</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="5908ddef-a646-42af-b258-089bb8934b00">
+                  <SHORT-NAME>MclIsrAvailable25</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="40d2a6a4-a622-4779-b9cb-fbeed3d3cc80">
+                  <SHORT-NAME>MclIsrAvailable26</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="54e597be-08e4-4aa1-9f59-96a50f229443">
+                  <SHORT-NAME>MclIsrAvailable27</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="3d454452-06e6-467c-9bd2-45459c35d5ae">
+                  <SHORT-NAME>MclIsrAvailable28</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="1fc121b2-8a19-4db9-8208-5e12f1dce59a">
+                  <SHORT-NAME>MclIsrAvailable29</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="988fb4a7-1290-489d-941b-cbc0ab988ca7">
+                  <SHORT-NAME>MclIsrAvailable30</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="5cf4f921-c502-412c-a110-a6e04e7d329a">
+                  <SHORT-NAME>MclIsrAvailable31</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="07ea8ba0-5890-420b-8338-a72a41e5b0d8">
+                  <SHORT-NAME>MclIsrAvailable32</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="81cbb586-7b32-400c-818a-7e8722b07e82">
+                  <SHORT-NAME>MclIsrAvailable33</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="202be468-49eb-48d9-8cf4-cd001338158c">
+                  <SHORT-NAME>MclIsrAvailable34</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="d0ad9a73-508d-4ce8-aa2a-f0391d7e7e95">
+                  <SHORT-NAME>MclIsrAvailable35</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="44f073bd-05b9-4e83-a5ff-b43be85ac1b0">
+                  <SHORT-NAME>MclIsrAvailable36</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="ec59f2f6-3f38-4979-aaff-2d19f156d765">
+                  <SHORT-NAME>MclIsrAvailable37</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="0050ba6d-47f2-4cfb-8f8d-6971133dd257">
+                  <SHORT-NAME>MclIsrAvailable38</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="87c9c837-23ad-4067-b126-c64873bb3a7e">
+                  <SHORT-NAME>MclIsrAvailable39</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="3638fe04-eb7a-4e5e-bbee-ce5ee8b0b804">
+                  <SHORT-NAME>MclIsrAvailable40</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="59786c15-cd0d-4915-8af6-fb5cfa59cadf">
+                  <SHORT-NAME>MclIsrAvailable41</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="7465ed1b-cf60-4128-9852-cea13c6ac800">
+                  <SHORT-NAME>MclIsrAvailable42</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="d0ac1c12-d06a-46a2-8d84-0b2c3b1c6a17">
+                  <SHORT-NAME>MclIsrAvailable43</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="3c9e3137-9bca-4f25-8a0e-e1aa410383e0">
+                  <SHORT-NAME>MclIsrAvailable44</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="0988d701-e885-46cb-aea1-0c26705d2fea">
+                  <SHORT-NAME>MclIsrAvailable45</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="6f6c92b1-7535-4970-b748-b3669b5cdad9">
+                  <SHORT-NAME>MclIsrAvailable46</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="569747fa-036a-4032-81a2-6ab42e002252">
+                  <SHORT-NAME>MclIsrAvailable47</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="97cf5d9a-20e1-4950-93f6-1545c44cc033">
+                  <SHORT-NAME>MclIsrAvailable48</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="03603006-3403-47ba-856c-896b89e2583c">
+                  <SHORT-NAME>MclIsrAvailable49</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="1b2dcc26-e498-4c39-8648-4b01120ad02a">
+                  <SHORT-NAME>MclIsrAvailable50</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="7101eee0-0da5-4420-806a-0ea2c7f234c2">
+                  <SHORT-NAME>MclIsrAvailable51</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="90ff28ae-212a-4cee-b25a-696fcafbf8bc">
+                  <SHORT-NAME>MclIsrAvailable52</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="59f93d1d-ddd5-4859-abe1-fc403be46c8b">
+                  <SHORT-NAME>MclIsrAvailable53</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="3d90327b-ab12-48b6-944d-ea6c8fdf7a36">
+                  <SHORT-NAME>MclIsrAvailable54</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="d197d010-8bb2-421d-b6d7-edf332eabb78">
+                  <SHORT-NAME>MclIsrAvailable55</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="41631e7b-64d7-44e2-951c-2c12941eb5e9">
+                  <SHORT-NAME>MclIsrAvailable56</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="9f33bb83-aa08-4ac5-9a37-8c35b5b2f6f9">
+                  <SHORT-NAME>MclIsrAvailable57</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="50490b12-bf28-4dc0-9422-95f25d1a6af4">
+                  <SHORT-NAME>MclIsrAvailable58</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="f43399b9-586a-4566-8acc-fb4789bdbb97">
+                  <SHORT-NAME>MclIsrAvailable59</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="bc94b230-e38b-423a-b668-056679f86bdd">
+                  <SHORT-NAME>MclIsrAvailable60</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="5d3d7cde-b249-49f2-9ace-bc6f08c73dbf">
+                  <SHORT-NAME>MclIsrAvailable61</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="2258f003-28d3-4654-abeb-c1a8cc14b675">
+                  <SHORT-NAME>MclIsrAvailable62</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="d7fd653f-24e6-4524-b25e-8636f8dc194c">
+                  <SHORT-NAME>MclIsrAvailable63</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclIsrName">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclIsrEnabled">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrName</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclGeneral/MclIsrAvailable/MclIsrEnabled</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="cec2c08a-719f-49a4-a329-d00a0fac4a9a">
+              <SHORT-NAME>MclConfigSet</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="80d47ab6-0d58-49eb-8c14-154dcd33789d">
+                  <SHORT-NAME>DmaInstance</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DmaHwInstance">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMA_CX">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMA_ECX">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMAChGroup0Priority">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMAChGroup1Priority">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMAChGroup2Priority">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMAChGroup3Priority">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMA_CLM">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMA_HALT">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMA_HOE">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMA_ERGA">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMA_ERCA">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclEDMA_EDBG">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/DmaHwInstance</DEFINITION-REF>
+                      <VALUE>eDMA_Instance0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMA_CX</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMA_ECX</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMAChGroup0Priority</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMAChGroup1Priority</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMAChGroup2Priority</DEFINITION-REF>
+                      <VALUE>2</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMAChGroup3Priority</DEFINITION-REF>
+                      <VALUE>3</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMA_CLM</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMA_HALT</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMA_HOE</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMA_ERGA</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMA_ERCA</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DmaInstance/MclEDMA_EDBG</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="b152e1ef-09d2-4330-9f90-6da500a2f58e">
+                  <SHORT-NAME>DMAChannel</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="MclDMAChannelId">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DmaHwChannel">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DMAChannelPriority">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="ECP">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DPA">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="EMI">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclDmaTransferCompletionNotif">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclDMAChannelEnable">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="MclDMAChannelTriggerEnable">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DmaSource0">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DmaSource1">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DmaSource2">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DmaSource3">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DmaSource4">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DmaSource5">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DmaSource6">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DmaSource7">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DmaSource8">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DmaSource9">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/MclDMAChannelId</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DmaHwChannel</DEFINITION-REF>
+                      <VALUE>eDMA_0</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DMAChannelPriority</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/ECP</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DPA</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/EMI</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/MclDmaTransferCompletionNotif</DEFINITION-REF>
+                      <VALUE>NULL_PTR</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/MclDMAChannelEnable</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/MclDMAChannelTriggerEnable</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DmaSource0</DEFINITION-REF>
+                      <VALUE>NOT_USED</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DmaSource1</DEFINITION-REF>
+                      <VALUE>NOT_USED</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DmaSource2</DEFINITION-REF>
+                      <VALUE>NOT_USED</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DmaSource3</DEFINITION-REF>
+                      <VALUE>NOT_USED</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DmaSource4</DEFINITION-REF>
+                      <VALUE>NOT_USED</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DmaSource5</DEFINITION-REF>
+                      <VALUE>NOT_USED</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DmaSource6</DEFINITION-REF>
+                      <VALUE>NOT_USED</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DmaSource7</DEFINITION-REF>
+                      <VALUE>NOT_USED</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DmaSource8</DEFINITION-REF>
+                      <VALUE>NOT_USED</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/MclConfigSet/DMAChannel/DmaSource9</DEFINITION-REF>
+                      <VALUE>NOT_USED</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="d8f60cc1-04ff-4ae1-b9f7-eb50cc76e75f">
+              <SHORT-NAME>CommonPublishedInformation</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="ArReleaseMajorVersion">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="ArReleaseMinorVersion">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="ArReleaseRevisionVersion">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="ModuleId">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="SwMajorVersion">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="SwMinorVersion">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="SwPatchVersion">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="VendorId">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T2D34M10I2R0/Mcl/CommonPublishedInformation</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/CommonPublishedInformation/ArReleaseMajorVersion</DEFINITION-REF>
+                  <VALUE>4</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/CommonPublishedInformation/ArReleaseMinorVersion</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/CommonPublishedInformation/ArReleaseRevisionVersion</DEFINITION-REF>
+                  <VALUE>3</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/CommonPublishedInformation/ModuleId</DEFINITION-REF>
+                  <VALUE>255</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/CommonPublishedInformation/SwMajorVersion</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/CommonPublishedInformation/SwMinorVersion</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/CommonPublishedInformation/SwPatchVersion</DEFINITION-REF>
+                  <VALUE>2</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T2D34M10I2R0/Mcl/CommonPublishedInformation/VendorId</DEFINITION-REF>
+                  <VALUE>43</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

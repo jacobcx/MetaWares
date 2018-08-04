@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_$ARSchema.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>VSTAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>BswMd</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-IMPLEMENTATION>
+            <SHORT-NAME>BswImpl_Os</SHORT-NAME>
+              <RESOURCE-CONSUMPTION>
+                <SHORT-NAME>ResConsumption_Os</SHORT-NAME>
+                  <MEMORY-SECTIONS>
+<!-- Procs Stack Memory Sections Start -->
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OS_CAT2_ISR_LEVEL_P6_Core1_App0_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OS_CAT2_ISR_LEVEL_P6_Core1_App0_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OS_CAT2_ISR_LEVEL_P7_Core1_App0_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OS_CAT2_ISR_LEVEL_P7_Core1_App0_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MasterBlinker_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>MasterBlinker_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OS_CAT2_ISR_LEVEL_P5_Core1_App0_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OS_CAT2_ISR_LEVEL_P5_Core1_App0_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MasterController_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>MasterController_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MasterFastBlinker_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>MasterFastBlinker_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OsTask_Core0_20ms_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OsTask_Core0_20ms_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OsTask_Core1_10ms_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OsTask_Core1_10ms_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OsTask_Core1_StartUp_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OsTask_Core1_StartUp_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>SlaveBlinker_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>SlaveBlinker_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OS_CAT2_ISR_LEVEL_P5_Core1_App1_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OS_CAT2_ISR_LEVEL_P5_Core1_App1_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>SlaveController_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>SlaveController_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>SlaveFastBlinker_STACK_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>SlaveFastBlinker_STACK_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+<!-- Procs Stack Memory Sections End -->
+<!-- Procs Context Memory Sections Start -->
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OS_CAT2_ISR_LEVEL_P6_Core1_App0_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OS_CAT2_ISR_LEVEL_P6_Core1_App0_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OS_CAT2_ISR_LEVEL_P7_Core1_App0_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OS_CAT2_ISR_LEVEL_P7_Core1_App0_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MasterBlinker_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>MasterBlinker_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OS_CAT2_ISR_LEVEL_P5_Core1_App0_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OS_CAT2_ISR_LEVEL_P5_Core1_App0_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MasterController_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>MasterController_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MasterFastBlinker_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>MasterFastBlinker_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OsTask_Core0_20ms_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OsTask_Core0_20ms_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OsTask_Core1_10ms_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OsTask_Core1_10ms_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OsTask_Core1_StartUp_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OsTask_Core1_StartUp_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>SlaveBlinker_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>SlaveBlinker_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>OS_CAT2_ISR_LEVEL_P5_Core1_App1_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>OS_CAT2_ISR_LEVEL_P5_Core1_App1_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>SlaveController_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>SlaveController_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>SlaveFastBlinker_CONTEXT_VAR_NO_INIT</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>SlaveFastBlinker_CONTEXT_VAR_NO_INIT</SYMBOL>
+                  </MEMORY-SECTION>
+<!-- Procs Context Memory Sections End -->
+                  </MEMORY-SECTIONS>
+                </RESOURCE-CONSUMPTION>
+                <BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/VSTAR/BswMd/Os/BswBehavior_Os</BEHAVIOR-REF>
+                <VENDOR-SPECIFIC-MODULE-DEF-REFS>
+                  <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/VSTAR/EcucDefs/Os</VENDOR-SPECIFIC-MODULE-DEF-REF>
+                </VENDOR-SPECIFIC-MODULE-DEF-REFS>
+            </BSW-IMPLEMENTATION>
+            <BSW-MODULE-DESCRIPTION>
+              <SHORT-NAME>Os</SHORT-NAME>
+              <MODULE-ID>1</MODULE-ID>
+              <INTERNAL-BEHAVIORS>
+                <BSW-INTERNAL-BEHAVIOR>
+                  <SHORT-NAME>BswBehavior_Os</SHORT-NAME>
+                </BSW-INTERNAL-BEHAVIOR>
+              </INTERNAL-BEHAVIORS>
+            </BSW-MODULE-DESCRIPTION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

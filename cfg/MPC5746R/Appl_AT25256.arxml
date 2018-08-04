@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-2-1.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="f279bbe3-2edc-4ba3-b62d-b56529002652">
+      <SHORT-NAME>Eep</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="5eaf7833-a5db-44b9-8c3b-c52789900c77">
+          <SHORT-NAME>Eep</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="MGC">
+                <SD GID="isStub">false</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/VSTAR/Eep_31_AT25256B/Eep</DEFINITION-REF>
+          <ECUC-DEF-EDITION>1.0.0</ECUC-DEF-EDITION>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-POST-BUILD</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/VSTAR/BswMd/BSWImpl_Eep_31_AT25256B</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="3890336c-92bd-4074-9be6-56f6edab9ca4">
+              <SHORT-NAME>EepGeneral</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="EepDevErrorDetect">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepDriverIndex">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepUseInterrupts">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepVersionInfoApi">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepWriteCycleReduction">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepVersionCheckForeignModule">
+                    <SD GID="status">NOTGENERATED;UI</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepGeneral/EepDevErrorDetect</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepGeneral/EepDriverIndex</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepGeneral/EepUseInterrupts</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepGeneral/EepVersionInfoApi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepGeneral/EepWriteCycleReduction</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepGeneral/EepVersionCheckForeignModule</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="5cee7f38-f62e-4ac2-acaf-d14c529db350">
+              <SHORT-NAME>EepInitConfiguration</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="EepBaseAddress">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepDefaultMode">
+                    <SD GID="status">DEFAULT;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepFastReadBlockSize">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepFastWriteBlockSize">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepNormalReadBlockSize">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepNormalWriteBlockSize">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepSize">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepWriteTimeOut">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepReadTimeOut">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepEraseTimeOut">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepJobCallCycle">
+                    <SD GID="status">NOTGENERATED;UI</SD>
+                  </SDG>
+                  <SDG GID="EepJobEndNotification">
+                    <SD GID="status">NOTGENERATED;UI</SD>
+                  </SDG>
+                  <SDG GID="EepJobErrorNotification">
+                    <SD GID="status">NOTGENERATED;UI</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepBaseAddress</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepDefaultMode</DEFINITION-REF>
+                  <VALUE>MEMIF_MODE_SLOW</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepFastReadBlockSize</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepFastWriteBlockSize</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepNormalReadBlockSize</DEFINITION-REF>
+                  <VALUE>64</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepNormalWriteBlockSize</DEFINITION-REF>
+                  <VALUE>64</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepSize</DEFINITION-REF>
+                  <VALUE>32768</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepWriteTimeOut</DEFINITION-REF>
+                  <VALUE>1.0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepReadTimeOut</DEFINITION-REF>
+                  <VALUE>1.0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepEraseTimeOut</DEFINITION-REF>
+                  <VALUE>1.0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepJobCallCycle</DEFINITION-REF>
+                  <VALUE>0.01</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepJobEndNotification</DEFINITION-REF>
+                  <VALUE>Ea_JobEndNotification</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepJobErrorNotification</DEFINITION-REF>
+                  <VALUE>Ea_JobErrorNotification</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="358293ce-1e8e-47c2-ae1b-0543f2244d97">
+                  <SHORT-NAME>EepExternalDriver</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepExternalDriver</DEFINITION-REF>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-SYMBOLIC-NAME-REFERENCE-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepExternalDriver/EepSpiReference</DEFINITION-REF>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <ANNOTATION-ORIGIN>status:NOTGENERATED;NONE</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT/>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Spi/Spi/SpiDriver/SpiSequence_EEP_READ</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-SYMBOLIC-NAME-REFERENCE-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepExternalDriver/EepSpiReference</DEFINITION-REF>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <ANNOTATION-ORIGIN>status:NOTGENERATED;NONE</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT/>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Spi/Spi/SpiDriver/SpiSequence_EEP_READSTATUS</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-SYMBOLIC-NAME-REFERENCE-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepExternalDriver/EepSpiReference</DEFINITION-REF>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <ANNOTATION-ORIGIN>status:NOTGENERATED;NONE</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT/>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Spi/Spi/SpiDriver/SpiSequence_EEP_WRITE</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="6a7ec322-7fb3-402d-ae1b-0378f220ec68">
+                  <SHORT-NAME>EepDemEventParameterRefs</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="EEP_E_COMPARE_FAILED">
+                        <SD GID="status">NOTGENERATED;UI</SD>
+                      </SDG>
+                      <SDG GID="EEP_E_ERASE_FAILED">
+                        <SD GID="status">NOTGENERATED;UI</SD>
+                      </SDG>
+                      <SDG GID="EEP_E_READ_FAILED">
+                        <SD GID="status">NOTGENERATED;UI</SD>
+                      </SDG>
+                      <SDG GID="EEP_E_WRITE_FAILED">
+                        <SD GID="status">NOTGENERATED;UI</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepDemEventParameterRefs</DEFINITION-REF>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-SYMBOLIC-NAME-REFERENCE-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepDemEventParameterRefs/EEP_E_COMPARE_FAILED</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemConfigSet/DemEventParameter_EEP</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-SYMBOLIC-NAME-REFERENCE-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepDemEventParameterRefs/EEP_E_ERASE_FAILED</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemConfigSet/DemEventParameter_EEP</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-SYMBOLIC-NAME-REFERENCE-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepDemEventParameterRefs/EEP_E_READ_FAILED</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemConfigSet/DemEventParameter_EEP</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-SYMBOLIC-NAME-REFERENCE-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepInitConfiguration/EepDemEventParameterRefs/EEP_E_WRITE_FAILED</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemConfigSet/DemEventParameter_EEP</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="15084739-a719-4351-bdd6-4e844b017b3c">
+              <SHORT-NAME>EepPublishedInformation</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="EepAllowedWriteCycles">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepEraseTime">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepEraseUnitSize">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepEraseValue">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepMinimumAddressType">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepMinimumLengthType">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepReadUnitSize">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepSpecifiedEraseCycles">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepTotalSize">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepWriteTime">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                  <SDG GID="EepWriteUnitSize">
+                    <SD GID="status">NOTGENERATED;NONE</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation/EepAllowedWriteCycles</DEFINITION-REF>
+                  <VALUE>65535</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation/EepEraseTime</DEFINITION-REF>
+                  <VALUE>0.005</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation/EepEraseUnitSize</DEFINITION-REF>
+                  <VALUE>64</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation/EepEraseValue</DEFINITION-REF>
+                  <VALUE>255</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation/EepMinimumAddressType</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation/EepMinimumLengthType</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation/EepReadUnitSize</DEFINITION-REF>
+                  <VALUE>64</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation/EepSpecifiedEraseCycles</DEFINITION-REF>
+                  <VALUE>5</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation/EepTotalSize</DEFINITION-REF>
+                  <VALUE>32768</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation/EepWriteTime</DEFINITION-REF>
+                  <VALUE>0.005</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/Eep_31_AT25256B/Eep/EepPublishedInformation/EepWriteUnitSize</DEFINITION-REF>
+                  <VALUE>64</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

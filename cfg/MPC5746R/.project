@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Demo</name>
+	<comment></comment>
+	<projects>
+		<project>BSW_LIB</project>
+		<project>System</project>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.artop.aal.workspace.autosarnature</nature>
+	</natures>
+</projectDescription>

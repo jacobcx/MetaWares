@@ -1,0 +1,17 @@
+Transformer prototypes for RemoteReceivers
+Transformer prototypes for RemoteSenders
+Transformer prototypes for RemoteSignalClients
+Transformer prototypes for RemoteSignalServers
+Cache entries for document #0
+ refCache: 48
+ revRefCache: 83
+ refValRefCache: 0
+ getOneByQueryCache: 820
+ getManyByQueryCache: 90
+ shortNameCache: 100
+ nodeTextCache: 291
+ usedPPortsCache: 0
+ usedRPortsCache: 0
+ usedPRPortsCache: 0
+ portPrototypeCache: 0
+

@@ -1,0 +1,174 @@
+;
+; This script is for MPC574xR
+;
+;&flashbase=0x01000000
+&flashbase=0x00F9C000
+&rambase=0x40000000
+;&flashsize=0x00380000
+&flashsize=0x003E4000
+&flashdriver="c55fm5746r.bin"
+&path=OS.PPD()
+
+
+;========================================================================
+; CPU setup
+
+SYStem.RESet
+SYStem.BdmClock 5MHz
+SYStem.CPU MPC5746R
+SYStem.CONFIG.CORE 2. 1. ; core_1
+SYStem.CONFIG.SLAVE OFF
+;SYStem.DETECT CPU
+SYStem.Option.WATCHDOG OFF
+SYStem.OPTION DUALPORT OFF
+;DIAG 3117 1
+;SYStem.Option.SLOWRESET ON
+SYStem.Up
+
+  LOCAL &DualPort
+  IF VERSION.BUILD.BASE()>=45520.
+    &DualPort="/DualPort"
+
+; initialize internal SRAM
+Data.Set EA:0x40000000--0x4000ffff %Quad 0x0
+
+; Initialize internal IMEM/DMEM
+Data.Set EA:0x51000000++0x3FFF %Quad 0 ; IMEM
+Data.Set EA:0x51800000++0x7FFF %Quad 0 ; DMEM
+
+;========================================================================
+; Flash declaration
+
+FLASH.RESet
+print "Flash Reset"
+
+  ; Low address space
+  FLASH.Create 1. 0x00404000--0x00407FFF NOP    Quad 0x0000    ; BAF - read only
+  FLASH.Create 1. 0x00FA0000--0x00FA3FFF TARGET Quad 0x0001
+  FLASH.Create 1. 0x00FA4000--0x00FA7FFF TARGET Quad 0x0002
+  FLASH.Create 1. 0x00FA8000--0x00FABFFF TARGET Quad 0x0003
+  FLASH.Create 1. 0x00FAC000--0x00FAFFFF TARGET Quad 0x0004
+  FLASH.Create 1. 0x00F9C000--0x00F9FFFF TARGET Quad 0x0005
+  FLASH.Create 1. 0x00FB0000--0x00FB7FFF TARGET Quad 0x0006
+  FLASH.Create 1. 0x00FB8000--0x00FBFFFF TARGET Quad 0x0007
+  FLASH.Create 1. 0x00FC0000--0x00FCFFFF TARGET Quad 0x0008
+  FLASH.Create 1. 0x00FD0000--0x00FDFFFF TARGET Quad 0x0009
+  FLASH.Create 1. 0x00FE0000--0x00FEFFFF TARGET Quad 0x000A
+  FLASH.Create 1. 0x00FF0000--0x00FFFFFF TARGET Quad 0x000B
+  ; Mid address space
+  FLASH.Create 2. 0x00800000--0x00803FFF TARGET Quad 0x0100
+  FLASH.Create 2. 0x00804000--0x00807FFF TARGET Quad 0x0101
+  FLASH.Create 2. 0x00808000--0x0080BFFF TARGET Quad 0x0102
+  FLASH.Create 2. 0x0080C000--0x0080FFFF TARGET Quad 0x0103
+  FLASH.Create 2. 0x00810000--0x00813FFF TARGET Quad 0x0104
+  FLASH.Create 2. 0x00814000--0x00817FFF TARGET Quad 0x0105
+  FLASH.Create 2. 0x00818000--0x0081BFFF TARGET Quad 0x0106
+  FLASH.Create 2. 0x0081C000--0x0081FFFF TARGET Quad 0x0107
+  FLASH.Create 2. 0x00820000--0x0082FFFF TARGET Quad 0x0108
+  FLASH.Create 2. 0x00830000--0x0083FFFF TARGET Quad 0x0109
+  ; 256k address space
+  FLASH.Create 4. 0x01000000--0x0103FFFF TARGET Quad 0x0300
+  FLASH.Create 4. 0x01040000--0x0107FFFF TARGET Quad 0x0301
+  FLASH.Create 4. 0x01080000--0x010BFFFF TARGET Quad 0x0302
+  FLASH.Create 4. 0x010C0000--0x010FFFFF TARGET Quad 0x0307
+  FLASH.Create 4. 0x01100000--0x0113FFFF TARGET Quad 0x0308
+  FLASH.Create 4. 0x01140000--0x0117FFFF TARGET Quad 0x0309
+  FLASH.Create 4. 0x01180000--0x011BFFFF TARGET Quad 0x0303
+  FLASH.Create 4. 0x011C0000--0x011FFFFF TARGET Quad 0x0304
+  FLASH.Create 4. 0x01200000--0x0123FFFF TARGET Quad 0x0305
+  FLASH.Create 4. 0x01240000--0x0127FFFF TARGET Quad 0x0306
+  FLASH.Create 4. 0x01280000--0x012BFFFF TARGET Quad 0x030a
+  FLASH.Create 4. 0x012C0000--0x012FFFFF TARGET Quad 0x030b
+  FLASH.Create 4. 0x01300000--0x0133FFFF TARGET Quad 0x030c
+  FLASH.Create 4. 0x01340000--0x0137FFFF TARGET Quad 0x030d
+  ; UTEST address space
+  FLASH.Create 6. 0x00400000--0x00403FFF TARGET Quad 0x0500 /OTP /INFO "UTEST"
+
+  ; Overlay enabled mapping
+  FLASH.CreateALIAS 0x08A00000--0x08FFFFFF 0x00A00000   ; Small & medium flash blocks
+  FLASH.CreateALIAS 0x09000000--0x09FFFFFF 0x01000000   ; Large flash blocks
+
+  LOCAL &imembase &dmembase
+  &imembase=Data.Long(SPR:0x2B7)&0xFFFFF000
+  &dmembase=Data.Long(SPR:0x2B6)&0xFFFFF000
+
+  ;FLASH.TARGET E:&imembase E:&dmembase 0x4000 ~~/demo/powerpc/flash/quad/c55fm5746r.bin /STACKSIZE 0x0200 
+  FLASH.TARGET E:0x40000000 E:0x40004000 0x4000 ~~/demo/powerpc/flash/quad/c55fm5746r.bin /STACKSIZE 0x0200 &DualPort
+
+;========================================================================
+; Flash programming example
+;
+; Flash programming speed is about three times faster when memory class E:
+; is used for data buffer (DUALPORT memory access). For DUALPORT access it
+; is required to setup MemAccess NEXUS for both, NEXUS and JTAG debugger.
+
+print "Flash Programming start"
+  DIALOG.YESNO "Flash programming prepared. Program flash memory now?"
+  LOCAL &progflash
+  ENTRY &progflash
+  IF &progflash 
+  (
+;;;  FLASH.UNLOCK ALL
+;;;  FLASH.ReProgram ALL /Erase
+;;;  Data.Load.Elf sample_app_mcal.elf E:0x01000000--(0x01000000+&flashsize-1) /Quad /verify
+;;;  FLASH.ReProgram OFF
+;;;  FLASH.LOCK ALL
+
+   FLASH.ReProgram ALL /Erase  
+   Data.Load.Elf * 
+   
+   ;Data.Load.auto *
+   FLASH.ReProgram OFF
+  )
+  ELSE
+  (
+    Data.Load.Elf MPC5746R_LLD_Template_Rev1_Z4_2.elf /Quad /verify
+  )
+
+print "Flash Programming finish"
+
+;========================================================================
+
+;Batch Job for debugging in internal FLASH
+
+
+;load program (if FLASH selected than load only debug symbols)
+
+;Data.Load.Elf sample_app_mcal.elf  /GLOBTYPES /NOCODE
+;Data.Load.Elf MPC5746R_LLD_Template_Rev1_Z4_2.elf  /GLOBTYPES
+
+;display source
+Data.List
+SYStem.OPTION DUALPORT ON
+
+trace.method onchip
+trace.tbarange 0x0D000000--0x0D003FFF
+
+; Include test execution, timeout and dump processing
+
+
+;clear all breakpoints
+;Break.delete /ALL
+
+print "[BEART]: Setting PC to _start"
+R.S IP _start
+
+
+
+;set breakpoint at main
+
+Break.SET main
+;Go
+
+;Executing test application with timeout " 60 " s"
+;wait for timeout or until the emulation is stopped
+;wait !run() 60.s
+
+;stop the emulation if it is runnning
+IF run()
+    (
+        Break
+    )
+
+;quit
+

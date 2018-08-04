@@ -1,0 +1,2322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   NOTE! This file is generated. Do not edit!
+   Generator: VSTAR Dem V6.1.0-Build575
+-->
+<!--           Copyright 2017 Mentor Graphics Corporation
+                         All rights reserved
+  
+   THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION WHICH IS
+   THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS AND IS
+   SUBJECT TO LICENSE TERMS.
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+   <AR-PACKAGES>
+      <AR-PACKAGE>
+         <SHORT-NAME>AUTOSAR</SHORT-NAME>
+         <AR-PACKAGES>
+            <AR-PACKAGE>
+               <SHORT-NAME>Services</SHORT-NAME>
+               <AR-PACKAGES>
+                  <AR-PACKAGE>
+                     <SHORT-NAME>Dem</SHORT-NAME>
+                     <ELEMENTS>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>AgingCycle</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00602]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>SetAgingCycleState</SHORT-NAME>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/AgingCycle/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>CallbackClearEventAllowed</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00620]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>ClearEventAllowed</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>Allowed</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/CallbackClearEventAllowed/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>CallbackDTCStatusChange</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00617]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>DTCStatusChanged</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTC</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCStatusOld</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_UdsStatusByteType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCStatusNew</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_UdsStatusByteType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/CallbackDTCStatusChange/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>CallbackEventDataChanged</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00618]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>EventDataChanged</SHORT-NAME>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>CallbackEventStatusChange</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00615]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>EventStatusChanged</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventStatusByteOld</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_UdsStatusByteType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventStatusByteNew</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_UdsStatusByteType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>CallbackGetFaultDetectCounter</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00622]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetFaultDetectionCounter</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>FaultDetectionCounter</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/sint8</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/CallbackGetFaultDetectCounter/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>CallbackInitMonitorForEvent</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00613]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>InitMonitorForEvent</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>InitMonitorReason</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_InitMonitorReasonType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/CallbackInitMonitorForEvent/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>CddIf</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00666]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>ClearDTC</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTC</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCFormat</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCFormatType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCOrigin</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCOriginType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/CddIf/DEM_CLEAR_WRONG_DTC</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/CddIf/DEM_CLEAR_WRONG_DTCORIGIN</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/CddIf/DEM_CLEAR_FAILED</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/CddIf/DEM_CLEAR_PENDING</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/CddIf/DEM_CLEAR_BUSY</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/CddIf/DEM_CLEAR_MEMORY_ERROR</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_WRONG_DTC</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_WRONG_DTCORIGIN</SHORT-NAME>
+                                 <ERROR-CODE>2</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_FAILED</SHORT-NAME>
+                                 <ERROR-CODE>3</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_PENDING</SHORT-NAME>
+                                 <ERROR-CODE>4</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_BUSY</SHORT-NAME>
+                                 <ERROR-CODE>5</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_MEMORY_ERROR</SHORT-NAME>
+                                 <ERROR-CODE>6</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>DcmIf</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00609]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>DcmClearDTC</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTC</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCFormat</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCFormatType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCOrigin</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCOriginType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DcmIf/DEM_CLEAR_WRONG_DTC</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DcmIf/DEM_CLEAR_WRONG_DTCORIGIN</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DcmIf/DEM_CLEAR_FAILED</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DcmIf/DEM_CLEAR_PENDING</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DcmIf/DEM_CLEAR_BUSY</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DcmIf/DEM_CLEAR_MEMORY_ERROR</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>DcmEnableDTCSetting</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCGroup</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCKind</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCKindType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DcmIf/DEM_CONTROL_DTC_SETTING_N_OK</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DcmIf/DEM_CONTROL_DTC_WRONG_DTCGROUP</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_WRONG_DTC</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_WRONG_DTCORIGIN</SHORT-NAME>
+                                 <ERROR-CODE>2</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_FAILED</SHORT-NAME>
+                                 <ERROR-CODE>3</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_PENDING</SHORT-NAME>
+                                 <ERROR-CODE>4</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_BUSY</SHORT-NAME>
+                                 <ERROR-CODE>5</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CLEAR_MEMORY_ERROR</SHORT-NAME>
+                                 <ERROR-CODE>6</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CONTROL_DTC_SETTING_N_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_CONTROL_DTC_WRONG_DTCGROUP</SHORT-NAME>
+                                 <ERROR-CODE>2</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>DiagnosticInfo</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00599]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetEventExtendedDataRecord</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>RecordNumber</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DestBuffer</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_MaxDataValueType</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                       <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/DEM_E_NODATAAVAILABLE</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/DEM_E_WRONG_RECORDNUMBER</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetEventFreezeFrameData</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>RecordNumber</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>ReportTotalRecord</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DataId</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DestBuffer</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_MaxDataValueType</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                       <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/DEM_E_NODATAAVAILABLE</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/DEM_E_WRONG_RECORDNUMBER</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/DEM_E_WRONG_DIDNUMBER</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetDTCOfEvent</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCFormat</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCFormatType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCOfEvent</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/DEM_E_NO_DTC_AVAILABLE</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetEventFailed</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventFailed</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetEventStatus</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventStatusByte</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_UdsStatusByteType</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetEventTested</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventTested</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetFaultDetectionCounter</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>FaultDetectionCounter</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/sint8</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticInfo/DEM_E_NO_FDC_AVAILABLE</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_E_NO_DTC_AVAILABLE</SHORT-NAME>
+                                 <ERROR-CODE>2</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_E_NO_FDC_AVAILABLE</SHORT-NAME>
+                                 <ERROR-CODE>3</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_E_NODATAAVAILABLE</SHORT-NAME>
+                                 <ERROR-CODE>48</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_E_WRONG_RECORDNUMBER</SHORT-NAME>
+                                 <ERROR-CODE>49</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_E_WRONG_DIDNUMBER</SHORT-NAME>
+                                 <ERROR-CODE>50</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>DiagnosticMonitor</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00598]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>SetEventStatus</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventStatus</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventStatusType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticMonitor/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>ResetEventStatus</SHORT-NAME>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticMonitor/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>PrestoreFreezeFrame</SHORT-NAME>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticMonitor/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>ClearPrestoredFreezeFrame</SHORT-NAME>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DiagnosticMonitor/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>DTCSuppression</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00608]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>SetDTCSuppression</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTC</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCFormat</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCFormatType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>SuppressionStatus</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/DTCSuppression/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>EvMemOverflowIndication</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00607]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetEventMemoryOverflow</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>OverflowIndication</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/EvMemOverflowIndication/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>ExternalAgingCycle</SHORT-NAME>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>SetAgingCycleCounterValue</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>CounterValue</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/ExternalAgingCycle/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>GeneralCallbackEventDataChanged</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00619]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>EventDataChanged</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventId</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>GeneralCallbackEventStatusChange</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00616]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>EventStatusChanged</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventId</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventStatusByteOld</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_UdsStatusByteType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventStatusByteNew</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_UdsStatusByteType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>GeneralDiagnosticInfo</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00600]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetDTCOfEvent</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventId</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCFormat</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCFormatType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DTCOfEvent</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/DEM_E_NO_DTC_AVAILABLE</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetEventExtendedDataRecord</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventId</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>RecordNumber</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DestBuffer</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_MaxDataValueType</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                       <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/DEM_E_NODATAAVAILABLE</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/DEM_E_WRONG_RECORDNUMBER</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetEventFailed</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventId</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventFailed</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetEventFreezeFrameData</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventId</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>RecordNumber</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>ReportTotalRecord</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DataId</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>DestBuffer</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_MaxDataValueType</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                       <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/DEM_E_NODATAAVAILABLE</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/DEM_E_WRONG_RECORDNUMBER</POSSIBLE-ERROR-REF>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/DEM_E_WRONG_DIDNUMBER</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetEventStatus</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventId</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventStatusByte</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_UdsStatusByteType</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetEventTested</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventId</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventTested</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetFaultDetectionCounter</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>EventId</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>FaultDetectionCounter</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/sint8</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/GeneralDiagnosticInfo/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_E_NO_DTC_AVAILABLE</SHORT-NAME>
+                                 <ERROR-CODE>2</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_E_NO_FDC_AVAILABLE</SHORT-NAME>
+                                 <ERROR-CODE>3</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_E_NODATAAVAILABLE</SHORT-NAME>
+                                 <ERROR-CODE>48</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_E_WRONG_RECORDNUMBER</SHORT-NAME>
+                                 <ERROR-CODE>49</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>DEM_E_WRONG_DIDNUMBER</SHORT-NAME>
+                                 <ERROR-CODE>50</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>IndicatorStatus</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00606]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>GetIndicatorStatus</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>IndicatorStatus</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_IndicatorStatusType</TYPE-TREF>
+                                       <DIRECTION>OUT</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/IndicatorStatus/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>OperationCycle</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00601]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>SetOperationCycleState</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>CycleState</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_OperationCycleStateType</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/OperationCycle/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>PermanentClearCondition</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[VSTAR_Dem_00054]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>SetPermClearCondFulfilled</SHORT-NAME>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/PermanentClearCondition/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                           <SHORT-NAME>PowerTakeOff</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00612]</L-2>
+                           </DESC>
+                           <IS-SERVICE>true</IS-SERVICE>
+                           <OPERATIONS>
+                              <CLIENT-SERVER-OPERATION>
+                                 <SHORT-NAME>SetPtoStatus</SHORT-NAME>
+                                 <ARGUMENTS>
+                                    <ARGUMENT-DATA-PROTOTYPE>
+                                       <SHORT-NAME>PtoStatus</SHORT-NAME>
+                                       <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                       <DIRECTION>IN</DIRECTION>
+                                    </ARGUMENT-DATA-PROTOTYPE>
+                                 </ARGUMENTS>
+                                 <POSSIBLE-ERROR-REFS>
+                                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dem/PowerTakeOff/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                 </POSSIBLE-ERROR-REFS>
+                              </CLIENT-SERVER-OPERATION>
+                           </OPERATIONS>
+                           <POSSIBLE-ERRORS>
+                              <APPLICATION-ERROR>
+                                 <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                                 <ERROR-CODE>1</ERROR-CODE>
+                              </APPLICATION-ERROR>
+                           </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <COMPU-METHOD>
+                           <SHORT-NAME>Dem_DTCFormatType_Enum</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00933]</L-2>
+                           </DESC>
+                           <CATEGORY>TEXTTABLE</CATEGORY>
+                           <COMPU-INTERNAL-TO-PHYS>
+                              <COMPU-SCALES>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>00</LOWER-LIMIT>
+                                    <UPPER-LIMIT>00</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_DTC_FORMAT_OBD</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>11</LOWER-LIMIT>
+                                    <UPPER-LIMIT>11</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_DTC_FORMAT_UDS</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>22</LOWER-LIMIT>
+                                    <UPPER-LIMIT>22</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_DTC_FORMAT_J1939</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                              </COMPU-SCALES>
+                           </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD>
+                           <SHORT-NAME>Dem_DTCKindType_Enum</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00932]</L-2>
+                           </DESC>
+                           <CATEGORY>TEXTTABLE</CATEGORY>
+                           <COMPU-INTERNAL-TO-PHYS>
+                              <COMPU-SCALES>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>1</LOWER-LIMIT>
+                                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_DTC_KIND_ALL_DTCS</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>2</LOWER-LIMIT>
+                                    <UPPER-LIMIT>2</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_DTC_KIND_EMISSION_REL_DTCS</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                              </COMPU-SCALES>
+                           </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD>
+                           <SHORT-NAME>Dem_DTCOriginType_Enum</SHORT-NAME>
+                           <CATEGORY>TEXTTABLE</CATEGORY>
+                           <COMPU-INTERNAL-TO-PHYS>
+                              <COMPU-SCALES>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>1</LOWER-LIMIT>
+                                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_DTC_ORIGIN_PRIMARY_MEMORY</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>2</LOWER-LIMIT>
+                                    <UPPER-LIMIT>2</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_DTC_ORIGIN_MIRROR_MEMORY</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>3</LOWER-LIMIT>
+                                    <UPPER-LIMIT>3</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_DTC_ORIGIN_PERMANENT_MEMORY</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>4</LOWER-LIMIT>
+                                    <UPPER-LIMIT>4</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_DTC_ORIGIN_SECONDARY_MEMORY</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                              </COMPU-SCALES>
+                           </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD>
+                           <SHORT-NAME>Dem_UdsStatusByteType_Enum</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00928]</L-2>
+                           </DESC>
+                           <CATEGORY>TEXTTABLE</CATEGORY>
+                           <COMPU-INTERNAL-TO-PHYS>
+                              <COMPU-SCALES>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>1</LOWER-LIMIT>
+                                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_UDS_STATUS_TF</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>2</LOWER-LIMIT>
+                                    <UPPER-LIMIT>2</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_UDS_STATUS_TFTOC</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>4</LOWER-LIMIT>
+                                    <UPPER-LIMIT>4</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_UDS_STATUS_PDTC</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>8</LOWER-LIMIT>
+                                    <UPPER-LIMIT>8</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_UDS_STATUS_CDTC</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>16</LOWER-LIMIT>
+                                    <UPPER-LIMIT>16</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_UDS_STATUS_TNCSLC</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>32</LOWER-LIMIT>
+                                    <UPPER-LIMIT>32</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_UDS_STATUS_TFSLC</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>64</LOWER-LIMIT>
+                                    <UPPER-LIMIT>64</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_UDS_STATUS_TNCTOC</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>128</LOWER-LIMIT>
+                                    <UPPER-LIMIT>128</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_UDS_STATUS_WIR</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                              </COMPU-SCALES>
+                           </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD>
+                           <SHORT-NAME>Dem_EventStatusType_Enum</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00926]</L-2>
+                           </DESC>
+                           <CATEGORY>TEXTTABLE</CATEGORY>
+                           <COMPU-INTERNAL-TO-PHYS>
+                              <COMPU-SCALES>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                                    <UPPER-LIMIT>0</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_EVENT_STATUS_PASSED</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>1</LOWER-LIMIT>
+                                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_EVENT_STATUS_FAILED</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>2</LOWER-LIMIT>
+                                    <UPPER-LIMIT>2</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_EVENT_STATUS_PREPASSED</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>3</LOWER-LIMIT>
+                                    <UPPER-LIMIT>3</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_EVENT_STATUS_PREFAILED</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>4</LOWER-LIMIT>
+                                    <UPPER-LIMIT>4</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_EVENT_STATUS_FDC_THRESHOLD_REACHED</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                              </COMPU-SCALES>
+                           </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD>
+                           <SHORT-NAME>Dem_IndicatorStatusType_Enum</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00930]</L-2>
+                           </DESC>
+                           <CATEGORY>TEXTTABLE</CATEGORY>
+                           <COMPU-INTERNAL-TO-PHYS>
+                              <COMPU-SCALES>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                                    <UPPER-LIMIT>0</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INDICATOR_OFF</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>1</LOWER-LIMIT>
+                                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INDICATOR_CONTINUOUS</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>2</LOWER-LIMIT>
+                                    <UPPER-LIMIT>2</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INDICATOR_BLINKING</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>3</LOWER-LIMIT>
+                                    <UPPER-LIMIT>3</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INDICATOR_BLINK_CONT</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>4</LOWER-LIMIT>
+                                    <UPPER-LIMIT>4</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INDICATOR_SLOW_FLASH</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>5</LOWER-LIMIT>
+                                    <UPPER-LIMIT>5</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INDICATOR_FAST_FLASH</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>6</LOWER-LIMIT>
+                                    <UPPER-LIMIT>6</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INDICATOR_ON_DEMAND</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>7</LOWER-LIMIT>
+                                    <UPPER-LIMIT>7</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INDICATOR_SHORT</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                              </COMPU-SCALES>
+                           </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD>
+                           <SHORT-NAME>Dem_InitMonitorReasonType_Enum</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00942]</L-2>
+                           </DESC>
+                           <CATEGORY>TEXTTABLE</CATEGORY>
+                           <COMPU-INTERNAL-TO-PHYS>
+                              <COMPU-SCALES>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>1</LOWER-LIMIT>
+                                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INIT_MONITOR_CLEAR</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>2</LOWER-LIMIT>
+                                    <UPPER-LIMIT>2</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INIT_MONITOR_RESTART</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>3</LOWER-LIMIT>
+                                    <UPPER-LIMIT>3</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INIT_MONITOR_REENABLED</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>4</LOWER-LIMIT>
+                                    <UPPER-LIMIT>4</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_INIT_MONITOR_STORAGE_REENABLED</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                              </COMPU-SCALES>
+                           </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD>
+                           <SHORT-NAME>Dem_OperationCycleStateType_Enum</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00929]</L-2>
+                           </DESC>
+                           <CATEGORY>TEXTTABLE</CATEGORY>
+                           <COMPU-INTERNAL-TO-PHYS>
+                              <COMPU-SCALES>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                                    <UPPER-LIMIT>0</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_CYCLE_STATE_START</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                                 <COMPU-SCALE>
+                                    <LOWER-LIMIT>1</LOWER-LIMIT>
+                                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                                    <COMPU-CONST>
+                                       <VT>DEM_CYCLE_STATE_END</VT>
+                                    </COMPU-CONST>
+                                 </COMPU-SCALE>
+                              </COMPU-SCALES>
+                           </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_DTCFormatType</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00933]</L-2>
+                           </DESC>
+                           <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                           <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                 <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dem/Dem_DTCFormatType_Enum</COMPU-METHOD-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                 </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                           </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_DTCKindType</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00932]</L-2>
+                           </DESC>
+                           <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                           <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                 <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dem/Dem_DTCKindType_Enum</COMPU-METHOD-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                 </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                           </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_DTCOriginType</SHORT-NAME>
+                           <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                           <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                 <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dem/Dem_DTCOriginType_Enum</COMPU-METHOD-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                 </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                           </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_EventIdType</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00925]</L-2>
+                           </DESC>
+                           <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                           <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                 <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                 </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                           </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_UdsStatusByteType</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00928]</L-2>
+                           </DESC>
+                           <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                           <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                 <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dem/Dem_UdsStatusByteType_Enum</COMPU-METHOD-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                 </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                           </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_EventStatusType</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00926]</L-2>
+                           </DESC>
+                           <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                           <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                 <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dem/Dem_EventStatusType_Enum</COMPU-METHOD-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                 </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                           </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_MaxDataValueType</SHORT-NAME>
+                           <CATEGORY>ARRAY</CATEGORY>
+                           <SUB-ELEMENTS>
+                              <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                 <SHORT-NAME>ARRAYELEMENT</SHORT-NAME>
+                                 <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                                 <ARRAY-SIZE>1</ARRAY-SIZE>
+                                 <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                                 <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                       <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                          <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                       </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                 </SW-DATA-DEF-PROPS>
+                              </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                              </SUB-ELEMENTS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_IndicatorIdType</SHORT-NAME>
+                           <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                           <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                 <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                 </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                           </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_IndicatorStatusType</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00930]</L-2>
+                           </DESC>
+                           <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                           <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                 <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dem/Dem_IndicatorStatusType_Enum</COMPU-METHOD-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                 </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                           </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_InitMonitorReasonType</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00942]</L-2>
+                           </DESC>
+                           <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                           <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                 <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dem/Dem_InitMonitorReasonType_Enum</COMPU-METHOD-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                 </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                           </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_OperationCycleIdType</SHORT-NAME>
+                           <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                           <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                 <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                 </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                           </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                           <SHORT-NAME>Dem_OperationCycleStateType</SHORT-NAME>
+                           <DESC>
+                              <L-2 L="FOR-ALL">[SWS_Dem_00929]</L-2>
+                           </DESC>
+                           <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                           <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                 <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dem/Dem_OperationCycleStateType_Enum</COMPU-METHOD-REF>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                 </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                           </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <SERVICE-SW-COMPONENT-TYPE>
+                           <SHORT-NAME>Dem</SHORT-NAME>
+                           <PORTS>
+                              <P-PORT-PROTOTYPE>
+                                 <SHORT-NAME>Event_DemEventParameter_22938</SHORT-NAME>
+                                 <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dem/DiagnosticMonitor</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                              <P-PORT-PROTOTYPE>
+                                 <SHORT-NAME>EventInfo_DemEventParameter_EEP</SHORT-NAME>
+                                 <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dem/DiagnosticInfo</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                              <P-PORT-PROTOTYPE>
+                                 <SHORT-NAME>EventInfo_DemEventParameter_CanSM</SHORT-NAME>
+                                 <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dem/DiagnosticInfo</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                              <P-PORT-PROTOTYPE>
+                                 <SHORT-NAME>EventInfo_DemEventParameter_22938</SHORT-NAME>
+                                 <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dem/DiagnosticInfo</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                              <P-PORT-PROTOTYPE>
+                                 <SHORT-NAME>EventInfo_DemEventParameter_22940</SHORT-NAME>
+                                 <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dem/DiagnosticInfo</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                              <P-PORT-PROTOTYPE>
+                                 <SHORT-NAME>OpCycle_DemOperationCycle</SHORT-NAME>
+                                 <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dem/OperationCycle</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                              <P-PORT-PROTOTYPE>
+                                 <SHORT-NAME>AgingCycle_DemOperationCycle</SHORT-NAME>
+                                 <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dem/AgingCycle</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                              <P-PORT-PROTOTYPE>
+                                 <SHORT-NAME>OverflowIndPrimaryMemory</SHORT-NAME>
+                                 <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dem/EvMemOverflowIndication</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                              <P-PORT-PROTOTYPE>
+                                 <SHORT-NAME>ControlDTCSuppression</SHORT-NAME>
+                                 <PROVIDED-COM-SPECS>
+                                    <SERVER-COM-SPEC>
+                                       <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DTCSuppression/SetDTCSuppression</OPERATION-REF>
+                                       <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                                    </SERVER-COM-SPEC>
+                                 </PROVIDED-COM-SPECS>
+                                 <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dem/DTCSuppression</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                              <P-PORT-PROTOTYPE>
+                                 <SHORT-NAME>Dcm</SHORT-NAME>
+                                 <PROVIDED-COM-SPECS>
+                                    <SERVER-COM-SPEC>
+                                       <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DcmIf/DcmClearDTC</OPERATION-REF>
+                                       <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                                    </SERVER-COM-SPEC>
+                                 </PROVIDED-COM-SPECS>
+                                 <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dem/DcmIf</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                              <P-PORT-PROTOTYPE>
+                              <SHORT-NAME>Cdd</SHORT-NAME>
+                                 <PROVIDED-COM-SPECS>
+                                    <SERVER-COM-SPEC>
+                                       <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/CddIf/ClearDTC</OPERATION-REF>
+                                       <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                                    </SERVER-COM-SPEC>
+                                 </PROVIDED-COM-SPECS>
+                                 <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dem/CddIf</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                           </PORTS>
+                           <INTERNAL-BEHAVIORS>
+                              <SWC-INTERNAL-BEHAVIOR>
+                                 <SHORT-NAME>IB_Dem</SHORT-NAME>
+                                 <EVENTS>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>SES_DemEventParameter_22938</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/SetEventStatus</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/Event_DemEventParameter_22938</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticMonitor/SetEventStatus</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>RES_DemEventParameter_22938</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/ResetEventStatus</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/Event_DemEventParameter_22938</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticMonitor/ResetEventStatus</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GES_DemEventParameter_EEP</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventStatus</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_EEP</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventStatus</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEF_DemEventParameter_EEP</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventFailed</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_EEP</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventFailed</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GET_DemEventParameter_EEP</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventTested</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_EEP</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventTested</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GDOE_DemEventParameter_EEP</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetDTCOfEvent</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_EEP</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetDTCOfEvent</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GFDC_DemEventParameter_EEP</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetFaultDetectionCounter</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_EEP</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetFaultDetectionCounter</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEEDR_DemEventParameter_EEP</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventExtendedDataRecord</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_EEP</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventExtendedDataRecord</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEFFD_DemEventParameter_EEP</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventFreezeFrameData</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_EEP</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventFreezeFrameData</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GES_DemEventParameter_CanSM</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventStatus</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_CanSM</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventStatus</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEF_DemEventParameter_CanSM</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventFailed</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_CanSM</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventFailed</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GET_DemEventParameter_CanSM</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventTested</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_CanSM</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventTested</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GDOE_DemEventParameter_CanSM</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetDTCOfEvent</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_CanSM</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetDTCOfEvent</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GFDC_DemEventParameter_CanSM</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetFaultDetectionCounter</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_CanSM</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetFaultDetectionCounter</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEEDR_DemEventParameter_CanSM</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventExtendedDataRecord</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_CanSM</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventExtendedDataRecord</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEFFD_DemEventParameter_CanSM</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventFreezeFrameData</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_CanSM</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventFreezeFrameData</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GES_DemEventParameter_22938</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventStatus</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22938</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventStatus</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEF_DemEventParameter_22938</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventFailed</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22938</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventFailed</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GET_DemEventParameter_22938</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventTested</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22938</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventTested</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GDOE_DemEventParameter_22938</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetDTCOfEvent</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22938</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetDTCOfEvent</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GFDC_DemEventParameter_22938</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetFaultDetectionCounter</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22938</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetFaultDetectionCounter</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEEDR_DemEventParameter_22938</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventExtendedDataRecord</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22938</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventExtendedDataRecord</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEFFD_DemEventParameter_22938</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventFreezeFrameData</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22938</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventFreezeFrameData</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GES_DemEventParameter_22940</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventStatus</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22940</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventStatus</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEF_DemEventParameter_22940</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventFailed</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22940</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventFailed</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GET_DemEventParameter_22940</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventTested</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22940</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventTested</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GDOE_DemEventParameter_22940</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetDTCOfEvent</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22940</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetDTCOfEvent</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GFDC_DemEventParameter_22940</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetFaultDetectionCounter</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22940</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetFaultDetectionCounter</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEEDR_DemEventParameter_22940</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventExtendedDataRecord</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22940</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventExtendedDataRecord</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEFFD_DemEventParameter_22940</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventFreezeFrameData</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22940</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DiagnosticInfo/GetEventFreezeFrameData</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>GEMO_Primary</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/GetEventMemoryOverflow</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/OverflowIndPrimaryMemory</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/EvMemOverflowIndication/GetEventMemoryOverflow</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>SOCS_DemOperationCycle</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/SetOperationCycleState</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/OpCycle_DemOperationCycle</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/OperationCycle/SetOperationCycleState</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>SACS_DemOperationCycle</SHORT-NAME>
+                                       <DISABLED-MODE-IREFS />
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/SetAgingCycleState</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/AgingCycle_DemOperationCycle</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/AgingCycle/SetAgingCycleState</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>OIE_SetDTCSuppression</SHORT-NAME>
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/SetDTCSuppression</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/ControlDTCSuppression</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DTCSuppression/SetDTCSuppression</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>OIE_DcmClearDTC</SHORT-NAME>
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/DcmClearDTC</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/Dcm</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DcmIf/DcmClearDTC</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>OIE_DcmEnableDTCSetting</SHORT-NAME>
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/DcmEnableDTCSetting</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/Dcm</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/DcmIf/DcmEnableDTCSetting</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                    <OPERATION-INVOKED-EVENT>
+                                       <SHORT-NAME>OIE_CddClearDTC</SHORT-NAME>
+                                       <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dem/Dem/IB_Dem/CddClearDTC</START-ON-EVENT-REF>
+                                       <OPERATION-IREF>
+                                          <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/Cdd</CONTEXT-P-PORT-REF>
+                                          <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dem/CddIf/ClearDTC</TARGET-PROVIDED-OPERATION-REF>
+                                       </OPERATION-IREF>
+                                    </OPERATION-INVOKED-EVENT>
+                                 </EVENTS>
+                                 <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                                 <INCLUDED-DATA-TYPE-SETS>
+                                    <INCLUDED-DATA-TYPE-SET>
+                                       <DATA-TYPE-REFS>
+                                          <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCKindType</DATA-TYPE-REF>
+                                          <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCFormatType</DATA-TYPE-REF>
+                                          <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCOriginType</DATA-TYPE-REF>
+                                          <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventStatusType</DATA-TYPE-REF>
+                                          <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_IndicatorStatusType</DATA-TYPE-REF>
+                                          <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_InitMonitorReasonType</DATA-TYPE-REF>
+                                          <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_OperationCycleStateType</DATA-TYPE-REF>
+                                          <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_UdsStatusByteType</DATA-TYPE-REF>
+                                          <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_OperationCycleIdType</DATA-TYPE-REF>
+                                          <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_IndicatorIdType</DATA-TYPE-REF>
+                                       </DATA-TYPE-REFS>
+                                    </INCLUDED-DATA-TYPE-SET>
+                                 </INCLUDED-DATA-TYPE-SETS>
+                                 <PER-INSTANCE-MEMORYS/>
+                                 <PORT-API-OPTIONS>
+                                    <PORT-API-OPTION>
+                                       <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                                       <INDIRECT-API>false</INDIRECT-API>
+                                       <PORT-ARG-VALUES>
+                                          <PORT-DEFINED-ARGUMENT-VALUE>
+                                             <VALUE>
+                                                <NUMERICAL-VALUE-SPECIFICATION>
+                                                   <SHORT-LABEL>EventId</SHORT-LABEL>
+                                                   <VALUE>3</VALUE>
+                                                </NUMERICAL-VALUE-SPECIFICATION>
+                                             </VALUE>
+                                             <VALUE-TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</VALUE-TYPE-TREF>
+                                          </PORT-DEFINED-ARGUMENT-VALUE>
+                                       </PORT-ARG-VALUES>
+                                       <PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/Event_DemEventParameter_22938</PORT-REF>
+                                    </PORT-API-OPTION>
+                                    <PORT-API-OPTION>
+                                       <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                                       <INDIRECT-API>false</INDIRECT-API>
+                                       <PORT-ARG-VALUES>
+                                          <PORT-DEFINED-ARGUMENT-VALUE>
+                                             <VALUE>
+                                                <NUMERICAL-VALUE-SPECIFICATION>
+                                                   <SHORT-LABEL>EventId</SHORT-LABEL>
+                                                   <VALUE>1</VALUE>
+                                                </NUMERICAL-VALUE-SPECIFICATION>
+                                             </VALUE>
+                                             <VALUE-TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</VALUE-TYPE-TREF>
+                                          </PORT-DEFINED-ARGUMENT-VALUE>
+                                       </PORT-ARG-VALUES>
+                                       <PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_EEP</PORT-REF>
+                                    </PORT-API-OPTION>
+                                    <PORT-API-OPTION>
+                                       <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                                       <INDIRECT-API>false</INDIRECT-API>
+                                       <PORT-ARG-VALUES>
+                                          <PORT-DEFINED-ARGUMENT-VALUE>
+                                             <VALUE>
+                                                <NUMERICAL-VALUE-SPECIFICATION>
+                                                   <SHORT-LABEL>EventId</SHORT-LABEL>
+                                                   <VALUE>2</VALUE>
+                                                </NUMERICAL-VALUE-SPECIFICATION>
+                                             </VALUE>
+                                             <VALUE-TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</VALUE-TYPE-TREF>
+                                          </PORT-DEFINED-ARGUMENT-VALUE>
+                                       </PORT-ARG-VALUES>
+                                       <PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_CanSM</PORT-REF>
+                                    </PORT-API-OPTION>
+                                    <PORT-API-OPTION>
+                                       <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                                       <INDIRECT-API>false</INDIRECT-API>
+                                       <PORT-ARG-VALUES>
+                                          <PORT-DEFINED-ARGUMENT-VALUE>
+                                             <VALUE>
+                                                <NUMERICAL-VALUE-SPECIFICATION>
+                                                   <SHORT-LABEL>EventId</SHORT-LABEL>
+                                                   <VALUE>3</VALUE>
+                                                </NUMERICAL-VALUE-SPECIFICATION>
+                                             </VALUE>
+                                             <VALUE-TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</VALUE-TYPE-TREF>
+                                          </PORT-DEFINED-ARGUMENT-VALUE>
+                                       </PORT-ARG-VALUES>
+                                       <PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22938</PORT-REF>
+                                    </PORT-API-OPTION>
+                                    <PORT-API-OPTION>
+                                       <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                                       <INDIRECT-API>false</INDIRECT-API>
+                                       <PORT-ARG-VALUES>
+                                          <PORT-DEFINED-ARGUMENT-VALUE>
+                                             <VALUE>
+                                                <NUMERICAL-VALUE-SPECIFICATION>
+                                                   <SHORT-LABEL>EventId</SHORT-LABEL>
+                                                   <VALUE>4</VALUE>
+                                                </NUMERICAL-VALUE-SPECIFICATION>
+                                             </VALUE>
+                                             <VALUE-TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_EventIdType</VALUE-TYPE-TREF>
+                                          </PORT-DEFINED-ARGUMENT-VALUE>
+                                       </PORT-ARG-VALUES>
+                                       <PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/EventInfo_DemEventParameter_22940</PORT-REF>
+                                    </PORT-API-OPTION>
+                                    <PORT-API-OPTION>
+                                       <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                                       <INDIRECT-API>false</INDIRECT-API>
+                                       <PORT-ARG-VALUES>
+                                          <PORT-DEFINED-ARGUMENT-VALUE>
+                                             <VALUE>
+                                                <TEXT-VALUE-SPECIFICATION>
+                                                   <SHORT-LABEL>DTCOrigin</SHORT-LABEL>
+                                                   <VALUE>DEM_DTC_ORIGIN_PRIMARY_MEMORY</VALUE>
+                                                </TEXT-VALUE-SPECIFICATION>
+                                             </VALUE>
+                                             <VALUE-TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dem/Dem_DTCOriginType</VALUE-TYPE-TREF>
+                                          </PORT-DEFINED-ARGUMENT-VALUE>
+                                       </PORT-ARG-VALUES>
+                                       <PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/OverflowIndPrimaryMemory</PORT-REF>
+                                    </PORT-API-OPTION>
+                                    <PORT-API-OPTION>
+                                       <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                                       <INDIRECT-API>false</INDIRECT-API>
+                                       <PORT-ARG-VALUES>
+                                          <PORT-DEFINED-ARGUMENT-VALUE>
+                                             <VALUE>
+                                                <NUMERICAL-VALUE-SPECIFICATION>
+                                                   <SHORT-LABEL>OperationCycleId</SHORT-LABEL>
+                                                   <VALUE>0</VALUE>
+                                                </NUMERICAL-VALUE-SPECIFICATION>
+                                             </VALUE>
+                                             <VALUE-TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</VALUE-TYPE-TREF>
+                                          </PORT-DEFINED-ARGUMENT-VALUE>
+                                       </PORT-ARG-VALUES>
+                                       <PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/OpCycle_DemOperationCycle</PORT-REF>
+                                    </PORT-API-OPTION>
+                                    <PORT-API-OPTION>
+                                       <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                                       <INDIRECT-API>false</INDIRECT-API>
+                                       <PORT-ARG-VALUES>
+                                          <PORT-DEFINED-ARGUMENT-VALUE>
+                                             <VALUE>
+                                                <NUMERICAL-VALUE-SPECIFICATION>
+                                                   <SHORT-LABEL>OperationCycleId</SHORT-LABEL>
+                                                   <VALUE>0</VALUE>
+                                                </NUMERICAL-VALUE-SPECIFICATION>
+                                             </VALUE>
+                                          <VALUE-TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</VALUE-TYPE-TREF>
+                                          </PORT-DEFINED-ARGUMENT-VALUE>
+                                       </PORT-ARG-VALUES>
+                                       <PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dem/Dem/AgingCycle_DemOperationCycle</PORT-REF>
+                                    </PORT-API-OPTION>
+                                 </PORT-API-OPTIONS>
+                                 <RUNNABLES>
+                                    <RUNNABLE-ENTITY>
+                                    <SHORT-NAME>DcmClearDTC</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES />
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS>
+                                       </SERVER-CALL-POINTS>
+                                       <SYMBOL>Dem_DcmClearDTC</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>DcmEnableDTCSetting</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES />
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS>
+                                       </SERVER-CALL-POINTS>
+                                       <SYMBOL>Dem_DcmEnableDTCSetting</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>CddClearDTC</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES />
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS>
+                                       </SERVER-CALL-POINTS>
+                                       <SYMBOL>Dem_ClearDTC</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>MainFunction</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES />
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS>
+                                       </SERVER-CALL-POINTS>
+                                       <SYMBOL>Dem_MainFunction</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>SetEventStatus</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES />
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS>
+                                       </SERVER-CALL-POINTS>
+                                       <SYMBOL>Dem_SetEventStatus</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>ResetEventStatus</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES />
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS>
+                                       </SERVER-CALL-POINTS>
+                                       <SYMBOL>Dem_ResetEventStatus</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>GetFaultDetectionCounter</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES />
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS>
+                                       </SERVER-CALL-POINTS>
+                                       <SYMBOL>Dem_GetFaultDetectionCounter</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>SetOperationCycleState</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES />
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS/>
+                                       <SYMBOL>Dem_SetOperationCycleState</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>SetAgingCycleState</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES />
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS/>
+                                       <SYMBOL>Dem_SetAgingCycleState</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>GetEventStatus</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES/>
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS/>
+                                       <SYMBOL>Dem_GetEventStatus</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>GetEventFailed</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES/>
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS/>
+                                       <SYMBOL>Dem_GetEventFailed</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>GetEventTested</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES/>
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS/>
+                                       <SYMBOL>Dem_GetEventTested</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>GetDTCOfEvent</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES/>
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS/>
+                                       <SYMBOL>Dem_GetDTCOfEvent</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>ClearPrestoredFreezeFrame</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES/>
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS/>
+                                       <SYMBOL>Dem_ClearPrestoredFreezeFrame</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>GetIndicatorStatus</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES/>
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <SERVER-CALL-POINTS/>
+                                       <SYMBOL>Dem_GetIndicatorStatus</SYMBOL>
+                                       <WAIT-POINTS/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>GetEventExtendedDataRecord</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dem_GetEventExtendedDataRecord</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>GetEventFreezeFrameData</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dem_GetEventFreezeFrameData</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>GetEventMemoryOverflow</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dem_GetEventMemoryOverflow</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>SetDTCSuppression</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dem_SetDTCSuppression</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                 </RUNNABLES>
+                                 <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                              </SWC-INTERNAL-BEHAVIOR>
+                           </INTERNAL-BEHAVIORS>
+                        </SERVICE-SW-COMPONENT-TYPE>
+                        <SWC-IMPLEMENTATION>
+                           <SHORT-NAME>IMPL_Dem</SHORT-NAME>
+                           <CODE-DESCRIPTORS>
+                              <CODE>
+                                 <SHORT-NAME>CODE_Dem</SHORT-NAME>
+                                 <ARTIFACT-DESCRIPTORS>
+                                    <AUTOSAR-ENGINEERING-OBJECT>
+                                       <SHORT-LABEL>Dem</SHORT-LABEL>
+                                       <CATEGORY>SWSRC</CATEGORY>
+                                    </AUTOSAR-ENGINEERING-OBJECT>
+                                 </ARTIFACT-DESCRIPTORS>
+                              </CODE>
+                           </CODE-DESCRIPTORS>
+                           <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                           <RESOURCE-CONSUMPTION>
+                              <SHORT-NAME>RC_Dem</SHORT-NAME>
+                              <MEMORY-SECTIONS>
+                                 <MEMORY-SECTION>
+                                    <SHORT-NAME>CODE</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                                    <SYMBOL>CODE</SYMBOL>
+                                 </MEMORY-SECTION>
+                              </MEMORY-SECTIONS>
+                           </RESOURCE-CONSUMPTION>
+                           <SW-VERSION>6.1.0</SW-VERSION>
+                           <SWC-BSW-MAPPING-REF DEST="SWC-BSW-MAPPING">/VSTAR/BswMd/SwcBswMapping_Dem</SWC-BSW-MAPPING-REF>
+                           <VENDOR-ID>31</VENDOR-ID>
+                           <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/AUTOSAR/Services/Dem/Dem/IB_Dem</BEHAVIOR-REF>
+                        </SWC-IMPLEMENTATION>
+                     </ELEMENTS>
+                  </AR-PACKAGE>
+               </AR-PACKAGES>
+            </AR-PACKAGE>
+         </AR-PACKAGES>
+      </AR-PACKAGE>
+   </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,371 @@
+;===================================================================================================
+;
+;    @file        run.cmm
+;    @version     1.0.1
+;
+;    @brief       AUTOSAR - Sample_app - Script for programming internal flash and executing
+;    @details     LTB script used for loading the elf into flash.
+;
+;    Project      : AUTOSAR 4.0 MCAL
+;    Platform     : PA
+;    Peripheral   : 
+;    Dependencies : Base Det Dem Port Dio Mcu Rte Wdg WdgIf CanIf LinIf FrIf EcuM
+;
+;    Autosar Version       : 4.0.3
+;    Autosar Revision      : ASR_REL_4_0_REV_0003
+;    Autosar Conf. Variant :
+;    Software Version      : 1.0.1
+;    Build Version         : MPC5746R_MCAL_1_0_0_RTM_ASR_REL_4_0_REV_0003_20150403
+;
+;    (c) Copyright 2006-2015 Freescale Semiconductor Inc. & STMicroelectronics
+;    All Rights Reserved.
+;
+;    This file contains sample code only. It is not part of the production code deliverables.
+;
+;
+;===================================================================================================
+;;===================================================================================================
+;Revision History:
+;                             Modification     Tracking
+;Author (core ID)              Date D/M/Y       Number     Description of Changes
+;---------------------------   ----------    ------------  ------------------------------------------
+;Marius Rotaru (rtrm001)        9/07/2009    ENGR119813    File creation
+;Nicolae Dobrostomat (b00556)  11/03/2010    ENGR121138    Added support for OS
+;Alex Gauggel (b39263)         3/04/2015     ENGR353635    Updated for Rainier RTM 1.0.1
+;---------------------------   ----------    ------------  ------------------------------------------
+;',);===================================================================================================
+
+
+;
+; Flashing algorithm is specific to each device
+;
+;&flashbase=0x01000000
+&rambase=0x40000000
+&flashsize=0x00380000
+&flashdriver="c55fm5746r.bin"
+&optimizePLL=0
+
+
+
+;========================================================================
+; CPU setup
+
+SYStem.RESet
+SYStem.BdmClock 5MHz
+SYStem.CPU MPC5746R
+SYStem.CONFIG.CORE 2. 1. ; core_1
+CORE.ASSIGN 1. 2. // assign cores to the SMP system
+;SYStem.CONFIG.SLAVE OFF
+;SYStem.DETECT CPU
+SYStem.Option.WATCHDOG OFF
+SYStem.OPTION DUALPORT ON
+DIAG 3117 1
+;SYStem.Option.SLOWRESET ON
+SYStem.Up
+
+;DisableWatchdog:
+; disable SWT1
+d.s 0xFC054010 %long 0xC520
+d.s 0xFC054010 %long 0xD928
+d.s 0xFC054000 %long 0x7F00010A
+
+; disable &SWT0
+d.s 0xFC050010 %long 0xC520
+d.s 0xFC050010 %long 0xD928
+d.s 0xFC050000 %long 0x7F00010A
+
+
+
+; PLL initialization 
+if &optimizePLL==1
+(
+   print "Starting PLL:"
+  
+
+   ;MC_RGM.DES.R = 0xFFFF; 
+   per.set ANC:0xFFFA8000 %LONG 0xFFFF
+   ;MC_RGM.FES.R = 0xFFFF; 
+   per.set ANC:0xFFFA8300 %LONG 0xFFFF
+
+  
+   ;/* Turn On XOSC - PLL's remain off */
+   ;MC_ME.DRUN_MC.R = 0x00030030;  /* Enable the XOSC */
+   per.set ANC:0xFFFB802C %LONG  0x00130030              
+ 
+   ;MC_ME.ME.R = 0x000005E2; /* Enable all modes */
+   per.set ANC:0xFFFB8008 %LONG  0x000005E2   
+   
+   ;/* Trigger DRUN mode Transision with XOSC ON and SYSCLK= IRC*/
+   ;MC_ME.MCTL.R = 0x30005AF0;    /* Mode & Key */
+   per.set ANC:0xFFFB8004 %LONG  0x30005AF0                
+   ;MC_ME.MCTL.R = 0x3000A50F;    /* Mode & Key inverted */
+   per.set ANC:0xFFFB8004 %LONG   0x3000A50F  
+        
+   ;while(MC_ME.GS.B.S_MTRANS == 1);  %LONG    27-27       /* Wait for mode entry to complete */
+   wait (Data.Long(ANC:0xFFFB8004)&0x08000000)==0 
+
+   ;while(MC_ME.GS.B.S_CURRENT_MODE != 0x3);  %LONG 28-31  /* Check DRUN mode has been entered */
+   wait (Data.Long(ANC:0xFFFB8004)&0xf0000000)==0x30000000
+   
+   ;MC_ME.IS.B.I_MTC = 1;  /* Clear Transition flag */
+   per.set.field ANC:0xFFFB800C %LONG 0x00000001 1. 
+   
+   ;/* Route XOSC to the PLL's - IRC is default */
+   ;MC_CGM.AC5_SC.B.SELCTL=1;         24-27                /* Connect XOSC to PLL0 */
+   PER.Set ANC:0xFFFB08C0 %LONG 0x01000000
+   
+   ;/* set PLL divider - 80MHz from 40Mhx XOSC*/
+   PER.Set ANC:0xFFFB0108 %LONG 0x78045028
+ 
+   ;/*Put PLL0 into Normal mode*/
+   PER.Set ANC:0xFFFB0100 %LONG 0x00000300
+      
+   ;/* DRUN MODE with PLLs ON and SYSCLK=XOSC */
+   ;MC_ME.DRUN_MC.R = 0x000300F1;  ANC:0xFFFB802C %LONG 
+   per.set ANC:0xFFFB802C %LONG 0x000300F1
+   ;MC_ME.MCTL.R = 0x30005AF0;    ANC:0xFFFB8004 %LONG                    /* Enter DRUN Mode & Key */
+   per.set ANC:0xFFFB8004 %LONG 0x30005AF0 
+   ;MC_ME.MCTL.R = 0x3000A50F;    ANC:0xFFFB8004 %LONG                    /* Enter DRUN Mode & Inverted Key */
+   per.set ANC:0xFFFB8004 %LONG 0x3000A50F
+   
+   ;while(MC_ME.GS.B.S_MTRANS == 1);  %LONG    27-27       /* Wait for mode entry to complete */
+   wait (Data.Long(ANC:0xFFFB8004)&0x08000000)==0 
+   ;while(MC_ME.GS.B.S_CURRENT_MODE != 0x3);  %LONG 28-31  /* Check DRUN mode has been entered */
+   wait (Data.Long(ANC:0xFFFB8004)&0xf0000000)==0x30000000
+   ;MC_ME.IS.B.I_MTC = 1;  /* Clear Transition flag */
+   per.set.field ANC:0xFFFB800C %LONG 0x00000001 1. 
+   
+   ;/* PLL0 */    while ((PLLDIG.PLL0SR.R & 0x4) != 0x4){} ;  ANC:0xFFFB0104 %LONG  /* Wait for lock bit to set */ 
+   wait (Data.Long(ANC:0xFFFB0104)&0x4)==0x4 
+    
+   ;/* DRUN MODE with PLLs ON and SYSCLK=PLL0 */
+   ;MC_ME.DRUN_MC.R = 0x000300F2;ANC:0xFFFB802C %LONG 
+   per.set ANC:0xFFFB802C %LONG 0x000300F2
+   ;MC_ME.MCTL.R = 0x30005AF0;   ANC:0xFFFB8004 %LONG                   /* Enter DRUN Mode & Key */
+   per.set ANC:0xFFFB8004 %LONG 0x30005AF0
+   ;MC_ME.MCTL.R = 0x3000A50F;    ANC:0xFFFB8004 %LONG                   /* Enter DRUN Mode & Inverted Key */
+   per.set ANC:0xFFFB8004 %LONG 0x3000A50F
+   
+   ;PFLASH.PFCR1.B.APC = 1;ANC:0xFC03_0000h %LONG   13-15?
+   per.set.field ANC:0xFC030000 %LONG 0x0000e000 1.
+   ;PFLASH.PFCR1.B.RWSC = 2;ANC:0xFC03_0000h %LONG      8-12
+   per.set.field ANC:0xFC030000 %LONG 0x001f00 2.
+
+   ;while(MC_ME.GS.B.S_MTRANS == 1);  %LONG    27-27       /* Wait for mode entry to complete */
+   wait (Data.Long(ANC:0xFFFB8004)&0x08000000)==0 
+   ;while(MC_ME.GS.B.S_CURRENT_MODE != 0x3);  %LONG 28-31  /* Check DRUN mode has been entered */
+   wait (Data.Long(ANC:0xFFFB8004)&0xf0000000)==0x30000000
+   ;MC_ME.IS.B.I_MTC = 1;  /* Clear Transition flag */
+   per.set.field ANC:0xFFFB800C %LONG 0x00000001 1.  
+
+   ; set JTAG clock to 10 MHz
+   SYStem.BdmClock 10MHz
+)
+
+; initialize internal SRAM
+Data.Set EA:0x40000000--0x4003ffff %Quad 0x0
+
+; Initialize internal IMEM/DMEM
+Data.Set EA:0x51000000++0x3FFF %Quad 0 ; IMEM
+Data.Set EA:0x51800000++0x7FFF %Quad 0 ; DMEM
+
+;========================================================================
+; Flash declaration
+
+FLASH.RESet
+print "Flash Reset"
+
+  ; Low address space
+  FLASH.Create 1. 0x00404000--0x00407FFF NOP    Quad 0x0000    ; BAF - read only
+  FLASH.Create 1. 0x00FA0000--0x00FA3FFF TARGET Quad 0x0001
+  FLASH.Create 1. 0x00FA4000--0x00FA7FFF TARGET Quad 0x0002
+  FLASH.Create 1. 0x00FA8000--0x00FABFFF TARGET Quad 0x0003
+  FLASH.Create 1. 0x00FAC000--0x00FAFFFF TARGET Quad 0x0004
+  FLASH.Create 1. 0x00F9C000--0x00F9FFFF TARGET Quad 0x0005
+  FLASH.Create 1. 0x00FB0000--0x00FB7FFF TARGET Quad 0x0006
+  FLASH.Create 1. 0x00FB8000--0x00FBFFFF TARGET Quad 0x0007
+  FLASH.Create 1. 0x00FC0000--0x00FCFFFF TARGET Quad 0x0008
+  FLASH.Create 1. 0x00FD0000--0x00FDFFFF TARGET Quad 0x0009
+  FLASH.Create 1. 0x00FE0000--0x00FEFFFF TARGET Quad 0x000A
+  FLASH.Create 1. 0x00FF0000--0x00FFFFFF TARGET Quad 0x000B
+  ; Mid address space
+  FLASH.Create 2. 0x00800000--0x00803FFF TARGET Quad 0x0100
+  FLASH.Create 2. 0x00804000--0x00807FFF TARGET Quad 0x0101
+  FLASH.Create 2. 0x00808000--0x0080BFFF TARGET Quad 0x0102
+  FLASH.Create 2. 0x0080C000--0x0080FFFF TARGET Quad 0x0103
+  FLASH.Create 2. 0x00810000--0x00813FFF TARGET Quad 0x0104
+  FLASH.Create 2. 0x00814000--0x00817FFF TARGET Quad 0x0105
+  FLASH.Create 2. 0x00818000--0x0081BFFF TARGET Quad 0x0106
+  FLASH.Create 2. 0x0081C000--0x0081FFFF TARGET Quad 0x0107
+  FLASH.Create 2. 0x00820000--0x0082FFFF TARGET Quad 0x0108
+  FLASH.Create 2. 0x00830000--0x0083FFFF TARGET Quad 0x0109
+  ; 256k address space
+  FLASH.Create 4. 0x01000000--0x0103FFFF TARGET Quad 0x0300
+  FLASH.Create 4. 0x01040000--0x0107FFFF TARGET Quad 0x0301
+  FLASH.Create 4. 0x01080000--0x010BFFFF TARGET Quad 0x0302
+  FLASH.Create 4. 0x010C0000--0x010FFFFF TARGET Quad 0x0307
+  FLASH.Create 4. 0x01100000--0x0113FFFF TARGET Quad 0x0308
+  FLASH.Create 4. 0x01140000--0x0117FFFF TARGET Quad 0x0309
+  FLASH.Create 4. 0x01180000--0x011BFFFF TARGET Quad 0x0303
+  FLASH.Create 4. 0x011C0000--0x011FFFFF TARGET Quad 0x0304
+  FLASH.Create 4. 0x01200000--0x0123FFFF TARGET Quad 0x0305
+  FLASH.Create 4. 0x01240000--0x0127FFFF TARGET Quad 0x0306
+  FLASH.Create 4. 0x01280000--0x012BFFFF TARGET Quad 0x030a
+  FLASH.Create 4. 0x012C0000--0x012FFFFF TARGET Quad 0x030b
+  FLASH.Create 4. 0x01300000--0x0133FFFF TARGET Quad 0x030c
+  FLASH.Create 4. 0x01340000--0x0137FFFF TARGET Quad 0x030d
+  ; UTEST address space
+  FLASH.Create 6. 0x00400000--0x00403FFF TARGET Quad 0x0500 /OTP /INFO "UTEST"
+
+  ; Overlay enabled mapping
+  FLASH.CreateALIAS 0x08A00000--0x08FFFFFF 0x00A00000   ; Small & medium flash blocks
+  FLASH.CreateALIAS 0x09000000--0x09FFFFFF 0x01000000   ; Large flash blocks
+
+;  FLASH.TARGET E:0x40004000 E:0x40008000 0x4000 ~~/demo/powerpc/flash/quad/c55fm5746r.bin /STACKSIZE 0x0200
+
+  LOCAL &imembase &dmembase
+  &imembase=Data.Long(SPR:0x2B7)&0xFFFFF000
+  &dmembase=Data.Long(SPR:0x2B6)&0xFFFFF000
+
+  FLASH.TARGET E:&imembase E:&dmembase 0x4000 ~~/demo/powerpc/flash/quad/c55fm5746r.bin /STACKSIZE 0x0200 
+
+;========================================================================
+; Flash programming example
+;
+; Flash programming speed is about three times faster when memory class E:
+; is used for data buffer (DUALPORT memory access). For DUALPORT access it
+; is required to setup MemAccess NEXUS for both, NEXUS and JTAG debugger.
+
+print "Flash Programming start"
+;;;  FLASH.UNLOCK ALL
+;;;  FLASH.ReProgram ALL /Erase
+;;;  Data.Load.Elf sample_app_mcal.elf E:0x01000000--(0x01000000+&flashsize-1) /Quad /verify
+;;;  FLASH.ReProgram OFF
+;;;  FLASH.LOCK ALL
+
+   FLASH.ReProgram ALL /Erase
+   Data.Load.Elf * E:0x00F9C000--(0x01000000+&flashsize-1) /Quad /verify
+   FLASH.ReProgram.off
+print "Flash Programming finish"
+;set JTAG clock back to default
+SYStem.BdmClock 4MHz
+
+
+;========================================================================
+
+;Batch Job for debugging in internal FLASH
+
+;clear the TRACE32 screen
+WinCLEAR
+
+; reset
+SYStem.RESet
+
+;select CPU type
+SYStem.CPU MPC5746R
+SYStem.CONFIG.CORE 2. 1; core_1
+SYStem.CONFIG.CORE 1. 1; core_0
+CORE.ASSIGN 1. 2. // assign cores to the SMP system
+
+;SYStem.CONFIG.SLAVE OFF
+SYStem.Option.WATCHDOG OFF
+
+
+
+;inform debugger about FLASH memory address range
+;Map.BOnchip 0x0--&flashsize
+Map.BOnchip 0x01000000--(0x01000000+&flashsize-1)
+
+;set debug clock (frequency for debugger-target communication)
+SYSTem.BdmClock 4000000.
+SYStem.OPTION DUALPORT ON
+;restart the CPU with debug mode enable
+;SYStem.Option.SLOWRESET ON
+SYSTem.Up
+
+
+; initialize internam SRAM
+Data.Set EA:0x40000000--0x4003FFFF %Quad 0xDEADBEEFDEADBEEF
+;d.s a:M4_BASE_ADDR--M4_END_ADDR %quad 0
+
+;; disable SWT1
+d.s 0xFC054010 %long 0xC520
+d.s 0xFC054010 %long 0xD928
+d.s 0xFC054000 %long 0xFF00010A
+;
+;; disable &SWT0
+d.s 0xFC050010 %long 0xC520
+d.s 0xFC050010 %long 0xD928
+d.s 0xFC050000 %long 0xFF00010A
+
+
+;load program (if FLASH selected than load only debug symbols)
+
+;Data.Load.Elf E:\01_Customer\Suppiler\40_Tongji\FCUV2.05-Test-20180528\bin\sample_app_mcal.elf E:0x01000000--(0x01000000+&flashsize-1) /Quad /verify
+
+;display source
+Data.List
+
+; Include test execution, timeout and dump processing
+
+
+;clear all breakpoints
+Break.delete /ALL
+
+print "[BEART]: Setting PC to _start"
+R.S IP _start
+
+
+;set breakpoint at main
+
+Break.SET main
+;Go
+
+;Executing test application with timeout " 60 " s"
+;wait for timeout or until the emulation is stopped
+;wait !run() 60.s
+
+;stop the emulation if it is runnning
+IF run()
+    (
+        Break
+    )
+
+;quit
+
+ B::
+ 
+ TOOLBAR ON
+ STATUSBAR ON
+ FramePOS 10.714,6.25,,,Maximized
+ WinPAGE.RESet
+ 
+;========================================================================
+; open some windows
+WinCLEAR
+WinPOS 0% 0% 33% 33%
+TargetSystem.state
+WinPOS 33% 0% 33% 33%
+List.auto
+WinPOS 66% 0% 33% 33%
+Var.Watch
+WinPOS 0% 33% 33% 33%
+List.auto /CORE 0.
+WinPOS 0% 66% 33% 33%
+Register.view /CORE 0.
+IF (CORENUMBER()>1.)
+(
+  WinPOS 33% 33% 33% 33%
+  List.auto /CORE 1.
+  WinPOS 33% 66% 33% 33%
+  Register.view /CORE 1.
+  IF (CORENUMBER()>2.)
+  (
+    WinPOS 66% 33% 33% 33%
+    List.auto /CORE 2.
+    WinPOS 66% 66% 33% 33%
+    Register.view /CORE 2.
+  )
+)
+ 
+ ENDDO

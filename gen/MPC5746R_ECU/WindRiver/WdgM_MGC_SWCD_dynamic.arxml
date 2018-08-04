@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Mentor Graphics Corporation
+    All Rights Reserved
+
+ THIS WORK CONTAINS TRADE SECRET
+ AND PROPRIETARY INFORMATION WHICH IS THE
+ PROPERTY OF MENTOR GRAPHICS
+ CORPORATION OR ITS LICENSORS AND IS
+ SUBJECT TO LICENSE TERMS.
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+   <AR-PACKAGES>
+      <AR-PACKAGE>
+         <SHORT-NAME>AUTOSAR</SHORT-NAME>
+         <REFERENCE-BASES/>
+         <ELEMENTS/>
+         <AR-PACKAGES>
+            <AR-PACKAGE>
+               <SHORT-NAME>Services</SHORT-NAME>
+               <REFERENCE-BASES/>
+               <ELEMENTS/>
+               <AR-PACKAGES>
+                  <AR-PACKAGE>
+                     <SHORT-NAME>WdgM</SHORT-NAME>
+                     <REFERENCE-BASES/>
+                     <ELEMENTS>
+                        <SERVICE-SW-COMPONENT-TYPE>
+                           <SHORT-NAME>WdgM</SHORT-NAME>
+                           <PORTS>
+                              <P-PORT-PROTOTYPE>
+                                 <SHORT-NAME>globalMode</SHORT-NAME>
+                                 <CLIENT-SERVER-ANNOTATIONS/>
+                                 <IO-HW-ABSTRACTION-SERVER-ANNOTATIONS/>
+                                 <MODE-PORT-ANNOTATIONS/>
+                                 <NV-DATA-PORT-ANNOTATIONS/>
+                                 <PARAMETER-PORT-ANNOTATIONS/>
+                                 <SENDER-RECEIVER-ANNOTATIONS/>
+                                 <TRIGGER-PORT-ANNOTATIONS/>
+                                 <PROVIDED-COM-SPECS/>
+                                 <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/AUTOSAR/Services/WdgM/WdgM_GlobalMode</PROVIDED-INTERFACE-TREF>
+                              </P-PORT-PROTOTYPE>
+                           </PORTS>
+                           <INTERNAL-BEHAVIORS>
+                              <SWC-INTERNAL-BEHAVIOR>
+                                 <SHORT-NAME>IB_WDGM</SHORT-NAME>
+                                 <CONSTANT-VALUE-MAPPING-REFS/>
+                                 <DATA-TYPE-MAPPING-REFS>
+                                    <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/AUTOSAR/Services/WdgM/WdgMModeMappingSet</DATA-TYPE-MAPPING-REF>
+                                 </DATA-TYPE-MAPPING-REFS>
+                                 <EXCLUSIVE-AREAS/>
+                                 <AR-TYPED-PER-INSTANCE-MEMORYS/>
+                                 <EVENTS>
+                                 </EVENTS>
+                                 <EXPLICIT-INTER-RUNNABLE-VARIABLES/>
+                                 <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                                 <IMPLICIT-INTER-RUNNABLE-VARIABLES/>
+                                 <INCLUDED-DATA-TYPE-SETS/>
+                                 <INSTANTIATION-DATA-DEF-PROPSS/>
+                                 <PER-INSTANCE-MEMORYS/>
+                                 <PER-INSTANCE-PARAMETERS/>
+                                 <PORT-API-OPTIONS>
+                                 </PORT-API-OPTIONS>
+                                 <RUNNABLES>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_UPDATEALIVECOUNETER</SHORT-NAME>
+                                       <DESC>
+                                          <L-2 L="FOR-ALL">Updated entity alive counter</L-2>
+                                       </DESC>
+                                       <CAN-ENTER-EXCLUSIVE-AREA-REFS/>
+                                       <RUNS-INSIDE-EXCLUSIVE-AREA-REFS/>
+                                       <ASYNCHRONOUS-SERVER-CALL-RESULT-POINTS/>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-ARGUMENTS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES/>
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <EXTERNAL-TRIGGERING-POINTS/>
+                                       <INTERNAL-TRIGGERING-POINTS/>
+                                       <MODE-ACCESS-POINTS/>
+                                       <MODE-SWITCH-POINTS/>
+                                       <PARAMETER-ACCESSS/>
+                                       <READ-LOCAL-VARIABLES/>
+                                       <SERVER-CALL-POINTS/>
+                                       <SYMBOL>WdgM_UpdateAliveCounter</SYMBOL>
+                                       <WAIT-POINTS/>
+                                       <WRITTEN-LOCAL-VARIABLES/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_CHECKPOINTREACHED</SHORT-NAME>
+                                       <DESC>
+                                          <L-2 L="FOR-ALL">invoked whenever there is a checkpoint reported</L-2>
+                                       </DESC>
+                                       <CAN-ENTER-EXCLUSIVE-AREA-REFS/>
+                                       <RUNS-INSIDE-EXCLUSIVE-AREA-REFS/>
+                                       <ASYNCHRONOUS-SERVER-CALL-RESULT-POINTS/>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-ARGUMENTS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES/>
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <EXTERNAL-TRIGGERING-POINTS/>
+                                       <INTERNAL-TRIGGERING-POINTS/>
+                                       <MODE-ACCESS-POINTS/>
+                                       <MODE-SWITCH-POINTS/>
+                                       <PARAMETER-ACCESSS/>
+                                       <READ-LOCAL-VARIABLES/>
+                                       <SERVER-CALL-POINTS/>
+                                       <SYMBOL>WdgM_CheckpointReached</SYMBOL>
+                                       <WAIT-POINTS/>
+                                       <WRITTEN-LOCAL-VARIABLES/>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_MAINFUNCTION</SHORT-NAME>
+                                       <DESC>
+                                          <L-2 L="FOR-ALL">Mainfunction</L-2>
+                                       </DESC>
+                                       <CAN-ENTER-EXCLUSIVE-AREA-REFS/>
+                                       <RUNS-INSIDE-EXCLUSIVE-AREA-REFS/>
+                                       <ASYNCHRONOUS-SERVER-CALL-RESULT-POINTS/>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <DATA-READ-ACCESSS/>
+                                       <DATA-RECEIVE-POINT-BY-ARGUMENTS/>
+                                       <DATA-RECEIVE-POINT-BY-VALUES/>
+                                       <DATA-SEND-POINTS/>
+                                       <DATA-WRITE-ACCESSS/>
+                                       <EXTERNAL-TRIGGERING-POINTS/>
+                                       <INTERNAL-TRIGGERING-POINTS/>
+                                       <MODE-ACCESS-POINTS/>
+                                       <MODE-SWITCH-POINTS>
+                                          <MODE-SWITCH-POINT>
+                                             <SHORT-NAME>globalMode</SHORT-NAME>
+                                             <MODE-GROUP-IREF>
+                                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/WdgM/WdgM/globalMode</CONTEXT-P-PORT-REF>
+                                                <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AUTOSAR/Services/WdgM/WdgM_GlobalMode/currentMode</TARGET-MODE-GROUP-REF>
+                                             </MODE-GROUP-IREF>
+                                          </MODE-SWITCH-POINT>
+                                       </MODE-SWITCH-POINTS>
+                                       <PARAMETER-ACCESSS/>
+                                       <READ-LOCAL-VARIABLES/>
+                                       <SERVER-CALL-POINTS/>
+                                       <SYMBOL>WdgM_Mainfunction</SYMBOL>
+                                       <WAIT-POINTS/>
+                                       <WRITTEN-LOCAL-VARIABLES/>
+                                    </RUNNABLE-ENTITY>
+                                 </RUNNABLES>
+                                 <SHARED-PARAMETERS/>
+                                 <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                              </SWC-INTERNAL-BEHAVIOR>
+                           </INTERNAL-BEHAVIORS>
+                        </SERVICE-SW-COMPONENT-TYPE>
+                        <SWC-IMPLEMENTATION>
+                           <SHORT-NAME>IMPL_WdgM</SHORT-NAME>
+                           <CODE-DESCRIPTORS/>
+                           <COMPILERS/>
+                           <HW-ELEMENT-REFS/>
+                           <LINKERS/>
+                           <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                           <RESOURCE-CONSUMPTION>
+                              <SHORT-NAME>RC_WdgM</SHORT-NAME>
+                              <MEMORY-SECTIONS>
+                                 <MEMORY-SECTION>
+                                    <SHORT-NAME>CODE</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                                    <SYMBOL>CODE</SYMBOL>
+                                 </MEMORY-SECTION>
+                              </MEMORY-SECTIONS>
+                           </RESOURCE-CONSUMPTION>
+                           <SW-VERSION>7.2.1</SW-VERSION>
+                           <SWC-BSW-MAPPING-REF DEST="SWC-BSW-MAPPING">/VSTAR/BswMd/SwcBswMapping_WdgM</SWC-BSW-MAPPING-REF>
+                           <VENDOR-ID>31</VENDOR-ID>
+                           <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/AUTOSAR/Services/WdgM/WdgM/IB_WDGM</BEHAVIOR-REF>
+                           <PER-INSTANCE-MEMORY-SIZES/>
+                        </SWC-IMPLEMENTATION>
+                     </ELEMENTS>
+                     <AR-PACKAGES/>
+                  </AR-PACKAGE>
+               </AR-PACKAGES>
+            </AR-PACKAGE>
+         </AR-PACKAGES>
+      </AR-PACKAGE>
+   </AR-PACKAGES>
+</AUTOSAR>

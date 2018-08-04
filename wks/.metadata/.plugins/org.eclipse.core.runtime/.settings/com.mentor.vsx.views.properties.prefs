@@ -1,0 +1,8 @@
+View=0
+eclipse.preferences.version=1
+instance/com.mentor.vsx.views.properties/cucparameterdef/EcucConfigurationClassAffection/affecteds/LeftColumnWidth=150
+instance/com.mentor.vsx.views.properties/cucparameterdef/EcucConfigurationClassAffection/affecteds/RightColumnWidth=150
+instance/com.mentor.vsx.views.properties/cucparameterdef/EcucParamConfContainerDef/destinationUris/LeftColumnWidth=150
+instance/com.mentor.vsx.views.properties/cucparameterdef/EcucParamConfContainerDef/destinationUris/RightColumnWidth=150
+instance/com.mentor.vsx.views.properties/curesource/HwElement/hwCategories/LeftColumnWidth=150
+instance/com.mentor.vsx.views.properties/curesource/HwElement/hwCategories/RightColumnWidth=150

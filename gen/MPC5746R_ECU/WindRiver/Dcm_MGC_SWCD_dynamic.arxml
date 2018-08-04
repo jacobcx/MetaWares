@@ -1,0 +1,1567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   NOTE! This file is generated. Do not edit!
+   Generator: VSTAR Dcm V8.0.1-Build664
+-->
+<!--           Copyright 2017 Mentor Graphics Corporation
+                         All rights reserved
+  
+   THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION WHICH IS
+   THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS AND IS
+   SUBJECT TO LICENSE TERMS.
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+   <AR-PACKAGES>
+      <AR-PACKAGE>
+         <SHORT-NAME>AUTOSAR</SHORT-NAME>
+         <AR-PACKAGES>
+            <AR-PACKAGE>
+               <SHORT-NAME>Services</SHORT-NAME>
+               <AR-PACKAGES>
+                  <AR-PACKAGE>
+                     <SHORT-NAME>Dcm</SHORT-NAME>
+                     <ELEMENTS>
+<SWC-IMPLEMENTATION>
+   <SHORT-NAME>IMPL_Dcm</SHORT-NAME>
+   <CODE-DESCRIPTORS>
+      <CODE>
+         <SHORT-NAME>CODE_Dcm</SHORT-NAME>
+         <ARTIFACT-DESCRIPTORS>
+            <AUTOSAR-ENGINEERING-OBJECT>
+               <SHORT-LABEL>Dcm</SHORT-LABEL>
+               <CATEGORY>SWSRC</CATEGORY>
+            </AUTOSAR-ENGINEERING-OBJECT>
+         </ARTIFACT-DESCRIPTORS>
+      </CODE>
+   </CODE-DESCRIPTORS>
+   <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+   <RESOURCE-CONSUMPTION>
+      <SHORT-NAME>RC_Dcm</SHORT-NAME>
+      <MEMORY-SECTIONS>
+         <MEMORY-SECTION>
+            <SHORT-NAME>CODE</SHORT-NAME>
+            <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+            <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+            <SYMBOL>CODE</SYMBOL>
+         </MEMORY-SECTION>
+      </MEMORY-SECTIONS>
+   </RESOURCE-CONSUMPTION>
+   <SW-VERSION>8.0.1</SW-VERSION>
+   <SWC-BSW-MAPPING-REF DEST="SWC-BSW-MAPPING">/VSTAR/BswMd/SwcBswMapping_Dcm</SWC-BSW-MAPPING-REF>
+   <VENDOR-ID>31</VENDOR-ID>
+   <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm</BEHAVIOR-REF>
+</SWC-IMPLEMENTATION>
+<UNIT>
+   <SHORT-NAME>UnitNone</SHORT-NAME>
+</UNIT>
+<CLIENT-SERVER-INTERFACE>
+   <SHORT-NAME>CallbackDCMRequestServices</SHORT-NAME>
+   <IS-SERVICE>true</IS-SERVICE>
+   <OPERATIONS>
+      <CLIENT-SERVER-OPERATION>
+         <SHORT-NAME>StartProtocol</SHORT-NAME>
+         <ARGUMENTS>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>ProtocolID</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_ProtocolType</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+         </ARGUMENTS>
+         <POSSIBLE-ERROR-REFS>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/CallbackDCMRequestServices/E_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/CallbackDCMRequestServices/E_NOT_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/CallbackDCMRequestServices/E_PROTOCOL_NOT_ALLOWED</POSSIBLE-ERROR-REF>
+         </POSSIBLE-ERROR-REFS>
+      </CLIENT-SERVER-OPERATION>
+      <CLIENT-SERVER-OPERATION>
+         <SHORT-NAME>StopProtocol</SHORT-NAME>
+         <ARGUMENTS>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>ProtocolID</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_ProtocolType</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+         </ARGUMENTS>
+         <POSSIBLE-ERROR-REFS>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/CallbackDCMRequestServices/E_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/CallbackDCMRequestServices/E_NOT_OK</POSSIBLE-ERROR-REF>
+         </POSSIBLE-ERROR-REFS>
+      </CLIENT-SERVER-OPERATION>
+   </OPERATIONS>
+   <POSSIBLE-ERRORS>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>E_OK</SHORT-NAME>
+         <ERROR-CODE>0</ERROR-CODE>
+      </APPLICATION-ERROR>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+         <ERROR-CODE>1</ERROR-CODE>
+      </APPLICATION-ERROR>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>E_PROTOCOL_NOT_ALLOWED</SHORT-NAME>
+         <ERROR-CODE>5</ERROR-CODE>
+      </APPLICATION-ERROR>
+   </POSSIBLE-ERRORS>
+</CLIENT-SERVER-INTERFACE>
+<CLIENT-SERVER-INTERFACE>
+   <SHORT-NAME>ServiceRequestNotification</SHORT-NAME>
+   <IS-SERVICE>true</IS-SERVICE>
+   <OPERATIONS>
+      <CLIENT-SERVER-OPERATION>
+         <SHORT-NAME>Indication</SHORT-NAME>
+         <ARGUMENTS>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>SID</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>RequestData</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/RequestDataArray</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>DataSize</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>ReqType</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>SourceAddress</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>ErrorCode</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_NegativeResponseCodeType</TYPE-TREF>
+               <DIRECTION>OUT</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+         </ARGUMENTS>
+         <POSSIBLE-ERROR-REFS>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/ServiceRequestNotification/E_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/ServiceRequestNotification/E_NOT_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/ServiceRequestNotification/E_REQUEST_NOT_ACCEPTED</POSSIBLE-ERROR-REF>
+         </POSSIBLE-ERROR-REFS>
+      </CLIENT-SERVER-OPERATION>
+      <CLIENT-SERVER-OPERATION>
+         <SHORT-NAME>Confirmation</SHORT-NAME>
+         <ARGUMENTS>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>SID</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>ReqType</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>SourceAddress</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>ConfirmationStatus</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_ConfirmationStatusType</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+         </ARGUMENTS>
+         <POSSIBLE-ERROR-REFS>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/ServiceRequestNotification/E_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/ServiceRequestNotification/E_NOT_OK</POSSIBLE-ERROR-REF>
+         </POSSIBLE-ERROR-REFS>
+      </CLIENT-SERVER-OPERATION>
+   </OPERATIONS>
+   <POSSIBLE-ERRORS>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>E_OK</SHORT-NAME>
+         <ERROR-CODE>0</ERROR-CODE>
+      </APPLICATION-ERROR>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+         <ERROR-CODE>1</ERROR-CODE>
+      </APPLICATION-ERROR>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>E_REQUEST_NOT_ACCEPTED</SHORT-NAME>
+         <ERROR-CODE>8</ERROR-CODE>
+      </APPLICATION-ERROR>
+   </POSSIBLE-ERRORS>
+</CLIENT-SERVER-INTERFACE>
+<CLIENT-SERVER-INTERFACE>
+   <SHORT-NAME>DCMServices</SHORT-NAME>
+   <IS-SERVICE>true</IS-SERVICE>
+   <OPERATIONS>
+      <CLIENT-SERVER-OPERATION>
+         <SHORT-NAME>GetActiveProtocol</SHORT-NAME>
+         <ARGUMENTS>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>ActiveProtocol</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_ProtocolType</TYPE-TREF>
+               <DIRECTION>OUT</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+         </ARGUMENTS>
+         <POSSIBLE-ERROR-REFS>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/DCMServices/E_OK</POSSIBLE-ERROR-REF>
+         </POSSIBLE-ERROR-REFS>
+      </CLIENT-SERVER-OPERATION>
+      <CLIENT-SERVER-OPERATION>
+         <SHORT-NAME>GetSesCtrlType</SHORT-NAME>
+         <ARGUMENTS>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>SesCtrlType</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_SesCtrlType</TYPE-TREF>
+               <DIRECTION>OUT</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+         </ARGUMENTS>
+         <POSSIBLE-ERROR-REFS>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/DCMServices/E_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/DCMServices/E_NOT_OK</POSSIBLE-ERROR-REF>
+         </POSSIBLE-ERROR-REFS>
+      </CLIENT-SERVER-OPERATION>
+      <CLIENT-SERVER-OPERATION>
+         <SHORT-NAME>GetSecurityLevel</SHORT-NAME>
+         <ARGUMENTS>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>SecLevel</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_SecLevelType</TYPE-TREF>
+               <DIRECTION>OUT</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+         </ARGUMENTS>
+         <POSSIBLE-ERROR-REFS>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/DCMServices/E_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/DCMServices/E_NOT_OK</POSSIBLE-ERROR-REF>
+         </POSSIBLE-ERROR-REFS>
+      </CLIENT-SERVER-OPERATION>
+      <CLIENT-SERVER-OPERATION>
+         <SHORT-NAME>ResetToDefaultSession</SHORT-NAME>
+         <ARGUMENTS>
+         </ARGUMENTS>
+         <POSSIBLE-ERROR-REFS>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/DCMServices/E_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/DCMServices/E_NOT_OK</POSSIBLE-ERROR-REF>
+         </POSSIBLE-ERROR-REFS>
+      </CLIENT-SERVER-OPERATION>
+   </OPERATIONS>
+   <POSSIBLE-ERRORS>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>E_OK</SHORT-NAME>
+         <ERROR-CODE>0</ERROR-CODE>
+      </APPLICATION-ERROR>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+         <ERROR-CODE>1</ERROR-CODE>
+      </APPLICATION-ERROR>
+   </POSSIBLE-ERRORS>
+</CLIENT-SERVER-INTERFACE>
+<CLIENT-SERVER-INTERFACE>
+   <SHORT-NAME>ResponsePendingService</SHORT-NAME>
+   <IS-SERVICE>true</IS-SERVICE>
+   <OPERATIONS>
+      <CLIENT-SERVER-OPERATION>
+         <SHORT-NAME>GetResponsePendingStatus</SHORT-NAME>
+         <ARGUMENTS>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>HasBeenSent</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+               <DIRECTION>OUT</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+         </ARGUMENTS>
+         <POSSIBLE-ERROR-REFS>
+         </POSSIBLE-ERROR-REFS>
+      </CLIENT-SERVER-OPERATION>
+   </OPERATIONS>
+   <POSSIBLE-ERRORS>
+   </POSSIBLE-ERRORS>
+</CLIENT-SERVER-INTERFACE>
+<CLIENT-SERVER-INTERFACE>
+   <SHORT-NAME>SecurityAccess_DcmDspSecurityRow</SHORT-NAME>
+   <IS-SERVICE>true</IS-SERVICE>
+   <OPERATIONS>
+      <CLIENT-SERVER-OPERATION>
+         <SHORT-NAME>GetSeed</SHORT-NAME>
+         <ARGUMENTS>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>OpStatus</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_OpStatusType</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>Seed</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/SeedArrayType_DcmDspSecurityRow</TYPE-TREF>
+               <DIRECTION>OUT</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>ErrorCode</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_NegativeResponseCodeType</TYPE-TREF>
+               <DIRECTION>OUT</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+         </ARGUMENTS>
+         <POSSIBLE-ERROR-REFS>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/SecurityAccess_DcmDspSecurityRow/E_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/SecurityAccess_DcmDspSecurityRow/E_NOT_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/SecurityAccess_DcmDspSecurityRow/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+         </POSSIBLE-ERROR-REFS>
+      </CLIENT-SERVER-OPERATION>
+      <CLIENT-SERVER-OPERATION>
+         <SHORT-NAME>CompareKey</SHORT-NAME>
+         <ARGUMENTS>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>Key</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/KeyArrayType_DcmDspSecurityRow</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>OpStatus</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_OpStatusType</TYPE-TREF>
+               <DIRECTION>IN</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+            <ARGUMENT-DATA-PROTOTYPE>
+               <SHORT-NAME>ErrorCode</SHORT-NAME>
+               <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_NegativeResponseCodeType</TYPE-TREF>
+               <DIRECTION>OUT</DIRECTION>
+            </ARGUMENT-DATA-PROTOTYPE>
+         </ARGUMENTS>
+         <POSSIBLE-ERROR-REFS>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/SecurityAccess_DcmDspSecurityRow/E_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/SecurityAccess_DcmDspSecurityRow/E_NOT_OK</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/SecurityAccess_DcmDspSecurityRow/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/AUTOSAR/Services/Dcm/SecurityAccess_DcmDspSecurityRow/DCM_E_COMPARE_KEY_FAILED</POSSIBLE-ERROR-REF>
+         </POSSIBLE-ERROR-REFS>
+      </CLIENT-SERVER-OPERATION>
+   </OPERATIONS>
+   <POSSIBLE-ERRORS>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>E_OK</SHORT-NAME>
+         <ERROR-CODE>0</ERROR-CODE>
+      </APPLICATION-ERROR>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+         <ERROR-CODE>1</ERROR-CODE>
+      </APPLICATION-ERROR>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>DCM_E_PENDING</SHORT-NAME>
+         <ERROR-CODE>10</ERROR-CODE>
+      </APPLICATION-ERROR>
+      <APPLICATION-ERROR>
+         <SHORT-NAME>DCM_E_COMPARE_KEY_FAILED</SHORT-NAME>
+         <ERROR-CODE>11</ERROR-CODE>
+      </APPLICATION-ERROR>
+   </POSSIBLE-ERRORS>
+</CLIENT-SERVER-INTERFACE>
+        <MODE-SWITCH-INTERFACE>
+          <SHORT-NAME>DcmEcuReset</SHORT-NAME>
+          <IS-SERVICE>true</IS-SERVICE>
+          <MODE-GROUP>
+            <SHORT-NAME>DcmEcuReset</SHORT-NAME>
+            <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmEcuReset</TYPE-TREF>
+          </MODE-GROUP>
+        </MODE-SWITCH-INTERFACE>
+        <MODE-SWITCH-INTERFACE>
+          <SHORT-NAME>DcmCommunicationControl</SHORT-NAME>
+          <IS-SERVICE>true</IS-SERVICE>
+          <MODE-GROUP>
+            <SHORT-NAME>DcmCommunicationControl</SHORT-NAME>
+            <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmCommunicationControl</TYPE-TREF>
+          </MODE-GROUP>
+        </MODE-SWITCH-INTERFACE>
+        <MODE-SWITCH-INTERFACE>
+          <SHORT-NAME>DcmControlDTCSetting</SHORT-NAME>
+          <IS-SERVICE>true</IS-SERVICE>
+          <MODE-GROUP>
+            <SHORT-NAME>DcmControlDTCSetting</SHORT-NAME>
+            <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmControlDTCSetting</TYPE-TREF>
+          </MODE-GROUP>
+        </MODE-SWITCH-INTERFACE>
+        <MODE-SWITCH-INTERFACE>
+          <SHORT-NAME>DcmModeRapidPowerShutDown</SHORT-NAME>
+          <IS-SERVICE>true</IS-SERVICE>
+          <MODE-GROUP>
+            <SHORT-NAME>DcmModeRapidPowerShutDown</SHORT-NAME>
+            <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmModeRapidPowerShutDown</TYPE-TREF>
+          </MODE-GROUP>
+        </MODE-SWITCH-INTERFACE>
+        <MODE-SWITCH-INTERFACE>
+          <SHORT-NAME>DcmDiagnosticSessionControl</SHORT-NAME>
+          <IS-SERVICE>true</IS-SERVICE>
+          <MODE-GROUP>
+            <SHORT-NAME>DcmDiagnosticSessionControl</SHORT-NAME>
+            <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmDiagnosticSessionControl</TYPE-TREF>
+          </MODE-GROUP>
+        </MODE-SWITCH-INTERFACE>
+<IMPLEMENTATION-DATA-TYPE>
+   <SHORT-NAME>Dcm_ProtocolType</SHORT-NAME>
+   <CATEGORY>TYPE_REFERENCE</CATEGORY>
+   <SW-DATA-DEF-PROPS>
+      <SW-DATA-DEF-PROPS-VARIANTS>
+         <SW-DATA-DEF-PROPS-CONDITIONAL>
+            <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dcm/Dcm_ProtocolType_Enum</COMPU-METHOD-REF>
+            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+         </SW-DATA-DEF-PROPS-CONDITIONAL>
+      </SW-DATA-DEF-PROPS-VARIANTS>
+   </SW-DATA-DEF-PROPS>
+</IMPLEMENTATION-DATA-TYPE>
+<COMPU-METHOD>
+   <SHORT-NAME>Dcm_ProtocolType_Enum</SHORT-NAME>
+   <CATEGORY>TEXTTABLE</CATEGORY>
+   <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>0</LOWER-LIMIT>
+            <UPPER-LIMIT>0</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_OBD_ON_CAN</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>1</LOWER-LIMIT>
+            <UPPER-LIMIT>1</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_OBD_ON_FLEXRAY</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>2</LOWER-LIMIT>
+            <UPPER-LIMIT>2</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_OBD_ON_IP</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>3</LOWER-LIMIT>
+            <UPPER-LIMIT>3</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_UDS_ON_CAN</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>4</LOWER-LIMIT>
+            <UPPER-LIMIT>4</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_UDS_ON_FLEXRAY</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>5</LOWER-LIMIT>
+            <UPPER-LIMIT>5</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_UDS_ON_IP</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>6</LOWER-LIMIT>
+            <UPPER-LIMIT>6</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_ROE_ON_CAN</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>7</LOWER-LIMIT>
+            <UPPER-LIMIT>7</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_ROE_ON_FLEXRAY</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>8</LOWER-LIMIT>
+            <UPPER-LIMIT>8</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_ROE_ON_IP</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>9</LOWER-LIMIT>
+            <UPPER-LIMIT>9</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_PERIODICTRANS_ON_CAN</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>10</LOWER-LIMIT>
+            <UPPER-LIMIT>10</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_PERIODICTRANS_ON_FLEXRAY</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>11</LOWER-LIMIT>
+            <UPPER-LIMIT>11</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_PERIODICTRANS_ON_IP</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>12</LOWER-LIMIT>
+            <UPPER-LIMIT>12</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_NO_ACTIVE_PROTOCOL</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>240</LOWER-LIMIT>
+            <UPPER-LIMIT>240</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_1</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>241</LOWER-LIMIT>
+            <UPPER-LIMIT>241</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_2</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>242</LOWER-LIMIT>
+            <UPPER-LIMIT>242</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_3</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>243</LOWER-LIMIT>
+            <UPPER-LIMIT>243</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_4</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>244</LOWER-LIMIT>
+            <UPPER-LIMIT>244</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_5</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>245</LOWER-LIMIT>
+            <UPPER-LIMIT>245</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_6</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>246</LOWER-LIMIT>
+            <UPPER-LIMIT>246</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_7</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>247</LOWER-LIMIT>
+            <UPPER-LIMIT>247</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_8</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>248</LOWER-LIMIT>
+            <UPPER-LIMIT>248</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_9</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>249</LOWER-LIMIT>
+            <UPPER-LIMIT>249</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_10</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>250</LOWER-LIMIT>
+            <UPPER-LIMIT>250</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_11</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>251</LOWER-LIMIT>
+            <UPPER-LIMIT>251</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_12</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>252</LOWER-LIMIT>
+            <UPPER-LIMIT>252</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_13</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>253</LOWER-LIMIT>
+            <UPPER-LIMIT>253</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_14</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>254</LOWER-LIMIT>
+            <UPPER-LIMIT>254</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SUPPLIER_15</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+      </COMPU-SCALES>
+   </COMPU-INTERNAL-TO-PHYS>
+</COMPU-METHOD>
+<IMPLEMENTATION-DATA-TYPE>
+   <SHORT-NAME>Dcm_NegativeResponseCodeType</SHORT-NAME>
+   <CATEGORY>TYPE_REFERENCE</CATEGORY>
+   <SW-DATA-DEF-PROPS>
+      <SW-DATA-DEF-PROPS-VARIANTS>
+         <SW-DATA-DEF-PROPS-CONDITIONAL>
+            <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dcm/Dcm_NegativeResponseCodeType_Enum</COMPU-METHOD-REF>
+            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+         </SW-DATA-DEF-PROPS-CONDITIONAL>
+      </SW-DATA-DEF-PROPS-VARIANTS>
+   </SW-DATA-DEF-PROPS>
+</IMPLEMENTATION-DATA-TYPE>
+<COMPU-METHOD>
+   <SHORT-NAME>Dcm_NegativeResponseCodeType_Enum</SHORT-NAME>
+   <CATEGORY>TEXTTABLE</CATEGORY>
+   <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>16</LOWER-LIMIT>
+            <UPPER-LIMIT>16</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_GENERALREJECT</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>17</LOWER-LIMIT>
+            <UPPER-LIMIT>17</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_SERVICENOTSUPPORTED</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>18</LOWER-LIMIT>
+            <UPPER-LIMIT>18</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_SUBFUNCTIONNOTSUPPORTED</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>19</LOWER-LIMIT>
+            <UPPER-LIMIT>19</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_INCORRECTMESSAGELENGTHORINVALIDFORMAT</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>20</LOWER-LIMIT>
+            <UPPER-LIMIT>20</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_RESPONSETOOLONG</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>33</LOWER-LIMIT>
+            <UPPER-LIMIT>33</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_BUSYREPEATREQUEST</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>34</LOWER-LIMIT>
+            <UPPER-LIMIT>34</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_CONDITIONSNOTCORRECT</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>36</LOWER-LIMIT>
+            <UPPER-LIMIT>36</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_REQUESTSEQUENCEERROR</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>37</LOWER-LIMIT>
+            <UPPER-LIMIT>37</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_NORESPONSEFROMSUBNETCOMPONENT</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>38</LOWER-LIMIT>
+            <UPPER-LIMIT>38</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_FAILUREPREVENTSEXECUTIONOFREQUESTEDACTION</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>49</LOWER-LIMIT>
+            <UPPER-LIMIT>49</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_REQUESTOUTOFRANGE</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>51</LOWER-LIMIT>
+            <UPPER-LIMIT>51</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_SECURITYACCESSDENIED</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>53</LOWER-LIMIT>
+            <UPPER-LIMIT>53</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_INVALIDKEY</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>54</LOWER-LIMIT>
+            <UPPER-LIMIT>54</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_EXCEEDNUMBEROFATTEMPTS</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>55</LOWER-LIMIT>
+            <UPPER-LIMIT>55</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_REQUIREDTIMEDELAYNOTEXPIRED</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>112</LOWER-LIMIT>
+            <UPPER-LIMIT>112</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_UPLOADDOWNLOADNOTACCEPTED</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>113</LOWER-LIMIT>
+            <UPPER-LIMIT>113</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_TRANSFERDATASUSPENDED</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>114</LOWER-LIMIT>
+            <UPPER-LIMIT>114</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_GENERALPROGRAMMINGFAILURE</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>115</LOWER-LIMIT>
+            <UPPER-LIMIT>115</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_WRONGBLOCKSEQUENCECOUNTER</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>126</LOWER-LIMIT>
+            <UPPER-LIMIT>126</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_SUBFUNCTIONNOTSUPPORTEDINACTIVESESSION</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>127</LOWER-LIMIT>
+            <UPPER-LIMIT>127</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_SERVICENOTSUPPORTEDINACTIVESESSION</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>129</LOWER-LIMIT>
+            <UPPER-LIMIT>129</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_RPMTOOHIGH</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>130</LOWER-LIMIT>
+            <UPPER-LIMIT>130</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_RPMTOOLOW</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>131</LOWER-LIMIT>
+            <UPPER-LIMIT>131</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_ENGINEISRUNNING</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>132</LOWER-LIMIT>
+            <UPPER-LIMIT>132</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_ENGINEISNOTRUNNING</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>133</LOWER-LIMIT>
+            <UPPER-LIMIT>133</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_ENGINERUNTIMETOOLOW</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>134</LOWER-LIMIT>
+            <UPPER-LIMIT>134</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_TEMPERATURETOOHIGH</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>135</LOWER-LIMIT>
+            <UPPER-LIMIT>135</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_TEMPERATURETOOLOW</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>136</LOWER-LIMIT>
+            <UPPER-LIMIT>136</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VEHICLESPEEDTOOHIGH</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>137</LOWER-LIMIT>
+            <UPPER-LIMIT>137</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VEHICLESPEEDTOOLOW</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>138</LOWER-LIMIT>
+            <UPPER-LIMIT>138</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_THROTTLE_PEDALTOOHIGH</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>139</LOWER-LIMIT>
+            <UPPER-LIMIT>139</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_THROTTLE_PEDALTOOLOW</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>140</LOWER-LIMIT>
+            <UPPER-LIMIT>140</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_TRANSMISSIONRANGENOTINNEUTRAL</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>141</LOWER-LIMIT>
+            <UPPER-LIMIT>141</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_TRANSMISSIONRANGENOTINGEAR</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>143</LOWER-LIMIT>
+            <UPPER-LIMIT>143</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_BRAKESWITCH_NOTCLOSED</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>144</LOWER-LIMIT>
+            <UPPER-LIMIT>144</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_SHIFTERLEVERNOTINPARK</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>145</LOWER-LIMIT>
+            <UPPER-LIMIT>145</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_TORQUECONVERTERCLUTCHLOCKED</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>146</LOWER-LIMIT>
+            <UPPER-LIMIT>146</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VOLTAGETOOHIGH</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>147</LOWER-LIMIT>
+            <UPPER-LIMIT>147</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VOLTAGETOOLOW</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>240</LOWER-LIMIT>
+            <UPPER-LIMIT>240</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_0</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>241</LOWER-LIMIT>
+            <UPPER-LIMIT>241</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_1</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>242</LOWER-LIMIT>
+            <UPPER-LIMIT>242</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_2</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>243</LOWER-LIMIT>
+            <UPPER-LIMIT>243</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_3</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>244</LOWER-LIMIT>
+            <UPPER-LIMIT>244</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_4</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>245</LOWER-LIMIT>
+            <UPPER-LIMIT>245</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_5</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>246</LOWER-LIMIT>
+            <UPPER-LIMIT>246</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_6</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>247</LOWER-LIMIT>
+            <UPPER-LIMIT>247</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_7</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>248</LOWER-LIMIT>
+            <UPPER-LIMIT>248</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_8</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>249</LOWER-LIMIT>
+            <UPPER-LIMIT>249</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_9</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>250</LOWER-LIMIT>
+            <UPPER-LIMIT>250</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_A</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>251</LOWER-LIMIT>
+            <UPPER-LIMIT>251</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_B</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>252</LOWER-LIMIT>
+            <UPPER-LIMIT>252</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_C</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>253</LOWER-LIMIT>
+            <UPPER-LIMIT>253</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_D</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>254</LOWER-LIMIT>
+            <UPPER-LIMIT>254</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_E_VMSCNC_E</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+      </COMPU-SCALES>
+   </COMPU-INTERNAL-TO-PHYS>
+</COMPU-METHOD>
+<IMPLEMENTATION-DATA-TYPE>
+   <SHORT-NAME>Dcm_SecLevelType</SHORT-NAME>
+   <CATEGORY>TYPE_REFERENCE</CATEGORY>
+   <SW-DATA-DEF-PROPS>
+      <SW-DATA-DEF-PROPS-VARIANTS>
+         <SW-DATA-DEF-PROPS-CONDITIONAL>
+            <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dcm/Dcm_SecLevelType_Enum</COMPU-METHOD-REF>
+            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+         </SW-DATA-DEF-PROPS-CONDITIONAL>
+      </SW-DATA-DEF-PROPS-VARIANTS>
+   </SW-DATA-DEF-PROPS>
+</IMPLEMENTATION-DATA-TYPE>
+<COMPU-METHOD>
+   <SHORT-NAME>Dcm_SecLevelType_Enum</SHORT-NAME>
+   <CATEGORY>TEXTTABLE</CATEGORY>
+   <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>0</LOWER-LIMIT>
+            <UPPER-LIMIT>0</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_SEC_LEV_LOCKED</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>1</LOWER-LIMIT>
+            <UPPER-LIMIT>1</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DcmDspSecurityRow</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+      </COMPU-SCALES>
+   </COMPU-INTERNAL-TO-PHYS>
+</COMPU-METHOD>
+<IMPLEMENTATION-DATA-TYPE>
+   <SHORT-NAME>Dcm_SesCtrlType</SHORT-NAME>
+   <CATEGORY>TYPE_REFERENCE</CATEGORY>
+   <SW-DATA-DEF-PROPS>
+      <SW-DATA-DEF-PROPS-VARIANTS>
+         <SW-DATA-DEF-PROPS-CONDITIONAL>
+            <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dcm/Dcm_SesCtrlType_Enum</COMPU-METHOD-REF>
+            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+         </SW-DATA-DEF-PROPS-CONDITIONAL>
+      </SW-DATA-DEF-PROPS-VARIANTS>
+   </SW-DATA-DEF-PROPS>
+</IMPLEMENTATION-DATA-TYPE>
+<COMPU-METHOD>
+   <SHORT-NAME>Dcm_SesCtrlType_Enum</SHORT-NAME>
+   <CATEGORY>TEXTTABLE</CATEGORY>
+   <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>1</LOWER-LIMIT>
+            <UPPER-LIMIT>1</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_DEFAULT_SESSION</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>2</LOWER-LIMIT>
+            <UPPER-LIMIT>2</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_PROGRAMMING_SESSION</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>3</LOWER-LIMIT>
+            <UPPER-LIMIT>3</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_EXTENDED_DIAGNOSTIC_SESSION</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+      </COMPU-SCALES>
+   </COMPU-INTERNAL-TO-PHYS>
+</COMPU-METHOD>
+<IMPLEMENTATION-DATA-TYPE>
+   <SHORT-NAME>Dcm_OpStatusType</SHORT-NAME>
+   <CATEGORY>TYPE_REFERENCE</CATEGORY>
+   <SW-DATA-DEF-PROPS>
+      <SW-DATA-DEF-PROPS-VARIANTS>
+         <SW-DATA-DEF-PROPS-CONDITIONAL>
+            <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dcm/Dcm_OpStatusType_Enum</COMPU-METHOD-REF>
+            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+         </SW-DATA-DEF-PROPS-CONDITIONAL>
+      </SW-DATA-DEF-PROPS-VARIANTS>
+   </SW-DATA-DEF-PROPS>
+</IMPLEMENTATION-DATA-TYPE>
+<COMPU-METHOD>
+   <SHORT-NAME>Dcm_OpStatusType_Enum</SHORT-NAME>
+   <CATEGORY>TEXTTABLE</CATEGORY>
+   <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>0</LOWER-LIMIT>
+            <UPPER-LIMIT>0</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_INITIAL</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>1</LOWER-LIMIT>
+            <UPPER-LIMIT>1</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_PENDING</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>2</LOWER-LIMIT>
+            <UPPER-LIMIT>2</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_CANCEL</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>3</LOWER-LIMIT>
+            <UPPER-LIMIT>3</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_FORCE_RCRRP_OK</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+      </COMPU-SCALES>
+   </COMPU-INTERNAL-TO-PHYS>
+</COMPU-METHOD>
+<IMPLEMENTATION-DATA-TYPE>
+   <SHORT-NAME>Dcm_ConfirmationStatusType</SHORT-NAME>
+   <CATEGORY>TYPE_REFERENCE</CATEGORY>
+   <SW-DATA-DEF-PROPS>
+      <SW-DATA-DEF-PROPS-VARIANTS>
+         <SW-DATA-DEF-PROPS-CONDITIONAL>
+            <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dcm/Dcm_ConfirmationStatusType_Enum</COMPU-METHOD-REF>
+            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+         </SW-DATA-DEF-PROPS-CONDITIONAL>
+      </SW-DATA-DEF-PROPS-VARIANTS>
+   </SW-DATA-DEF-PROPS>
+</IMPLEMENTATION-DATA-TYPE>
+<COMPU-METHOD>
+   <SHORT-NAME>Dcm_ConfirmationStatusType_Enum</SHORT-NAME>
+   <CATEGORY>TEXTTABLE</CATEGORY>
+   <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>0</LOWER-LIMIT>
+            <UPPER-LIMIT>0</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_RES_POS_OK</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>1</LOWER-LIMIT>
+            <UPPER-LIMIT>1</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_RES_POS_NOT_OK</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>2</LOWER-LIMIT>
+            <UPPER-LIMIT>2</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_RES_NEG_OK</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>3</LOWER-LIMIT>
+            <UPPER-LIMIT>3</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_RES_NEG_NOT_OK</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+      </COMPU-SCALES>
+   </COMPU-INTERNAL-TO-PHYS>
+</COMPU-METHOD>
+<IMPLEMENTATION-DATA-TYPE>
+   <SHORT-NAME>Dcm_RoeStateType</SHORT-NAME>
+   <CATEGORY>TYPE_REFERENCE</CATEGORY>
+   <SW-DATA-DEF-PROPS>
+      <SW-DATA-DEF-PROPS-VARIANTS>
+         <SW-DATA-DEF-PROPS-CONDITIONAL>
+            <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dcm/Dcm_RoeStateType_Enum</COMPU-METHOD-REF>
+            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+         </SW-DATA-DEF-PROPS-CONDITIONAL>
+      </SW-DATA-DEF-PROPS-VARIANTS>
+   </SW-DATA-DEF-PROPS>
+</IMPLEMENTATION-DATA-TYPE>
+<COMPU-METHOD>
+   <SHORT-NAME>Dcm_RoeStateType_Enum</SHORT-NAME>
+   <CATEGORY>TEXTTABLE</CATEGORY>
+   <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>0</LOWER-LIMIT>
+            <UPPER-LIMIT>0</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_ROE_ACTIVE</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>1</LOWER-LIMIT>
+            <UPPER-LIMIT>1</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_ROE_UNACTIVE</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+      </COMPU-SCALES>
+   </COMPU-INTERNAL-TO-PHYS>
+</COMPU-METHOD>
+<IMPLEMENTATION-DATA-TYPE>
+   <SHORT-NAME>KeyArrayType_DcmDspSecurityRow</SHORT-NAME>
+   <CATEGORY>ARRAY</CATEGORY>
+   <SUB-ELEMENTS>
+      <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+         <SHORT-NAME>ARRAYELEMENT</SHORT-NAME>
+         <CATEGORY>TYPE_REFERENCE</CATEGORY>
+         <ARRAY-SIZE>2</ARRAY-SIZE>
+         <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+               <SW-DATA-DEF-PROPS-CONDITIONAL>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+               </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+         </SW-DATA-DEF-PROPS>
+      </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+   </SUB-ELEMENTS>
+</IMPLEMENTATION-DATA-TYPE>
+<IMPLEMENTATION-DATA-TYPE>
+   <SHORT-NAME>RequestDataArray</SHORT-NAME>
+   <CATEGORY>ARRAY</CATEGORY>
+   <SUB-ELEMENTS>
+      <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+         <SHORT-NAME>ARRAYELEMENT</SHORT-NAME>
+         <CATEGORY>TYPE_REFERENCE</CATEGORY>
+         <ARRAY-SIZE>255</ARRAY-SIZE>
+         <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+               <SW-DATA-DEF-PROPS-CONDITIONAL>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+               </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+         </SW-DATA-DEF-PROPS>
+      </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+   </SUB-ELEMENTS>
+</IMPLEMENTATION-DATA-TYPE>
+<IMPLEMENTATION-DATA-TYPE>
+   <SHORT-NAME>SeedArrayType_DcmDspSecurityRow</SHORT-NAME>
+   <CATEGORY>ARRAY</CATEGORY>
+   <SUB-ELEMENTS>
+      <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+         <SHORT-NAME>ARRAYELEMENT</SHORT-NAME>
+         <CATEGORY>TYPE_REFERENCE</CATEGORY>
+         <ARRAY-SIZE>2</ARRAY-SIZE>
+         <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+               <SW-DATA-DEF-PROPS-CONDITIONAL>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+               </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+         </SW-DATA-DEF-PROPS>
+      </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+   </SUB-ELEMENTS>
+</IMPLEMENTATION-DATA-TYPE>
+<IMPLEMENTATION-DATA-TYPE>
+   <SHORT-NAME>Dcm_DidSupportedType</SHORT-NAME>
+   <CATEGORY>TYPE_REFERENCE</CATEGORY>
+   <SW-DATA-DEF-PROPS>
+      <SW-DATA-DEF-PROPS-VARIANTS>
+         <SW-DATA-DEF-PROPS-CONDITIONAL>
+            <COMPU-METHOD-REF DEST="COMPU-METHOD">/AUTOSAR/Services/Dcm/Dcm_DidSupportedType_Enum</COMPU-METHOD-REF>
+            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+         </SW-DATA-DEF-PROPS-CONDITIONAL>
+      </SW-DATA-DEF-PROPS-VARIANTS>
+   </SW-DATA-DEF-PROPS>
+</IMPLEMENTATION-DATA-TYPE>
+<COMPU-METHOD>
+   <SHORT-NAME>Dcm_DidSupportedType_Enum</SHORT-NAME>
+   <CATEGORY>TEXTTABLE</CATEGORY>
+   <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>0</LOWER-LIMIT>
+            <UPPER-LIMIT>0</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_DID_SUPPORTED</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+         <COMPU-SCALE>
+            <LOWER-LIMIT>1</LOWER-LIMIT>
+            <UPPER-LIMIT>1</UPPER-LIMIT>
+            <COMPU-CONST>
+               <VT>DCM_DID_NOT_SUPPORTED</VT>
+            </COMPU-CONST>
+         </COMPU-SCALE>
+      </COMPU-SCALES>
+   </COMPU-INTERNAL-TO-PHYS>
+</COMPU-METHOD>
+     <SERVICE-SW-COMPONENT-TYPE>
+        <SHORT-NAME>Dcm</SHORT-NAME>
+        <PORTS>
+           <P-PORT-PROTOTYPE>
+              <SHORT-NAME>DCMServices</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                 <SERVER-COM-SPEC>
+                    <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/DCMServices/GetActiveProtocol</OPERATION-REF>
+                    <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                 </SERVER-COM-SPEC>
+                 <SERVER-COM-SPEC>
+                    <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/DCMServices/GetSesCtrlType</OPERATION-REF>
+                    <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                 </SERVER-COM-SPEC>
+                 <SERVER-COM-SPEC>
+                    <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/DCMServices/GetSecurityLevel</OPERATION-REF>
+                    <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                 </SERVER-COM-SPEC>
+                 <SERVER-COM-SPEC>
+                    <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/DCMServices/ResetToDefaultSession</OPERATION-REF>
+                    <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                 </SERVER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dcm/DCMServices</PROVIDED-INTERFACE-TREF>
+           </P-PORT-PROTOTYPE>
+           <P-PORT-PROTOTYPE>
+              <SHORT-NAME>DcmEcuReset</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                 <MODE-SWITCH-SENDER-COM-SPEC>
+                    <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AUTOSAR/Services/Dcm/DcmEcuReset/DcmEcuReset</MODE-GROUP-REF>
+                    <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                 </MODE-SWITCH-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/AUTOSAR/Services/Dcm/DcmEcuReset</PROVIDED-INTERFACE-TREF>
+           </P-PORT-PROTOTYPE>
+           <P-PORT-PROTOTYPE>
+              <SHORT-NAME>DcmControlDTCSetting</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                 <MODE-SWITCH-SENDER-COM-SPEC>
+                    <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AUTOSAR/Services/Dcm/DcmControlDTCSetting/DcmControlDTCSetting</MODE-GROUP-REF>
+                    <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                 </MODE-SWITCH-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/AUTOSAR/Services/Dcm/DcmControlDTCSetting</PROVIDED-INTERFACE-TREF>
+           </P-PORT-PROTOTYPE>
+           <P-PORT-PROTOTYPE>
+              <SHORT-NAME>DcmCommunicationControl</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                 <MODE-SWITCH-SENDER-COM-SPEC>
+                    <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AUTOSAR/Services/Dcm/DcmCommunicationControl/DcmCommunicationControl</MODE-GROUP-REF>
+                    <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                 </MODE-SWITCH-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/AUTOSAR/Services/Dcm/DcmCommunicationControl</PROVIDED-INTERFACE-TREF>
+           </P-PORT-PROTOTYPE>
+           <P-PORT-PROTOTYPE>
+              <SHORT-NAME>DcmModeRapidPowerShutDown</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                 <MODE-SWITCH-SENDER-COM-SPEC>
+                    <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AUTOSAR/Services/Dcm/DcmModeRapidPowerShutDown/DcmModeRapidPowerShutDown</MODE-GROUP-REF>
+                    <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                 </MODE-SWITCH-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/AUTOSAR/Services/Dcm/DcmModeRapidPowerShutDown</PROVIDED-INTERFACE-TREF>
+           </P-PORT-PROTOTYPE>
+           <P-PORT-PROTOTYPE>
+              <SHORT-NAME>DcmDiagnosticSessionControl</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                 <MODE-SWITCH-SENDER-COM-SPEC>
+                    <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AUTOSAR/Services/Dcm/DcmDiagnosticSessionControl/DcmDiagnosticSessionControl</MODE-GROUP-REF>
+                    <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                 </MODE-SWITCH-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/AUTOSAR/Services/Dcm/DcmDiagnosticSessionControl</PROVIDED-INTERFACE-TREF>
+           </P-PORT-PROTOTYPE>
+           <P-PORT-PROTOTYPE>
+              <SHORT-NAME>ResponsePendingService</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                 <SERVER-COM-SPEC>
+                    <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/ResponsePendingService/GetResponsePendingStatus</OPERATION-REF>
+                    <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                 </SERVER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dcm/ResponsePendingService</PROVIDED-INTERFACE-TREF>
+           </P-PORT-PROTOTYPE>
+           <R-PORT-PROTOTYPE>
+              <SHORT-NAME>SecurityAccess_DcmDspSecurityRow</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/Dcm/SecurityAccess_DcmDspSecurityRow</REQUIRED-INTERFACE-TREF>
+           </R-PORT-PROTOTYPE>
+        </PORTS>
+  <INTERNAL-BEHAVIORS>
+     <SWC-INTERNAL-BEHAVIOR>
+        <SHORT-NAME>IB_Dcm</SHORT-NAME>
+        <DATA-TYPE-MAPPING-REFS>
+           <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/VSTAR/BswMd/DcmModeMappingSet</DATA-TYPE-MAPPING-REF>
+        </DATA-TYPE-MAPPING-REFS>
+<EVENTS>
+<OPERATION-INVOKED-EVENT>
+   <SHORT-NAME>OI_GetActiveProtocol</SHORT-NAME>
+   <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_GetActiveProtocol</START-ON-EVENT-REF>
+   <OPERATION-IREF>
+      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/DCMServices</CONTEXT-P-PORT-REF>
+      <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/DCMServices/GetActiveProtocol</TARGET-PROVIDED-OPERATION-REF>
+   </OPERATION-IREF>
+</OPERATION-INVOKED-EVENT>
+<OPERATION-INVOKED-EVENT>
+   <SHORT-NAME>OI_GetSesCtrlType</SHORT-NAME>
+   <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_GetSesCtrlType</START-ON-EVENT-REF>
+   <OPERATION-IREF>
+      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/DCMServices</CONTEXT-P-PORT-REF>
+      <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/DCMServices/GetSesCtrlType</TARGET-PROVIDED-OPERATION-REF>
+   </OPERATION-IREF>
+</OPERATION-INVOKED-EVENT>
+<OPERATION-INVOKED-EVENT>
+   <SHORT-NAME>OI_GetSecurityLevel</SHORT-NAME>
+   <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_GetSecurityLevel</START-ON-EVENT-REF>
+   <OPERATION-IREF>
+      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/DCMServices</CONTEXT-P-PORT-REF>
+      <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/DCMServices/GetSecurityLevel</TARGET-PROVIDED-OPERATION-REF>
+   </OPERATION-IREF>
+</OPERATION-INVOKED-EVENT>
+<OPERATION-INVOKED-EVENT>
+   <SHORT-NAME>OI_ResetToDefaultSession</SHORT-NAME>
+   <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_ResetToDefaultSession</START-ON-EVENT-REF>
+   <OPERATION-IREF>
+      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/DCMServices</CONTEXT-P-PORT-REF>
+      <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/DCMServices/ResetToDefaultSession</TARGET-PROVIDED-OPERATION-REF>
+   </OPERATION-IREF>
+</OPERATION-INVOKED-EVENT>
+<OPERATION-INVOKED-EVENT>
+   <SHORT-NAME>OI_GetResponsePendingStatus</SHORT-NAME>
+   <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_GetResponsePendingStatus</START-ON-EVENT-REF>
+   <OPERATION-IREF>
+      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/ResponsePendingService</CONTEXT-P-PORT-REF>
+      <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/ResponsePendingService/GetResponsePendingStatus</TARGET-PROVIDED-OPERATION-REF>
+   </OPERATION-IREF>
+</OPERATION-INVOKED-EVENT>
+</EVENTS>
+<HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+<INCLUDED-DATA-TYPE-SETS>
+   <INCLUDED-DATA-TYPE-SET>
+      <DATA-TYPE-REFS>
+         <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_ProtocolType</DATA-TYPE-REF>
+         <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_NegativeResponseCodeType</DATA-TYPE-REF>
+         <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_SecLevelType</DATA-TYPE-REF>
+         <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_SesCtrlType</DATA-TYPE-REF>
+         <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_OpStatusType</DATA-TYPE-REF>
+         <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_ConfirmationStatusType</DATA-TYPE-REF>
+         <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_RoeStateType</DATA-TYPE-REF>
+         <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/Dcm/Dcm_DidSupportedType</DATA-TYPE-REF>
+      </DATA-TYPE-REFS>
+   </INCLUDED-DATA-TYPE-SET>
+</INCLUDED-DATA-TYPE-SETS>
+<PORT-API-OPTIONS>
+</PORT-API-OPTIONS>
+                                 <RUNNABLES>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_Dcm_ClearDiagnosticInformation</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_SE_Dcm_ClearDiagnosticInformation</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_Dcm_DiagnosticSessionControl</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_SE_Dcm_DiagnosticSessionControl</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_Dcm_MainFunction</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_MainFunction</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_Dcm_ReadDTCInformation</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_SE_Dcm_ReadDTCInformation</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_Dcm_ReadDataByIdentifier</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_SE_Dcm_ReadDataByIdentifier</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_Dcm_SecurityAccess</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SERVER-CALL-POINTS>
+                                          <SYNCHRONOUS-SERVER-CALL-POINT>
+                                             <SHORT-NAME>SSCP_SecurityAccess_DcmDspSecurityRow_CompareKey</SHORT-NAME>
+                                             <OPERATION-IREF>
+                                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/SecurityAccess_DcmDspSecurityRow</CONTEXT-R-PORT-REF>
+                                                <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/SecurityAccess_DcmDspSecurityRow/CompareKey</TARGET-REQUIRED-OPERATION-REF>
+                                             </OPERATION-IREF>
+                                             <TIMEOUT>0.0</TIMEOUT>
+                                          </SYNCHRONOUS-SERVER-CALL-POINT>
+                                          <SYNCHRONOUS-SERVER-CALL-POINT>
+                                             <SHORT-NAME>SSCP_SecurityAccess_DcmDspSecurityRow_GetSeed</SHORT-NAME>
+                                             <OPERATION-IREF>
+                                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/SecurityAccess_DcmDspSecurityRow</CONTEXT-R-PORT-REF>
+                                                <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/Dcm/SecurityAccess_DcmDspSecurityRow/GetSeed</TARGET-REQUIRED-OPERATION-REF>
+                                             </OPERATION-IREF>
+                                             <TIMEOUT>0.0</TIMEOUT>
+                                          </SYNCHRONOUS-SERVER-CALL-POINT>
+                                       </SERVER-CALL-POINTS>
+                                       <SYMBOL>Dcm_SE_Dcm_SecurityAccess</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_Dcm_TesterPresent</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_SE_Dcm_TesterPresent</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_Dcm_WriteDataByIdentifier</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_SE_Dcm_WriteDataByIdentifier</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_GetActiveProtocol</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_GetActiveProtocol</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_GetResponsePendingStatus</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_GetResponsePendingStatus</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_GetSecurityLevel</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_GetSecurityLevel</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_GetSesCtrlType</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_GetSesCtrlType</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                    <RUNNABLE-ENTITY>
+                                       <SHORT-NAME>RE_ResetToDefaultSession</SHORT-NAME>
+                                       <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                                       <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                       <SYMBOL>Dcm_ResetToDefaultSession</SYMBOL>
+                                    </RUNNABLE-ENTITY>
+                                 </RUNNABLES>
+                                 <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                              </SWC-INTERNAL-BEHAVIOR>
+                           </INTERNAL-BEHAVIORS>
+                        </SERVICE-SW-COMPONENT-TYPE>
+                     </ELEMENTS>
+                   </AR-PACKAGE>
+               </AR-PACKAGES>
+            </AR-PACKAGE>
+         </AR-PACKAGES>
+       </AR-PACKAGE>
+   </AR-PACKAGES>
+</AUTOSAR>

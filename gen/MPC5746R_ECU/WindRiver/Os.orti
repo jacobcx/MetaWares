@@ -1,0 +1,614 @@
+/*******************************************************************/
+/************************* Version Section *************************/
+/*******************************************************************/
+
+VERSION{
+    KOIL = "2.2";
+    OSSEMANTICS = "ORTI", "2.2";
+};
+
+/*******************************************************************/
+/************************* Declaration Section *********************/
+/*******************************************************************/
+
+IMPLEMENTATION VSTAR_OS {
+                                             
+/*************************** OS Declaration *************************/
+
+    OS {
+        ENUM "uint32" [
+            "NO"  = 0,
+            "YES" = 1
+        ] VALID, "Orti Info Valid";
+
+        ENUM "TaskType" [
+            "NO_TASK" = 0,
+            "MasterBlinker" = "&Os_Proc_Stat[2]",
+            "MasterController" = "&Os_Proc_Stat[4]",
+            "MasterFastBlinker" = "&Os_Proc_Stat[5]",
+            "OsTask_Core0_20ms" = "&Os_Proc_Stat[6]",
+            "OsTask_Core1_10ms" = "&Os_Proc_Stat[7]",
+            "OsTask_Core1_StartUp" = "&Os_Proc_Stat[8]",
+            "SlaveBlinker" = "&Os_Proc_Stat[9]",
+            "SlaveController" = "&Os_Proc_Stat[11]",
+            "SlaveFastBlinker" = "&Os_Proc_Stat[12]"
+        ] RUNNINGTASK, "Running Task Identifier";
+
+        ENUM "Os_PriorityType" [
+            "TaskPrio_0" = 0,
+            "TaskPrio_1" = 1,
+            "TaskPrio_2" = 2,
+            "TaskPrio_3" = 3,
+            "TaskPrio_4" = 4,
+            "IsrPrio_5" = 5,
+            "IsrPrio_6" = 6,
+            "IsrPrio_7" = 7
+        ] RUNNINGTASKPRIORITY, "Running Task Priority";
+
+        ENUM "ISRType" [
+            "NO_ISR" = 0,
+            "Adc_Adcdig_EndGroupConvUnit0" = "&Os_Proc_Stat[0]",
+            "Gpt_PIT_0_TIMER_7_ISR" = "&Os_Proc_Stat[1]",
+            "MasterButton" = "&Os_Proc_Stat[3]",
+            "SlaveButton" = "&Os_Proc_Stat[10]"
+        ] RUNNINGISR2, "Running Category 2 ISR";
+
+        TOTRACE ENUM "OsServiceTrace_t" [
+            "AllowAccess"                   =     0,
+            "GetApplicationState"           =     2,
+            "TerminateApplication"          =     4,
+            "CheckObjectAccess"             =     6,
+            "CheckObjectOwnership"          =     8,
+            "GetApplicationID"              =    10,
+            "CancelAlarm"                   =    12,
+            "SetAbsAlarm"                   =    14,
+            "SetRelAlarm"                   =    16,
+            "GetAlarmBase"                  =    18,
+            "GetAlarm"                      =    20,
+            "StopScheduleTable"             =    22,
+            "StartScheduleTableAbs"         =    24,
+            "StartScheduleTableRel"         =    26,
+            "NextScheduleTable"             =    28,
+            "StartScheduleTableSynchron"    =    30,
+            "SetScheduleTableAsync"         =    32,
+            "SyncScheduleTable"             =    34,
+            "GetScheduleTableStatus"        =    36,
+            "IncrementCounter"              =    38,
+            "GetCounterValue"               =    40,
+            "GetElapsedValue"               =    42,
+            "GetResource"                   =    44,
+            "ReleaseResource"               =    46,
+            "GetActiveApplicationMode"      =    48,
+            "StartOS"                       =    50,
+            "ActivateTask"                  =    52,
+            "ChainTask"                     =    54,
+            "TerminateTask"                 =    56,
+            "GetTaskState"                  =    58,
+            "ShutdownOS"                    =    60,
+            "ShutdownAllCores"              =    62,
+            "GetNumberOfActivatedCores"     =    64,
+            "GetCoreID"                     =    66,
+            "Schedule"                      =    68,
+            "GetTaskID"                     =    70,
+            "GetISRID"                      =    72,
+            "SetEvent"                      =    74,
+            "GetEvent"                      =    76,
+            "ClearEvent"                    =    78,
+            "WaitEvent"                     =    80,
+            "CallTrustedFunction"           =    82,
+            "CheckISRMemoryAccess"          =    84,
+            "CheckTaskMemoryAccess"         =    86,
+            "SuspendAllInterrupts"          =    88,
+            "SuspendOSInterrupts"           =    90,
+            "ResumeAllInterrupts"           =    92,
+            "ResumeOSInterrupts"            =    94,
+            "DisableAllInterrupts"          =    96,
+            "EnableAllInterrupts"           =    98,
+            "ControlIdle"                   =   100,
+            "GetSpinlock"                   =   102,
+            "ReleaseSpinlock"               =   104,
+            "TryToGetSpinlock"              =   106,
+            "INVALID_SERVICE"               =   108
+        ] SERVICETRACE, "Os Service";
+
+        ENUM "uint8" [
+            "E_OK"                            =     0,
+            "E_OS_ACCESS"                     =     1,
+            "E_OS_CALLEVEL"                   =     2,
+            "E_OS_ID"                         =     3,
+            "E_OS_LIMIT"                      =     4,
+            "E_OS_NOFUNC"                     =     5,
+            "E_OS_RESOURCE"                   =     6,
+            "E_OS_STATE"                      =     7,
+            "E_OS_VALUE"                      =     8,
+            "E_OS_QUEUE_OVERFLOW"             =     9,
+            "E_OS_DISABLEDINT"                =    10,
+            "E_OS_SYS_ERROR"                  =    11,
+            "E_OS_SERVICEID"                  =    12,
+            "E_OS_ILLEGAL_ADDRESS"            =    13,
+            "E_OS_PARAM_POINTER"              =    14,
+            "E_OS_MISSINGEND"                 =    15,
+            "E_OS_STACKFAULT"                 =    16,
+            "E_OS_PROTECTION_MEMORY"          =    17,
+            "E_OS_PROTECTION_TIME"            =    18,
+            "E_OS_PROTECTION_ARRIVAL"         =    19,
+            "E_OS_PROTECTION_LOCKED"          =    20,
+            "E_OS_PROTECTION_EXCEPTION"       =    21,
+            "E_OS_UNHANDLED_INT"              =    22
+        ] LASTERROR, "Last Error";
+
+        ENUM "AppModeType" [
+            "OSDEFAULTAPPMODE" = 0
+        ] CURRENTAPPMODE, "Current Application Mode";
+
+    }, "OS";
+
+/************************** TASK Declaration ************************/
+
+    TASK {
+        ENUM "uint32" [
+            "NO"  = 0,
+            "YES" = 1
+        ] VALID, "Orti Info Valid";
+
+        ENUM "Os_PriorityType" [
+            "NOT_RUNNING" = 0,
+            "TaskPrio_1"  = 1,
+            "TaskPrio_2"  = 2,
+            "TaskPrio_3"  = 3,
+            "TaskPrio_4"  = 4,
+            "IsrPrio_5"  = 5,
+            "IsrPrio_6"  = 6,
+            "IsrPrio_7"  = 7
+        ] PRIORITY, "Actual Task Priority";
+
+        ENUM "TaskStateType" [
+            "RUNNING"   = 0,
+            "WAITING"   = 1,
+            "READY"     = 2,
+            "SUSPENDED" = 3
+        ] STATE, "Current Task State";
+
+        ENUM "Os_StackType*" [
+            "OS_CAT2_ISR_LEVEL_P5_Core1_App0_Stack" : OS_CAT2_ISR_LEVEL_P5_Core1_App0_Stack = "OS_CAT2_ISR_LEVEL_P5_Core1_App0_Stack",
+            "OS_CAT2_ISR_LEVEL_P5_Core1_App1_Stack" : OS_CAT2_ISR_LEVEL_P5_Core1_App1_Stack = "OS_CAT2_ISR_LEVEL_P5_Core1_App1_Stack",
+            "OS_CAT2_ISR_LEVEL_P6_Core1_App0_Stack" : OS_CAT2_ISR_LEVEL_P6_Core1_App0_Stack = "OS_CAT2_ISR_LEVEL_P6_Core1_App0_Stack",
+            "OS_CAT2_ISR_LEVEL_P7_Core1_App0_Stack" : OS_CAT2_ISR_LEVEL_P7_Core1_App0_Stack = "OS_CAT2_ISR_LEVEL_P7_Core1_App0_Stack",
+            "Os_MasterBlinkerStack" : Os_MasterBlinkerStack = "Os_MasterBlinkerStack",
+            "Os_MasterControllerStack" : Os_MasterControllerStack = "Os_MasterControllerStack",
+            "Os_MasterFastBlinkerStack" : Os_MasterFastBlinkerStack = "Os_MasterFastBlinkerStack",
+            "Os_OsTask_Core0_20msStack" : Os_OsTask_Core0_20msStack = "Os_OsTask_Core0_20msStack",
+            "Os_OsTask_Core1_10msStack" : Os_OsTask_Core1_10msStack = "Os_OsTask_Core1_10msStack",
+            "Os_OsTask_Core1_StartUpStack" : Os_OsTask_Core1_StartUpStack = "Os_OsTask_Core1_StartUpStack",
+            "Os_SlaveBlinkerStack" : Os_SlaveBlinkerStack = "Os_SlaveBlinkerStack",
+            "Os_SlaveControllerStack" : Os_SlaveControllerStack = "Os_SlaveControllerStack",
+            "Os_SlaveFastBlinkerStack" : Os_SlaveFastBlinkerStack = "Os_SlaveFastBlinkerStack"
+        ] STACK, "Current Task Stack";
+
+        CTYPE "Integer" CURRENTACTIVATIONS,"Current Activations";    //Number of Current Activations for the Task
+
+        ENUM "Os_StackType*" [
+            "Adc_Adcdig_EndGroupConvUnit0Context" : Adc_Adcdig_EndGroupConvUnit0Context = "Os_Proc_Stat[0].Os_ProcContext",
+            "Gpt_PIT_0_TIMER_7_ISRContext" : Gpt_PIT_0_TIMER_7_ISRContext = "Os_Proc_Stat[1].Os_ProcContext",
+            "MasterBlinkerContext" : MasterBlinkerContext = "Os_Proc_Stat[2].Os_ProcContext",
+            "MasterButtonContext" : MasterButtonContext = "Os_Proc_Stat[3].Os_ProcContext",
+            "MasterControllerContext" : MasterControllerContext = "Os_Proc_Stat[4].Os_ProcContext",
+            "MasterFastBlinkerContext" : MasterFastBlinkerContext = "Os_Proc_Stat[5].Os_ProcContext",
+            "OsTask_Core0_20msContext" : OsTask_Core0_20msContext = "Os_Proc_Stat[6].Os_ProcContext",
+            "OsTask_Core1_10msContext" : OsTask_Core1_10msContext = "Os_Proc_Stat[7].Os_ProcContext",
+            "OsTask_Core1_StartUpContext" : OsTask_Core1_StartUpContext = "Os_Proc_Stat[8].Os_ProcContext",
+            "SlaveBlinkerContext" : SlaveBlinkerContext = "Os_Proc_Stat[9].Os_ProcContext",
+            "SlaveButtonContext" : SlaveButtonContext = "Os_Proc_Stat[10].Os_ProcContext",
+            "SlaveControllerContext" : SlaveControllerContext = "Os_Proc_Stat[11].Os_ProcContext",
+            "SlaveFastBlinkerContext" : SlaveFastBlinkerContext = "Os_Proc_Stat[12].Os_ProcContext"
+        ] CONTEXT, "Current Task Context";    //Reference to the Context Object that the task is currently using
+    }, "Task";
+
+/************************* CONTEXT Declaration **********************/
+
+    CONTEXT {
+        ENUM "uint32" [
+            "NO"  = 0,
+            "YES" = 1
+        ] VALID, "Orti Info Valid";
+
+        CTYPE "Os_StackType*" ADDRESS, "Base Address of Context";    //Base Address of a Memory Area Containing a Subset of the Context
+    }, "Context";
+
+/************************** STACK Declaration ***********************/
+
+    STACK {
+        ENUM "uint32" [
+        "NO"  = 0,
+        "YES" = 1
+        ] VALID, "Orti Info Valid";
+
+        CTYPE "Os_StackSizeType" SIZE,"Allocated memory (bytes) for Stack";    //Size (in bytes) of a Memory Area Allocated for Stack
+        CTYPE "Os_StackType*" BASEADDRESS,"Lowest Address of Stack";          //Lowest Address of Stack Memory Area, Regardless of the Stack Direction
+        STRING STACKDIRECTION,"Direction of Stack (UP/DOWN)";
+        CTYPE FILLPATTERN,"Initialized Stack Pattern";        
+    }, "Stack";
+
+/************************** ALARM Declaration ***********************/
+
+    ALARM {
+        ENUM "uint32" [
+            "NO"  = 0,
+            "YES" = 1
+        ] VALID, "Orti Info Valid";
+
+        TOTRACE CTYPE "TickType" ALARMTIME,"Alarm Expiration Time (in ticks)";  //Specifies how to evaluate the time until the alarm expires next
+        CTYPE "TickType" CYCLETIME,"Cycle time (in ticks)";                     //Specifies how to evaluate the cycle time for cyclic alarms. The value of CYCLETIME is 0 for non-cyclic alarms.
+
+        ENUM "Os_AlarmStateType" [
+            "OS_ALARM_OFF" = 0,
+            "OS_ALARM_SET" = 1
+        ] STATE, "Alarm State";
+
+        STRING ACTION,"Alarm Action";       //String with a Description of the Action when the Alarm Expires
+        STRING COUNTER,"Counter name";      //String Containing the Name of the Counter Used by this Alarm
+    }, "Alarm";
+
+/************************ RESOURCE Declaration **********************/
+
+    RESOURCE {
+        ENUM "uint32" [
+            "NO"  = 0,
+            "YES" = 1
+        ] VALID, "Orti Info Valid";
+
+        ENUM "unsigned int"[
+            "UNLOCKED" = 0,
+            "LOCKED"   = 1
+        ] STATE, "Resource State";
+
+        ENUM "TaskType" [
+            "None"    =    "~0",
+            "Adc_Adcdig_EndGroupConvUnit0" = "&Os_Proc_Stat[0]",
+            "Gpt_PIT_0_TIMER_7_ISR" = "&Os_Proc_Stat[1]",
+            "MasterBlinker" = "&Os_Proc_Stat[2]",
+            "MasterButton" = "&Os_Proc_Stat[3]",
+            "MasterController" = "&Os_Proc_Stat[4]",
+            "MasterFastBlinker" = "&Os_Proc_Stat[5]",
+            "OsTask_Core0_20ms" = "&Os_Proc_Stat[6]",
+            "OsTask_Core1_10ms" = "&Os_Proc_Stat[7]",
+            "OsTask_Core1_StartUp" = "&Os_Proc_Stat[8]",
+            "SlaveBlinker" = "&Os_Proc_Stat[9]",
+            "SlaveButton" = "&Os_Proc_Stat[10]",
+            "SlaveController" = "&Os_Proc_Stat[11]",
+            "SlaveFastBlinker" = "&Os_Proc_Stat[12]"
+        ] LOCKER, "Locking TASK/ISR";
+
+        STRING PRIORITY,"UsingProcessType:CeilingPriority";
+        //This attribute has two components that state: that the RESOURCE is used by TASKs only or by TASKs and ISRs, and the priority that will be used when locking the RESOURCE.
+    }, "Resource";
+
+
+};
+
+/*******************************************************************/
+/************************* Information Section *********************/
+/*******************************************************************/
+
+/*************************** OS Definition *************************/
+
+    OS VSTAROS {
+        VALID               =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        RUNNINGTASK         =   "Os_Core_Stat[0].Os_Core_Dyn->Os_SchedulerDyn.Os_SchedulerCurrentTask";
+        RUNNINGTASKPRIORITY =   "Os_Core_Stat[0].Os_Core_Dyn->Os_SchedulerDyn.Os_SchedulerLastScheduledPriority";
+        RUNNINGISR2         =   "Os_Core_Stat[0].Os_Core_Dyn->Os_IsrDyn.Os_IsrRunningIsr";
+        SERVICETRACE        =   "Os_Core_DynShared[0].Os_PublicDataNoInit.Os_Error.Os_ServiceError.Os_ServiceTrace";
+        LASTERROR           =   "Os_Core_DynShared[0].Os_PublicDataNoInit.Os_Error.Os_ServiceError.Os_LastError";
+        CURRENTAPPMODE      =   "Os_Core_DynInit_0.Os_CoreAppMode";
+    };
+
+/************************** TASK Definitions ***********************/
+
+    TASK MasterBlinker {
+        VALID               =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        PRIORITY            =   "( Os_Proc_Dyn[2].Os_ProcActivations != 0 ) ? Os_Proc_Dyn[2].Os_ProcCurrentPriority : 0";
+        STATE               =   "Os_Proc_Dyn[2].Os_ProcState";
+        STACK               =   "Os_MasterBlinkerStack";
+        CURRENTACTIVATIONS  =   "Os_Proc_Dyn[2].Os_ProcActivations";
+        CONTEXT             =   "Os_Proc_Stat[2].Os_ProcContext";
+    };
+
+    TASK MasterController {
+        VALID               =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        PRIORITY            =   "( Os_Proc_Dyn[4].Os_ProcActivations != 0 ) ? Os_Proc_Dyn[4].Os_ProcCurrentPriority : 0";
+        STATE               =   "Os_Proc_Dyn[4].Os_ProcState";
+        STACK               =   "Os_MasterControllerStack";
+        CURRENTACTIVATIONS  =   "Os_Proc_Dyn[4].Os_ProcActivations";
+        CONTEXT             =   "Os_Proc_Stat[4].Os_ProcContext";
+    };
+
+    TASK MasterFastBlinker {
+        VALID               =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        PRIORITY            =   "( Os_Proc_Dyn[5].Os_ProcActivations != 0 ) ? Os_Proc_Dyn[5].Os_ProcCurrentPriority : 0";
+        STATE               =   "Os_Proc_Dyn[5].Os_ProcState";
+        STACK               =   "Os_MasterFastBlinkerStack";
+        CURRENTACTIVATIONS  =   "Os_Proc_Dyn[5].Os_ProcActivations";
+        CONTEXT             =   "Os_Proc_Stat[5].Os_ProcContext";
+    };
+
+    TASK OsTask_Core0_20ms {
+        VALID               =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        PRIORITY            =   "( Os_Proc_Dyn[6].Os_ProcActivations != 0 ) ? Os_Proc_Dyn[6].Os_ProcCurrentPriority : 0";
+        STATE               =   "Os_Proc_Dyn[6].Os_ProcState";
+        STACK               =   "Os_OsTask_Core0_20msStack";
+        CURRENTACTIVATIONS  =   "Os_Proc_Dyn[6].Os_ProcActivations";
+        CONTEXT             =   "Os_Proc_Stat[6].Os_ProcContext";
+    };
+
+    TASK OsTask_Core1_10ms {
+        VALID               =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        PRIORITY            =   "( Os_Proc_Dyn[7].Os_ProcActivations != 0 ) ? Os_Proc_Dyn[7].Os_ProcCurrentPriority : 0";
+        STATE               =   "Os_Proc_Dyn[7].Os_ProcState";
+        STACK               =   "Os_OsTask_Core1_10msStack";
+        CURRENTACTIVATIONS  =   "Os_Proc_Dyn[7].Os_ProcActivations";
+        CONTEXT             =   "Os_Proc_Stat[7].Os_ProcContext";
+    };
+
+    TASK OsTask_Core1_StartUp {
+        VALID               =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        PRIORITY            =   "( Os_Proc_Dyn[8].Os_ProcActivations != 0 ) ? Os_Proc_Dyn[8].Os_ProcCurrentPriority : 0";
+        STATE               =   "Os_Proc_Dyn[8].Os_ProcState";
+        STACK               =   "Os_OsTask_Core1_StartUpStack";
+        CURRENTACTIVATIONS  =   "Os_Proc_Dyn[8].Os_ProcActivations";
+        CONTEXT             =   "Os_Proc_Stat[8].Os_ProcContext";
+    };
+
+    TASK SlaveBlinker {
+        VALID               =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        PRIORITY            =   "( Os_Proc_Dyn[9].Os_ProcActivations != 0 ) ? Os_Proc_Dyn[9].Os_ProcCurrentPriority : 0";
+        STATE               =   "Os_Proc_Dyn[9].Os_ProcState";
+        STACK               =   "Os_SlaveBlinkerStack";
+        CURRENTACTIVATIONS  =   "Os_Proc_Dyn[9].Os_ProcActivations";
+        CONTEXT             =   "Os_Proc_Stat[9].Os_ProcContext";
+    };
+
+    TASK SlaveController {
+        VALID               =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        PRIORITY            =   "( Os_Proc_Dyn[11].Os_ProcActivations != 0 ) ? Os_Proc_Dyn[11].Os_ProcCurrentPriority : 0";
+        STATE               =   "Os_Proc_Dyn[11].Os_ProcState";
+        STACK               =   "Os_SlaveControllerStack";
+        CURRENTACTIVATIONS  =   "Os_Proc_Dyn[11].Os_ProcActivations";
+        CONTEXT             =   "Os_Proc_Stat[11].Os_ProcContext";
+    };
+
+    TASK SlaveFastBlinker {
+        VALID               =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        PRIORITY            =   "( Os_Proc_Dyn[12].Os_ProcActivations != 0 ) ? Os_Proc_Dyn[12].Os_ProcCurrentPriority : 0";
+        STATE               =   "Os_Proc_Dyn[12].Os_ProcState";
+        STACK               =   "Os_SlaveFastBlinkerStack";
+        CURRENTACTIVATIONS  =   "Os_Proc_Dyn[12].Os_ProcActivations";
+        CONTEXT             =   "Os_Proc_Stat[12].Os_ProcContext";
+    };
+
+/************************* CONTEXT Definitions **********************/
+
+    CONTEXT Adc_Adcdig_EndGroupConvUnit0Context {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[0].Os_ProcContext";
+    };
+
+    CONTEXT Gpt_PIT_0_TIMER_7_ISRContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[1].Os_ProcContext";
+    };
+
+    CONTEXT MasterBlinkerContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[2].Os_ProcContext";
+    };
+
+    CONTEXT MasterButtonContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[3].Os_ProcContext";
+    };
+
+    CONTEXT MasterControllerContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[4].Os_ProcContext";
+    };
+
+    CONTEXT MasterFastBlinkerContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[5].Os_ProcContext";
+    };
+
+    CONTEXT OsTask_Core0_20msContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[6].Os_ProcContext";
+    };
+
+    CONTEXT OsTask_Core1_10msContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[7].Os_ProcContext";
+    };
+
+    CONTEXT OsTask_Core1_StartUpContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[8].Os_ProcContext";
+    };
+
+    CONTEXT SlaveBlinkerContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[9].Os_ProcContext";
+    };
+
+    CONTEXT SlaveButtonContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[10].Os_ProcContext";
+    };
+
+    CONTEXT SlaveControllerContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[11].Os_ProcContext";
+    };
+
+    CONTEXT SlaveFastBlinkerContext {
+        VALID   =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ADDRESS =   "Os_Proc_Stat[12].Os_ProcContext";
+    };
+
+/************************** STACK Definitions ***********************/
+
+    STACK OS_CAT2_ISR_LEVEL_P5_Core1_App0_Stack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[3].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[3].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[3].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK OS_CAT2_ISR_LEVEL_P5_Core1_App1_Stack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[10].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[10].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[10].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK OS_CAT2_ISR_LEVEL_P6_Core1_App0_Stack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[0].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[0].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[0].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK OS_CAT2_ISR_LEVEL_P7_Core1_App0_Stack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[1].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[1].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[1].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK Os_MasterBlinkerStack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[2].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[2].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[2].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK Os_MasterControllerStack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[4].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[4].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[4].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK Os_MasterFastBlinkerStack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[5].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[5].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[5].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK Os_OsTask_Core0_20msStack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[6].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[6].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[6].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK Os_OsTask_Core1_10msStack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[7].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[7].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[7].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK Os_OsTask_Core1_StartUpStack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[8].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[8].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[8].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK Os_SlaveBlinkerStack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[9].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[9].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[9].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK Os_SlaveControllerStack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[11].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[11].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[11].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+    STACK Os_SlaveFastBlinkerStack {
+        VALID           =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        SIZE            =   "Os_Proc_Stat[12].Os_ProcStack->Os_ProcStackSize * 4";
+        BASEADDRESS     =   "Os_Proc_Stat[12].Os_ProcStack->Os_ProcStackBase - Os_Proc_Stat[12].Os_ProcStack->Os_ProcStackSize + 1";
+        STACKDIRECTION  =   "DOWN";
+        FILLPATTERN     =   "0xDEADBEEF";
+    };
+
+/************************** ALARM Definitions ***********************/
+
+    ALARM MasterBlinkerAlarm {
+        VALID       =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ALARMTIME   =   "Os_AlarmDyns[0].Os_AlarmState && !( Os_AlarmDyns[0].Os_AlarmCycle == 0 && Os_CounterDyn[0].Os_CounterValue == 0 ) ? ( ( Os_AlarmDyns[0].Os_AlarmValue >= Os_CounterDyn[0].Os_CounterValue ) ? ( Os_AlarmDyns[0].Os_AlarmValue - Os_CounterDyn[0].Os_CounterValue ) : ( ( Os_CounterStat[0].Os_CounterMaxAllowedValue + 1 ) - Os_CounterDyn[0].Os_CounterValue + Os_AlarmDyns[0].Os_AlarmValue ) ) : 0";
+        CYCLETIME   =   "Os_AlarmDyns[0].Os_AlarmCycle";
+        STATE       =   "Os_AlarmDyns[0].Os_AlarmState";
+        ACTION      =   "Os_AlarmAction_ActivateTask : { SlaveFastBlinker }";
+        COUNTER     =   "MasterCounter100";
+    };
+
+    ALARM OsAlarm_10ms {
+        VALID       =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ALARMTIME   =   "Os_AlarmDyns[1].Os_AlarmState && !( Os_AlarmDyns[1].Os_AlarmCycle == 0 && Os_CounterDyn[0].Os_CounterValue == 0 ) ? ( ( Os_AlarmDyns[1].Os_AlarmValue >= Os_CounterDyn[0].Os_CounterValue ) ? ( Os_AlarmDyns[1].Os_AlarmValue - Os_CounterDyn[0].Os_CounterValue ) : ( ( Os_CounterStat[0].Os_CounterMaxAllowedValue + 1 ) - Os_CounterDyn[0].Os_CounterValue + Os_AlarmDyns[1].Os_AlarmValue ) ) : 0";
+        CYCLETIME   =   "Os_AlarmDyns[1].Os_AlarmCycle";
+        STATE       =   "Os_AlarmDyns[1].Os_AlarmState";
+        ACTION      =   "Os_AlarmAction_ActivateTask : { OsTask_Core1_10ms }";
+        COUNTER     =   "MasterCounter100";
+    };
+
+    ALARM OsAlarm_20ms {
+        VALID       =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ALARMTIME   =   "Os_AlarmDyns[2].Os_AlarmState && !( Os_AlarmDyns[2].Os_AlarmCycle == 0 && Os_CounterDyn[0].Os_CounterValue == 0 ) ? ( ( Os_AlarmDyns[2].Os_AlarmValue >= Os_CounterDyn[0].Os_CounterValue ) ? ( Os_AlarmDyns[2].Os_AlarmValue - Os_CounterDyn[0].Os_CounterValue ) : ( ( Os_CounterStat[0].Os_CounterMaxAllowedValue + 1 ) - Os_CounterDyn[0].Os_CounterValue + Os_AlarmDyns[2].Os_AlarmValue ) ) : 0";
+        CYCLETIME   =   "Os_AlarmDyns[2].Os_AlarmCycle";
+        STATE       =   "Os_AlarmDyns[2].Os_AlarmState";
+        ACTION      =   "Os_AlarmAction_ActivateTask : { OsTask_Core0_20ms }";
+        COUNTER     =   "MasterCounter100";
+    };
+
+    ALARM SlaveBlinkerAlarm {
+        VALID       =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        ALARMTIME   =   "Os_AlarmDyns[3].Os_AlarmState && !( Os_AlarmDyns[3].Os_AlarmCycle == 0 && Os_CounterDyn[1].Os_CounterValue == 0 ) ? ( ( Os_AlarmDyns[3].Os_AlarmValue >= Os_CounterDyn[1].Os_CounterValue ) ? ( Os_AlarmDyns[3].Os_AlarmValue - Os_CounterDyn[1].Os_CounterValue ) : ( ( Os_CounterStat[1].Os_CounterMaxAllowedValue + 1 ) - Os_CounterDyn[1].Os_CounterValue + Os_AlarmDyns[3].Os_AlarmValue ) ) : 0";
+        CYCLETIME   =   "Os_AlarmDyns[3].Os_AlarmCycle";
+        STATE       =   "Os_AlarmDyns[3].Os_AlarmState";
+        ACTION      =   "Os_AlarmAction_ActivateTask : { MasterFastBlinker }";
+        COUNTER     =   "SlaveCounter100";
+    };
+
+/************************* RESOURCE Definitions *********************/
+
+    RESOURCE MasterBlinkerSettings {
+        VALID       =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        STATE       =   "Os_ResourceDyns[0].Os_LockerProc ? 1u : 0u";
+        LOCKER      =   "Os_ResourceDyns[0].Os_LockerProc != 0 ? Os_ResourceDyns[0].Os_LockerProc : ~0";
+        PRIORITY    =   "Task:2";
+    };
+
+    RESOURCE SlaveBlinkerSettings {
+        VALID       =   "Os_Core_DynInitShared[0].Os_CoreStarted == 0xCAFEBABEu ? 1 : 0";
+        STATE       =   "Os_ResourceDyns[1].Os_LockerProc ? 1u : 0u";
+        LOCKER      =   "Os_ResourceDyns[1].Os_LockerProc != 0 ? Os_ResourceDyns[1].Os_LockerProc : ~0";
+        PRIORITY    =   "Task:4";
+    };
+

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+NOTE! This file is generated. Do not edit!
+Generator: VSTAR NvM V8.2.0-Build513
+ -->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+<!-- Copyright 2015 Mentor Graphics Corporation
+All Rights Reserved
+THIS WORK CONTAINS TRADE SECRET
+AND PROPRIETARY INFORMATION WHICH IS THE
+PROPERTY OF MENTOR GRAPHICS
+CORPORATION OR ITS LICENSORS AND IS
+SUBJECT TO LICENSE TERMS.
+-->
+   <AR-PACKAGES>
+      <AR-PACKAGE>
+         <SHORT-NAME>VSTAR</SHORT-NAME>
+         <AR-PACKAGES>
+            <AR-PACKAGE>
+               <SHORT-NAME>BswMd</SHORT-NAME>
+               <ELEMENTS>
+               <BSW-MODULE-ENTRY>
+                  <SHORT-NAME>NvM_MainFunction</SHORT-NAME>
+                  <SERVICE-ID>14</SERVICE-ID>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                  <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <SWC-BSW-MAPPING>
+                  <SHORT-NAME>SwcBswMapping_NvM</SHORT-NAME>
+                 <BSW-BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/VSTAR/BswMd/NvM/BswBehavior_NvM</BSW-BEHAVIOR-REF>
+                    <RUNNABLE-MAPPINGS>
+                       <SWC-BSW-RUNNABLE-MAPPING>
+                       <BSW-ENTITY-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/NvM/BswBehavior_NvM/NvMMainFunctionEntity</BSW-ENTITY-REF>
+                       <SWC-RUNNABLE-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/NvM/NvM/IB_NVM/NvM_MainFunction</SWC-RUNNABLE-REF>
+                       </SWC-BSW-RUNNABLE-MAPPING>
+                    </RUNNABLE-MAPPINGS>
+                  <SWC-BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/AUTOSAR/Services/NvM/NvM/IB_NVM</SWC-BEHAVIOR-REF>
+              </SWC-BSW-MAPPING>
+              <BSW-MODULE-DESCRIPTION>
+                     <SHORT-NAME>NvM</SHORT-NAME>
+                     <LONG-NAME>
+                     <L-4 L="FOR-ALL">NVRAM Manager</L-4>
+                     </LONG-NAME>
+                     <MODULE-ID>20</MODULE-ID>
+                     <INTERNAL-BEHAVIORS>
+                     <BSW-INTERNAL-BEHAVIOR>
+                        <SHORT-NAME>BswBehavior_NvM</SHORT-NAME>
+                    <EXCLUSIVE-AREAS>
+                      <EXCLUSIVE-AREA>
+                         <SHORT-NAME>EaServiceProcessQueue</SHORT-NAME>
+                      </EXCLUSIVE-AREA>
+                    </EXCLUSIVE-AREAS>
+                    <ENTITYS>
+                      <BSW-SCHEDULABLE-ENTITY>
+                         <SHORT-NAME>NvMMainFunctionEntity</SHORT-NAME>
+                         <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/NvM/BswBehavior_NvM/EaServiceProcessQueue</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                         </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                         <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                         <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/BswMd/NvM_MainFunction</IMPLEMENTED-ENTRY-REF>
+                       </BSW-SCHEDULABLE-ENTITY>
+                     </ENTITYS>
+                           <EVENTS>
+                              <BSW-TIMING-EVENT>
+                                 <SHORT-NAME>Evt_NvM_MainFunction</SHORT-NAME>
+                                 <LONG-NAME>
+                                    <L-4 L="FOR-ALL">Evt_NvM_MainFunction</L-4>
+                                 </LONG-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/NvM/BswBehavior_NvM/NvMMainFunctionEntity</STARTS-ON-EVENT-REF>
+                                 <PERIOD>0.01</PERIOD>
+                              </BSW-TIMING-EVENT>
+                           </EVENTS>
+                              <SERVICE-DEPENDENCYS> 
+                             <BSW-SERVICE-DEPENDENCY>
+                               <SERVICE-NEEDS>
+                                 <DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                                   <SHORT-NAME>NVM_E_INTEGRITY_FAILED</SHORT-NAME>
+                                </DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                               </SERVICE-NEEDS>
+                            </BSW-SERVICE-DEPENDENCY>
+                             <BSW-SERVICE-DEPENDENCY>
+                               <SERVICE-NEEDS>
+                                 <DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                                   <SHORT-NAME>NVM_E_REQ_FAILED</SHORT-NAME>
+                                </DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                               </SERVICE-NEEDS>
+                            </BSW-SERVICE-DEPENDENCY>
+                             <BSW-SERVICE-DEPENDENCY>
+                               <SERVICE-NEEDS>
+                                 <DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                                   <SHORT-NAME>NVM_E_WRONG_BLOCK_ID</SHORT-NAME>
+                                </DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                               </SERVICE-NEEDS>
+                            </BSW-SERVICE-DEPENDENCY>
+                             <BSW-SERVICE-DEPENDENCY>
+                               <SERVICE-NEEDS>
+                                 <DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                                   <SHORT-NAME>NVM_E_VERIFY_FAILED</SHORT-NAME>
+                                </DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                               </SERVICE-NEEDS>
+                            </BSW-SERVICE-DEPENDENCY>
+                             <BSW-SERVICE-DEPENDENCY>
+                               <SERVICE-NEEDS>
+                                 <DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                                   <SHORT-NAME>NVM_E_LOSS_OF_REDUNDANCY</SHORT-NAME>
+                                </DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                               </SERVICE-NEEDS>
+                            </BSW-SERVICE-DEPENDENCY>
+                             <BSW-SERVICE-DEPENDENCY>
+                               <SERVICE-NEEDS>
+                                 <DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                                   <SHORT-NAME>NVM_E_QUEUE_OVERFLOW</SHORT-NAME>
+                                </DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                               </SERVICE-NEEDS>
+                            </BSW-SERVICE-DEPENDENCY>
+                             <BSW-SERVICE-DEPENDENCY>
+                               <SERVICE-NEEDS>
+                                 <DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                                   <SHORT-NAME>NVM_E_WRITE_PROTECTED</SHORT-NAME>
+                                </DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                               </SERVICE-NEEDS>
+                            </BSW-SERVICE-DEPENDENCY>
+                          </SERVICE-DEPENDENCYS>
+                        </BSW-INTERNAL-BEHAVIOR>
+                     </INTERNAL-BEHAVIORS>
+                  </BSW-MODULE-DESCRIPTION>
+               </ELEMENTS>
+            </AR-PACKAGE>
+         </AR-PACKAGES>
+      </AR-PACKAGE>
+   </AR-PACKAGES>
+</AUTOSAR>

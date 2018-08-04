@@ -1,0 +1,212 @@
+
+
+/*  How to use this generated linker directive file
+    1) Copy the MEMORY and SECTIONS blocks below to appropriate place of baseline linker file
+    2) Generate memory map by executing linker to get section sizes
+    3) Min value of DATA_SIZE defaults should be sum of _DATA and _BSS sections sizes
+    4) Remove section related SECTIONS block comments is section sizes is grater than 0
+*/
+
+/*
+MEMORY
+{
+    Platform specific memory areas
+}
+*/
+
+SECTIONS
+{
+    GROUP : {
+        .rchw : {}
+    } > flash_rsvd1
+    GROUP : {
+        OS_PRIVATE_START = OS_FLASH_USAGE_START;
+        .Os_TEXT_VTAB_Z4  ALIGN(16): {}
+        .Os_TEXT_VTAB_Z4_0  ALIGN(16): {}
+    } > vector_table_os_0
+
+    GROUP : {
+        .Os_TEXT_VTAB_Z4_1  ALIGN(16): {}
+    } > vector_table_os_1
+
+    GROUP ALIGN(32) : {
+        /* Private section of the operating system */
+            .Os_TEXT  ALIGN(32) : {}
+            .Os_CONST ALIGN(32) : {}
+        . = ALIGN(32);
+        . += 0;
+        OS_PRIVATE_END = . - 1;
+    } > os_private
+
+    GROUP: {
+        .copytable : {} /* Location of copytable */
+    } > flash_memory1
+
+    /* Collect all code sections from all input files to make a single output
+     * .text section and locate it in "rom1" memory (except for .text2 code
+     * sections).
+     */
+
+    GROUP : {
+        .ctors (=TEXT) : { ctordtor.o(.ctors) *(.ctors) }
+        .dtors (=TEXT) : { ctordtor.o(.dtors) *(.dtors) }
+
+        . =  ALIGN(32);
+        OS_PUBLIC_START = .;
+            .sdata2         : {}
+
+            .Os_PUBLIC_TEXT : { *(.text) *(.init) *(.fini) *(.text_vle) *(.Os_PUBLIC_CONST) *(.bcovconst) }
+
+            . = ALIGN(4);
+            BULLSEYE_INITFUNC_CONST_START = .;
+                .BULLSEYE_INITFUNC_CONST: { *(.EMBUNIT_SEC_BULLSEYE_INITFUNCADDRESSES) }
+            BULLSEYE_INITFUNC_CONST_END = .;
+
+        . =  ALIGN(32);
+        . += 0;
+        OS_PUBLIC_END = . - 1;
+
+
+    } > flash_memory2
+
+
+    GROUP ALIGN(32) LOAD(>flash_memory1) COPYTABLE: {
+
+        OS_RAM_START = .;
+
+        /* DATA sections */
+
+        .DATA_START ALIGN(32) (=DATA) : {}
+
+        . = ALIGN(32);
+        OS_PRIVATE_DATA_START = .;
+            .Os_DATA (=DATA) : {}
+
+        . = ALIGN(32);
+        . += 0;
+        OS_PUBLIC_DATA_START = .;
+            .Os_PUBLIC_DATA (=DATA) : { *(.data) }
+
+            /* Small data areas must be placed close ( 0x8000 ) to each other. */
+            .sdata  (=DATA)  ALIGN(32) : {}
+
+    } > ram
+
+
+    GROUP ALIGN(32) : {
+
+        /* BSS sections */
+
+        __BSS_START = .;
+
+            /* Small data areas must be placed close ( 0x8000 ) to each other. */
+            .sbss   (=BSS)   ALIGN(32) : {}
+
+        /* Allocate uninitialized sections. */
+            .bss            (=BSS) ALIGN(32) : {}
+            .bcovbss        (=BSS) ALIGN(32) : {}
+            .Os_PUBLIC_BSS  (=BSS) ALIGN(32) : {}
+        . = ALIGN(32);
+        OS_PUBLIC_DATA_END = . - 1;
+
+        OS_PRIVATE_BSS_START = .;
+            .Os_BSS         (=BSS) ALIGN(32) : {}
+        . = ALIGN(32);
+        OS_PRIVATE_BSS_END = . - 1;
+        OS_PRIVATE_DATA_END = . - 1;
+
+        /* Use gap between stack and the private data. */
+        . += 32 + 0;
+
+        /* Stacks */
+        . = ALIGN(32);
+        OS_TASK_STACK_START = .;
+
+            /* Process Contexts of Core 1 */
+            .OS_CAT2_ISR_LEVEL_P6_Core1_App0_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .OS_CAT2_ISR_LEVEL_P7_Core1_App0_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .MasterBlinker_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .OS_CAT2_ISR_LEVEL_P5_Core1_App0_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .MasterController_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .MasterFastBlinker_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .OsTask_Core0_20ms_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .OsTask_Core1_10ms_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .OsTask_Core1_StartUp_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .SlaveBlinker_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .OS_CAT2_ISR_LEVEL_P5_Core1_App1_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .SlaveController_CONTEXT (=BSS) ALIGN(32) : {}
+
+            .SlaveFastBlinker_CONTEXT (=BSS) ALIGN(32) : {}
+
+
+            /* Process Stacks of Core 1 */
+            .OS_CAT2_ISR_LEVEL_P6_Core1_App0_STACK (=BSS) ALIGN(32) : {}
+
+            .OS_CAT2_ISR_LEVEL_P7_Core1_App0_STACK (=BSS) ALIGN(32) : {}
+
+            .MasterBlinker_STACK (=BSS) ALIGN(32) : {}
+
+            .OS_CAT2_ISR_LEVEL_P5_Core1_App0_STACK (=BSS) ALIGN(32) : {}
+
+            .MasterController_STACK (=BSS) ALIGN(32) : {}
+
+            .MasterFastBlinker_STACK (=BSS) ALIGN(32) : {}
+
+            .OsTask_Core0_20ms_STACK (=BSS) ALIGN(32) : {}
+
+            .OsTask_Core1_10ms_STACK (=BSS) ALIGN(32) : {}
+
+            .OsTask_Core1_StartUp_STACK (=BSS) ALIGN(32) : {}
+
+            .SlaveBlinker_STACK (=BSS) ALIGN(32) : {}
+
+            .OS_CAT2_ISR_LEVEL_P5_Core1_App1_STACK (=BSS) ALIGN(32) : {}
+
+            .SlaveController_STACK (=BSS) ALIGN(32) : {}
+
+            .SlaveFastBlinker_STACK (=BSS) ALIGN(32) : {}
+
+
+        . = ALIGN(32);
+        OS_TASK_STACK_END = . - 1;
+
+        /* OS has access to the whole ram */
+        . = ALIGN(32);
+
+        __BSS_END = .;
+
+        OS_RAM_END = . - 1;
+    } > ram
+
+    /* this group is placed to generate a error if those sections are used  */
+    GROUP : {
+        .invalid_BSS   ALIGN(32) : {}
+        .invalid_DATA  ALIGN(32) : {}
+    } > ram
+}
+
+__SP_0_INIT   = ADDR ( stack0 ) + SIZEOF ( stack0 ) - 4;
+__SP_0_START  = __SP_0_INIT - 1;
+__SP_0_END    = ADDR ( stack0 );
+__SP_1_INIT   = ADDR ( stack1 ) + SIZEOF ( stack1 ) - 4;
+__SP_1_START  = __SP_1_INIT - 1;
+__SP_1_END    = ADDR ( stack1 );
+
+__CORE0_BSS_START = __BSS_START;
+__CORE0_BSS_END   = __CORE0_BSS_START;
+__CORE1_BSS_START = __BSS_START;
+__CORE1_BSS_END   = __CORE1_BSS_START;
+
+OS_REGISTERMAP_START = ADDR ( regspace );
+OS_REGISTERMAP_END   = ADDR ( regspace ) + SIZEOF ( regspace ) - 1;

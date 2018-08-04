@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   NOTE! This file is generated. Do not edit!
+   Generator: VSTAR Dcm V8.0.1-Build664
+-->
+<!--           Copyright 2017 Mentor Graphics Corporation
+                         All rights reserved
+  
+   THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION WHICH IS
+   THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS AND IS
+   SUBJECT TO LICENSE TERMS.
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+   <AR-PACKAGES>
+      <AR-PACKAGE>
+         <SHORT-NAME>VSTAR</SHORT-NAME>
+         <LONG-NAME>
+            <L-4 L="FOR-ALL">VSTAR</L-4>
+         </LONG-NAME>
+         <AR-PACKAGES>
+            <AR-PACKAGE>
+               <SHORT-NAME>BswMd</SHORT-NAME>
+               <ELEMENTS>
+                  <DATA-TYPE-MAPPING-SET>
+                     <SHORT-NAME>DcmModeMappingSet</SHORT-NAME>
+                     <MODE-REQUEST-TYPE-MAPS>
+                        <MODE-REQUEST-TYPE-MAP>
+                           <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                           <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmCommunicationControl</MODE-GROUP-REF>
+                        </MODE-REQUEST-TYPE-MAP>
+                        <MODE-REQUEST-TYPE-MAP>
+                           <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                           <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmControlDTCSetting</MODE-GROUP-REF>
+                        </MODE-REQUEST-TYPE-MAP>
+                        <MODE-REQUEST-TYPE-MAP>
+                           <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                           <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmDiagnosticSessionControl</MODE-GROUP-REF>
+                        </MODE-REQUEST-TYPE-MAP>
+                        <MODE-REQUEST-TYPE-MAP>
+                           <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                           <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmEcuReset</MODE-GROUP-REF>
+                        </MODE-REQUEST-TYPE-MAP>
+                        <MODE-REQUEST-TYPE-MAP>
+                           <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                           <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmModeRapidPowerShutDown</MODE-GROUP-REF>
+                        </MODE-REQUEST-TYPE-MAP>
+                     </MODE-REQUEST-TYPE-MAPS>
+                  </DATA-TYPE-MAPPING-SET>
+                  <MODE-DECLARATION-GROUP>
+                     <SHORT-NAME>DcmDiagnosticSessionControl</SHORT-NAME>
+                     <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                     <INITIAL-MODE-REF DEST="MODE-DECLARATION">/VSTAR/BswMd/DcmDiagnosticSessionControl/DEFAULT_SESSION</INITIAL-MODE-REF>
+                     <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DEFAULT_SESSION</SHORT-NAME>
+                           <VALUE>1</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>PROGRAMMING_SESSION</SHORT-NAME>
+                           <VALUE>2</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>EXTENDED_DIAGNOSTIC_SESSION</SHORT-NAME>
+                           <VALUE>3</VALUE>
+                        </MODE-DECLARATION>
+                     </MODE-DECLARATIONS>
+                     <ON-TRANSITION-VALUE>255</ON-TRANSITION-VALUE>
+                  </MODE-DECLARATION-GROUP>
+                  <MODE-DECLARATION-GROUP>
+                     <SHORT-NAME>DcmEcuReset</SHORT-NAME>
+                     <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                     <INITIAL-MODE-REF DEST="MODE-DECLARATION">/VSTAR/BswMd/DcmEcuReset/NONE</INITIAL-MODE-REF>
+                     <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>NONE</SHORT-NAME>
+                           <VALUE>0</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>HARD</SHORT-NAME>
+                           <VALUE>1</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>KEYONOFF</SHORT-NAME>
+                           <VALUE>2</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>SOFT</SHORT-NAME>
+                           <VALUE>3</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>JUMPTOBOOTLOADER</SHORT-NAME>
+                           <VALUE>4</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>JUMPTOSYSSUPPLIERBOOTLOADER</SHORT-NAME>
+                           <VALUE>5</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>EXECUTE</SHORT-NAME>
+                           <VALUE>6</VALUE>
+                        </MODE-DECLARATION>
+                     </MODE-DECLARATIONS>
+                     <ON-TRANSITION-VALUE>7</ON-TRANSITION-VALUE>
+                  </MODE-DECLARATION-GROUP>
+                  <MODE-DECLARATION-GROUP>
+                     <SHORT-NAME>DcmModeRapidPowerShutDown</SHORT-NAME>
+                     <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                     <INITIAL-MODE-REF DEST="MODE-DECLARATION">/VSTAR/BswMd/DcmModeRapidPowerShutDown/ENABLE_RAPIDPOWERSHUTDOWN</INITIAL-MODE-REF>
+                     <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>ENABLE_RAPIDPOWERSHUTDOWN</SHORT-NAME>
+                           <VALUE>0</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DISABLE_RAPIDPOWERSHUTDOWN</SHORT-NAME>
+                           <VALUE>1</VALUE>
+                        </MODE-DECLARATION>
+                     </MODE-DECLARATIONS>
+                     <ON-TRANSITION-VALUE>2</ON-TRANSITION-VALUE>
+                  </MODE-DECLARATION-GROUP>
+                  <MODE-DECLARATION-GROUP>
+                     <SHORT-NAME>DcmControlDTCSetting</SHORT-NAME>
+                     <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                     <INITIAL-MODE-REF DEST="MODE-DECLARATION">/VSTAR/BswMd/DcmControlDTCSetting/ENABLEDTCSETTING</INITIAL-MODE-REF>
+                     <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>ENABLEDTCSETTING</SHORT-NAME>
+                           <VALUE>0</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DISABLEDTCSETTING</SHORT-NAME>
+                           <VALUE>1</VALUE>
+                        </MODE-DECLARATION>
+                     </MODE-DECLARATIONS>
+                     <ON-TRANSITION-VALUE>2</ON-TRANSITION-VALUE>
+                  </MODE-DECLARATION-GROUP>
+                  <MODE-DECLARATION-GROUP>
+                     <SHORT-NAME>DcmCommunicationControl</SHORT-NAME>
+                     <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                     <INITIAL-MODE-REF DEST="MODE-DECLARATION">/VSTAR/BswMd/DcmCommunicationControl/DCM_ENABLE_RX_TX_NORM</INITIAL-MODE-REF>
+                     <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_ENABLE_RX_TX_NORM</SHORT-NAME>
+                           <VALUE>0</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_ENABLE_RX_DISABLE_TX_NORM</SHORT-NAME>
+                           <VALUE>1</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_DISABLE_RX_ENABLE_TX_NORM</SHORT-NAME>
+                           <VALUE>2</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_DISABLE_RX_TX_NORMAL</SHORT-NAME>
+                           <VALUE>3</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_ENABLE_RX_TX_NM</SHORT-NAME>
+                           <VALUE>4</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_ENABLE_RX_DISABLE_TX_NM</SHORT-NAME>
+                           <VALUE>5</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_DISABLE_RX_ENABLE_TX_NM</SHORT-NAME>
+                           <VALUE>6</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_DISABLE_RX_TX_NM</SHORT-NAME>
+                           <VALUE>7</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_ENABLE_RX_TX_NORM_NM</SHORT-NAME>
+                           <VALUE>8</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_ENABLE_RX_DISABLE_TX_NORM_NM</SHORT-NAME>
+                           <VALUE>9</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_DISABLE_RX_ENABLE_TX_NORM_NM</SHORT-NAME>
+                           <VALUE>10</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>DCM_DISABLE_RX_TX_NORM_NM</SHORT-NAME>
+                           <VALUE>11</VALUE>
+                        </MODE-DECLARATION>
+                     </MODE-DECLARATIONS>
+                     <ON-TRANSITION-VALUE>12</ON-TRANSITION-VALUE>
+                  </MODE-DECLARATION-GROUP>
+                  <MODE-DECLARATION-GROUP>
+                     <SHORT-NAME>DcmResponseOnEvent</SHORT-NAME>
+                     <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                     <INITIAL-MODE-REF DEST="MODE-DECLARATION">/VSTAR/BswMd/DcmResponseOnEvent/EVENT_CLEARED</INITIAL-MODE-REF>
+                     <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>EVENT_STARTED</SHORT-NAME>
+                           <VALUE>0</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>EVENT_STOPPED</SHORT-NAME>
+                           <VALUE>1</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>EVENT_CLEARED</SHORT-NAME>
+                           <VALUE>2</VALUE>
+                        </MODE-DECLARATION>
+                     </MODE-DECLARATIONS>
+                     <ON-TRANSITION-VALUE>3</ON-TRANSITION-VALUE>
+                  </MODE-DECLARATION-GROUP>
+                  <BSW-MODULE-DESCRIPTION>
+                     <SHORT-NAME>Dcm</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Diagnostic Communication Manager</L-4>
+                     </LONG-NAME>
+                     <MODULE-ID>35</MODULE-ID>
+                     <PROVIDED-ENTRYS>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_GetVersionInfo</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_MainFunction</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_Init</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_StartOfReception</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_CopyRxData</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_TpRxIndication</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_CopyTxData</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_TpTxConfirmation</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_TxConfirmation</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_ComM_NoComModeEntered</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_ComM_SilentComModeEntered</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_ComM_FullComModeEntered</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_DemTriggerOnDTCStatus</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_TriggerOnEvent</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                           <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_ResetToDefaultSession</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                     </PROVIDED-ENTRYS>
+                     <OUTGOING-CALLBACKS/>
+                     <PROVIDED-MODE-GROUPS>
+                        <MODE-DECLARATION-GROUP-PROTOTYPE>
+                           <SHORT-NAME>DcmEcuReset</SHORT-NAME>
+                           <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmEcuReset</TYPE-TREF>
+                        </MODE-DECLARATION-GROUP-PROTOTYPE>
+                        <MODE-DECLARATION-GROUP-PROTOTYPE>
+                           <SHORT-NAME>DcmModeRapidPowerShutDown</SHORT-NAME>
+                           <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmModeRapidPowerShutDown</TYPE-TREF>
+                        </MODE-DECLARATION-GROUP-PROTOTYPE>
+                        <MODE-DECLARATION-GROUP-PROTOTYPE>
+                           <SHORT-NAME>DcmControlDTCSetting</SHORT-NAME>
+                           <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmControlDTCSetting</TYPE-TREF>
+                        </MODE-DECLARATION-GROUP-PROTOTYPE>
+                        <MODE-DECLARATION-GROUP-PROTOTYPE>
+                           <SHORT-NAME>DcmCommunicationControl</SHORT-NAME>
+                           <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmCommunicationControl</TYPE-TREF>
+                        </MODE-DECLARATION-GROUP-PROTOTYPE>
+                        <MODE-DECLARATION-GROUP-PROTOTYPE>
+                           <SHORT-NAME>DcmDiagnosticSessionControl</SHORT-NAME>
+                           <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/VSTAR/BswMd/DcmDiagnosticSessionControl</TYPE-TREF>
+                        </MODE-DECLARATION-GROUP-PROTOTYPE>
+                     </PROVIDED-MODE-GROUPS>
+                     <INTERNAL-BEHAVIORS>
+                        <BSW-INTERNAL-BEHAVIOR>
+                           <SHORT-NAME>BswBehavior_Dcm</SHORT-NAME>
+                           <LONG-NAME>
+                              <L-4 L="FOR-ALL">BswBehavior_Dcm</L-4>
+                           </LONG-NAME>
+                           <DATA-TYPE-MAPPING-REFS>
+                              <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/VSTAR/BswMd/DcmModeMappingSet</DATA-TYPE-MAPPING-REF>
+                           </DATA-TYPE-MAPPING-REFS>
+                           <EXCLUSIVE-AREAS>
+                              <EXCLUSIVE-AREA>
+                                 <SHORT-NAME>EaRxBuffers</SHORT-NAME>
+                                 <LONG-NAME>
+                                    <L-4 L="FOR-ALL">Dcm_EaRxBuffers</L-4>
+                                 </LONG-NAME>
+                                 <DESC>
+                                    <L-2 L="FOR-ALL">Exclusive area for Rx buffers in the Dcm</L-2>
+                                 </DESC>
+                              </EXCLUSIVE-AREA>
+                              <EXCLUSIVE-AREA>
+                                 <SHORT-NAME>EaTimers</SHORT-NAME>
+                                 <LONG-NAME>
+                                    <L-4 L="FOR-ALL">Dcm_EaTimers</L-4>
+                                 </LONG-NAME>
+                                 <DESC>
+                                    <L-2 L="FOR-ALL">Exclusive area for timers in the Dcm</L-2>
+                                 </DESC>
+                              </EXCLUSIVE-AREA>
+                           </EXCLUSIVE-AREAS>
+                           <INTERNAL-TRIGGERING-POINTS>
+                              <BSW-INTERNAL-TRIGGERING-POINT>
+                                 <SHORT-NAME>IntTrP_Dcm_ClearDiagnosticInformation</SHORT-NAME>
+                                 <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </BSW-INTERNAL-TRIGGERING-POINT>
+                              <BSW-INTERNAL-TRIGGERING-POINT>
+                                 <SHORT-NAME>IntTrP_Dcm_DiagnosticSessionControl</SHORT-NAME>
+                                 <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </BSW-INTERNAL-TRIGGERING-POINT>
+                              <BSW-INTERNAL-TRIGGERING-POINT>
+                                 <SHORT-NAME>IntTrP_Dcm_ReadDTCInformation</SHORT-NAME>
+                                 <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </BSW-INTERNAL-TRIGGERING-POINT>
+                              <BSW-INTERNAL-TRIGGERING-POINT>
+                                 <SHORT-NAME>IntTrP_Dcm_ReadDataByIdentifier</SHORT-NAME>
+                                 <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </BSW-INTERNAL-TRIGGERING-POINT>
+                              <BSW-INTERNAL-TRIGGERING-POINT>
+                                 <SHORT-NAME>IntTrP_Dcm_SecurityAccess</SHORT-NAME>
+                                 <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </BSW-INTERNAL-TRIGGERING-POINT>
+                              <BSW-INTERNAL-TRIGGERING-POINT>
+                                 <SHORT-NAME>IntTrP_Dcm_TesterPresent</SHORT-NAME>
+                                 <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </BSW-INTERNAL-TRIGGERING-POINT>
+                              <BSW-INTERNAL-TRIGGERING-POINT>
+                                 <SHORT-NAME>IntTrP_Dcm_WriteDataByIdentifier</SHORT-NAME>
+                                 <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </BSW-INTERNAL-TRIGGERING-POINT>
+                              <BSW-INTERNAL-TRIGGERING-POINT>
+                                 <SHORT-NAME>IntTrP_DslStateMachine</SHORT-NAME>
+                                 <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </BSW-INTERNAL-TRIGGERING-POINT>
+                              <BSW-INTERNAL-TRIGGERING-POINT>
+                                 <SHORT-NAME>IntTrP_DsdStateMachine</SHORT-NAME>
+                                 <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </BSW-INTERNAL-TRIGGERING-POINT>
+                           </INTERNAL-TRIGGERING-POINTS>
+                           <ENTITYS>
+                           <BSW-SCHEDULABLE-ENTITY>
+                              <SHORT-NAME>SE_Dcm_ClearDiagnosticInformation</SHORT-NAME>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_SE_Dcm_ClearDiagnosticInformation</IMPLEMENTED-ENTRY-REF>
+                           </BSW-SCHEDULABLE-ENTITY>
+                           <BSW-SCHEDULABLE-ENTITY>
+                              <SHORT-NAME>SE_Dcm_DiagnosticSessionControl</SHORT-NAME>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_SE_Dcm_DiagnosticSessionControl</IMPLEMENTED-ENTRY-REF>
+                              <MANAGED-MODE-GROUPS>
+                                 <MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                                    <MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmEcuReset</MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                 </MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                              </MANAGED-MODE-GROUPS>
+                           </BSW-SCHEDULABLE-ENTITY>
+                           <BSW-SCHEDULABLE-ENTITY>
+                              <SHORT-NAME>SE_Dcm_MainFunction</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/EaTimers</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DslStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_MainFunction</IMPLEMENTED-ENTRY-REF>
+                              <MANAGED-MODE-GROUPS>
+                                 <MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                                    <MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmCommunicationControl</MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                 </MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                                 <MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                                    <MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmControlDTCSetting</MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                 </MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                                 <MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                                    <MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmDiagnosticSessionControl</MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                 </MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                                 <MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                                    <MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmEcuReset</MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                 </MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                                 <MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                                    <MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmModeRapidPowerShutDown</MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                 </MODE-DECLARATION-GROUP-PROTOTYPE-REF-CONDITIONAL>
+                              </MANAGED-MODE-GROUPS>
+                           </BSW-SCHEDULABLE-ENTITY>
+                           <BSW-SCHEDULABLE-ENTITY>
+                              <SHORT-NAME>SE_Dcm_ReadDTCInformation</SHORT-NAME>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_SE_Dcm_ReadDTCInformation</IMPLEMENTED-ENTRY-REF>
+                           </BSW-SCHEDULABLE-ENTITY>
+                           <BSW-SCHEDULABLE-ENTITY>
+                              <SHORT-NAME>SE_Dcm_ReadDataByIdentifier</SHORT-NAME>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_SE_Dcm_ReadDataByIdentifier</IMPLEMENTED-ENTRY-REF>
+                           </BSW-SCHEDULABLE-ENTITY>
+                           <BSW-SCHEDULABLE-ENTITY>
+                              <SHORT-NAME>SE_Dcm_SecurityAccess</SHORT-NAME>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_SE_Dcm_SecurityAccess</IMPLEMENTED-ENTRY-REF>
+                           </BSW-SCHEDULABLE-ENTITY>
+                           <BSW-SCHEDULABLE-ENTITY>
+                              <SHORT-NAME>SE_Dcm_TesterPresent</SHORT-NAME>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_SE_Dcm_TesterPresent</IMPLEMENTED-ENTRY-REF>
+                           </BSW-SCHEDULABLE-ENTITY>
+                           <BSW-SCHEDULABLE-ENTITY>
+                              <SHORT-NAME>SE_Dcm_WriteDataByIdentifier</SHORT-NAME>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_SE_Dcm_WriteDataByIdentifier</IMPLEMENTED-ENTRY-REF>
+                           </BSW-SCHEDULABLE-ENTITY>
+                           <BSW-SCHEDULABLE-ENTITY>
+                              <SHORT-NAME>SE_DsdStateMachine</SHORT-NAME>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DslStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_ClearDiagnosticInformation</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_DiagnosticSessionControl</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_ReadDTCInformation</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_ReadDataByIdentifier</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_SecurityAccess</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_TesterPresent</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_WriteDataByIdentifier</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_SE_DsdStateMachine</IMPLEMENTED-ENTRY-REF>
+                           </BSW-SCHEDULABLE-ENTITY>
+                           <BSW-SCHEDULABLE-ENTITY>
+                              <SHORT-NAME>SE_DslStateMachine</SHORT-NAME>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DslStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_SE_DslStateMachine</IMPLEMENTED-ENTRY-REF>
+                           </BSW-SCHEDULABLE-ENTITY>
+                           <BSW-CALLED-ENTITY>
+                              <SHORT-NAME>Dcm_ComM_FullComModeEntered</SHORT-NAME>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_ComM_FullComModeEntered</IMPLEMENTED-ENTRY-REF>
+                           </BSW-CALLED-ENTITY>
+                           <BSW-CALLED-ENTITY>
+                              <SHORT-NAME>Dcm_ComM_NoComModeEntered</SHORT-NAME>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_ComM_NoComModeEntered</IMPLEMENTED-ENTRY-REF>
+                           </BSW-CALLED-ENTITY>
+                           <BSW-CALLED-ENTITY>
+                              <SHORT-NAME>Dcm_ComM_SilentComModeEntered</SHORT-NAME>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_ComM_SilentComModeEntered</IMPLEMENTED-ENTRY-REF>
+                           </BSW-CALLED-ENTITY>
+                           <BSW-CALLED-ENTITY>
+                              <SHORT-NAME>Dcm_CopyRxData</SHORT-NAME>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_CopyRxData</IMPLEMENTED-ENTRY-REF>
+                           </BSW-CALLED-ENTITY>
+                           <BSW-CALLED-ENTITY>
+                              <SHORT-NAME>Dcm_CopyTxData</SHORT-NAME>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DslStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_CopyTxData</IMPLEMENTED-ENTRY-REF>
+                           </BSW-CALLED-ENTITY>
+                           <BSW-CALLED-ENTITY>
+                              <SHORT-NAME>Dcm_Init</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/EaTimers</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_Init</IMPLEMENTED-ENTRY-REF>
+                           </BSW-CALLED-ENTITY>
+                           <BSW-CALLED-ENTITY>
+                              <SHORT-NAME>Dcm_ResetToDefaultSession</SHORT-NAME>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DslStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_ResetToDefaultSession</IMPLEMENTED-ENTRY-REF>
+                           </BSW-CALLED-ENTITY>
+                           <BSW-CALLED-ENTITY>
+                              <SHORT-NAME>Dcm_StartOfReception</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/EaTimers</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/EaRxBuffers</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DslStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_StartOfReception</IMPLEMENTED-ENTRY-REF>
+                           </BSW-CALLED-ENTITY>
+                           <BSW-CALLED-ENTITY>
+                              <SHORT-NAME>Dcm_TpRxIndication</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/EaTimers</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DslStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_TpRxIndication</IMPLEMENTED-ENTRY-REF>
+                           </BSW-CALLED-ENTITY>
+                           <BSW-CALLED-ENTITY>
+                              <SHORT-NAME>Dcm_TpTxConfirmation</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/EaTimers</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_TpTxConfirmation</IMPLEMENTED-ENTRY-REF>
+                           </BSW-CALLED-ENTITY>
+                           <BSW-CALLED-ENTITY>
+                              <SHORT-NAME>Dcm_TxConfirmation</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/EaTimers</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <ACTIVATION-POINTS>
+                                 <BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                                    <BSW-INTERNAL-TRIGGERING-POINT-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</BSW-INTERNAL-TRIGGERING-POINT-REF>
+                                 </BSW-INTERNAL-TRIGGERING-POINT-REF-CONDITIONAL>
+                              </ACTIVATION-POINTS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dcm/BswModuleEntrys/Dcm_TxConfirmation</IMPLEMENTED-ENTRY-REF>
+                           </BSW-CALLED-ENTITY>
+                           </ENTITYS>
+                           <EVENTS>
+                              <BSW-TIMING-EVENT>
+                                 <SHORT-NAME>Evt_Dcm_MainFunction</SHORT-NAME>
+                                 <LONG-NAME>
+                                    <L-4 L="FOR-ALL">Evt_Dcm_MainFunction</L-4>
+                                 </LONG-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_MainFunction</STARTS-ON-EVENT-REF>
+                                 <PERIOD>0.01</PERIOD>
+                              </BSW-TIMING-EVENT>
+                              <BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                                 <SHORT-NAME>IntTrOccEv_Dcm_ClearDiagnosticInformation</SHORT-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_ClearDiagnosticInformation</STARTS-ON-EVENT-REF>
+                                 <EVENT-SOURCE-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_ClearDiagnosticInformation</EVENT-SOURCE-REF>
+                              </BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                              <BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                                 <SHORT-NAME>IntTrOccEv_Dcm_DiagnosticSessionControl</SHORT-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_DiagnosticSessionControl</STARTS-ON-EVENT-REF>
+                                 <EVENT-SOURCE-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_DiagnosticSessionControl</EVENT-SOURCE-REF>
+                              </BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                              <BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                                 <SHORT-NAME>IntTrOccEv_Dcm_ReadDTCInformation</SHORT-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_ReadDTCInformation</STARTS-ON-EVENT-REF>
+                                 <EVENT-SOURCE-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_ReadDTCInformation</EVENT-SOURCE-REF>
+                              </BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                              <BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                                 <SHORT-NAME>IntTrOccEv_Dcm_ReadDataByIdentifier</SHORT-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_ReadDataByIdentifier</STARTS-ON-EVENT-REF>
+                                 <EVENT-SOURCE-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_ReadDataByIdentifier</EVENT-SOURCE-REF>
+                              </BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                              <BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                                 <SHORT-NAME>IntTrOccEv_Dcm_SecurityAccess</SHORT-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_SecurityAccess</STARTS-ON-EVENT-REF>
+                                 <EVENT-SOURCE-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_SecurityAccess</EVENT-SOURCE-REF>
+                              </BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                              <BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                                 <SHORT-NAME>IntTrOccEv_Dcm_TesterPresent</SHORT-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_TesterPresent</STARTS-ON-EVENT-REF>
+                                 <EVENT-SOURCE-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_TesterPresent</EVENT-SOURCE-REF>
+                              </BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                              <BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                                 <SHORT-NAME>IntTrOccEv_Dcm_WriteDataByIdentifier</SHORT-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_WriteDataByIdentifier</STARTS-ON-EVENT-REF>
+                                 <EVENT-SOURCE-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_Dcm_WriteDataByIdentifier</EVENT-SOURCE-REF>
+                              </BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                              <BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                                 <SHORT-NAME>IntTrOccEv_DslStateMachine</SHORT-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_DslStateMachine</STARTS-ON-EVENT-REF>
+                                 <EVENT-SOURCE-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DslStateMachine</EVENT-SOURCE-REF>
+                              </BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                              <BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                                 <SHORT-NAME>IntTrOccEv_DsdStateMachine</SHORT-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_DsdStateMachine</STARTS-ON-EVENT-REF>
+                                 <EVENT-SOURCE-REF DEST="BSW-INTERNAL-TRIGGERING-POINT">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/IntTrP_DsdStateMachine</EVENT-SOURCE-REF>
+                              </BSW-INTERNAL-TRIGGER-OCCURRED-EVENT>
+                           </EVENTS>
+                           <MODE-SENDER-POLICYS>
+                              <BSW-MODE-SENDER-POLICY>
+                                 <PROVIDED-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmEcuReset</PROVIDED-MODE-GROUP-REF>
+                                 <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                              </BSW-MODE-SENDER-POLICY>
+                              <BSW-MODE-SENDER-POLICY>
+                                 <PROVIDED-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmModeRapidPowerShutDown</PROVIDED-MODE-GROUP-REF>
+                                 <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                              </BSW-MODE-SENDER-POLICY>
+                              <BSW-MODE-SENDER-POLICY>
+                                 <PROVIDED-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmControlDTCSetting</PROVIDED-MODE-GROUP-REF>
+                                 <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                              </BSW-MODE-SENDER-POLICY>
+                              <BSW-MODE-SENDER-POLICY>
+                                 <PROVIDED-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmCommunicationControl</PROVIDED-MODE-GROUP-REF>
+                                 <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                              </BSW-MODE-SENDER-POLICY>
+                              <BSW-MODE-SENDER-POLICY>
+                                 <PROVIDED-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmDiagnosticSessionControl</PROVIDED-MODE-GROUP-REF>
+                                 <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                              </BSW-MODE-SENDER-POLICY>
+                           </MODE-SENDER-POLICYS>
+                        </BSW-INTERNAL-BEHAVIOR>
+                     </INTERNAL-BEHAVIORS>
+                  </BSW-MODULE-DESCRIPTION>
+                  <SWC-BSW-MAPPING>
+                     <SHORT-NAME>SwcBswMapping_Dcm</SHORT-NAME>
+                     <BSW-BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/VSTAR/BswMd/Dcm/BswBehavior_Dcm</BSW-BEHAVIOR-REF>
+                     <RUNNABLE-MAPPINGS>
+                        <SWC-BSW-RUNNABLE-MAPPING>
+                           <BSW-ENTITY-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_MainFunction</BSW-ENTITY-REF>
+                           <SWC-RUNNABLE-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_Dcm_MainFunction</SWC-RUNNABLE-REF>
+                        </SWC-BSW-RUNNABLE-MAPPING>
+                        <SWC-BSW-RUNNABLE-MAPPING>
+                           <BSW-ENTITY-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_ClearDiagnosticInformation</BSW-ENTITY-REF>
+                           <SWC-RUNNABLE-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_Dcm_ClearDiagnosticInformation</SWC-RUNNABLE-REF>
+                        </SWC-BSW-RUNNABLE-MAPPING>
+                        <SWC-BSW-RUNNABLE-MAPPING>
+                           <BSW-ENTITY-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_DiagnosticSessionControl</BSW-ENTITY-REF>
+                           <SWC-RUNNABLE-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_Dcm_DiagnosticSessionControl</SWC-RUNNABLE-REF>
+                        </SWC-BSW-RUNNABLE-MAPPING>
+                        <SWC-BSW-RUNNABLE-MAPPING>
+                           <BSW-ENTITY-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_ReadDTCInformation</BSW-ENTITY-REF>
+                           <SWC-RUNNABLE-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_Dcm_ReadDTCInformation</SWC-RUNNABLE-REF>
+                        </SWC-BSW-RUNNABLE-MAPPING>
+                        <SWC-BSW-RUNNABLE-MAPPING>
+                           <BSW-ENTITY-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_ReadDataByIdentifier</BSW-ENTITY-REF>
+                           <SWC-RUNNABLE-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_Dcm_ReadDataByIdentifier</SWC-RUNNABLE-REF>
+                        </SWC-BSW-RUNNABLE-MAPPING>
+                        <SWC-BSW-RUNNABLE-MAPPING>
+                           <BSW-ENTITY-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_SecurityAccess</BSW-ENTITY-REF>
+                           <SWC-RUNNABLE-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_Dcm_SecurityAccess</SWC-RUNNABLE-REF>
+                        </SWC-BSW-RUNNABLE-MAPPING>
+                        <SWC-BSW-RUNNABLE-MAPPING>
+                           <BSW-ENTITY-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_TesterPresent</BSW-ENTITY-REF>
+                           <SWC-RUNNABLE-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_Dcm_TesterPresent</SWC-RUNNABLE-REF>
+                        </SWC-BSW-RUNNABLE-MAPPING>
+                        <SWC-BSW-RUNNABLE-MAPPING>
+                           <BSW-ENTITY-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Dcm/BswBehavior_Dcm/SE_Dcm_WriteDataByIdentifier</BSW-ENTITY-REF>
+                           <SWC-RUNNABLE-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm/RE_Dcm_WriteDataByIdentifier</SWC-RUNNABLE-REF>
+                        </SWC-BSW-RUNNABLE-MAPPING>
+                     </RUNNABLE-MAPPINGS>
+                     <SWC-BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/AUTOSAR/Services/Dcm/Dcm/IB_Dcm</SWC-BEHAVIOR-REF>
+                     <SYNCHRONIZED-MODE-GROUPS>
+                        <SWC-BSW-SYNCHRONIZED-MODE-GROUP-PROTOTYPE>
+                           <BSW-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmEcuReset</BSW-MODE-GROUP-REF>
+                           <SWC-MODE-GROUP-IREF>
+                              <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/DcmEcuReset</CONTEXT-P-PORT-REF>
+                              <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AUTOSAR/Services/Dcm/DcmEcuReset/DcmEcuReset</TARGET-MODE-GROUP-REF>
+                           </SWC-MODE-GROUP-IREF>
+                        </SWC-BSW-SYNCHRONIZED-MODE-GROUP-PROTOTYPE>
+                        <SWC-BSW-SYNCHRONIZED-MODE-GROUP-PROTOTYPE>
+                           <BSW-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmModeRapidPowerShutDown</BSW-MODE-GROUP-REF>
+                           <SWC-MODE-GROUP-IREF>
+                              <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/DcmModeRapidPowerShutDown</CONTEXT-P-PORT-REF>
+                              <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AUTOSAR/Services/Dcm/DcmModeRapidPowerShutDown/DcmModeRapidPowerShutDown</TARGET-MODE-GROUP-REF>
+                           </SWC-MODE-GROUP-IREF>
+                        </SWC-BSW-SYNCHRONIZED-MODE-GROUP-PROTOTYPE>
+                        <SWC-BSW-SYNCHRONIZED-MODE-GROUP-PROTOTYPE>
+                           <BSW-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmControlDTCSetting</BSW-MODE-GROUP-REF>
+                           <SWC-MODE-GROUP-IREF>
+                              <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/DcmControlDTCSetting</CONTEXT-P-PORT-REF>
+                              <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AUTOSAR/Services/Dcm/DcmControlDTCSetting/DcmControlDTCSetting</TARGET-MODE-GROUP-REF>
+                           </SWC-MODE-GROUP-IREF>
+                        </SWC-BSW-SYNCHRONIZED-MODE-GROUP-PROTOTYPE>
+                        <SWC-BSW-SYNCHRONIZED-MODE-GROUP-PROTOTYPE>
+                           <BSW-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmCommunicationControl</BSW-MODE-GROUP-REF>
+                           <SWC-MODE-GROUP-IREF>
+                              <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/DcmCommunicationControl</CONTEXT-P-PORT-REF>
+                              <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AUTOSAR/Services/Dcm/DcmCommunicationControl/DcmCommunicationControl</TARGET-MODE-GROUP-REF>
+                           </SWC-MODE-GROUP-IREF>
+                        </SWC-BSW-SYNCHRONIZED-MODE-GROUP-PROTOTYPE>
+                        <SWC-BSW-SYNCHRONIZED-MODE-GROUP-PROTOTYPE>
+                           <BSW-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/VSTAR/BswMd/Dcm/DcmDiagnosticSessionControl</BSW-MODE-GROUP-REF>
+                           <SWC-MODE-GROUP-IREF>
+                              <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/Dcm/Dcm/DcmDiagnosticSessionControl</CONTEXT-P-PORT-REF>
+                              <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/AUTOSAR/Services/Dcm/DcmDiagnosticSessionControl/DcmDiagnosticSessionControl</TARGET-MODE-GROUP-REF>
+                           </SWC-MODE-GROUP-IREF>
+                        </SWC-BSW-SYNCHRONIZED-MODE-GROUP-PROTOTYPE>
+                     </SYNCHRONIZED-MODE-GROUPS>
+                  </SWC-BSW-MAPPING>
+                  <BSW-IMPLEMENTATION>
+                     <SHORT-NAME>BswImpl_Dcm</SHORT-NAME>
+                     <MC-SUPPORT>
+                       <MC-PARAMETER-INSTANCES>
+                         <MC-DATA-INSTANCE>
+                           <SHORT-NAME>DcmDsdServiceTable</SHORT-NAME>
+                           <CATEGORY>ARRAY</CATEGORY>
+                           <ARRAY-SIZE>8</ARRAY-SIZE>
+                           <SUB-ELEMENTS>
+                             <MC-DATA-INSTANCE>
+                               <SHORT-NAME>DcmDsdServiceTable_DcmDsdService_0x10_Supported</SHORT-NAME>
+                               <LONG-NAME>
+                                 <L-4 L="FOR-ALL">DcmDsdServiceTable: DcmDsdService_0x10 0: Service disabled, 1: Service enabled</L-4>
+                               </LONG-NAME>
+                               <CATEGORY>VALUE</CATEGORY>
+                               <RESULTING-PROPERTIES>
+                                 <SW-DATA-DEF-PROPS-VARIANTS>
+                                   <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                     <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_Platform/BaseTypes/uint8</BASE-TYPE-REF>
+                                     <SW-BIT-REPRESENTATION>
+                                       <BIT-POSITION>0</BIT-POSITION>
+                                       <NUMBER-OF-BITS>1</NUMBER-OF-BITS>
+                                     </SW-BIT-REPRESENTATION>
+                                     <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                     <COMPU-METHOD-REF DEST="COMPU-METHOD">/VSTAR/BswMd/DCM_BOOLEAN_CM</COMPU-METHOD-REF>
+                                     <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/boolean</DATA-CONSTR-REF>
+                                   </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                 </SW-DATA-DEF-PROPS-VARIANTS>
+                               </RESULTING-PROPERTIES>
+                               <SYMBOL>[2]</SYMBOL>
+                             </MC-DATA-INSTANCE>
+                             <MC-DATA-INSTANCE>
+                               <SHORT-NAME>DcmDsdServiceTable_DcmDsdService_0x14_Supported</SHORT-NAME>
+                               <LONG-NAME>
+                                 <L-4 L="FOR-ALL">DcmDsdServiceTable: DcmDsdService_0x14 0: Service disabled, 1: Service enabled</L-4>
+                               </LONG-NAME>
+                               <CATEGORY>VALUE</CATEGORY>
+                               <RESULTING-PROPERTIES>
+                                 <SW-DATA-DEF-PROPS-VARIANTS>
+                                   <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                     <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_Platform/BaseTypes/uint8</BASE-TYPE-REF>
+                                     <SW-BIT-REPRESENTATION>
+                                       <BIT-POSITION>4</BIT-POSITION>
+                                       <NUMBER-OF-BITS>1</NUMBER-OF-BITS>
+                                     </SW-BIT-REPRESENTATION>
+                                     <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                     <COMPU-METHOD-REF DEST="COMPU-METHOD">/VSTAR/BswMd/DCM_BOOLEAN_CM</COMPU-METHOD-REF>
+                                     <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/boolean</DATA-CONSTR-REF>
+                                   </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                 </SW-DATA-DEF-PROPS-VARIANTS>
+                               </RESULTING-PROPERTIES>
+                               <SYMBOL>[2]</SYMBOL>
+                             </MC-DATA-INSTANCE>
+                             <MC-DATA-INSTANCE>
+                               <SHORT-NAME>DcmDsdServiceTable_DcmDsdService_0x19_Supported</SHORT-NAME>
+                               <LONG-NAME>
+                                 <L-4 L="FOR-ALL">DcmDsdServiceTable: DcmDsdService_0x19 0: Service disabled, 1: Service enabled</L-4>
+                               </LONG-NAME>
+                               <CATEGORY>VALUE</CATEGORY>
+                               <RESULTING-PROPERTIES>
+                                 <SW-DATA-DEF-PROPS-VARIANTS>
+                                   <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                     <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_Platform/BaseTypes/uint8</BASE-TYPE-REF>
+                                     <SW-BIT-REPRESENTATION>
+                                       <BIT-POSITION>1</BIT-POSITION>
+                                       <NUMBER-OF-BITS>1</NUMBER-OF-BITS>
+                                     </SW-BIT-REPRESENTATION>
+                                     <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                     <COMPU-METHOD-REF DEST="COMPU-METHOD">/VSTAR/BswMd/DCM_BOOLEAN_CM</COMPU-METHOD-REF>
+                                     <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/boolean</DATA-CONSTR-REF>
+                                   </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                 </SW-DATA-DEF-PROPS-VARIANTS>
+                               </RESULTING-PROPERTIES>
+                               <SYMBOL>[3]</SYMBOL>
+                             </MC-DATA-INSTANCE>
+                             <MC-DATA-INSTANCE>
+                               <SHORT-NAME>DcmDsdServiceTable_DcmDsdService_0x22_Supported</SHORT-NAME>
+                               <LONG-NAME>
+                                 <L-4 L="FOR-ALL">DcmDsdServiceTable: DcmDsdService_0x22 0: Service disabled, 1: Service enabled</L-4>
+                               </LONG-NAME>
+                               <CATEGORY>VALUE</CATEGORY>
+                               <RESULTING-PROPERTIES>
+                                 <SW-DATA-DEF-PROPS-VARIANTS>
+                                   <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                     <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_Platform/BaseTypes/uint8</BASE-TYPE-REF>
+                                     <SW-BIT-REPRESENTATION>
+                                       <BIT-POSITION>2</BIT-POSITION>
+                                       <NUMBER-OF-BITS>1</NUMBER-OF-BITS>
+                                     </SW-BIT-REPRESENTATION>
+                                     <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                     <COMPU-METHOD-REF DEST="COMPU-METHOD">/VSTAR/BswMd/DCM_BOOLEAN_CM</COMPU-METHOD-REF>
+                                     <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/boolean</DATA-CONSTR-REF>
+                                   </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                 </SW-DATA-DEF-PROPS-VARIANTS>
+                               </RESULTING-PROPERTIES>
+                               <SYMBOL>[4]</SYMBOL>
+                             </MC-DATA-INSTANCE>
+                             <MC-DATA-INSTANCE>
+                               <SHORT-NAME>DcmDsdServiceTable_DcmDsdService_0x27_Supported</SHORT-NAME>
+                               <LONG-NAME>
+                                 <L-4 L="FOR-ALL">DcmDsdServiceTable: DcmDsdService_0x27 0: Service disabled, 1: Service enabled</L-4>
+                               </LONG-NAME>
+                               <CATEGORY>VALUE</CATEGORY>
+                               <RESULTING-PROPERTIES>
+                                 <SW-DATA-DEF-PROPS-VARIANTS>
+                                   <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                     <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_Platform/BaseTypes/uint8</BASE-TYPE-REF>
+                                     <SW-BIT-REPRESENTATION>
+                                       <BIT-POSITION>7</BIT-POSITION>
+                                       <NUMBER-OF-BITS>1</NUMBER-OF-BITS>
+                                     </SW-BIT-REPRESENTATION>
+                                     <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                     <COMPU-METHOD-REF DEST="COMPU-METHOD">/VSTAR/BswMd/DCM_BOOLEAN_CM</COMPU-METHOD-REF>
+                                     <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/boolean</DATA-CONSTR-REF>
+                                   </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                 </SW-DATA-DEF-PROPS-VARIANTS>
+                               </RESULTING-PROPERTIES>
+                               <SYMBOL>[4]</SYMBOL>
+                             </MC-DATA-INSTANCE>
+                             <MC-DATA-INSTANCE>
+                               <SHORT-NAME>DcmDsdServiceTable_DcmDsdService_0x2E_Supported</SHORT-NAME>
+                               <LONG-NAME>
+                                 <L-4 L="FOR-ALL">DcmDsdServiceTable: DcmDsdService_0x2E 0: Service disabled, 1: Service enabled</L-4>
+                               </LONG-NAME>
+                               <CATEGORY>VALUE</CATEGORY>
+                               <RESULTING-PROPERTIES>
+                                 <SW-DATA-DEF-PROPS-VARIANTS>
+                                   <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                     <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_Platform/BaseTypes/uint8</BASE-TYPE-REF>
+                                     <SW-BIT-REPRESENTATION>
+                                       <BIT-POSITION>6</BIT-POSITION>
+                                       <NUMBER-OF-BITS>1</NUMBER-OF-BITS>
+                                     </SW-BIT-REPRESENTATION>
+                                     <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                     <COMPU-METHOD-REF DEST="COMPU-METHOD">/VSTAR/BswMd/DCM_BOOLEAN_CM</COMPU-METHOD-REF>
+                                     <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/boolean</DATA-CONSTR-REF>
+                                   </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                 </SW-DATA-DEF-PROPS-VARIANTS>
+                               </RESULTING-PROPERTIES>
+                               <SYMBOL>[5]</SYMBOL>
+                             </MC-DATA-INSTANCE>
+                             <MC-DATA-INSTANCE>
+                               <SHORT-NAME>DcmDsdServiceTable_DcmDsdService_0x3E_Supported</SHORT-NAME>
+                               <LONG-NAME>
+                                 <L-4 L="FOR-ALL">DcmDsdServiceTable: DcmDsdService_0x3E 0: Service disabled, 1: Service enabled</L-4>
+                               </LONG-NAME>
+                               <CATEGORY>VALUE</CATEGORY>
+                               <RESULTING-PROPERTIES>
+                                 <SW-DATA-DEF-PROPS-VARIANTS>
+                                   <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                     <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_Platform/BaseTypes/uint8</BASE-TYPE-REF>
+                                     <SW-BIT-REPRESENTATION>
+                                       <BIT-POSITION>6</BIT-POSITION>
+                                       <NUMBER-OF-BITS>1</NUMBER-OF-BITS>
+                                     </SW-BIT-REPRESENTATION>
+                                     <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                     <COMPU-METHOD-REF DEST="COMPU-METHOD">/VSTAR/BswMd/DCM_BOOLEAN_CM</COMPU-METHOD-REF>
+                                     <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/boolean</DATA-CONSTR-REF>
+                                   </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                 </SW-DATA-DEF-PROPS-VARIANTS>
+                               </RESULTING-PROPERTIES>
+                               <SYMBOL>[7]</SYMBOL>
+                             </MC-DATA-INSTANCE>
+                           </SUB-ELEMENTS>
+                           <SYMBOL>dcmCfgServiceSupport_0</SYMBOL>
+                         </MC-DATA-INSTANCE>
+                       </MC-PARAMETER-INSTANCES>
+                       <MC-VARIABLE-INSTANCES>
+                       </MC-VARIABLE-INSTANCES>
+                     </MC-SUPPORT>
+                     <RESOURCE-CONSUMPTION>
+                        <SHORT-NAME>RC_Dcm</SHORT-NAME>
+                        <MEMORY-SECTIONS>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>CALIB_8</SHORT-NAME>
+                              <ALIGNMENT>8</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CALIB</SW-ADDRMETHOD-REF>
+                              <SYMBOL>CALIB_8</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>CODE</SHORT-NAME>
+                              <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                              <SYMBOL>CODE</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>CONST_32</SHORT-NAME>
+                              <ALIGNMENT>32</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONST</SW-ADDRMETHOD-REF>
+                              <SYMBOL>CONST_32</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>CONST_8</SHORT-NAME>
+                              <ALIGNMENT>8</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONST</SW-ADDRMETHOD-REF>
+                              <SYMBOL>CONST_8</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>CONST_UNSPECIFIED</SHORT-NAME>
+                              <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONST</SW-ADDRMETHOD-REF>
+                              <SYMBOL>CONST_UNSPECIFIED</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>POSTBUILD_CONST_32</SHORT-NAME>
+                              <ALIGNMENT>32</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONFIG_DATA</SW-ADDRMETHOD-REF>
+                              <SYMBOL>POSTBUILD_CONST_32</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>POSTBUILD_CONST_UNSPECIFIED</SHORT-NAME>
+                              <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONFIG_DATA</SW-ADDRMETHOD-REF>
+                              <SYMBOL>POSTBUILD_CONST_UNSPECIFIED</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>POSTBUILD_VAR_NO_INIT_8</SHORT-NAME>
+                              <ALIGNMENT>8</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/POSTBUILD_VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                              <SYMBOL>POSTBUILD_VAR_NO_INIT_8</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>POSTBUILD_VAR_NO_INIT_BOOLEAN</SHORT-NAME>
+                              <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/POSTBUILD_VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                              <SYMBOL>POSTBUILD_VAR_NO_INIT_BOOLEAN</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>POSTBUILD_VAR_NO_INIT_UNSPECIFIED</SHORT-NAME>
+                              <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/POSTBUILD_VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                              <SYMBOL>POSTBUILD_VAR_NO_INIT_UNSPECIFIED</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>READ_DID_0X2345_CODE</SHORT-NAME>
+                              <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                              <SYMBOL>READ_DID_0X2345_CODE</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>VAR_NO_INIT_UNSPECIFIED</SHORT-NAME>
+                              <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                              <SYMBOL>VAR_NO_INIT_UNSPECIFIED</SYMBOL>
+                           </MEMORY-SECTION>
+                           <MEMORY-SECTION>
+                              <SHORT-NAME>WRITE_DID_0X2345_CODE</SHORT-NAME>
+                              <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                              <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                              <SYMBOL>WRITE_DID_0X2345_CODE</SYMBOL>
+                           </MEMORY-SECTION>
+                        </MEMORY-SECTIONS>
+                     </RESOURCE-CONSUMPTION>
+                  </BSW-IMPLEMENTATION>
+                 <COMPU-METHOD>
+                   <SHORT-NAME>DCM_BOOLEAN_CM</SHORT-NAME>
+                   <CATEGORY>TEXTTABLE</CATEGORY>
+                   <COMPU-INTERNAL-TO-PHYS>
+                     <COMPU-SCALES>
+                       <COMPU-SCALE>
+                         <LOWER-LIMIT>0</LOWER-LIMIT>
+                         <UPPER-LIMIT>0</UPPER-LIMIT>
+                         <COMPU-CONST>
+                           <VT>FALSE</VT>
+                         </COMPU-CONST>
+                       </COMPU-SCALE>
+                       <COMPU-SCALE>
+                         <LOWER-LIMIT>1</LOWER-LIMIT>
+                         <UPPER-LIMIT>1</UPPER-LIMIT>
+                         <COMPU-CONST>
+                           <VT>TRUE</VT>
+                         </COMPU-CONST>
+                       </COMPU-SCALE>
+                     </COMPU-SCALES>
+                   </COMPU-INTERNAL-TO-PHYS>
+                 </COMPU-METHOD>
+               </ELEMENTS>
+            </AR-PACKAGE>
+         </AR-PACKAGES>
+      </AR-PACKAGE>
+      <AR-PACKAGE>
+         <SHORT-NAME>AUTOSAR_Dcm</SHORT-NAME>
+         <LONG-NAME>
+            <L-4 L="FOR-ALL">AUTOSAR_Dcm</L-4>
+         </LONG-NAME>
+         <AR-PACKAGES>
+            <AR-PACKAGE>
+               <SHORT-NAME>BswModuleEntrys</SHORT-NAME>
+               <ELEMENTS>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_GetVersionInfo</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_GetVersionInfo</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>36</SERVICE-ID>
+                     <IS-REENTRANT>true</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>REGULAR</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_MainFunction</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_MainFunction</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>37</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                     <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_Init</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_Init</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>1</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>REGULAR</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_StartOfReception</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_StartOfReception</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>70</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>CALLBACK</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_CopyRxData</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_CopyRxData</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>68</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>CALLBACK</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_TpRxIndication</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_TpRxIndication</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>69</SERVICE-ID>
+                     <IS-REENTRANT>true</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>CALLBACK</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_CopyTxData</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_CopyTxData</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>67</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>CALLBACK</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_TpTxConfirmation</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_TpTxConfirmation</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>72</SERVICE-ID>
+                     <IS-REENTRANT>true</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>CALLBACK</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_TxConfirmation</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_TxConfirmation</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>64</SERVICE-ID>
+                     <IS-REENTRANT>true</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>CALLBACK</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_ComM_NoComModeEntered</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_ComM_NoComModeEntered</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>33</SERVICE-ID>
+                     <IS-REENTRANT>true</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>CALLBACK</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_ComM_SilentComModeEntered</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_ComM_SilentComModeEntered</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>34</SERVICE-ID>
+                     <IS-REENTRANT>true</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>CALLBACK</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_ComM_FullComModeEntered</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_ComM_FullComModeEntered</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>35</SERVICE-ID>
+                     <IS-REENTRANT>true</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>CALLBACK</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_DemTriggerOnDTCStatus</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_DemTriggerOnDTCStatus</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>43</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>REGULAR</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_TriggerOnEvent</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_TriggerOnEvent</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>45</SERVICE-ID>
+                     <IS-REENTRANT>true</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>REGULAR</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_ResetToDefaultSession</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_ResetToDefaultSession</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>42</SERVICE-ID>
+                     <IS-REENTRANT>true</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>REGULAR</CALL-TYPE>
+                     <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_SE_Dcm_ClearDiagnosticInformation</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_SE_Dcm_ClearDiagnosticInformation</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>100</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                     <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_SE_Dcm_DiagnosticSessionControl</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_SE_Dcm_DiagnosticSessionControl</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>100</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                     <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_SE_Dcm_ReadDTCInformation</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_SE_Dcm_ReadDTCInformation</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>100</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                     <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_SE_Dcm_ReadDataByIdentifier</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_SE_Dcm_ReadDataByIdentifier</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>100</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                     <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_SE_Dcm_SecurityAccess</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_SE_Dcm_SecurityAccess</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>100</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                     <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_SE_Dcm_TesterPresent</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_SE_Dcm_TesterPresent</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>100</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                     <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_SE_Dcm_WriteDataByIdentifier</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_SE_Dcm_WriteDataByIdentifier</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>100</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                     <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_SE_DslStateMachine</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_SE_DslStateMachine</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>100</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                     <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>Dcm_SE_DsdStateMachine</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Dcm_SE_DsdStateMachine</L-4>
+                     </LONG-NAME>
+                     <SERVICE-ID>100</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                     <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+               </ELEMENTS>
+            </AR-PACKAGE>
+         </AR-PACKAGES>
+      </AR-PACKAGE>
+   </AR-PACKAGES>
+</AUTOSAR>

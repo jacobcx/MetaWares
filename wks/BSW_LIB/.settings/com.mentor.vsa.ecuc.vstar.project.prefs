@@ -1,0 +1,9 @@
+VSTAR_BSW_Folder_Location=PROJECT_LOC\\..\\..\\..\\..\\BSWs
+VSTAR_Folder_Location=PROJECT_LOC\\..\\..\\..\\..
+VSTAR_Location_Mode=false
+VSTAR_Name=BSW_LIB
+VSTAR_OS_Folder_Location=PROJECT_LOC\\..\\..\\..\\..\\BSWs
+VSTAR_Selected_Target=PowerPC
+VSTAR_TTS_Folder_Location=PROJECT_LOC\\..\\..\\..\\..\\TTs
+VSTAR_VSC_Folder_Location=PROJECT_LOC\\..\\..\\..\\..\\Tools\\VSC
+eclipse.preferences.version=1

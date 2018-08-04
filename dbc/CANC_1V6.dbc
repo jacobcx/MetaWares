@@ -1,0 +1,939 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: CVM12 CVM11 CVM10 CVM9 CVM8 CVM7 CVM6 CVM5 CMP CVM4 CVM3 CVM2 CVM1 DCF HCU DCU HRB FCU
+VAL_TABLE_ DCF_Mode 0 "OFF" 85 "ON" ;
+VAL_TABLE_ ActionSignal_1bit 1 "ON" 0 "OFF" ;
+VAL_TABLE_ ECU_StateMachine 10 "Debug" 9 "Calib" 5 "Error" 4 "Manual" 3 "Auto" 2 "Ready" 1 "PowerUp" 0 "Not Defined" ;
+VAL_TABLE_ ECU_ErrGrade 3 "Warning---Error Grade 3" 2 "Alarm---Error Grade 2" 1 "Emergency---Error Grade 1" 0 "NO Error" ;
+VAL_TABLE_ StateSignal_1bit 1 "Error" 0 "OK" ;
+VAL_TABLE_ ECU_Mode 221 "Debug" 187 "Bootloader" 204 "Calib" 170 "Manual" 85 "Auto" 0 "Not Defined" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ FCU_DevFB : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ FCU_DevCtl : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 2566848880 FCU_RESP2: 8 Vector__XXX
+ SG_ FCU_BaseState : 60|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ FCU_StepCtl : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ FCU_ExtendedState : 56|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ FCU_ErrGrade : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ FCU_ErrCode : 24|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 2566848864 FCU_RESP1: 8 Vector__XXX
+ SG_ SOV_HPurge_FB : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SOV_HM_FB : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SOV_HInPurge_FB : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SOV_AHB_FB : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_HRB_FB : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_HCUValve_FB : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_HCU_FB : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_FC_FB : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_DCFOutputPreCharge_FB : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_DCFOutput_FB : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_CMPLowVoltage_FB : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_Baterry_FB : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ FCS_GenEnergy : 32|32@1+ (0.1,0) [0|500000] "kWh" Vector__XXX
+
+BO_ 2566848848 FCU_H_RESP2: 8 Vector__XXX
+ SG_ C_HPZ : 16|8@1+ (0.02,0) [0|5] "%" Vector__XXX
+ SG_ C_HEZ : 8|8@1+ (0.02,0) [0|5] "%" Vector__XXX
+ SG_ C_HAE : 0|8@1+ (0.02,0) [0|5] "%" Vector__XXX
+
+BO_ 2566848832 FCU_H_RESP1: 8 Vector__XXX
+ SG_ T_HIn : 48|8@1+ (1,-40) [-40|210] "¡æ" Vector__XXX
+ SG_ P_HOut : 32|16@1+ (1,0) [0|500] "kPa.a" Vector__XXX
+ SG_ P_HM : 0|16@1+ (0.01,0) [0|20] "bar" Vector__XXX
+ SG_ P_HIn : 16|16@1+ (1,0) [0|500] "kPa.a" Vector__XXX
+
+BO_ 2164195587 CANC_FCU_Debug_CMD2: 8 Vector__XXX
+ SG_ TimeOn_HInPurge : 48|16@1+ (1,0) [0|2000] "s" Vector__XXX
+ SG_ TimeOn_HPurge : 16|16@1+ (10,0) [0|5000] "ms" Vector__XXX
+ SG_ Time_HPurge : 0|16@1+ (1,0) [0|300] "s" Vector__XXX
+ SG_ Time_HInPurge : 32|16@1+ (1,0) [0|2000] "s" Vector__XXX
+
+BO_ 2164195586 CANC_FCU_Debug_CMD1: 8 Vector__XXX
+ SG_ P_AInSet : 16|16@1+ (1,0) [0|500] "kPa.a" Vector__XXX
+ SG_ Q_ASet : 0|16@1+ (1,0) [0|10000] "slpm" Vector__XXX
+
+BO_ 2164195585 CANC_FCU_CMD: 8 Vector__XXX
+ SG_ SOV_HPurge_CMD : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SOV_HM_CMD : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SOV_HInPurge_CMD : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SOV_AHB_CMD : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_HRB_CMD : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_HCUValve_CMD : 46|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_HCU_CMD : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_FC_CMD : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_DCFOutputPreCharge_CMD : 50|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_DCFOutput_CMD : 49|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_CMPLowVoltage_CMD : 47|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CNT_Baterry_CMD : 51|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ FCU_Mode : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Pos_BPCVSet : 24|8@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ P_PCVSet : 0|16@1+ (1,0) [0|500] "kPa.a" Vector__XXX
+
+BO_ 2566848816 FCU_A_RESP3: 8 Vector__XXX
+ SG_ Pos_BPCV : 56|8@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ Q_A : 0|16@1+ (1,0) [0|10000] "slpm" Vector__XXX
+
+BO_ 2566848800 FCU_A_RESP2: 8 Vector__XXX
+ SG_ T_AMB : 16|8@1+ (1,-40) [-40|210] "¡æ" Vector__XXX
+ SG_ T_AOut : 40|8@1+ (1,-40) [-40|210] "¡æ" Vector__XXX
+ SG_ T_AIn : 32|8@1+ (1,-40) [-40|210] "¡æ" Vector__XXX
+
+BO_ 2566848784 FCU_A_RESP1: 8 Vector__XXX
+ SG_ P_AOut : 48|16@1+ (1,0) [0|500] "kPa.a" Vector__XXX
+ SG_ P_AIn : 32|16@1+ (1,0) [0|500] "kPa.a" Vector__XXX
+ SG_ P_AMB : 0|16@1+ (1,0) [0|500] "kPa.a" Vector__XXX
+
+BO_ 2566876336 CVM12_TriggeredRESP2: 8 CVM12
+ SG_ CVM12_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566876080 CVM11_TriggeredRESP2: 8 CVM11
+ SG_ CVM11_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566876352 CVM12_TriggeredRESP3: 8 CVM12
+ SG_ CVM12_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566876096 CVM11_TriggeredRESP3: 8 CVM11
+ SG_ CVM11_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566876320 CVM12_TriggeredRESP1: 8 CVM12
+ SG_ CVM12_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566876064 CVM11_TriggeredRESP1: 8 CVM11
+ SG_ CVM11_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875824 CVM10_TriggeredRESP2: 8 CVM10
+ SG_ CVM10_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875568 CVM9_TriggeredRESP2: 8 CVM9
+ SG_ CVM9_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875840 CVM10_TriggeredRESP3: 8 CVM10
+ SG_ CVM10_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875808 CVM10_TriggeredRESP1: 8 CVM10
+ SG_ CVM10_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875552 CVM9_TriggeredRESP1: 8 CVM9
+ SG_ CVM9_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875584 CVM9_TriggeredRESP3: 8 CVM9
+ SG_ CVM9_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875328 CVM8_TriggeredRESP3: 8 CVM8
+ SG_ CVM8_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875312 CVM8_TriggeredRESP2: 8 CVM8
+ SG_ CVM8_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875296 CVM8_TriggeredRESP1: 8 CVM8
+ SG_ CVM8_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875072 CVM7_TriggeredRESP3: 8 CVM7
+ SG_ CVM7_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875056 CVM7_TriggeredRESP2: 8 CVM7
+ SG_ CVM7_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566875040 CVM7_TriggeredRESP1: 8 CVM7
+ SG_ CVM7_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566876176 CVM12_RESP: 8 CVM12
+ SG_ CVM12_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM12_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM12_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM12_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ CVM12_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+
+BO_ 2566875920 CVM11_RESP: 8 CVM11
+ SG_ CVM11_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM11_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM11_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM11_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ CVM11_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+
+BO_ 2566875664 CVM10_RESP: 8 CVM10
+ SG_ CVM10_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM10_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM10_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM10_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ CVM10_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+
+BO_ 2566875408 CVM9_RESP: 8 CVM9
+ SG_ CVM9_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM9_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM9_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM9_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ CVM9_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+
+BO_ 2566875152 CVM8_RESP: 8 CVM8
+ SG_ CVM8_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM8_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM8_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM8_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ CVM8_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+
+BO_ 2566874896 CVM7_RESP: 8 CVM7
+ SG_ CVM7_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ CVM7_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+ SG_ CVM7_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM7_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM7_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM7_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874816 CVM6_TriggeredRESP3: 8 CVM6
+ SG_ CVM6_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874800 CVM6_TriggeredRESP2: 8 CVM6
+ SG_ CVM6_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874784 CVM6_TriggeredRESP1: 8 CVM6
+ SG_ CVM6_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874560 CVM5_TriggeredRESP3: 8 CVM5
+ SG_ CVM5_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874544 CVM5_TriggeredRESP2: 8 CVM5
+ SG_ CVM5_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874528 CVM5_TriggeredRESP1: 8 CVM5
+ SG_ CVM5_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874640 CVM6_RESP: 8 CVM6
+ SG_ CVM6_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ CVM6_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+ SG_ CVM6_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM6_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM6_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM6_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874384 CVM5_RESP: 8 CVM5
+ SG_ CVM5_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+ SG_ CVM5_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM5_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM5_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM5_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+
+BO_ 2566877472 CMP_RESP2: 8 CMP
+ SG_ CMP_EEPROM : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_DriveRotatorError : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_DrivePowerSupplyError : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_DriveOverVoltage : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_DriveOverTemp : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_DriveOverCurrent : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_DriveLowVoltage : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_DriveHallError : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_DriveEEPROMError : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_CommunicationTimeOut : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_Ready : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_MotorOverTemp : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_Init : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CMP_HVIL : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2566877456 CMP_RESP1: 8 CMP
+ SG_ CMP_FailureGrade : 59|2@1+ (1,0) [0|3] ""  FCU
+ SG_ CMP_ExtendedState : 56|3@1+ (1,0) [0|7] ""  FCU
+ SG_ CMP_BaseState : 61|3@1+ (1,0) [0|7] ""  FCU
+ SG_ T_CMPInv : 48|8@1+ (1,-40) [-40|120] "¡æ"  FCU
+ SG_ T_CMPMot : 40|8@1+ (1,-40) [-40|150] "¡æ"  FCU
+ SG_ I_CMP : 32|8@1+ (0.2,0) [0|50] "A"  FCU
+ SG_ V_CMP : 16|16@1+ (0.1,0) [0|1000] "V"  FCU
+ SG_ Spd_CMP : 0|16@1+ (1,0) [0|15000] "rpm"  FCU
+
+BO_ 2164224257 CANC_CMP_CMD_Manual: 8 FCU
+ SG_ CMP_En_Manual : 16|8@1+ (1,0) [0|2] ""  CMP
+ SG_ Spd_CMPSet_Manual : 0|16@1+ (50,0) [0|15000] "rpm"  CMP
+
+BO_ 2566874304 CVM4_TriggeredRESP3: 8 CVM4
+ SG_ CVM4_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874288 CVM4_TriggeredRESP2: 8 CVM4
+ SG_ CVM4_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874272 CVM4_TriggeredRESP1: 8 CVM4
+ SG_ CVM4_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874048 CVM3_TriggeredRESP3: 8 CVM3
+ SG_ CVM3_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874032 CVM3_TriggeredRESP2: 8 CVM3
+ SG_ CVM3_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566874016 CVM3_TriggeredRESP1: 8 CVM3
+ SG_ CVM3_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566873792 CVM2_TriggeredRESP3: 8 CVM2
+ SG_ CVM2_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566873776 CVM2_TriggeredRESP2: 8 CVM2
+ SG_ CVM2_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566873760 CVM2_TriggeredRESP1: 8 CVM2
+ SG_ CVM2_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566873536 CVM1_TriggeredRESP3: 8 CVM1
+ SG_ CVM1_V24 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V23 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V22 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V21 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V20 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V19 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V18 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V17 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566873520 CVM1_TriggeredRESP2: 8 CVM1
+ SG_ CVM1_V16 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V15 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V14 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V13 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V12 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V11 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V10 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V09 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566873504 CVM1_TriggeredRESP1: 8 CVM1
+ SG_ CVM1_V08 : 56|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V07 : 48|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V06 : 40|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V05 : 32|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V04 : 24|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V03 : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V02 : 8|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_V01 : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2164219906 CANC_CVM_TriggeredCMD_Manual: 8 FCU
+ SG_ CVM_Triggered_Manual : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2566874128 CVM4_RESP: 8 CVM4
+ SG_ CVM4_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ CVM4_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+ SG_ CVM4_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM4_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM4_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM4_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566873872 CVM3_RESP: 8 CVM3
+ SG_ CVM3_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ CVM3_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+ SG_ CVM3_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM3_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM3_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM3_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566873616 CVM2_RESP: 8 CVM2
+ SG_ CVM2_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ CVM2_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+ SG_ CVM2_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM2_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM2_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM2_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2566873360 CVM1_RESP: 8 CVM1
+ SG_ CVM1_Var : 48|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ CVM1_Total : 32|16@1+ (0.01,-60) [-60|60] "V"  FCU
+ SG_ CVM1_VMinCH : 24|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM1_VMin : 16|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+ SG_ CVM1_VMaxCH : 8|8@1+ (1,0) [1|24] ""  FCU
+ SG_ CVM1_VMax : 0|8@1+ (0.01,-1.25) [-1.25|1.25] "V"  FCU
+
+BO_ 2164219905 CANC_CVM_CMD_Manual: 8 FCU
+ SG_ CVM_ChSelect_Manual : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ CVM_Mode_Manual : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 2566861088 DCF_RESP2: 8 DCF
+ SG_ DCF_ErrorStatus : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DCF_RunningStatus : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DCF_OverTemperatureProtect : 12|1@1+ (1,0) [0|1] ""  FCU
+ SG_ DCF_OutputOverVoltageProtect : 10|1@1+ (1,0) [0|1] ""  FCU
+ SG_ DCF_OutputOverCurrentWarning : 19|1@1+ (1,0) [0|1] ""  FCU
+ SG_ DCF_OutputOverCurrentProtect : 11|1@1+ (1,0) [0|1] ""  FCU
+ SG_ DCF_OtherHardwareFailure : 13|1@1+ (1,0) [0|1] ""  FCU
+ SG_ DCF_MinorVersion : 56|4@1+ (1,0) [0|15] ""  FCU
+ SG_ DCF_MainPreCntStatus : 27|1@1+ (1,0) [0|1] ""  FCU
+ SG_ DCF_MainCntStatus : 26|1@1+ (1,0) [0|1] ""  FCU
+ SG_ DCF_InputOverVoltageProtect : 9|1@1+ (1,0) [0|1] ""  FCU
+ SG_ DCF_InputLowVoltageProtect : 8|1@1+ (1,0) [0|1] ""  FCU
+ SG_ DCF_MainVersion : 60|4@1+ (1,0) [0|15] ""  FCU
+ SG_ DCF_PeriodResp : 0|8@1+ (1,0) [0|255] ""  FCU
+ SG_ VIn2_DCF : 40|16@1+ (0.1,-300) [-300|1000] "V"  FCU
+ SG_ T_DCF : 32|8@1+ (1,-40) [-40|150] "¡æ"  FCU
+
+BO_ 2566861072 DCF_RESP1: 8 DCF
+ SG_ IOut_DCF : 16|16@1+ (0.1,-300) [-300|1000] "A"  FCU
+ SG_ IIn_DCF : 48|16@1+ (0.1,-300) [-300|1000] "A"  FCU
+ SG_ VOut_DCF : 0|16@1+ (0.1,-300) [-300|1000] "V"  FCU
+ SG_ VIn1_DCF : 32|16@1+ (0.1,-300) [-300|1000] "V"  FCU
+
+BO_ 2164207873 CANC_DCF_CMD_Manual: 8 FCU
+ SG_ DCF_PeriodCmd_Manual : 8|8@1+ (1,0) [0|255] ""  FCU
+ SG_ DCF_Reset_Manual : 1|1@1+ (1,0) [0|1] ""  FCU
+ SG_ DCF_ISet_Manual : 40|16@1+ (0.1,0) [0|300] "A"  FCU,DCF
+ SG_ DCF_En_Manual : 56|8@1+ (1,0) [0|255] ""  FCU,DCF
+ SG_ CNT_DCF_Manual : 0|1@1+ (1,0) [0|1] ""  DCF
+
+BO_ 2566856992 HCU_RESP2: 8 HCU
+ SG_ SOC_H : 16|16@1+ (0.1,0) [0|120] "%" Vector__XXX
+ SG_ HCU_StateMachine : 56|4@1+ (1,0) [0|15] ""  FCU
+ SG_ HCU_ErrGrade : 60|4@1+ (1,0) [0|15] ""  FCU
+ SG_ HCU_ErrCode : 40|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ P_HTank : 0|16@1+ (0.01,0) [0|500] "bar"  FCU
+
+BO_ 2566856976 HCU_RESP1: 8 HCU
+ SG_ P_HMid : 48|16@1+ (0.01,0) [0|20] "bar" Vector__XXX
+ SG_ C_HC3 : 40|8@1+ (0.02,0) [0|5] "%" Vector__XXX
+ SG_ C_HC2 : 32|8@1+ (0.02,0) [0|5] "%"  FCU
+ SG_ C_HC1 : 24|8@1+ (0.02,0) [0|5] "%"  FCU
+ SG_ T_HTank3 : 16|8@1+ (1,-40) [-40|210] "¡æ"  FCU
+ SG_ T_HTank2 : 8|8@1+ (1,-40) [-40|210] "¡æ"  FCU
+ SG_ T_HTank1 : 0|8@1+ (1,-40) [-40|210] "¡æ"  FCU
+
+BO_ 2164203777 CANC_HCU_CMD_Manual: 8 FCU
+ SG_ HMid_SOV_Manual : 55|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HCU_Mode_Manual : 56|8@1+ (1,0) [0|255] ""  HCU
+ SG_ HTank3_SOV_Manual : 42|1@1+ (1,0) [0|1] ""  HCU
+ SG_ HTank2_SOV_Manual : 41|1@1+ (1,0) [0|1] ""  HCU
+ SG_ HTank1_SOV_Manual : 40|1@1+ (1,0) [0|1] ""  HCU
+
+BO_ 2566852896 DCU_RESP2: 8 DCU
+ SG_ P_DIOut : 16|16@1+ (1,0) [0|500] "kPa.a" Vector__XXX
+ SG_ FAN4_FB : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DCU_StateMachine : 56|4@1+ (1,0) [0|15] ""  FCU
+ SG_ DCU_ErrGrade : 60|4@1+ (1,0) [0|15] ""  FCU
+ SG_ DCU_ErrCode : 40|16@1+ (1,0) [0|65535] ""  FCU
+ SG_ LV_DI : 32|1@1+ (1,0) [0|1] ""  FCU
+ SG_ FAN3_FB : 35|1@1+ (1,0) [0|1] ""  FCU
+ SG_ FAN2_FB : 34|1@1+ (1,0) [0|1] ""  FCU
+ SG_ FAN1_FB : 33|1@1+ (1,0) [0|1] ""  FCU
+ SG_ P_DI : 0|16@1+ (1,0) [0|500] "kPa.a"  FCU
+
+BO_ 2566852880 DCU_RESP1: 8 DCU
+ SG_ C_DI : 56|8@1+ (0.1,0) [0|25] "us/cm"  FCU
+ SG_ T_HEXWout : 48|8@1+ (1,-40) [-40|210] "¡æ"  FCU
+ SG_ T_DCFWout : 40|8@1+ (1,-40) [-40|210] "¡æ"  FCU
+ SG_ T_CMPWout : 32|8@1+ (1,-40) [-40|210] "¡æ"  FCU
+ SG_ T_DIOut : 16|16@1+ (0.1,-40) [-40|210] "¡æ"  FCU
+ SG_ T_DIIn : 0|16@1+ (0.1,-40) [-40|210] "¡æ"  FCU
+
+BO_ 2164199682 CANC_DCU_CMD2_Manual: 8 FCU
+ SG_ FAN4_Set_Manual : 24|8@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ TV_DI_Manual : 56|1@1+ (1,0) [0|1] ""  DCU
+ SG_ WP_Set_Manual : 32|8@1+ (1,0) [0|100] "%"  DCU
+ SG_ FAN3_Set_Manual : 16|8@1+ (1,0) [0|100] "%"  DCU
+ SG_ FAN2_Set_Manual : 8|8@1+ (1,0) [0|100] "%"  DCU
+ SG_ FAN1_Set_Manual : 0|8@1+ (1,0) [0|100] "%"  DCU
+
+BO_ 2164199681 CANC_DCU_CMD1_Manual: 8 FCU
+ SG_ FC_OutputPower_Manual : 48|8@1+ (0.5,0) [0|100] "kW" Vector__XXX
+ SG_ T_AMB_Manual : 40|8@1+ (1,-40) [-40|210] "¡æ" Vector__XXX
+ SG_ DCU_Mode_Manual : 56|8@1+ (1,0) [0|255] ""  DCU
+ SG_ TDiff_FCSet_Manual : 16|8@1+ (0.1,0) [0|25] "¡æ"  DCU
+ SG_ T_FCSet_Manual : 0|8@1+ (1,-40) [-40|210] "¡æ"  DCU
+
+BO_ 2365564852 HRB_RESP: 8 HRB
+ SG_ HRBStatus_OverCurrent : 63|1@1+ (1,0) [0|1] ""  FCU
+ SG_ HRBStatus_TemperatureLimit : 62|1@1+ (1,0) [0|1] ""  FCU
+ SG_ HRBStatus_PlausibilityError : 61|1@1+ (1,0) [0|1] ""  FCU
+ SG_ HRBStatus_WrongVol : 60|1@1+ (1,0) [0|1] ""  FCU
+ SG_ HRBStatus_PowerOn : 59|1@1+ (1,0) [0|1] ""  FCU
+ SG_ HRBStatus_MAFErr : 58|1@1+ (1,0) [0|1] ""  FCU
+ SG_ HRBStatus_MFGEn : 57|1@1+ (1,0) [0|1] ""  FCU
+ SG_ HRBStatus_PumpEn : 56|1@1+ (1,0) [0|1] ""  FCU
+ SG_ T_HRBAir : 48|8@1+ (1,-40) [-40|210] "¡æ"  FCU
+ SG_ T_HRBElec : 40|8@1+ (1,-40) [-40|210] "¡æ"  FCU
+ SG_ V_HRB : 32|8@1+ (0.2,0) [0|50] "V"  FCU
+ SG_ I_HRB : 24|8@1+ (0.5,0) [0|125] "A"  FCU
+ SG_ Spd_HRB : 16|8@1+ (40,0) [0|10200] "U/min"  FCU
+ SG_ Q_HRB : 0|16@1+ (0.002,-60) [-60|68.51] "kg/h"  FCU
+
+BO_ 2365564477 CANC_HRB_CMD_Manual: 8 FCU
+ SG_ HRB_MFGEn_Manual : 34|2@1+ (1,0) [0|1] ""  HRB
+ SG_ HRB_PumpEn_Manual : 32|2@1+ (1,0) [0|1] ""  HRB
+ SG_ Spd_HRBSet_Manual : 16|16@1+ (1,0) [0|64255] "U/min"  HRB
+ SG_ Q_HRBSet_Manual : 0|16@1+ (0.001,0) [0|64.225] "kg/h"  HRB
+
+
+
+EV_ Var_FAN4_Set: 0 [0|100] "" 0 1 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ Var_CVMCMD: 0 [0|0] "" 0 2 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ Var_CVMTriggeredCMD: 0 [0|0] "" 0 3 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ Var_WP_Set: 0 [0|100] "" 0 4 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ Var_FAN3_Set: 0 [0|100] "" 0 5 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ Var_FAN2_Set: 0 [0|100] "" 0 6 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ Var_FAN1_Set: 0 [0|100] "" 0 7 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ Var_DCU_Mode: 0 [0|0] "" 0 8 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+BA_DEF_ SG_  "GenSigLongName" STRING ;
+BA_DEF_ SG_  "GenSigStartValue" FLOAT -9.22337203685478E+018 1.84467440737096E+019;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType","OnChangeAndIfActive","OnChangeAndIfActiveWithRepetition";
+BA_DEF_ SG_  "GenSigCycleTime" INT 0 0;
+BA_DEF_ SG_  "GenSigCycleTimeActive" INT 0 0;
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","spontaneous","cyclicIfActive","spontaneousWithDelay","immediate";
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "no","yes";
+BA_DEF_ BO_  "NmAsrMessage" ENUM  "no","yes";
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 0;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 0;
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 0;
+BA_DEF_ BO_  "DiagUUDTResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagConnection" INT 0 65535;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 300000;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 300000;
+BA_DEF_ BU_  "ILUsed" ENUM  "no","yes";
+BA_DEF_ BU_  "NmAsrCanMsgCycleOffset" INT 0 65535;
+BA_DEF_ BU_  "NmAsrCanMsgReducedTime" INT 0 65535;
+BA_DEF_ BU_  "NmAsrNode" ENUM  "no","yes";
+BA_DEF_ BU_  "NmAsrNodeIdentifier" INT 0 255;
+BA_DEF_  "BaudRate" FLOAT 1000 1000000;
+BA_DEF_  "IlTxTimeout" INT 0 65535;
+BA_DEF_  "NmAsrBaseAddress" HEX 0 65535;
+BA_DEF_  "NmAsrCanMsgCycleTime" INT 0 65535;
+BA_DEF_  "NmAsrMessageCount" INT 0 256;
+BA_DEF_  "NmAsrRepeatMessageTime" INT 0 65535;
+BA_DEF_  "NmAsrTimeoutTime" INT 0 65535;
+BA_DEF_  "NmAsrWaitBusSleepTime" INT 0 65535;
+BA_DEF_  "Manufacturer" STRING ;
+BA_DEF_  "NmType" STRING ;
+BA_DEF_  "Baudrate" INT 0 1000000;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_REL_ BU_SG_REL_  "GenSigTimeoutTime" INT 0 65535;
+BA_DEF_DEF_  "GenSigLongName" "";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigCycleTime" 0;
+BA_DEF_DEF_  "GenSigCycleTimeActive" 0;
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgSendType" "";
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_DEF_DEF_  "DiagState" "No";
+BA_DEF_DEF_  "GenMsgILSupport" "yes";
+BA_DEF_DEF_  "NmAsrMessage" "no";
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "DiagUUDTResponse" "No";
+BA_DEF_DEF_  "DiagConnection" 0;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "ILUsed" "yes";
+BA_DEF_DEF_  "NmAsrCanMsgCycleOffset" 0;
+BA_DEF_DEF_  "NmAsrCanMsgReducedTime" 50;
+BA_DEF_DEF_  "NmAsrNode" "yes";
+BA_DEF_DEF_  "NmAsrNodeIdentifier" 0;
+BA_DEF_DEF_  "BaudRate" 1000;
+BA_DEF_DEF_  "IlTxTimeout" 0;
+BA_DEF_DEF_  "NmAsrBaseAddress" 1024;
+BA_DEF_DEF_  "NmAsrCanMsgCycleTime" 100;
+BA_DEF_DEF_  "NmAsrMessageCount" 64;
+BA_DEF_DEF_  "NmAsrRepeatMessageTime" 400;
+BA_DEF_DEF_  "NmAsrTimeoutTime" 1000;
+BA_DEF_DEF_  "NmAsrWaitBusSleepTime" 750;
+BA_DEF_DEF_  "Manufacturer" "Vector";
+BA_DEF_DEF_  "NmType" "";
+BA_DEF_DEF_  "Baudrate" 500000;
+BA_DEF_DEF_  "DBName" "CAN";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_REL_ "GenSigTimeoutTime" 0;
+BA_ "DBName" "CANC_1V6";
+BA_ "GenMsgCycleTime" BO_ 2566876176 100;
+BA_ "GenMsgSendType" BO_ 2566876176 0;
+BA_ "GenMsgCycleTime" BO_ 2566875920 100;
+BA_ "GenMsgSendType" BO_ 2566875920 0;
+BA_ "GenMsgCycleTime" BO_ 2566875664 100;
+BA_ "GenMsgSendType" BO_ 2566875664 0;
+BA_ "GenMsgCycleTime" BO_ 2566877456 100;
+BA_ "GenMsgSendType" BO_ 2566877456 0;
+BA_ "GenMsgCycleTime" BO_ 2164224257 100;
+BA_ "GenMsgSendType" BO_ 2164224257 0;
+BA_ "GenMsgCycleTime" BO_ 2164219906 100;
+BA_ "GenMsgSendType" BO_ 2164219906 0;
+BA_ "GenMsgCycleTime" BO_ 2566873360 100;
+BA_ "GenMsgSendType" BO_ 2566873360 0;
+BA_ "GenMsgCycleTime" BO_ 2164219905 100;
+BA_ "GenMsgSendType" BO_ 2164219905 0;
+BA_ "GenMsgCycleTime" BO_ 2566861072 100;
+BA_ "GenMsgSendType" BO_ 2566861072 0;
+BA_ "GenMsgCycleTime" BO_ 2164207873 100;
+BA_ "GenMsgSendType" BO_ 2164207873 0;
+BA_ "GenMsgCycleTime" BO_ 2566856976 100;
+BA_ "GenMsgSendType" BO_ 2566856976 0;
+BA_ "GenMsgCycleTime" BO_ 2164203777 100;
+BA_ "GenMsgSendType" BO_ 2164203777 0;
+BA_ "GenMsgCycleTime" BO_ 2566852880 100;
+BA_ "GenMsgSendType" BO_ 2566852880 0;
+BA_ "GenMsgCycleTime" BO_ 2164199682 100;
+BA_ "GenMsgSendType" BO_ 2164199682 0;
+BA_ "GenMsgCycleTime" BO_ 2164199681 100;
+BA_ "GenMsgSendType" BO_ 2164199681 0;
+BA_ "GenMsgCycleTime" BO_ 2365564852 100;
+BA_ "GenMsgSendType" BO_ 2365564852 0;
+BA_ "GenMsgCycleTime" BO_ 2365564477 100;
+BA_ "GenMsgSendType" BO_ 2365564477 0;
+VAL_ 2566848864 SOV_HPurge_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2566848864 SOV_HM_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2566848864 SOV_HInPurge_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2566848864 SOV_AHB_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2566848864 CNT_HRB_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2566848864 CNT_HCUValve_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2566848864 CNT_HCU_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2566848864 CNT_FC_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2566848864 CNT_DCFOutputPreCharge_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2566848864 CNT_DCFOutput_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2566848864 CNT_CMPLowVoltage_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2566848864 CNT_Baterry_FB 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 SOV_HPurge_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 SOV_HM_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 SOV_HInPurge_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 SOV_AHB_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 CNT_HRB_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 CNT_HCUValve_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 CNT_HCU_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 CNT_FC_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 CNT_DCFOutputPreCharge_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 CNT_DCFOutput_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 CNT_CMPLowVoltage_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 CNT_Baterry_CMD 1 "Enable" 0 "Disable" ;
+VAL_ 2164195585 FCU_Mode 10 "Debug" 4 "Manual" 0 "Auto" ;
+VAL_ 2566877472 CMP_EEPROM 1 "Writing" 0 "not Writing" ;
+VAL_ 2566877472 CMP_DriveRotatorError 1 "Error" 0 "Normal" ;
+VAL_ 2566877472 CMP_DrivePowerSupplyError 1 "Error" 0 "Normal" ;
+VAL_ 2566877472 CMP_DriveOverVoltage 1 "Error" 0 "Normal" ;
+VAL_ 2566877472 CMP_DriveOverTemp 1 "Error" 0 "Normal" ;
+VAL_ 2566877472 CMP_DriveOverCurrent 1 "Error" 0 "Normal" ;
+VAL_ 2566877472 CMP_DriveLowVoltage 1 "Error" 0 "Normal" ;
+VAL_ 2566877472 CMP_DriveHallError 1 "Error" 0 "Normal" ;
+VAL_ 2566877472 CMP_DriveEEPROMError 1 "Error" 0 "Normal" ;
+VAL_ 2566877472 CMP_CommunicationTimeOut 1 "TimeOut 1s" 0 "Normal" ;
+VAL_ 2566877472 CMP_Ready 1 "Ready" 0 "not Ready" ;
+VAL_ 2566877472 CMP_MotorOverTemp 1 "Error" 0 "Normal" ;
+VAL_ 2566877472 CMP_Init 1 "Drive Initing" 0 "Init Completed" ;
+VAL_ 2566877472 CMP_HVIL 1 "Error" 0 "Normal" ;
+VAL_ 2566877456 CMP_BaseState 7 "Calib" 5 "Error" 4 "PowerUp" 2 "Enable" 0 "Ready" ;
+VAL_ 2164224257 CMP_En_Manual 2 "ON" 1 "OFF" ;
+VAL_ 2164219905 CVM_Mode_Manual 221 "Debug" 187 "Bootloader" 204 "Calib" 170 "Manual" 85 "Auto" 0 "Not Defined" ;
+VAL_ 2566861088 DCF_ErrorStatus 1 "Error" 0 "Normal" ;
+VAL_ 2566861088 DCF_RunningStatus 1 "ON" 0 "OFF" ;
+VAL_ 2566861088 DCF_OverTemperatureProtect 1 "ON" 0 "OFF" ;
+VAL_ 2566861088 DCF_OutputOverVoltageProtect 1 "ON" 0 "OFF" ;
+VAL_ 2566861088 DCF_OutputOverCurrentWarning 1 "ON" 0 "OFF" ;
+VAL_ 2566861088 DCF_OutputOverCurrentProtect 1 "ON" 0 "OFF" ;
+VAL_ 2566861088 DCF_OtherHardwareFailure 1 "ON" 0 "OFF" ;
+VAL_ 2566861088 DCF_MainPreCntStatus 1 "ON" 0 "OFF" ;
+VAL_ 2566861088 DCF_MainCntStatus 1 "ON" 0 "OFF" ;
+VAL_ 2566861088 DCF_InputOverVoltageProtect 1 "ON" 0 "OFF" ;
+VAL_ 2566861088 DCF_InputLowVoltageProtect 1 "ON" 0 "OFF" ;
+VAL_ 2164207873 DCF_Reset_Manual 1 "RESET" 0 "OFF" ;
+VAL_ 2164207873 DCF_En_Manual 0 "OFF" 85 "ON" ;
+VAL_ 2164207873 CNT_DCF_Manual 1 "ON" 0 "OFF" ;
+VAL_ 2566856992 HCU_StateMachine 11 "Boot" 10 "Debug" 9 "Calib" 5 "Error" 4 "Manual" 3 "Auto" 2 "Ready" 1 "PowerUp" 0 "Not Defined" ;
+VAL_ 2566856992 HCU_ErrGrade 3 "Warning---Error Grade 3" 2 "Alarm---Error Grade 2" 1 "Emergency---Error Grade 1" 0 "NO Error" ;
+VAL_ 2164203777 HMid_SOV_Manual 1 "ON" 0 "OFF" ;
+VAL_ 2164203777 HCU_Mode_Manual 187 "Boot" 204 "Calib" 170 "Manual" 85 "Auto" 0 "Not Defined" ;
+VAL_ 2164203777 HTank3_SOV_Manual 1 "ON" 0 "OFF" ;
+VAL_ 2164203777 HTank2_SOV_Manual 1 "ON" 0 "OFF" ;
+VAL_ 2164203777 HTank1_SOV_Manual 1 "ON" 0 "OFF" ;
+VAL_ 2566852896 FAN4_FB 1 "Error" 0 "Ok" ;
+VAL_ 2566852896 DCU_StateMachine 11 "Boot" 10 "Debug" 9 "Calib" 5 "Error" 4 "Manual" 3 "Auto" 2 "Ready" 1 "PowerUp" 0 "Not Defined" ;
+VAL_ 2566852896 DCU_ErrGrade 3 "Warning---Error Grade 3" 2 "Alarm---Error Grade 2" 1 "Emergency---Error Grade 1" 0 "NO Error" ;
+VAL_ 2566852896 LV_DI 1 "Error" 0 "OK" ;
+VAL_ 2566852896 FAN3_FB 1 "Error" 0 "Ok" ;
+VAL_ 2566852896 FAN2_FB 1 "Error" 0 "OK" ;
+VAL_ 2566852896 FAN1_FB 1 "Error" 0 "OK" ;
+VAL_ 2164199682 TV_DI_Manual 1 "ON" 0 "OFF" ;
+VAL_ 2164199681 DCU_Mode_Manual 187 "Boot" 204 "Calib" 170 "Manual" 85 "Auto" 0 "Not Defined" ;
+VAL_ 2365564852 HRBStatus_OverCurrent 1 "Description for the value '0x1'" 0 "Normal" ;
+VAL_ 2365564852 HRBStatus_TemperatureLimit 1 "Error" 0 "Normal" ;
+VAL_ 2365564852 HRBStatus_PlausibilityError 1 "Error" 0 "Normal" ;
+VAL_ 2365564852 HRBStatus_WrongVol 1 "Description for the value '0x1'" 0 "Normal" ;
+VAL_ 2365564852 HRBStatus_PowerOn 1 "PowerOn" ;
+VAL_ 2365564852 HRBStatus_MAFErr 1 "Description for the value '0x1'" 0 "Normal" ;
+VAL_ 2365564852 HRBStatus_MFGEn 1 "ON" 0 "OFF" ;
+VAL_ 2365564852 HRBStatus_PumpEn 1 "ON" 0 "OFF" ;
+VAL_ 2365564477 HRB_MFGEn_Manual 1 "ON" 0 "OFF" ;
+VAL_ 2365564477 HRB_PumpEn_Manual 1 "ON" 0 "OFF" ;
+

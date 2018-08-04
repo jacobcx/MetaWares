@@ -1,0 +1,4 @@
+1 PduInfo.swPduHandle = 10; 修改为PduInfo.swPduHandle = 0; 
+2 VSB工程中修改AD模块，将MUX接口1 更改为直接接口1  
+3 VSB工程中修改Port模块  增加PZ[0] AD直接采样的第一路
+4 VSB工程中修改OS模块的中断，将ADC1模块的中断修改为ADC0 模块的中断

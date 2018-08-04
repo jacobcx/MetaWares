@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+NOTE! This file is generated. Do not edit!
+Generator: VSTAR Ea V7.2.0-Build418
+ -->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+<!-- Copyright 2016 Mentor Graphics Corporation
+    All Rights Reserved
+
+ THIS WORK CONTAINS TRADE SECRET
+ AND PROPRIETARY INFORMATION WHICH IS THE
+ PROPERTY OF MENTOR GRAPHICS
+ CORPORATION OR ITS LICENSORS AND IS
+ SUBJECT TO LICENSE TERMS.
+-->
+   <AR-PACKAGES>
+      <AR-PACKAGE>
+          <SHORT-NAME>AUTOSAR_Ea</SHORT-NAME>
+              <AR-PACKAGES>
+                  <AR-PACKAGE>
+                      <SHORT-NAME>BswModuleEntrys</SHORT-NAME>
+                      <ELEMENTS>
+                       <BSW-MODULE-ENTRY>
+                         <SHORT-NAME>Ea_MainFunction</SHORT-NAME>
+                         <SERVICE-ID>12</SERVICE-ID>
+                         <IS-SYNCHRONOUS>false</IS-SYNCHRONOUS>
+                         <CALL-TYPE>REGULAR</CALL-TYPE>
+                         <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                         <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                       </BSW-MODULE-ENTRY>
+                      </ELEMENTS>
+                  </AR-PACKAGE>
+              </AR-PACKAGES>
+      </AR-PACKAGE>
+      <AR-PACKAGE>
+         <SHORT-NAME>VSTAR</SHORT-NAME>
+         <AR-PACKAGES>
+            <AR-PACKAGE>
+               <SHORT-NAME>BswMd</SHORT-NAME>
+               <ELEMENTS>
+                  <BSW-MODULE-DESCRIPTION>
+                     <SHORT-NAME>Ea</SHORT-NAME>
+                     <LONG-NAME>
+                       <L-4 L="FOR-ALL">EEPROM Abstraction</L-4>
+                     </LONG-NAME>
+                     <MODULE-ID>40</MODULE-ID>
+                     <INTERNAL-BEHAVIORS>
+                        <BSW-INTERNAL-BEHAVIOR>
+                           <SHORT-NAME>BswBehavior_Ea</SHORT-NAME>
+                           <EXCLUSIVE-AREAS>
+                             <EXCLUSIVE-AREA>
+                               <SHORT-NAME>EaStateChange</SHORT-NAME>
+                             </EXCLUSIVE-AREA>
+                           </EXCLUSIVE-AREAS>
+                           <ENTITYS>
+                             <BSW-SCHEDULABLE-ENTITY>
+                             <SHORT-NAME>Ea_MainFunction</SHORT-NAME>
+                               <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/Ea/BswBehavior_Ea/EaStateChange</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                               </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                             <RUNS-INSIDE-EXCLUSIVE-AREA-REFS/>
+                             <ACCESSED-MODE-GROUPS/>
+                             <ACTIVATION-POINTS/>
+                             <CALLED-ENTRYS/>
+                             <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Ea/BswModuleEntrys/Ea_MainFunction</IMPLEMENTED-ENTRY-REF>
+                             <ISSUED-TRIGGERS/>
+                             <MANAGED-MODE-GROUPS/>
+                             </BSW-SCHEDULABLE-ENTITY>
+                           </ENTITYS>
+                           <EVENTS>
+                              <BSW-TIMING-EVENT>
+                                 <SHORT-NAME>Evt_Ea_MainFunction</SHORT-NAME>
+                                 <LONG-NAME>
+                                    <L-4 L="FOR-ALL">Evt_Ea_MainFunction</L-4>
+                                 </LONG-NAME>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/Ea/BswBehavior_Ea/Ea_MainFunction</STARTS-ON-EVENT-REF>
+                                 <PERIOD>0.01</PERIOD>
+                              </BSW-TIMING-EVENT>
+                           </EVENTS>
+                        </BSW-INTERNAL-BEHAVIOR>
+                     </INTERNAL-BEHAVIORS>
+                  </BSW-MODULE-DESCRIPTION>
+               </ELEMENTS>
+            </AR-PACKAGE>
+         </AR-PACKAGES>
+      </AR-PACKAGE>
+   </AR-PACKAGES>
+</AUTOSAR>

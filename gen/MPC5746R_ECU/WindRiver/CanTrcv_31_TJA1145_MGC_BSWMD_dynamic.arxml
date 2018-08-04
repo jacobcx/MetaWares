@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-2-2.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>VSTAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="5cf000a1-2e04-4ad3-ac2a-37f53e8c5b07">
+          <SHORT-NAME>CanTrcv_TJA1145</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="3e867799-6421-4d3b-86f7-0b6e3c8d9140">
+              <SHORT-NAME>BswDescr</SHORT-NAME>
+              <ELEMENTS>
+                <BSW-MODULE-DESCRIPTION UUID="916228d7-e8ef-4ece-92d3-25951826a4d3">
+                  <SHORT-NAME>CanTrcv</SHORT-NAME>
+                  <MODULE-ID>70</MODULE-ID>
+                  <INTERNAL-BEHAVIORS>
+                    <BSW-INTERNAL-BEHAVIOR UUID="83532e68-d59f-44ab-8eef-95e7d724dd75">
+                      <SHORT-NAME>CanTrcv_BswBehavior</SHORT-NAME>
+                      <EXCLUSIVE-AREAS>
+                        <EXCLUSIVE-AREA UUID="138fa926-84b7-43fc-a636-8dffab90fe7f">
+                          <SHORT-NAME>SCHM_CANTRCV_EXCLUSIVE_AREA_0</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="9e6d6afb-9a6b-41b4-b3d8-26125460dabf">
+                          <SHORT-NAME>SCHM_CANTRCV_EXCLUSIVE_AREA_1</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="4c029ce2-cba6-4131-a6f4-f618687ecd06">
+                          <SHORT-NAME>SCHM_CANTRCV_EXCLUSIVE_AREA_2</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="8acb5c66-731a-485e-84c4-ade2b2aaaa57">
+                          <SHORT-NAME>SCHM_CANTRCV_EXCLUSIVE_AREA_3</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="50fbdeb4-0627-4856-a807-92569f55488e">
+                          <SHORT-NAME>SCHM_CANTRCV_EXCLUSIVE_AREA_4</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="181c9f30-f733-454f-9521-363afc08f0cc">
+                          <SHORT-NAME>SCHM_CANTRCV_EXCLUSIVE_AREA_5</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="163bcf6c-dd55-489e-a438-6771447fc988">
+                          <SHORT-NAME>SCHM_CANTRCV_EXCLUSIVE_AREA_6</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                      </EXCLUSIVE-AREAS>
+                      <ENTITYS>
+                        <BSW-SCHEDULABLE-ENTITY UUID="b36959c5-06da-4046-a1ce-878103eb9a6e">
+                          <SHORT-NAME>CanTrcv_MainFunction</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_2</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_3</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_4</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_5</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_6</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_MainFunction</IMPLEMENTED-ENTRY-REF>
+                        </BSW-SCHEDULABLE-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="0de3ca8c-da9b-4110-9e2b-d513dff359d2">
+                          <SHORT-NAME>CanTrcv_31_TJA1145_GetBusWuReason</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_31_TJA1145_GetBusWuReason</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="dd8399e9-378a-48c8-91fb-69d0f9913831">
+                          <SHORT-NAME>CanTrcv_31_TJA1145_GetOpMode</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_31_TJA1145_GetOpMode</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="490eb1ab-2d96-49e7-9eae-0bba97927e0a">
+                          <SHORT-NAME>CanTrcv_Init</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_Init</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="d3334e61-f4de-4b78-af03-e961874142f9">
+                          <SHORT-NAME>CanTrcv_SetOpMode</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_3</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_SetOpMode</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="28d30dde-e153-4651-ae2b-efaa76ceb879">
+                          <SHORT-NAME>CanTrcv_SetWakeupMode</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_0</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_2</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_SetWakeupMode</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="65b52151-e37e-42cd-a058-4f1d992242ac">
+                          <SHORT-NAME>CanTrcv_CheckWakeup</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_0</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_2</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_CheckWakeup</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-SCHEDULABLE-ENTITY UUID="aaaf43bd-9034-4af8-9eb8-a9f230f6d4f7">
+                          <SHORT-NAME>CanTrcv_MainFunctionDiagnostics</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_6</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_MainFunctionDiagnostics</IMPLEMENTED-ENTRY-REF>
+                        </BSW-SCHEDULABLE-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="bc8da178-88e7-4edd-b9bc-515e2e2a444a">
+                          <SHORT-NAME>CanTrcv_GetVersionInfo</SHORT-NAME>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_GetVersionInfo</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="4566adcb-a7b7-4a86-bb67-101d81331621">
+                          <SHORT-NAME>CanTrcv_GetTrcvSystemData</SHORT-NAME>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_GetTrcvSystemData</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="687ec3c5-e44f-4cb2-8777-c3c9c1976f76">
+                          <SHORT-NAME>CanTrcv_ClearTrcvWufFlag</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/SCHM_CANTRCV_EXCLUSIVE_AREA_4</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_ClearTrcvWufFlag</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="e019daa4-f911-4e82-8e97-688f449831d3">
+                          <SHORT-NAME>CanTrcv_ReadTrcvTimeoutFlag</SHORT-NAME>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_ReadTrcvTimeoutFlag</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="b7d9d4df-c5fc-4f69-a75b-685267805821">
+                          <SHORT-NAME>CanTrcv_ClearTrcvTimeoutFlag</SHORT-NAME>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_ClearTrcvTimeoutFlag</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="bce78283-12f9-44da-ad17-5ef9a44ab359">
+                          <SHORT-NAME>CanTrcv_ReadTrcvSilenceFlag</SHORT-NAME>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_ReadTrcvSilenceFlag</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="7b03d842-1058-4327-afcf-5b01c5e152c1">
+                          <SHORT-NAME>CanTrcv_SetPNActivationState</SHORT-NAME>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_SetPNActivationState</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                        <BSW-CALLED-ENTITY UUID="c7a4b002-4a94-4764-85ea-9d2486585316">
+                          <SHORT-NAME>CanTrcv_CheckWakeFlag</SHORT-NAME>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv_CheckWakeFlag</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                      </ENTITYS>
+                      <EVENTS>
+                        <BSW-TIMING-EVENT UUID="af08ffb8-85b2-43a4-806d-dc95cc6805b8">
+                          <SHORT-NAME>Evt_CanTrcv_MainFunction</SHORT-NAME>
+                          <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/CanTrcv_MainFunction</STARTS-ON-EVENT-REF>
+                          <PERIOD>0.01</PERIOD>
+                        </BSW-TIMING-EVENT>
+                        <BSW-TIMING-EVENT UUID="294a1cc3-d111-448b-9ccc-42208a66d870">
+                          <SHORT-NAME>Evt_CanTrcv_MainFunctionDiagnostics</SHORT-NAME>
+                          <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/CanTrcv_TJA1145/BswDescr/CanTrcv/CanTrcv_BswBehavior/CanTrcv_MainFunctionDiagnostics</STARTS-ON-EVENT-REF>
+                          <PERIOD>0.01</PERIOD>
+                        </BSW-TIMING-EVENT>
+                      </EVENTS>
+                    </BSW-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </BSW-MODULE-DESCRIPTION>
+                <BSW-MODULE-ENTRY UUID="c4bc3925-cba0-43a0-91b0-7a27193a996c">
+                  <SHORT-NAME>CanTrcv_Init</SHORT-NAME>
+                  <SERVICE-ID>0</SERVICE-ID>
+                  <IS-REENTRANT>false</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="d30adac5-2a82-4e50-8dfd-0b86b9252368">
+                  <SHORT-NAME>CanTrcv_SetOpMode</SHORT-NAME>
+                  <SERVICE-ID>1</SERVICE-ID>
+                  <IS-REENTRANT>true</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>false</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="95f73b6e-1ef3-4863-ba01-dabdd9271fdb">
+                  <SHORT-NAME>CanTrcv_GetOpMode</SHORT-NAME>
+                  <SERVICE-ID>2</SERVICE-ID>
+                  <IS-REENTRANT>true</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="7f7b15ec-5a81-4e41-a527-46144b1dfdd2">
+                  <SHORT-NAME>CanTrcv_GetBusWuReason</SHORT-NAME>
+                  <SERVICE-ID>3</SERVICE-ID>
+                  <IS-REENTRANT>true</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="88615e12-b3b6-4180-b32e-d7d932f9c3a7">
+                  <SHORT-NAME>CanTrcv_GetVersionInfo</SHORT-NAME>
+                  <SERVICE-ID>4</SERVICE-ID>
+                  <IS-REENTRANT>true</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="75719c24-3dca-4bf0-a2fb-3375f2d9f924">
+                  <SHORT-NAME>CanTrcv_SetWakeupMode</SHORT-NAME>
+                  <SERVICE-ID>5</SERVICE-ID>
+                  <IS-REENTRANT>true</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="6252432d-f351-46f5-be3d-e3e6d74bef61">
+                  <SHORT-NAME>CanTrcv_CheckWakeup</SHORT-NAME>
+                  <SERVICE-ID>7</SERVICE-ID>
+                  <IS-REENTRANT>true</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="9021229a-fa6b-4784-b80f-c5f4b8366c37">
+                  <SHORT-NAME>CanTrcv_MainFunction</SHORT-NAME>
+                  <SERVICE-ID>6</SERVICE-ID>
+                  <IS-REENTRANT>false</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="9fd70d9f-3d42-490a-a748-b1371b1feadb">
+                  <SHORT-NAME>CanTrcv_GetTrcvSystemData</SHORT-NAME>
+                  <SERVICE-ID>9</SERVICE-ID>
+                  <IS-REENTRANT>false</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="59aaf47e-e4fe-45df-99a2-6e29e4bc3d8f">
+                  <SHORT-NAME>CanTrcv_ClearTrcvWufFlag</SHORT-NAME>
+                  <SERVICE-ID>10</SERVICE-ID>
+                  <IS-REENTRANT>true</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="2f7ba59f-9ac5-4801-832b-733a6f4c3c9b">
+                  <SHORT-NAME>CanTrcv_ReadTrcvTimeoutFlag</SHORT-NAME>
+                  <SERVICE-ID>11</SERVICE-ID>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="435433e8-6af8-4ac1-8608-a3eb3dcd6a4a">
+                  <SHORT-NAME>CanTrcv_ClearTrcvTimeoutFlag</SHORT-NAME>
+                  <SERVICE-ID>12</SERVICE-ID>
+                  <IS-REENTRANT>false</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>false</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="84aead85-f827-4376-9617-3b8461283c19">
+                  <SHORT-NAME>CanTrcv_ReadTrcvSilenceFlag</SHORT-NAME>
+                  <SERVICE-ID>13</SERVICE-ID>
+                  <IS-REENTRANT>false</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="19cbfbaa-d591-4758-9230-ada253727529">
+                  <SHORT-NAME>CanTrcv_SetPNActivationState</SHORT-NAME>
+                  <SERVICE-ID>15</SERVICE-ID>
+                  <IS-REENTRANT>false</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="fa57e15f-e9a0-4235-91c7-b612994c81a0">
+                  <SHORT-NAME>CanTrcv_CheckWakeFlag</SHORT-NAME>
+                  <SERVICE-ID>14</SERVICE-ID>
+                  <IS-REENTRANT>false</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="120fc94b-6dd2-4a20-954b-cffe351ac605">
+                  <SHORT-NAME>CanTrcv_MainFunctionDiagnostics</SHORT-NAME>
+                  <SERVICE-ID>8</SERVICE-ID>
+                  <IS-REENTRANT>false</IS-REENTRANT>
+                  <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                  <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+		  </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES></AUTOSAR>

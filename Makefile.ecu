@@ -1,0 +1,594 @@
+
+#libs separated by filename Os_<MCU_derivative>_<Compiler>_<SC>_<Std/Ext>.a
+LIB_OUTPUT_PATH=libs
+OBJ_OUTPUT_PATH  = objs/$(TARGET_PLATFORM)/$(TARGET_COMPILER)
+GEN_OUTPUT_PATH  = gen/$(TARGET_PLATFORM)/$(TARGET_COMPILER)
+ENVIRONMENT_ROOT = $(realpath $(PROJECT_ROOT)/../..)
+VSC_TOOL_PATH    = $(ENVIRONMENT_ROOT)/Tools/VSC
+ECG_TOOL_PATH    = $(ENVIRONMENT_ROOT)/Tools/VSC
+BSW_ROOT         = $(ENVIRONMENT_ROOT)/BSWs
+PLATFORM_ROOT    = $(PROJECT_ROOT)/platform/$(TARGET_PLATFORM)
+OS_CORE_ROOT     = $(BSW_ROOT)/Os/Os/core
+
+TRESOS_PATH=../../Tools/EB/tresos/bin
+TRESOS_GENERATOR = $(TRESOS_PATH)/tresos_cmd.bat
+TRESOS_COMMON_ARGS= -Dtarget=PA -Dderivate=MPC5746R -DverifyReadOnly=false legacy generate
+RESOURCE_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Resource.arxml
+MCAL_MODULES_VERSION = TS_T2D34M10I2R0
+
+Os_USE_DRIVERS = 1
+
+ifdef Os_LIB_PATH
+BUILD_TYPE = ADD_AUTOSAR_NOBUILD
+else
+BUILD_TYPE  = ADD_AUTOSAR
+Os_LIB_PATH = $(LIB_OUTPUT_PATH)
+endif
+
+# DONT_USE_DEFAULT_TARGET_INITIALIZATION=1
+GCC_I386_NOT_SHARED = 1
+include $(ENVIRONMENT_ROOT)/TTs/$(TARGET_CPU)/$(TARGET_COMPILER)/Makefile.compiler
+
+# Add Base
+BASE_OUTPUT_PATH = $(GEN_OUTPUT_PATH)
+BASE_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Base.arxml
+$(eval $(call $(BUILD_TYPE),Base,$(BSW_ROOT)/MCAL/MPC5746R/Base/ssc/make))
+
+MAKE_GENERATE_RULES += Base_Workaround
+Base_Workaround:
+	$(RM) $(GEN_OUTPUT_PATH)/include/modules.h
+
+# Add Mcu
+MCU_NOBUILD =1
+MCU_CONFIG_VARIANT=PB,PC,LT
+MCU_LIB_CONFIG_TYPE=PB_max
+MCU_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+MCU_CONFIG_ROOT = /Mcu/Mcu
+MCU_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Mcu.arxml
+MCAL_DEM_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Mcal_Dem.arxml
+$(eval $(call $(BUILD_TYPE),Mcu,$(BSW_ROOT)/MCAL/MPC5746R/Mcu/ssc/make))
+
+#Add Port
+PORT_CONFIG_VARIANT = PB
+PORT_LIB_CONFIG_TYPE=PB_max
+PORT_OUTPUT_PATH = $(GEN_OUTPUT_PATH)
+PORT_CONFIG_ROOT = /Port/Port
+PORT_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Port.arxml
+$(eval $(call $(BUILD_TYPE),Port,$(BSW_ROOT)/MCAL/MPC5746R/Port/ssc/make))
+
+#Add Dio
+DIO_CONFIG_VARIANT=PB,PC
+DIO_LIB_CONFIG_TYPE=PB_max
+DIO_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+DIO_ECU_CONFIG_TYPE= PC_max
+DIO_CONFIG_ROOT = /Dio/Dio
+DIO_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Dio.arxml
+$(eval $(call $(BUILD_TYPE),DIO,$(BSW_ROOT)/MCAL/MPC5746R/Dio/ssc/make))
+
+#Add Mcl
+MCL_CONFIG_VARIANT=PB,PC
+MCL_LIB_CONFIG_TYPE=PB_max
+MCL_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+MCL_ECU_CONFIG_TYPE= PC_max
+MCL_CONFIG_ROOT = /Mcl/Mcl
+MCL_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Mcl.arxml
+$(eval $(call $(BUILD_TYPE),MCL,$(BSW_ROOT)/MCAL/MPC5746R/Mcl/ssc/make))
+
+#Add Spi 
+SPI_CONFIG_VARIANT=PB,PC
+SPI_LIB_CONFIG_TYPE=PB_max
+SPI_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+SPI_ECU_CONFIG_TYPE= PC_max
+SPI_CONFIG_ROOT = /Spi/Spi
+SPI_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Spi.arxml
+MCAL_MCU_CONFIG_FILE= cfg/$(TARGET_DERIVATIVE)/Appl_Mcu.arxml
+$(eval $(call $(BUILD_TYPE),SPI,$(BSW_ROOT)/MCAL/MPC5746R/Spi/ssc/make))
+
+#Add Icu
+ICU_CONFIG_VARIANT=PB,PC
+ICU_LIB_CONFIG_TYPE=PB_max
+ICU_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+ICU_ECU_CONFIG_TYPE= PC_max
+ICU_CONFIG_ROOT = /Icu/Icu
+ICU_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Icu.arxml
+$(eval $(call $(BUILD_TYPE),ICU,$(BSW_ROOT)/MCAL/MPC5746R/Icu/ssc/make))
+
+#Add Gpt
+GPT_CONFIG_VARIANT=PB,PC
+GPT_LIB_CONFIG_TYPE=PB_max
+GPT_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+GPT_ECU_CONFIG_TYPE= PC_max
+GPT_CONFIG_ROOT = /Gpt/Gpt
+GPT_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Gpt.arxml
+$(eval $(call $(BUILD_TYPE),GPT,$(BSW_ROOT)/MCAL/MPC5746R/Gpt/ssc/make))
+
+#Add Pwm
+PWM_CONFIG_VARIANT=PB,PC
+PWM_LIB_CONFIG_TYPE=PB_max
+PWM_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+PWM_ECU_CONFIG_TYPE= PC_max
+PWM_CONFIG_ROOT = /Pwm/Pwm
+PWM_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Pwm.arxml
+$(eval $(call $(BUILD_TYPE),PWM,$(BSW_ROOT)/MCAL/MPC5746R/Pwm/ssc/make))
+
+#Add Can
+CAN_CONFIG_VARIANT=PB,PC
+CAN_LIB_CONFIG_TYPE=PB_max
+CAN_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+CAN_ECU_CONFIG_TYPE= PC_max
+CAN_CONFIG_ROOT = /Can/Can
+CAN_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+$(eval $(call $(BUILD_TYPE),CAN,$(BSW_ROOT)/MCAL/MPC5746R/Can/ssc/make))
+
+#Add Lin
+LIN_CONFIG_VARIANT=PB,PC
+LIN_LIB_CONFIG_TYPE=PB_max
+LIN_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+LIN_ECU_CONFIG_TYPE= PC_max
+LIN_CONFIG_ROOT = /Lin/Lin
+LIN_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Lin.arxml
+MCAL_ECUM_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Mcal_EcuM.arxml
+$(eval $(call $(BUILD_TYPE),LIN,$(BSW_ROOT)/MCAL/MPC5746R/Lin/ssc/make))
+
+#Add Adc
+ADC_CONFIG_VARIANT=PB,PC
+ADC_LIB_CONFIG_TYPE=PB_max
+ADC_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+ADC_ECU_CONFIG_TYPE= PC_max
+ADC_CONFIG_ROOT = /Adc/Adc
+ADC_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Adc.arxml
+$(eval $(call $(BUILD_TYPE),ADC,$(BSW_ROOT)/MCAL/MPC5746R/Adc/ssc/make))
+
+#Add Wdg
+WDG_CONFIG_VARIANT=PB,PC, LT 
+WDG_LIB_CONFIG_TYPE=PB_max
+WDG_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+WDG_ECU_CONFIG_TYPE= PC_max
+WDG_CONFIG_ROOT = /Wdg/Wdg
+WDG_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Wdg.arxml
+$(eval $(call $(BUILD_TYPE),WDG,$(BSW_ROOT)/MCAL/MPC5746R/Wdg/ssc/make))
+
+#WdgIf
+WdgIf_CONFIG_VARIANT=PB LT PC
+WdgIf_LIB_CONFIG_TYPE=LT_max
+WdgIf_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+WdgIf_CORE_PATH = $(BSW_ROOT)/WDG/WdgIf/ssc
+WdgIf_ECU_ROOT = /os_ecuc/ECU
+WdgIf_CONFIG_ROOT = /Wdg/WdgIf
+WdgIf_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+WdgIf_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Wdg.arxml
+WdgIf_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+WdgIf_CONFIG_FILE += $(BSW_ROOT)/MCAL/MPC5746R/Wdg/ssc/cfg/Wdg_mpc5746r_mapbga252.arxml
+WdgIf_CONFIG_FILE += $(BSW_ROOT)/MCAL/MPC5746R/Wdg/ssc/cfg/Wdg_Impl.arxml
+$(eval $(call ADD_AUTOSAR,WdgIf,$(BSW_ROOT)/WDG/WdgIf/ssc/make))
+
+#WdgM
+WdgM_CONFIG_VARIANT=PB LT PC
+WdgM_LIB_CONFIG_TYPE=LT_max
+WdgM_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+WdgM_CORE_PATH = $(BSW_ROOT)/WDG/WddM/ssc
+WdgM_ECU_ROOT = /os_ecuc/ECU
+WdgM_CONFIG_ROOT = /Wdg/WdgM
+WdgM_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+WdgM_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Wdg.arxml
+WdgM_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+WdgM_CONFIG_FILE += $(BSW_ROOT)/WDG/WdgIf/ssc/cfg/WdgIf_MGC_Impl.arxml
+WdgM_CONFIG_FILE += $(BSW_ROOT)/WDG/WdgIf/ssc/cfg/WdgIf_MGC_MD.arxml
+$(eval $(call ADD_AUTOSAR,WdgM,$(BSW_ROOT)/WDG/WdgM/ssc/make))
+
+
+#Add UJA1132 CAN Trcv
+CanTrcv_31_UJA1132_CONFIG_VARIANT=LT,PC
+CanTrcv_31_UJA1132_LIB_CONFIG_TYPE=PB_max
+CanTrcv_31_UJA1132_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+CanTrcv_31_UJA1132_ECU_CONFIG_TYPE= PC_max
+CanTrcv_31_UJA1132_COLLECTION_ROOT = /os_ecuc/ECU
+CanTrcv_31_UJA1132_CONFIG_ROOT = /CanTrcv_UJA1132/CanTrcv_SBC
+CanTrcv_31_UJA1132_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/UJA1132_Can.arxml
+CanTrcv_31_UJA1132_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+CanTrcv_31_UJA1132_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Spi.arxml
+CanTrcv_31_UJA1132_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Dio.arxml
+CanTrcv_31_UJA1132_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Icu.arxml
+CanTrcv_31_UJA1132_CONFIG_FILE += $(BSW_ROOT)/MCAL/MPC5746R/Spi/ssc/cfg/Spi_mpc5746r_mapbga252.arxml
+CanTrcv_31_UJA1132_CONFIG_FILE += $(BSW_ROOT)/MCAL/MPC5746R/Dio/ssc/cfg/Dio_mpc5746r_mapbga252.arxml
+CanTrcv_31_UJA1132_CONFIG_FILE += $(BSW_ROOT)/MCAL/MPC5746R/Icu/ssc/cfg/Icu_mpc5746r_mapbga252.arxml
+CanTrcv_31_UJA1132_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_Impl.arxml
+CanTrcv_31_UJA1132_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_MD.arxml
+CanTrcv_31_UJA1132_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call $(BUILD_TYPE),CanTrcv_31_UJA1132,$(BSW_ROOT)/COM/CanTrcv/ssc/target/UJA1132/make))
+
+
+#Add UJA1132 LIN Trcv
+LinTrcv_31_UJA1132_CONFIG_VARIANT=LT,PC
+LinTrcv_31_UJA1132_LIB_CONFIG_TYPE=PB_max
+LinTrcv_31_UJA1132_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+LinTrcv_31_UJA1132_ECU_CONFIG_TYPE= PC_max
+LinTrcv_31_UJA1132_COLLECTION_ROOT = /os_ecuc/ECU
+LinTrcv_31_UJA1132_CONFIG_ROOT = /LinTrcv_UJA1132/LinTrcv_SBC
+LinTrcv_31_UJA1132_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/UJA1132_Lin.arxml
+LinTrcv_31_UJA1132_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+LinTrcv_31_UJA1132_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Spi.arxml
+LinTrcv_31_UJA1132_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Dio.arxml
+LinTrcv_31_UJA1132_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Icu.arxml
+LinTrcv_31_UJA1132_CONFIG_FILE += $(BSW_ROOT)/MCAL/MPC5746R/Spi/ssc/cfg/Spi_mpc5746r_mapbga252.arxml
+LinTrcv_31_UJA1132_CONFIG_FILE += $(BSW_ROOT)/MCAL/MPC5746R/Dio/ssc/cfg/Dio_mpc5746r_mapbga252.arxml
+LinTrcv_31_UJA1132_CONFIG_FILE += $(BSW_ROOT)/MCAL/MPC5746R/Icu/ssc/cfg/Icu_mpc5746r_mapbga252.arxml
+LinTrcv_31_UJA1132_CONFIG_FILE += $(BSW_ROOT)/COM/LinIf/ssc/cfg/LinIf_MGC_Impl.arxml
+LinTrcv_31_UJA1132_CONFIG_FILE += $(BSW_ROOT)/COM/LinIf/ssc/cfg/LinIf_MGC_MD.arxml
+LinTrcv_31_UJA1132_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call $(BUILD_TYPE),LinTrcv_31_UJA1132,$(BSW_ROOT)/COM/LinTrcv/ssc/target/UJA1132/make))
+
+#Add TJA1145 CAN Trcv
+CanTrcv_31_TJA1145_CONFIG_VARIANT = PC LT PB
+CanTrcv_31_TJA1145_LIB_CONFIG_TYPE = LT_max
+CanTrcv_31_TJA1145_OUTPUT_PATH= $(GEN_OUTPUT_PATH)
+CanTrcv_31_TJA1145_ECU_CONFIG_TYPE= LT_max
+CanTrcv_31_TJA1145_CONFIG_ROOT = /TJA1145/CanTrcv_TJA1145
+CanTrcv_31_TJA1145_COLLECTION_ROOT = /os_ecuc/ECU
+CanTrcv_31_TJA1145_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/TJA1145.arxml
+CanTrcv_31_TJA1145_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+CanTrcv_31_TJA1145_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Spi.arxml
+CanTrcv_31_TJA1145_CONFIG_FILE += $(BSW_ROOT)/MCAL/MPC5746R/Spi/ssc/cfg/Spi_mpc5746r_mapbga252.arxml
+CanTrcv_31_TJA1145_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_Impl.arxml
+CanTrcv_31_TJA1145_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_MD.arxml
+CanTrcv_31_TJA1145_CONFIG_FILE += $(BSW_ROOT)/SYSTEM/EcuM/ssc/cfg/EcuM_MGC_Impl.arxml
+CanTrcv_31_TJA1145_CONFIG_FILE += $(BSW_ROOT)/SYSTEM/EcuM/ssc/cfg/EcuM_MGC_MD.arxml
+CanTrcv_31_TJA1145_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call ADD_AUTOSAR,CanTrcv_31_TJA1145,../../BSWs/COM/CanTrcv/ssc/target/TJA1145/make))
+
+#Add EEP AT25256
+EEP_31_AT25256B_CONFIG_VARIANT = PC LT PB
+EEP_31_AT25256B_LIB_CONFIG_TYPE = LT_max
+EEP_31_AT25256B_OUTPUT_PATH= $(GEN_OUTPUT_PATH)
+EEP_31_AT25256B_ECU_CONFIG_TYPE= LT_max
+EEP_31_AT25256B_CONFIG_ROOT= /Eep/Eep
+EEP_31_AT25256B_ECU_ROOT = /os_ecuc/ECU
+EEP_31_AT25256B_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_AT25256.arxml
+EEP_31_AT25256B_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+EEP_31_AT25256B_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Spi.arxml
+EEP_31_AT25256B_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Dem.arxml
+EEP_31_AT25256B_CONFIG_FILE += $(BSW_ROOT)/DIAG/Dem/ssc/cfg/Dem_MGC_Impl.arxml
+EEP_31_AT25256B_CONFIG_FILE += $(BSW_ROOT)/DIAG/Dem/ssc/cfg/Dem_MGC_MD.arxml
+EEP_31_AT25256B_CONFIG_FILE += $(BSW_ROOT)/MCAL/MPC5746R/Spi/ssc/cfg/Spi_mpc5746r_mapbga252.arxml
+EEP_31_AT25256B_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call ADD_AUTOSAR,EEP_31_AT25256B,$(BSW_ROOT)/MCAL/Mentor/Eep_31_AT25256B/ssc/make))
+
+# EA module
+Ea_CONFIG_VARIANT=LT PC PB
+Ea_LIB_CONFIG_TYPE=LT_max
+Ea_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+Ea_CONFIG_ROOT = /Mem/Ea
+Ea_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+Ea_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+Ea_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Mem.arxml
+Ea_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_AT25256.arxml
+Ea_CONFIG_FILE += $(BSW_ROOT)/MCAL/Mentor/Eep_31_AT25256B/ssc/cfg/Eep_31_AT25256B_Impl.arxml
+Ea_CONFIG_FILE += $(BSW_ROOT)/MCAL/Mentor/Eep_31_AT25256B/ssc/cfg/Eep_31_AT25256B_MD.arxml
+$(eval $(call ADD_AUTOSAR,Ea,$(BSW_ROOT)/MEM/Ea/ssc/make))
+
+
+#MemIf
+MemIf_CONFIG_VARIANT=LT PC
+MemIf_LIB_CONFIG_TYPE=LT_max
+MemIf_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+MemIf_CORE_PATH = $(BSW_ROOT)/MEM/MemIf/ssc
+MemIf_CONFIG_ROOT = /Mem/MemIf
+MemIf_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+MemIf_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+MemIf_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Mem.arxml
+MemIf_CONFIG_FILE += $(BSW_ROOT)/MEM/Ea/ssc/cfg/Ea_MGC_Impl.arxml
+MemIf_CONFIG_FILE += $(BSW_ROOT)/MEM/Ea/ssc/cfg/Ea_MGC_MD.arxml
+$(eval $(call ADD_AUTOSAR,MemIf,$(BSW_ROOT)/MEM/MemIf/ssc/make))
+
+
+#Nvm module
+NvM_CONFIG_VARIANT=LT PC PB
+NvM_LIB_CONFIG_TYPE=LT_max
+NvM_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+NvM_CONFIG_ROOT = /Mem/NvM
+NvM_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+NvM_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+NvM_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Mem.arxml
+NvM_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_AT25256.arxml
+$(eval $(call ADD_AUTOSAR,NvM,$(BSW_ROOT)/MEM/NvM/ssc/make))
+
+#CanIf Module
+#CanIf_NOBUILD=1
+CanIf_CONFIG_VARIANT = PC LT PB
+CanIf_LIB_CONFIG_TYPE = PB
+CanIf_OUTPUT_PATH = $(GEN_OUTPUT_PATH)
+CanIf_CONFIG_ROOT = /os_ecuc/CanIf
+CanIf_ECU_ROOT = /os_ecuc/ECU
+CanIf_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+CanIf_CONFIG_FILE +=$(BSW_ROOT)/MCAL/$(TARGET_DERIVATIVE)/Can/ssc/cfg/Can_mpc5746r_mapbga252.arxml
+CanIf_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/TJA1145.arxml
+CanIf_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/UJA1132_Can.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/CanTrcv/ssc/cfg/TJA1145/CanTrcv_31_TJA1145_MGC_MD.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/CanTrcv/ssc/cfg/TJA1145/CanTrcv_31_TJA1145_MGC_Impl.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/CanTrcv/ssc/cfg/UJA1132/CanTrcv_31_UJA1132_MGC_MD.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/CanTrcv/ssc/cfg/UJA1132/CanTrcv_31_UJA1132_MGC_Impl.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/CanTp/ssc/cfg/CanTp_MGC_Impl.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/CanTp/ssc/cfg/CanTp_MGC_MD.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/PduR/ssc/cfg/PduR_MGC_Impl.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/PduR/ssc/cfg/PduR_MGC_MD.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/CanSM/ssc/cfg/CanSM_MGC_MD.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/CanSM/ssc/cfg/CanSM_MGC_Impl.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/CanNm/ssc/cfg/CanNm_MGC_MD.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/COM/CanNm/ssc/cfg/CanNm_MGC_Impl.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/Debug/Xcp/ssc/cfg/Xcp_MGC_MD.arxml
+CanIf_CONFIG_FILE += $(BSW_ROOT)/RTE/Rte/ssc/cfg/Rte_MGC_MD.arxml
+CanIf_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call ADD_AUTOSAR,CanIf,../../BSWs/COM/CanIf/ssc/make))
+
+
+
+#PduR Module
+#PduR_NOBUILD=1
+PduR_CONFIG_VARIANT = PC LT PB
+PduR_LIB_CONFIG_TYPE = PB
+PduR_OUTPUT_PATH = $(GEN_OUTPUT_PATH)
+PduR_LOGFILE=gen/log.txt
+PduR_CORE_PATH=$(BSW_ROOT)/COM/PduR/ssc
+PduR_CONFIG_ROOT = /os_ecuc/PduR
+PduR_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+PduR_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Dcm.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/LinIf/ssc/cfg/LinIf_MGC_Impl.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/LinIf/ssc/cfg/LinIf_MGC_MD.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_Impl.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_MD.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/CanTp/ssc/cfg/CanTp_MGC_Impl.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/CanTp/ssc/cfg/CanTp_MGC_MD.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/DIAG/Dcm/ssc/cfg/Dcm_MGC_MD.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/DIAG/Dcm/ssc/cfg/Dcm_MGC_Impl.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/Com/ssc/cfg/Com_MGC_Impl.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/Com/ssc/cfg/Com_MGC_MD.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/IpduM/ssc/cfg/IpduM_MGC_MD.arxml 
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/IpduM/ssc/cfg/IpduM_MGC_Impl.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/CanNm/ssc/cfg/CanNm_MGC_MD.arxml
+PduR_CONFIG_FILE += $(BSW_ROOT)/COM/CanNm/ssc/cfg/CanNm_MGC_Impl.arxml
+PduR_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call ADD_AUTOSAR,PduR,../../BSWs/COM/PduR/ssc/make))
+
+
+# COM Module
+#Com_NOBUILD=1
+Com_CONFIG_VARIANT = PC LT PB
+Com_LIB_CONFIG_TYPE = PB
+Com_OUTPUT_PATH = $(GEN_OUTPUT_PATH)
+Com_CORE_PATH=$(BSW_ROOT)/COM/Com/ssc
+Com_CONFIG_ROOT = /os_ecuc/Com
+Com_ECU_ROOT = /os_ecuc/ECU
+Com_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+Com_CONFIG_FILE += System/System.arxml
+Com_CONFIG_FILE += $(Com_CORE_PATH)/cfg/Com_MGC_Impl.arxml
+Com_CONFIG_FILE += $(Com_CORE_PATH)/cfg/Com_MGC_MD.arxml
+Com_CONFIG_FILE += $(BSW_ROOT)/COM/PduR/ssc/cfg/PduR_MGC_Impl.arxml
+Com_CONFIG_FILE += $(BSW_ROOT)/COM/PduR/ssc/cfg/PduR_MGC_MD.arxml
+Com_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call ADD_AUTOSAR,Com,../../BSWs/COM/Com/ssc/make))
+
+
+# CanNm Module
+#CanNm_NOBUILD=1
+CanNm_CONFIG_VARIANT = PC LT PB
+CanNm_LIB_CONFIG_TYPE = LT
+CanNm_OUTPUT_PATH = $(GEN_OUTPUT_PATH)
+CanNm_CONFIG_ROOT = /os_ecuc/CanNm
+CanNm_ECU_ROOT = /os_ecuc/ECU
+CanNm_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+CanNm_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_Impl.arxml
+CanNm_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_MD.arxml
+CanNm_CONFIG_FILE += $(BSW_ROOT)/COM/ComM/ssc/cfg/ComM_MGC_Impl.arxml
+CanNm_CONFIG_FILE += $(BSW_ROOT)/COM/ComM/ssc/cfg/ComM_MGC_MD.arxml
+CanNm_CONFIG_FILE += $(BSW_ROOT)/COM/Nm/ssc/cfg/Nm_MGC_MD.arxml
+CanNm_CONFIG_FILE += $(BSW_ROOT)/COM/Nm/ssc/cfg/Nm_MGC_Impl.arxml
+CanNm_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+CanNm_CONFIG_FILE += $(BSW_ROOT)/COM/PduR/ssc/cfg/PduR_MGC_Impl.arxml
+CanNm_CONFIG_FILE += $(BSW_ROOT)/COM/PduR/ssc/cfg/PduR_MGC_MD.arxml
+#$(eval $(call ADD_AUTOSAR,CanNm,../../BSWs/COM/CanNm/ssc/make))
+
+
+# CanSM Module
+#CanSM_NOBUILD=1
+CanSM_CONFIG_VARIANT = PC LT PB
+CanSM_LIB_CONFIG_TYPE = LT
+CanSM_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+CanSM_CONFIG_ROOT = /os_ecuc/CanSM
+CanSM_ECU_ROOT = /os_ecuc/ECU
+CanSM_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+CanSM_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Dem.arxml
+CanSM_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_Impl.arxml
+CanSM_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_MD.arxml
+CanSM_CONFIG_FILE += $(BSW_ROOT)/DIAG/Dem/ssc/cfg/Dem_MGC_MD.arxml
+CanSM_CONFIG_FILE += $(BSW_ROOT)/DIAG/Dem/ssc/cfg/Dem_MGC_Impl.arxml
+CanSM_CONFIG_FILE += $(CanSM_CORE_PATH)/cfg/CanSM_MGC_MD.arxml
+CanSM_CONFIG_FILE += $(CanSM_CORE_PATH)/cfg/CanSM_MGC_Impl.arxml
+CanSM_CONFIG_FILE += $(BSW_ROOT)/COM/ComM/ssc/cfg/ComM_MGC_MD.arxml
+CanSM_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call ADD_AUTOSAR,CanSM,../../BSWs/COM/CanSM/ssc/make))
+
+
+# ComM Module
+#ComM_NOBUILD=1
+ComM_CONFIG_VARIANT = PC LT PB
+ComM_LIB_CONFIG_TYPE = LT
+ComM_OUTPUT_PATH = $(GEN_OUTPUT_PATH)
+ComM_ECU_ROOT = /os_ecuc/ECU
+#ComM_LIB_PATH = $(LIB_OUTPUT_PATH)
+ComM_CONFIG_ROOT = /os_ecuc/ComM
+ComM_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+ComM_CONFIG_FILE += $(BSW_ROOT)/COM/ComM/ssc/cfg/ComM_MGC_Impl.arxml
+ComM_CONFIG_FILE += $(BSW_ROOT)/COM/ComM/ssc/cfg/ComM_MGC_MD.arxml
+ComM_CONFIG_FILE += $(BSW_ROOT)/COM/Com/ssc/cfg/Com_MGC_Impl.arxml
+ComM_CONFIG_FILE += $(BSW_ROOT)/COM/Com/ssc/cfg/Com_MGC_MD.arxml
+ComM_CONFIG_FILE += $(BSW_ROOT)/COM/Nm/ssc/cfg/Nm_MGC_Impl.arxml
+ComM_CONFIG_FILE += $(BSW_ROOT)/COM/Nm/ssc/cfg/Nm_MGC_MD.arxml
+ComM_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call ADD_AUTOSAR,ComM,$(PROJECT_ROOT)/../../BSWs/COM/ComM/ssc/make))
+
+
+# Nm Module
+Nm_CONFIG_VARIANT = PC LT PB
+Nm_LIB_CONFIG_TYPE = PB
+Nm_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+Nm_CONFIG_ROOT = /os_ecuc/Nm
+Nm_ECU_ROOT = /os_ecuc/ECU
+Nm_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+Nm_CONFIG_FILE += $(BSW_ROOT)/COM/CanNM/ssc/cfg/CanNm_MGC_MD.arxml
+Nm_CONFIG_FILE += $(BSW_ROOT)/COM/CanNM/ssc/cfg/CanNm_MGC_Impl.arxml
+Nm_CONFIG_FILE += $(BSW_ROOT)/COM/ComM/ssc/cfg/ComM_MGC_Impl.arxml
+Nm_CONFIG_FILE += $(BSW_ROOT)/COM/ComM/ssc/cfg/ComM_MGC_MD.arxml
+Nm_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+#$(eval $(call ADD_AUTOSAR,Nm,../../BSWs/COM/Nm/ssc/make))
+
+
+#LinIf Module
+LinIf_CONFIG_VARIANT=PC,LT,PB
+LinIf_LIB_CONFIG_TYPE=PB_MAX
+LinIf_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+LinIf_ECU_CONFIG_TYPE= PB_MAX
+LinIf_CORE_PATH=$(BSW_ROOT)/COM/LinIf/ssc
+LinIf_CONFIG_ROOT = /os_ecuc/LinIf
+LinIf_ECU_ROOT = /os_ecuc/ECU
+LinIf_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+LinIf_CONFIG_FILE += $(BSW_ROOT)/MCAL/$(TARGET_DERIVATIVE)/Lin/ssc/cfg/*.arxml
+LinIf_CONFIG_FILE += $(BSW_ROOT)/SYSTEM/EcuM/ssc/cfg/EcuM_MGC_MD.arxml
+LinIf_CONFIG_FILE += $(BSW_ROOT)/COM/PduR/ssc/cfg/PduR_MGC_MD.arxml
+LinIf_CONFIG_FILE += $(BSW_ROOT)/COM/ComM/ssc/cfg/ComM_MGC_MD.arxml
+LinIf_CONFIG_FILE += $(BSW_ROOT)/COM/LinTrcv/ssc/cfg/UJA1132/LinTrcv_31_UJA1132_MGC_MD.arxml
+LinIf_CONFIG_FILE += $(BSW_ROOT)/COM/LinTrcv/ssc/cfg/UJA1132/LinTrcv_31_UJA1132_MGC_Impl.arxml
+LinIf_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Lin.arxml
+LinIf_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/UJA1132_Lin.arxml
+LinIf_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call ADD_AUTOSAR,LinIf,$(BSW_ROOT)/COM/LinIf/ssc/make))
+
+
+#LinSm Module
+LinSM_CONFIG_VARIANT=LT PC PB
+LinSM_LIB_CONFIG_TYPE=LT_MAX
+LinSM_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+LinSM_ECU_CONFIG_TYPE= LT_MAX
+LinSM_CONFIG_ROOT = /os_ecuc/LinSM
+LinSM_ECU_ROOT = /os_ecuc/ECU
+LinSM_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+LinSM_CONFIG_FILE += $(BSW_ROOT)/COM/ComM/ssc/cfg/ComM_MGC_MD.arxml
+LinSM_CONFIG_FILE += $(BSW_ROOT)/COM/LinIf/ssc/cfg/LinIf_MGC_MD.arxml
+LinSM_CONFIG_FILE += $(BSW_ROOT)/DIAG/Dem/ssc/cfg/Dem_MGC_MD.arxml
+LinSM_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call ADD_AUTOSAR,LinSM,$(BSW_ROOT)/COM/LinSM/ssc/make))
+
+
+#CanTp Module
+#CanTp_NOBUILD=1
+CanTp_CONFIG_VARIANT=PB LT PC
+CanTp_LIB_CONFIG_TYPE=LT_max
+CanTp_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+CanTp_ECU_CONFIG_TYPE= LT_max
+CanTp_CONFIG_ROOT = /os_ecuc/CanTp
+CanTp_ECU_ROOT = /os_ecuc/ECU
+CanTp_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+CanTp_CONFIG_FILE += $(BSW_ROOT)/COM/PduR/ssc/cfg/PduR_MGC_Impl.arxml
+CanTp_CONFIG_FILE += $(BSW_ROOT)/COM/PduR/ssc/cfg/PduR_MGC_MD.arxml
+CanTp_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_Impl.arxml
+CanTp_CONFIG_FILE += $(BSW_ROOT)/COM/CanIf/ssc/cfg/CanIf_MGC_MD.arxml
+CanTp_CONFIG_FILE += $(BSW_ROOT)/DIAG/Dcm/ssc/cfg/Dcm_MGC_MD.arxml
+CanTp_CONFIG_FILE += $(BSW_ROOT)/DIAG/Dcm/ssc/cfg/Dcm_MGC_Impl.arxml
+CanTp_CONFIG_FILE += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+$(eval $(call ADD_AUTOSAR,CanTp,$(BSW_ROOT)/COM/CanTp/ssc/make))
+
+
+# Dcm Module
+#Dcm_NOBUILD=1
+Dcm_LIB_CONFIG_TYPE=PB_max
+Dcm_CONFIG_VARIANT=PB LT PC
+Dcm_OUTPUT_PATH = $(GEN_OUTPUT_PATH)
+Dcm_CONFIG_ROOT = /os_ecuc/Dcm
+Dcm_ECU_ROOT = /os_ecuc/ECU
+Dcm_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Dcm.arxml
+Dcm_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+$(eval $(call ADD_AUTOSAR,Dcm,../../BSWs/DIAG/Dcm/ssc/make))
+
+#Dem Module
+#Dem_NOBUILD=1
+Dem_CONFIG_VARIANT= PC LT PB
+Dem_LIB_CONFIG_TYPE=PB_max
+Dem_OUTPUT_PATH=$(GEN_OUTPUT_PATH)
+Dem_CONFIG_ROOT = /os_ecuc/Dem
+Dem_ECU_ROOT = /os_ecuc/ECU
+Dem_CONFIG_FILE = cfg/$(TARGET_DERIVATIVE)/Appl_Dem.arxml
+Dem_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/Appl_Mem.arxml
+Dem_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+Dem_CONFIG_FILE += $(BSW_ROOT)/MEM/NvM/ssc/cfg/NvM_MGC_Impl.arxml
+Dem_CONFIG_FILE += $(BSW_ROOT)/MEM/NvM/ssc/cfg/NvM_MGC_MD.arxml
+$(eval $(call ADD_AUTOSAR,Dem,../../BSWs/DIAG/Dem/ssc/make))
+
+
+
+# Add Os
+Os_LIB_CONFIG_TYPE  = SC1_Ext
+Os_CONFIG_VARIANT   = PC,LT,PB
+Os_OUTPUT_PATH      = $(GEN_OUTPUT_PATH)
+Os_CONFIG_FILE     += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+Os_CONFIG_FILE     += cfg/$(TARGET_DERIVATIVE)/Platform_Types.arxml
+Os_CONFIG_FILE     += $(Os_DEFINITION_FILES)
+Os_CONFIG_FILE     += $(VSC_TOOL_PATH)/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml
+Os_CONFIG_ROOT      = /os_ecuc/Os
+
+Os_ORTI = 1
+Os_IOC  = 1
+#Os_STANDALONE_MODE = 1
+$(eval $(call $(BUILD_TYPE),Os,$(OS_CORE_ROOT)/ssc/make))
+
+# Add RTE
+Rte_MODE = rte-contract
+ifdef OLD_SWC
+Rte_CONFIG_FILE += $(OS_ROOT_PATH)/cfg/Os_SWC.arxml
+else
+Rte_CONFIG_FILE += $(OS_ROOT_PATH)/cfg/ar422/Os_MGC_SWC.arxml
+endif
+Rte_CONFIG_FILE += $(BSW_ROOT)/RTE/Rte/ssc/cfg/AUTOSAR_Types.arxml
+Rte_CONFIG_FILE += cfg/$(TARGET_DERIVATIVE)/os_ecuc.arxml
+Rte_OUTPUT_PATH  = $(GEN_OUTPUT_PATH)
+Rte_PROJECT_PATH = $(BSW_ROOT)/RTE/Rte
+Rte_CORE_PATH    = $(BSW_ROOT)/RTE/Rte/ssc
+
+-include $(BSW_ROOT)/RTE/Rte/ssc/make/Rte_cfg.mak
+-include $(BSW_ROOT)/RTE/Rte/ssc/make/Rte_defs.mak
+-include $(BSW_ROOT)/RTE/Rte/ssc/make/Rte_rules.mak
+
+CC_FILES_TO_BUILD  += $(Os_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(CanTrcv_31_UJA1132_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(LinTrcv_31_UJA1132_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(CanTrcv_31_TJA1145_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(CAN_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(LIN_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(ADC_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(PWM_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(Ea_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(NvM_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(CanIf_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(CanSM_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(LinIf_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(LinSM_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(CanTp_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(Com_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(ComM_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(PduR_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(WDG_GENERATED_SOURCE_FILES)
+CC_FILES_TO_BUILD  += $(WdgM_GENERATED_SOURCE_FILES)
+ASM_FILES_TO_BUILD += $(Os_GENERATED_ASM_FILES)
+CC_INCLUDE_PATH    += $(GEN_OUTPUT_PATH)/
+CC_INCLUDE_PATH    += $(GEN_OUTPUT_PATH)/include
+
+# Add VSTAR_Bits
+-include $(BSW_ROOT)/Library/VSTAR_Bits/ssc/make/Vstar_Bits_defs.mak
+-include $(BSW_ROOT)/Library/VSTAR_Bits/ssc/make/Vstar_Bits_rules.mak
+
+# Add Test
+$(eval $(call ADD_AUTOSAR,testmain,make))
+
+$(eval $(call ADD_MACRO,DISABLE_MCAL_INTERMODULE_ASR_CHECK))
+$(eval $(call ADD_MACRO,_DIABDATA_C_MPC574XR_))
+
+TARGET := out/Double_$(TARGET_PLATFORM)_$(TARGET_COMPILER).$(OUT_FILE_SUFFIX)
+

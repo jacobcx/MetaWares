@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Mentor Graphics Corporation
+    All Rights Reserved
+
+ THIS WORK CONTAINS TRADE SECRET
+ AND PROPRIETARY INFORMATION WHICH IS THE
+ PROPERTY OF MENTOR GRAPHICS
+ CORPORATION OR ITS LICENSORS AND IS
+ SUBJECT TO LICENSE TERMS.
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+   <AR-PACKAGES>
+      <AR-PACKAGE>
+         <SHORT-NAME>AUTOSAR_WdgM</SHORT-NAME>
+         <AR-PACKAGES>
+            <AR-PACKAGE>
+                <SHORT-NAME>BswModuleEntrys</SHORT-NAME>
+                <ELEMENTS>
+                    <BSW-MODULE-ENTRY>
+                        <SHORT-NAME>WdgM_MainFunction</SHORT-NAME>
+                        <SERVICE-ID>2</SERVICE-ID>
+                        <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                        <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                        <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                    </BSW-MODULE-ENTRY>
+                </ELEMENTS>
+            </AR-PACKAGE>
+         </AR-PACKAGES>
+      </AR-PACKAGE>
+      <AR-PACKAGE>
+         <SHORT-NAME>VSTAR</SHORT-NAME>
+         <AR-PACKAGES>
+            <AR-PACKAGE>
+               <SHORT-NAME>BswMd</SHORT-NAME>
+               <ELEMENTS>
+                  <BSW-MODULE-DESCRIPTION>
+                     <SHORT-NAME>WdgM</SHORT-NAME>
+                     <LONG-NAME>
+                        <L-4 L="FOR-ALL">Watchdog Manager</L-4>
+                     </LONG-NAME>
+                     <MODULE-ID>13</MODULE-ID>
+                     <BSW-MODULE-DEPENDENCYS>
+                        <BSW-MODULE-DEPENDENCY>
+                           <SHORT-NAME>BswModuleDependency_Dem</SHORT-NAME>
+                           <TARGET-MODULE-ID>54</TARGET-MODULE-ID>
+                           <SERVICE-ITEMS>
+                              <DIAGNOSTIC-EVENT-NEEDS>
+                                 <SHORT-NAME>WDGM_E_SET_MODE</SHORT-NAME>
+                                 <DTC-KIND>EMISSION-RELATED-DTC</DTC-KIND>
+                              </DIAGNOSTIC-EVENT-NEEDS>
+                              <DIAGNOSTIC-EVENT-NEEDS>
+                                 <SHORT-NAME>WDGM_E_MONITORING</SHORT-NAME>
+                                 <DTC-KIND>EMISSION-RELATED-DTC</DTC-KIND>
+                              </DIAGNOSTIC-EVENT-NEEDS>
+                              <DIAGNOSTIC-EVENT-NEEDS>
+                                 <SHORT-NAME>WDGM_E_IMPROPER_CALLER</SHORT-NAME>
+                                 <DTC-KIND>EMISSION-RELATED-DTC</DTC-KIND>
+                              </DIAGNOSTIC-EVENT-NEEDS>
+                           </SERVICE-ITEMS>
+                        </BSW-MODULE-DEPENDENCY>
+                     </BSW-MODULE-DEPENDENCYS>
+                     <INTERNAL-BEHAVIORS>
+                        <BSW-INTERNAL-BEHAVIOR>
+                           <SHORT-NAME>BswBehavior_WdgM</SHORT-NAME>
+                           <EXCLUSIVE-AREAS>
+                              <EXCLUSIVE-AREA>
+                                 <SHORT-NAME>EaActStatusProtect</SHORT-NAME>
+                              </EXCLUSIVE-AREA>
+                           </EXCLUSIVE-AREAS>
+                           <ENTITYS>
+                              <BSW-SCHEDULABLE-ENTITY>
+                                 <SHORT-NAME>BEn_WdgM_MainFunction</SHORT-NAME>
+                                 <LONG-NAME>
+                                    <L-4 L="FOR-ALL"/>
+                                 </LONG-NAME>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                    <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/WdgM/BswBehavior_WdgM/EaActStatusProtect</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                 </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_WdgM/BswModuleEntrys/WdgM_MainFunction</IMPLEMENTED-ENTRY-REF>
+                              </BSW-SCHEDULABLE-ENTITY>
+                           
+                             <BSW-CALLED-ENTITY>
+                                 <SHORT-NAME>BEn_WdgM_DeInit</SHORT-NAME>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                    <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/WdgM/BswBehavior_WdgM/EaActStatusProtect</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                 </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/BswMd/WdgM_DeInit</IMPLEMENTED-ENTRY-REF>
+                              </BSW-CALLED-ENTITY>
+                             <BSW-CALLED-ENTITY>
+                                 <SHORT-NAME>BEn_WdgM_DeInit</SHORT-NAME>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                    <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/WdgM/BswBehavior_WdgM/EaActStatusProtect</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                 </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/BswMd/WdgM_DeInit</IMPLEMENTED-ENTRY-REF>
+                              </BSW-CALLED-ENTITY>
+                             <BSW-CALLED-ENTITY>
+                                 <SHORT-NAME>BEn_WdgM_SetMode</SHORT-NAME>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                    <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/WdgM/BswBehavior_WdgM/EaActStatusProtect</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                 </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/BswMd/WdgM_SetMode</IMPLEMENTED-ENTRY-REF>
+                              </BSW-CALLED-ENTITY>
+                             <BSW-CALLED-ENTITY>
+                                 <SHORT-NAME>BEn_WdgM_CheckpointReached</SHORT-NAME>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                    <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/VSTAR/BswMd/WdgM/BswBehavior_WdgM/EaActStatusProtect</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                 </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/VSTAR/BswMd/WdgM_CheckpointReached</IMPLEMENTED-ENTRY-REF>
+                              </BSW-CALLED-ENTITY>                              
+                           </ENTITYS>
+                           <EVENTS>
+                              <BSW-TIMING-EVENT>
+                                 <SHORT-NAME>BEv_WdgMMainFunction_WdgMMode</SHORT-NAME>
+                                 <LONG-NAME>
+                                    <L-4 L="FOR-ALL">BEv_WdgMMainFunction_WdgMMode</L-4>
+                                 </LONG-NAME>
+                                 <DISABLED-IN-MODE-IREFS>
+                                 </DISABLED-IN-MODE-IREFS>
+                                 <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/WdgM/BswBehavior_WdgM/BEn_WdgM_MainFunction</STARTS-ON-EVENT-REF>
+                                 <PERIOD>0.01</PERIOD>
+                              </BSW-TIMING-EVENT>
+                           </EVENTS>
+                        </BSW-INTERNAL-BEHAVIOR>
+                     </INTERNAL-BEHAVIORS>
+                  </BSW-MODULE-DESCRIPTION>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>WdgM_DeInit</SHORT-NAME>
+                     <SERVICE-ID>1</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>REGULAR</CALL-TYPE>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>                  
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>WdgM_SetMode</SHORT-NAME>
+                     <SERVICE-ID>3</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>REGULAR</CALL-TYPE>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>                  
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>WdgM_MainFunction</SHORT-NAME>
+                     <SERVICE-ID>2</SERVICE-ID>
+                     <IS-REENTRANT>false</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                     <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>
+                  <BSW-MODULE-ENTRY>
+                     <SHORT-NAME>WdgM_CheckpointReached</SHORT-NAME>
+                     <SERVICE-ID>14</SERVICE-ID>
+                     <IS-REENTRANT>true</IS-REENTRANT>
+                     <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                     <CALL-TYPE>REGULAR</CALL-TYPE>
+                     <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                  </BSW-MODULE-ENTRY>                  
+                  <IMPLEMENTATION-DATA-TYPE>
+                     <SHORT-NAME>WdgM_ModeType</SHORT-NAME>
+                     <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                     <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                           <SW-DATA-DEF-PROPS-CONDITIONAL>
+                              <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                           </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                     </SW-DATA-DEF-PROPS>
+                  </IMPLEMENTATION-DATA-TYPE>
+                  <SWC-BSW-MAPPING>
+                     <SHORT-NAME>SwcBswMapping_WdgM</SHORT-NAME>
+                     <BSW-BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/VSTAR/BswMd/WdgM/BswBehavior_WdgM</BSW-BEHAVIOR-REF>
+                     <RUNNABLE-MAPPINGS>
+                        <SWC-BSW-RUNNABLE-MAPPING>
+                           <BSW-ENTITY-REF DEST="BSW-SCHEDULABLE-ENTITY">/VSTAR/BswMd/WdgM/BswBehavior_WdgM/BEn_WdgM_MainFunction</BSW-ENTITY-REF>
+                           <SWC-RUNNABLE-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/WdgM/WdgM/IB_WDGM/RE_MAINFUNCTION</SWC-RUNNABLE-REF>
+                        </SWC-BSW-RUNNABLE-MAPPING>
+                     </RUNNABLE-MAPPINGS>
+                     <SWC-BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/AUTOSAR/Services/WdgM/WdgM/IB_WDGM</SWC-BEHAVIOR-REF>
+                  </SWC-BSW-MAPPING>
+                  <MODE-DECLARATION-GROUP>
+                     <SHORT-NAME>WdgMMode</SHORT-NAME>
+                     <INITIAL-MODE-REF DEST="MODE-DECLARATION">/VSTAR/BswMd/WdgMMode/WdgMMode</INITIAL-MODE-REF>
+                     <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                           <SHORT-NAME>WdgMMode</SHORT-NAME>
+                           <VALUE>0</VALUE>
+                        </MODE-DECLARATION>
+                     </MODE-DECLARATIONS>
+                  </MODE-DECLARATION-GROUP>
+               </ELEMENTS>
+            </AR-PACKAGE>
+         </AR-PACKAGES>
+      </AR-PACKAGE>
+   </AR-PACKAGES>
+</AUTOSAR>
