@@ -82,6 +82,7 @@
 
 extern VAR(uint8,NVM_VAR) NvM_Cfg_Ram[NVM_BLOCK_1_DATA_LENGTH];
 extern VAR(uint8,NVM_VAR) NvM_Cfg_Appl[NVM_BLOCK_2_DATA_LENGTH];
+extern VAR(uint8,NVM_VAR) NvM_Cfg_BSW[NVM_BLOCK_3_DATA_LENGTH];
 
 #define NVM_STOP_SEC_VAR_NO_INIT_8
 #include "NvM_MemMap.h" /* KW MISRA.INCL.INSIDE */
@@ -195,6 +196,40 @@ extern VAR(uint8,NVM_VAR) NvM_Cfg_Appl[NVM_BLOCK_2_DATA_LENGTH];
 #define NvMBlockDescriptor_Appl_NVM_BLOCK_USE_CRC_COMP_MECHANISM         (NVM_BLOCK_USE_CRC_COMP_MECHANISM_OFF)
 #define NvMBlockDescriptor_Appl_NVM_BLOCK_USE_AUTO_VALIDATION         (NVM_BLOCK_USE_AUTO_VALIDATION_OFF)
 #define NvMBlockDescriptor_Appl_NVM_BLOCK_USE_SET_RAM_BLOCK_STATUS         (NVM_BLOCK_USE_SET_RAM_BLOCK_STATUS_ON)
+#define NvMBlockDescriptor_BSW_NVM_BLOCK_CRC_TYPE          (NVM_CRC00)
+#define NvMBlockDescriptor_BSW_NVM_NVRAM_DEVICE_ID         ((uint8)0)
+#define NvMBlockDescriptor_BSW_NVM_BLOCK_MANAGEMENT        (NVM_BLOCK_REDUNDANT)
+#define NvMBlockDescriptor_BSW_NVM_NV_BLOCK_NUM            ((uint8)2)
+#define NvMBlockDescriptor_BSW_NVM_ROM_BLOCK_NUM           ((uint8)0)
+#define NvMBlockDescriptor_BSW_NVM_BLOCK_JOB_PRIORITY      ((uint8)0)
+#define NvMBlockDescriptor_BSW_NVM_NV_BLOCK_LENGTH         ((uint16)256)
+#define NvMBlockDescriptor_BSW_NVM_NV_BLOCK_BASE_NUMBER    ((uint16)1)
+#define NvMBlockDescriptor_BSW_NVM_NV_BLOCK_IDENTIFIER     ((uint16)3)
+#define NvMBlockDescriptor_BSW_NVM_MAX_NUM_OF_READ_RETRIES     ((uint8)1)
+#define NvMBlockDescriptor_BSW_NVM_MAX_NUM_OF_WRITE_RETRIES     ((uint8)1)
+#define NvMBlockDescriptor_BSW_NVM_WRITE_VERIFICATION_DATA_SIZE     ((uint16)1)
+#define NvMBlockDescriptor_BSW_NVM_RAM_BLOCK_DATA_ADDRESS  (&NvM_Cfg_BSW[0])
+#define NvMBlockDescriptor_BSW_NVM_ROM_BLOCK_DATA_ADDRESS  (NULL_PTR)
+#define NvMBlockDescriptor_BSW_NVM_INIT_BLOCK_CALLBACK     (NULL_PTR)
+#define NvMBlockDescriptor_BSW_NVM_SINGLE_BLOCK_CALLBACK   (NULL_PTR)
+#define NvMBlockDescriptor_BSW_NVM_READ_RAM_BLOCK_FROM_NVM     (NULL_PTR)
+#define NvMBlockDescriptor_BSW_NVM_WRITE_RAM_BLOCK_TO_NVM   (NULL_PTR)
+#define NvMBlockDescriptor_BSW_NVM_DEM_EVENT_ID_STRUCT_PTR  (NULL_PTR)
+#define NvMBlockDescriptor_BSW_NVM_BLOCK_USE_CRC            (NVM_BLOCK_USE_CRC_OFF)
+#define NvMBlockDescriptor_BSW_NVM_CALC_RAM_BLOCK_CRC       (NVM_CALC_RAM_BLOCK_CRC_OFF)
+#define NvMBlockDescriptor_BSW_NVM_BLOCK_WRITE_PROT         (NVM_BLOCK_WRITE_PROT_OFF)
+#define NvMBlockDescriptor_BSW_NVM_WRITE_BLOCK_ONCE         (NVM_WRITE_BLOCK_ONCE_OFF)
+#define NvMBlockDescriptor_BSW_NVM_RESISTANT_TO_CHANGED_SW  (NVM_RESISTANT_TO_CHANGED_SW_OFF)
+#define NvMBlockDescriptor_BSW_NVM_SELECT_BLOCK_FOR_READALL (NVM_SELECT_BLOCK_FOR_READALL_OFF)
+#define NvMBlockDescriptor_BSW_NVM_BLOCK_USE_SYNC_MECHANISM       (NVM_BLOCK_USE_SYNC_MECHANISM_OFF) /* [DD-NVM00511-MGC01-V1] */
+#define NvMBlockDescriptor_BSW_NVM_SELECT_BLOCK_FOR_WRITEALL (NVM_SELECT_BLOCK_FOR_WRITEALL_OFF)
+#define NvMBlockDescriptor_BSW_NVM_WRITE_VERIFICATION     (NVM_WRITE_VERIFICATION_OFF)
+#define NvMBlockDescriptor_BSW_NVM_STATIC_BLOCK_ID_CHECK     (NVM_STATIC_BLOCK_ID_CHECK_OFF)
+#define NvMBlockDescriptor_BSW_NVM_BSWM_BLOCK_STATUS_INFORMATION     (NVM_BSWM_BLOCK_STATUS_INFORMATION_OFF)
+#define NvMBlockDescriptor_BSW_NVM_BLOCK_CRC_FUNCTION_PTR     (NULL_PTR)
+#define NvMBlockDescriptor_BSW_NVM_BLOCK_USE_CRC_COMP_MECHANISM         (NVM_BLOCK_USE_CRC_COMP_MECHANISM_OFF)
+#define NvMBlockDescriptor_BSW_NVM_BLOCK_USE_AUTO_VALIDATION         (NVM_BLOCK_USE_AUTO_VALIDATION_OFF)
+#define NvMBlockDescriptor_BSW_NVM_BLOCK_USE_SET_RAM_BLOCK_STATUS         (NVM_BLOCK_USE_SET_RAM_BLOCK_STATUS_ON)
 
 
 /* LOCAL DEFINE MACROS (#, ##) --------------------------------------------*/
@@ -287,7 +322,7 @@ static VAR(uint8,NVM_VAR) NvM_Mirror[NVM_MAXIMUM_BUFFER_LENGTH]; /* [DD-NVM00513
 #define NVM_START_SEC_VAR_NO_INIT_32
 #include "NvM_MemMap.h" /* KW MISRA.INCL.INSIDE */
 /** Block crc value array [DD-NVM00040-MGC01-V1] [DD-NVM00544-MGC01-V1] */
-static VAR(uint32,NVM_VAR) NvM_BlockCrc[3];
+static VAR(uint32,NVM_VAR) NvM_BlockCrc[4];
 
 #define NVM_STOP_SEC_VAR_NO_INIT_32
 #include "NvM_MemMap.h" /* KW MISRA.INCL.INSIDE */
@@ -300,7 +335,7 @@ static VAR(uint32,NVM_VAR) NvM_BlockCrc[3];
  * NvM Block Administrative Table
  * [DD-NVM00135-MGC01-V1]
  */
-static VAR(NvM_AdministrativeBlockType,NVM_VAR) NvM_AdministrativeBlock[3];
+static VAR(NvM_AdministrativeBlockType,NVM_VAR) NvM_AdministrativeBlock[4];
 /**
  * Mark end of memory area for unspecified variables with no initialisation
  */
@@ -346,12 +381,13 @@ MISRA RULE C197 VIOLATION:
   * [DD-NVM00373-MGC01-V1] [DD-NVM00370-MGC01-V1] [DD-NVM00140-MGC01-V1] [DD-NVM00143-MGC01-V1]
   * [DD-NVM00000-MGC01-V1] [DD-NVM-0006-MGC04-V1]
   */
-static CONST(NvM_BlockDescriptorType,NVM_CONST) NvM_BlockDescriptor[3]=
+static CONST(NvM_BlockDescriptorType,NVM_CONST) NvM_BlockDescriptor[4]=
 {
    /* [DD-NVM00393-MGC01-V1] */
    NVM_CONFIGURE_BLOCK(NVM_BLOCK_0), /* KW MISRA.CAST.PTR MISRA.CAST.FUNC_PTR */
    NVM_CONFIGURE_BLOCK(NVM_BLOCK_1), /* KW MISRA.CAST.PTR MISRA.CAST.FUNC_PTR */
-   NVM_CONFIGURE_BLOCK(NvMBlockDescriptor_Appl) /* KW MISRA.CAST.PTR MISRA.CAST.FUNC_PTR */
+   NVM_CONFIGURE_BLOCK(NvMBlockDescriptor_Appl), /* KW MISRA.CAST.PTR MISRA.CAST.FUNC_PTR */
+   NVM_CONFIGURE_BLOCK(NvMBlockDescriptor_BSW) /* KW MISRA.CAST.PTR MISRA.CAST.FUNC_PTR */
 };
 
  /* PRQA S 3635 -- */
@@ -362,7 +398,7 @@ CONST(NvM_CommonType,NVM_CONST) NvM_Common =
 {
    65535,      /* NvM CRC number of bytes */
    1,      /* NvM Config ID [DD-NVM00034-MGC01-V1] */
-   3,      /* Total number of NvM Ram blocks */
+   4,      /* Total number of NvM Ram blocks */
    NULL_PTR,      /* NvMMultiBlockCallback [DD-NVM00260-MGC01-V1] */
    &NvM_BswM_NvM_CurrentBlockMode_Is_Not_Used,      /* No BswM_NvM_CurrentBlockMode is configured. */
    &BswM_NvM_CurrentJobMode,      /*  BswM is informed about the multiblock job. [DD-NVM00745-MGC01-V1] */

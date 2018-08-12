@@ -82,12 +82,12 @@ CONST(uint32, EA_CONST) Ea_LTtoPCHashValue = 0xA03BE7B8UL; /* Link time to pre-c
 #define EA_BLOCK_AMOUNTS_2               ((uint8)1)
 #define EA_IMMEDIATE_DATA_2              (FALSE)
 
-#define EA_BLOCK_NUMBER_3                ((uint16)3)
-#define EA_BLOCK_SIZE_3                  ((uint16)100)
-#define EA_DEVICE_INDEX_3                ((uint8)0)
-#define EA_PHYSICAL_BLOCK_NUMBER_3       ((uint16)3)
-#define EA_BLOCK_AMOUNTS_3               ((uint8)1)
-#define EA_IMMEDIATE_DATA_3              (FALSE)
+#define EA_BLOCK_NUMBER_2                ((uint16)2)
+#define EA_BLOCK_SIZE_2                  ((uint16)100)
+#define EA_DEVICE_INDEX_2                ((uint8)0)
+#define EA_PHYSICAL_BLOCK_NUMBER_2       ((uint16)3)
+#define EA_BLOCK_AMOUNTS_2               ((uint8)1)
+#define EA_IMMEDIATE_DATA_2              (FALSE)
 
 #define EA_BLOCK_NUMBER_4                ((uint16)4)
 #define EA_BLOCK_SIZE_4                  ((uint16)256)
@@ -120,12 +120,12 @@ CONST(EA_BlockConfigurationType, EA_CONST) EA_BlockDescriptor[EA_TOTAL_BLOCK_NUM
       EA_IMMEDIATE_DATA_2
    },
    {
-      EA_BLOCK_NUMBER_3,
-      EA_BLOCK_SIZE_3,
-      EA_DEVICE_INDEX_3,
-      EA_PHYSICAL_BLOCK_NUMBER_3,
-      EA_BLOCK_AMOUNTS_3,
-      EA_IMMEDIATE_DATA_3
+      EA_BLOCK_NUMBER_2,
+      EA_BLOCK_SIZE_2,
+      EA_DEVICE_INDEX_2,
+      EA_PHYSICAL_BLOCK_NUMBER_2,
+      EA_BLOCK_AMOUNTS_2,
+      EA_IMMEDIATE_DATA_2
    },
    {
       EA_BLOCK_NUMBER_4,

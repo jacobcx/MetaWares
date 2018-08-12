@@ -42,11 +42,19 @@ SUBJECT TO LICENSE TERMS.
                     <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/NvM/NvMService</PROVIDED-INTERFACE-TREF>
                  </P-PORT-PROTOTYPE>
                  <P-PORT-PROTOTYPE>
+                    <SHORT-NAME>P_Service_NvMBlockDescriptor_BSW</SHORT-NAME>
+                    <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/NvM/NvMService</PROVIDED-INTERFACE-TREF>
+                 </P-PORT-PROTOTYPE>
+                 <P-PORT-PROTOTYPE>
                     <SHORT-NAME>P_Admin_NvMBlockDescriptor_Cfg</SHORT-NAME>
                     <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/NvM/NvMAdmin</PROVIDED-INTERFACE-TREF>
                  </P-PORT-PROTOTYPE>
                  <P-PORT-PROTOTYPE>
                     <SHORT-NAME>P_Admin_NvMBlockDescriptor_Appl</SHORT-NAME>
+                    <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/NvM/NvMAdmin</PROVIDED-INTERFACE-TREF>
+                 </P-PORT-PROTOTYPE>
+                 <P-PORT-PROTOTYPE>
+                    <SHORT-NAME>P_Admin_NvMBlockDescriptor_BSW</SHORT-NAME>
                     <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/AUTOSAR/Services/NvM/NvMAdmin</PROVIDED-INTERFACE-TREF>
                  </P-PORT-PROTOTYPE>
              </PORTS>
@@ -218,6 +226,86 @@ SUBJECT TO LICENSE TERMS.
                   <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/NvM/NvMAdmin/SetBlockProtection</TARGET-PROVIDED-OPERATION-REF>
                </OPERATION-IREF>
             </OPERATION-INVOKED-EVENT>
+            <OPERATION-INVOKED-EVENT>
+            <SHORT-NAME>EV_GetErrorStatus_Block3</SHORT-NAME>
+               <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/NvM/NvM/IB_NVM/GetErrorStatus</START-ON-EVENT-REF>
+               <OPERATION-IREF>
+                  <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Service_NvMBlockDescriptor_BSW</CONTEXT-P-PORT-REF>
+                  <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/NvM/NvMService/GetErrorStatus</TARGET-PROVIDED-OPERATION-REF>
+               </OPERATION-IREF>
+            </OPERATION-INVOKED-EVENT>
+            <OPERATION-INVOKED-EVENT>
+            <SHORT-NAME>EV_SetDataIndex_Block3</SHORT-NAME>
+               <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/NvM/NvM/IB_NVM/SetDataIndex</START-ON-EVENT-REF>
+               <OPERATION-IREF>
+                  <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Service_NvMBlockDescriptor_BSW</CONTEXT-P-PORT-REF>
+                  <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/NvM/NvMService/SetDataIndex</TARGET-PROVIDED-OPERATION-REF>
+               </OPERATION-IREF>
+            </OPERATION-INVOKED-EVENT>
+            <OPERATION-INVOKED-EVENT>
+            <SHORT-NAME>EV_SetRamBlockStatus_Block3</SHORT-NAME>
+               <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/NvM/NvM/IB_NVM/SetRamBlockStatus</START-ON-EVENT-REF>
+               <OPERATION-IREF>
+                  <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Service_NvMBlockDescriptor_BSW</CONTEXT-P-PORT-REF>
+                  <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/NvM/NvMService/SetRamBlockStatus</TARGET-PROVIDED-OPERATION-REF>
+               </OPERATION-IREF>
+            </OPERATION-INVOKED-EVENT>
+            <OPERATION-INVOKED-EVENT>
+            <SHORT-NAME>EV_GetDataIndex_Block3</SHORT-NAME>
+               <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/NvM/NvM/IB_NVM/GetDataIndex</START-ON-EVENT-REF>
+               <OPERATION-IREF>
+                  <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Service_NvMBlockDescriptor_BSW</CONTEXT-P-PORT-REF>
+                  <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/NvM/NvMService/GetDataIndex</TARGET-PROVIDED-OPERATION-REF>
+               </OPERATION-IREF>
+            </OPERATION-INVOKED-EVENT>
+            <OPERATION-INVOKED-EVENT>
+            <SHORT-NAME>EV_ReadBlock_Block3</SHORT-NAME>
+               <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/NvM/NvM/IB_NVM/ReadBlock</START-ON-EVENT-REF>
+               <OPERATION-IREF>
+                  <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Service_NvMBlockDescriptor_BSW</CONTEXT-P-PORT-REF>
+                  <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/NvM/NvMService/ReadBlock</TARGET-PROVIDED-OPERATION-REF>
+               </OPERATION-IREF>
+            </OPERATION-INVOKED-EVENT>
+            <OPERATION-INVOKED-EVENT>
+            <SHORT-NAME>EV_WriteBlock_Block3</SHORT-NAME>
+               <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/NvM/NvM/IB_NVM/WriteBlock</START-ON-EVENT-REF>
+               <OPERATION-IREF>
+                  <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Service_NvMBlockDescriptor_BSW</CONTEXT-P-PORT-REF>
+                  <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/NvM/NvMService/WriteBlock</TARGET-PROVIDED-OPERATION-REF>
+               </OPERATION-IREF>
+            </OPERATION-INVOKED-EVENT>
+            <OPERATION-INVOKED-EVENT>
+            <SHORT-NAME>EV_RestoreBlockDefaults_Block3</SHORT-NAME>
+               <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/NvM/NvM/IB_NVM/RestoreBlockDefaults</START-ON-EVENT-REF>
+               <OPERATION-IREF>
+                  <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Service_NvMBlockDescriptor_BSW</CONTEXT-P-PORT-REF>
+                  <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/NvM/NvMService/RestoreBlockDefaults</TARGET-PROVIDED-OPERATION-REF>
+               </OPERATION-IREF>
+            </OPERATION-INVOKED-EVENT>
+            <OPERATION-INVOKED-EVENT>
+            <SHORT-NAME>EV_EraseNvBlock_Block3</SHORT-NAME>
+               <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/NvM/NvM/IB_NVM/EraseNvBlock</START-ON-EVENT-REF>
+               <OPERATION-IREF>
+                  <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Service_NvMBlockDescriptor_BSW</CONTEXT-P-PORT-REF>
+                  <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/NvM/NvMService/EraseBlock</TARGET-PROVIDED-OPERATION-REF>
+               </OPERATION-IREF>
+            </OPERATION-INVOKED-EVENT>
+            <OPERATION-INVOKED-EVENT>
+            <SHORT-NAME>EV_InvalidateNvBlock_Block3</SHORT-NAME>
+               <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/NvM/NvM/IB_NVM/InvalidateNvBlock</START-ON-EVENT-REF>
+               <OPERATION-IREF>
+                  <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Service_NvMBlockDescriptor_BSW</CONTEXT-P-PORT-REF>
+                  <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/NvM/NvMService/InvalidateNvBlock</TARGET-PROVIDED-OPERATION-REF>
+               </OPERATION-IREF>
+            </OPERATION-INVOKED-EVENT>
+            <OPERATION-INVOKED-EVENT>
+            <SHORT-NAME>EV_SetBlockProtection_Block3</SHORT-NAME>
+               <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/AUTOSAR/Services/NvM/NvM/IB_NVM/SetBlockProtection</START-ON-EVENT-REF>
+               <OPERATION-IREF>
+                  <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Admin_NvMBlockDescriptor_BSW</CONTEXT-P-PORT-REF>
+                  <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/AUTOSAR/Services/NvM/NvMAdmin/SetBlockProtection</TARGET-PROVIDED-OPERATION-REF>
+               </OPERATION-IREF>
+            </OPERATION-INVOKED-EVENT>
             </EVENTS>
             <PORT-API-OPTIONS>
                <PORT-API-OPTION>
@@ -253,6 +341,20 @@ SUBJECT TO LICENSE TERMS.
                   <PORT-ARG-VALUES>
                      <PORT-DEFINED-ARGUMENT-VALUE>
                         <VALUE>
+                           <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>3</VALUE>
+                           </NUMERICAL-VALUE-SPECIFICATION>
+                        </VALUE>
+                        <VALUE-TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/NvM/NvM_BlockIdType</VALUE-TYPE-TREF>
+                     </PORT-DEFINED-ARGUMENT-VALUE>
+                  </PORT-ARG-VALUES>
+                  <PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Service_NvMBlockDescriptor_BSW</PORT-REF>
+               </PORT-API-OPTION>
+               <PORT-API-OPTION>
+                  <INDIRECT-API>true</INDIRECT-API>
+                  <PORT-ARG-VALUES>
+                     <PORT-DEFINED-ARGUMENT-VALUE>
+                        <VALUE>
                         <NUMERICAL-VALUE-SPECIFICATION>
                            <VALUE>1</VALUE>
                         </NUMERICAL-VALUE-SPECIFICATION>
@@ -275,6 +377,20 @@ SUBJECT TO LICENSE TERMS.
                      </PORT-DEFINED-ARGUMENT-VALUE>
                   </PORT-ARG-VALUES>
                   <PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Admin_NvMBlockDescriptor_Appl</PORT-REF>
+               </PORT-API-OPTION>
+               <PORT-API-OPTION>
+                  <INDIRECT-API>true</INDIRECT-API>
+                  <PORT-ARG-VALUES>
+                     <PORT-DEFINED-ARGUMENT-VALUE>
+                        <VALUE>
+                        <NUMERICAL-VALUE-SPECIFICATION>
+                           <VALUE>3</VALUE>
+                        </NUMERICAL-VALUE-SPECIFICATION>
+                        </VALUE>
+                        <VALUE-TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/Services/NvM/NvM_BlockIdType</VALUE-TYPE-TREF>
+                     </PORT-DEFINED-ARGUMENT-VALUE>
+                  </PORT-ARG-VALUES>
+                  <PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR/Services/NvM/NvM/P_Admin_NvMBlockDescriptor_BSW</PORT-REF>
                </PORT-API-OPTION>
             </PORT-API-OPTIONS>
              <RUNNABLES>

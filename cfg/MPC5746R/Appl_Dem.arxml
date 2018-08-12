@@ -62,7 +62,7 @@
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemEventParameter/DemEventKind</DEFINITION-REF>
-                      <VALUE>DEM_EVENT_KIND_BSW</VALUE>
+                      <VALUE>DEM_EVENT_KIND_SWC</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemEventParameter/DemFFPrestorageSupported</DEFINITION-REF>
@@ -242,6 +242,12 @@
                       <SDG GID="DemAgingCycleCounterThreshold">
                         <SD GID="status">NOTGENERATED;UI</SD>
                       </SDG>
+                      <SDG GID="DemFreezeFrameClassRef">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
+                      <SDG GID="DemFreezeFrameRecNumClassRef">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
                     </SDGS>
                   </ADMIN-DATA>
                   <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemDTCAttributes</DEFINITION-REF>
@@ -272,6 +278,14 @@
                       <DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemDTCAttributes/DemMemoryDestinationRef</DEFINITION-REF>
                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemGeneral/DemPrimaryMemory</VALUE-REF>
                     </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemDTCAttributes/DemFreezeFrameClassRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemGeneral/DemFreezeFrameClass</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemDTCAttributes/DemFreezeFrameRecNumClassRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemGeneral/DemFreezeFrameRecNumClass</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
                   </REFERENCE-VALUES>
                 </ECUC-CONTAINER-VALUE>
                 <ECUC-CONTAINER-VALUE UUID="94f0fbe7-bc3b-4082-8f88-f693e6c3371b">
@@ -288,7 +302,7 @@
                         <SD GID="status">NOTGENERATED;NONE</SD>
                       </SDG>
                       <SDG GID="DemEventKind">
-                        <SD GID="status">DEFAULT;NONE</SD>
+                        <SD GID="status">NOTGENERATED;NONE</SD>
                       </SDG>
                       <SDG GID="DemFFPrestorageSupported">
                         <SD GID="status">DEFAULT;NONE</SD>
@@ -298,6 +312,9 @@
                       </SDG>
                       <SDG GID="DemDTCRef">
                         <SD GID="status">NOTGENERATED;UI</SD>
+                      </SDG>
+                      <SDG GID="DemStorageConditionGroupRef">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
                       </SDG>
                     </SDGS>
                   </ADMIN-DATA>
@@ -317,7 +334,7 @@
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemEventParameter/DemEventKind</DEFINITION-REF>
-                      <VALUE>DEM_EVENT_KIND_SWC</VALUE>
+                      <VALUE>DEM_EVENT_KIND_BSW</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemEventParameter/DemFFPrestorageSupported</DEFINITION-REF>
@@ -332,6 +349,10 @@
                     <ECUC-REFERENCE-VALUE>
                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemEventParameter/DemDTCRef</DEFINITION-REF>
                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemConfigSet/DemDTC_22938</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemEventParameter/DemStorageConditionGroupRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemGeneral/DemStorageConditionGroup</VALUE-REF>
                     </ECUC-REFERENCE-VALUE>
                   </REFERENCE-VALUES>
                   <SUB-CONTAINERS>
@@ -791,7 +812,7 @@
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
                   <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemNvMSupport</DEFINITION-REF>
-                  <VALUE>0</VALUE>
+                  <VALUE>1</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
               </PARAMETER-VALUES>
               <SUB-CONTAINERS>
@@ -805,6 +826,9 @@
                       <SDG GID="DemOperationCycleType">
                         <SD GID="status">DEFAULT;NONE</SD>
                       </SDG>
+                      <SDG GID="DemOpCycleDefaultInitValue">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
                     </SDGS>
                   </ADMIN-DATA>
                   <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemOperationCycle</DEFINITION-REF>
@@ -817,6 +841,10 @@
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemOperationCycle/DemOperationCycleType</DEFINITION-REF>
                       <VALUE>DEM_OPCYC_OBD_DCY</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemOperationCycle/DemOpCycleDefaultInitValue</DEFINITION-REF>
+                      <VALUE>DEM_CYCLE_STATE_START</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
                   </PARAMETER-VALUES>
                 </ECUC-CONTAINER-VALUE>
                 <ECUC-CONTAINER-VALUE UUID="20df6552-a5e1-4b4c-be2b-8fecee33c68a">
@@ -826,6 +854,9 @@
                       <SDG GID="DemMaxNumberEventEntryPrimary">
                         <SD GID="status">DEFAULT;NONE</SD>
                       </SDG>
+                      <SDG GID="DemNumberOfFreezeFrameEntriesPrimary">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
                     </SDGS>
                   </ADMIN-DATA>
                   <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemPrimaryMemory</DEFINITION-REF>
@@ -834,7 +865,189 @@
                       <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemPrimaryMemory/DemMaxNumberEventEntryPrimary</DEFINITION-REF>
                       <VALUE>10</VALUE>
                     </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemPrimaryMemory/DemNumberOfFreezeFrameEntriesPrimary</DEFINITION-REF>
+                      <VALUE>2</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
                   </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="b9d2189f-d751-41ab-9f9c-56123caa4f04">
+                  <SHORT-NAME>DemStorageCondition</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DemStorageConditionStatus">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
+                      <SDG GID="DemStorageConditionId">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
+                      <SDG GID="DemStorageConditionReplacementEventRef">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemStorageCondition</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemStorageCondition/DemStorageConditionStatus</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemStorageCondition/DemStorageConditionId</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemStorageCondition/DemStorageConditionReplacementEventRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemConfigSet/DemEventParameter_22938</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="628b04c4-9ae7-4744-85d6-ac45a49608c7">
+                  <SHORT-NAME>DemStorageConditionGroup</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DemStorageConditionRef">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemStorageConditionGroup</DEFINITION-REF>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemStorageConditionGroup/DemStorageConditionRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemGeneral/DemStorageCondition</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="c26e0a1d-38b0-4385-8344-c2f12ed81f8e">
+                  <SHORT-NAME>DemFreezeFrameClass</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DemDidClassRef">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemFreezeFrameClass</DEFINITION-REF>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemFreezeFrameClass/DemDidClassRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemGeneral/DemDidClass</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="458be9d7-9b27-427d-bef2-8e28af6383dc">
+                  <SHORT-NAME>DemFreezeFrameRecNumClass</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DemFreezeFrameRecordClassRef">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemFreezeFrameRecNumClass</DEFINITION-REF>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemFreezeFrameRecNumClass/DemFreezeFrameRecordClassRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemGeneral/DemFreezeFrameRecordClass</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="363f0a2a-1b4b-4d65-a1d5-c4d275082ef9">
+                  <SHORT-NAME>DemFreezeFrameRecordClass</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DemFreezeFrameRecordNumber">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
+                      <SDG GID="DemFreezeFrameRecordTrigger">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                      <SDG GID="DemFreezeFrameRecordUpdate">
+                        <SD GID="status">DEFAULT;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemFreezeFrameRecordClass</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemFreezeFrameRecordClass/DemFreezeFrameRecordNumber</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemFreezeFrameRecordClass/DemFreezeFrameRecordTrigger</DEFINITION-REF>
+                      <VALUE>DEM_TRIGGER_ON_TEST_FAILED</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemFreezeFrameRecordClass/DemFreezeFrameRecordUpdate</DEFINITION-REF>
+                      <VALUE>DEM_UPDATE_RECORD_NO</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="67425612-9e5d-4f1d-8be5-33d1a99d5c39">
+                  <SHORT-NAME>DemDidClass</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DemDidIdentifier">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
+                      <SDG GID="DemDidDataElementClassRef">
+                        <SD GID="status">NOTGENERATED;NONE</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemDidClass</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemDidClass/DemDidIdentifier</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemDidClass/DemDidDataElementClassRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemGeneral/DemDataElementClass</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="f9122c36-f28f-4ea7-a9b3-68004cd95ab4">
+                  <SHORT-NAME>DemDataElementClass</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemDataElementClass</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="4f6ffd69-d862-4da2-bb80-7d92345a34b4">
+                      <SHORT-NAME>DemDataElementClass_DemExternalCSDataElementClass</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DemDataElementUsePort">
+                            <SD GID="status">NOTGENERATED;NONE</SD>
+                          </SDG>
+                          <SDG GID="DemDataElementDataSize">
+                            <SD GID="status">NOTGENERATED;NONE</SD>
+                          </SDG>
+                          <SDG GID="DemDataElementReadFnc">
+                            <SD GID="status">NOTGENERATED;NONE</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemDataElementClass/DemExternalCSDataElementClass</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemDataElementClass/DemExternalCSDataElementClass/DemDataElementUsePort</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemDataElementClass/DemExternalCSDataElementClass/DemDataElementDataSize</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemDataElementClass/DemExternalCSDataElementClass/DemDataElementReadFnc</DEFINITION-REF>
+                          <VALUE>ReadDataElement</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
                 </ECUC-CONTAINER-VALUE>
               </SUB-CONTAINERS>
             </ECUC-CONTAINER-VALUE>

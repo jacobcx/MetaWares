@@ -66,15 +66,17 @@
  
 
 /** Number of block descriptors */
-#define NVM_TOTAL_BLOCK_NUMBER                 2
+#define NVM_TOTAL_BLOCK_NUMBER                 3
  
 
 #define NvMConf_NvMBlockDescriptor_NvMBlockDescriptor_Cfg                 ((uint16)1)
 #define NvMConf_NvMBlockDescriptor_NvMBlockDescriptor_Appl                 ((uint16)2)
+#define NvMConf_NvMBlockDescriptor_NvMBlockDescriptor_BSW                 ((uint16)3)
 
 /** Block Data size (the same value as NVM_BLOCK_X_NVM_NV_BLOCK_LENGTH) */
 #define NVM_BLOCK_1_DATA_LENGTH   ((uint16)100)
 #define NVM_BLOCK_2_DATA_LENGTH   ((uint16)256)
+#define NVM_BLOCK_3_DATA_LENGTH   ((uint16)256)
 /**
  * NV Block Total length (Block Header(optional)+NV Data Size +CRC length(optional))
  * [DD-NVM00125-MGC01-V1] [DD-NVM00126-MGC01-V1] [DD-NVM00522-MGC01-V1]
@@ -82,6 +84,7 @@
  */
 #define NVM_BLOCK_1_TOTAL_LENGTH   ((uint16)102)/* Header (0)+ Block Length(100)+Crc (2)*/
 #define NVM_BLOCK_2_TOTAL_LENGTH   ((uint16)256)/* Header (0)+ Block Length(256)+Crc (0)*/
+#define NVM_BLOCK_3_TOTAL_LENGTH   ((uint16)256)/* Header (0)+ Block Length(256)+Crc (0)*/
 
 /** Buffer size = NV Block Maximum Length 
  * calculated over the NV blocks for which either 
@@ -108,6 +111,7 @@ extern CONST(NvM_BlockManagementType,NVM_CONST) NvM_BlockManagementTable;
 
 #define NVM_START_SEC_CODE
 #include "NvM_MemMap.h" /* KW MISRA.INCL.INSIDE */
+
 
 
 

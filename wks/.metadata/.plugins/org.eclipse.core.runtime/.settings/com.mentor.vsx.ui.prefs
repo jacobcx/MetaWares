@@ -1,3 +1,10 @@
 AdvancedIsOpen=false
 eclipse.preferences.version=1
-selectedFile=platform\:/resource/Demo/Appl_Dcm.arxml
+optionsDialog/Refactor/Rename/default=MASTER
+optionsDialog/Refactor/Rename/dialogTitle=Rename
+optionsDialog/Refactor/Rename/doNotAsk=false
+optionsDialog/Refactor/Rename/options/1/NONE=No Refactor
+optionsDialog/Refactor/Rename/options/2/MASTER=Master Project Scope
+optionsDialog/Refactor/Rename/question=Scope of Refactor
+optionsDialog/Refactor/Rename/selected=MASTER
+selectedFile=platform\:/resource/Demo/Appl_Dem.arxml
