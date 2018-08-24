@@ -1,6 +1,6 @@
 PrefferdEditors/autosar40.bswmodule.bswimplementation.BswImplementation=com.mentor.vsx.editor.base.VsxBaseEditor
 PrefferdEditors/autosar40.ecucdescription.EcucContainerValue=com.mentor.vsa.ecuc.editors.dcm.autosar40.DCMEditor
-PrefferdEditors/autosar40.ecucdescription.EcucModuleConfigurationValues=com.mentor.vsa.ecuc.editors.modulecfg.ModuleCfgParameterEditor
+PrefferdEditors/autosar40.ecucdescription.EcucModuleConfigurationValues=com.mentor.vsa.ecuc.editors.dcm.autosar40.DCMEditor
 PrefferdEditors/autosar40.ecucdescription.EcucValueCollection=com.mentor.vsa.ecuc.editors.mem.autosar40.MemStackEditor
 PrefferdEditors/autosar40.ecucparameterdef.EcucEnumerationParamDef=com.mentor.vsa.ecuc.editors.moduledefinition.editor.ModuleDefinitionEditor
 PrefferdEditors/autosar40.ecucparameterdef.EcucFunctionNameDef=com.mentor.vsa.ecuc.editors.moduledefinition.editor.ModuleDefinitionEditor

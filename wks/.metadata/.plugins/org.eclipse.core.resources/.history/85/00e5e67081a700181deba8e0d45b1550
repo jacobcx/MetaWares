@@ -293,7 +293,7 @@
                   <ADMIN-DATA>
                     <SDGS>
                       <SDG GID="DemEventAvailable">
-                        <SD GID="status">NOTGENERATED;NONE</SD>
+                        <SD GID="status">DEFAULT;NONE</SD>
                       </SDG>
                       <SDG GID="DemEventFailureCycleCounterThreshold">
                         <SD GID="status">DEFAULT;NONE</SD>
@@ -313,9 +313,7 @@
                       <SDG GID="DemDTCRef">
                         <SD GID="status">NOTGENERATED;UI</SD>
                       </SDG>
-                      <SDG GID="DemStorageConditionGroupRef">
-                        <SD GID="status">NOTGENERATED;NONE</SD>
-                      </SDG>
+                      <SDG GID="DemStorageConditionGroupRef"/>
                     </SDGS>
                   </ADMIN-DATA>
                   <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemEventParameter</DEFINITION-REF>
@@ -334,7 +332,7 @@
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemEventParameter/DemEventKind</DEFINITION-REF>
-                      <VALUE>DEM_EVENT_KIND_BSW</VALUE>
+                      <VALUE>DEM_EVENT_KIND_SWC</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemEventParameter/DemFFPrestorageSupported</DEFINITION-REF>
@@ -349,10 +347,6 @@
                     <ECUC-REFERENCE-VALUE>
                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemEventParameter/DemDTCRef</DEFINITION-REF>
                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemConfigSet/DemDTC_22938</VALUE-REF>
-                    </ECUC-REFERENCE-VALUE>
-                    <ECUC-REFERENCE-VALUE>
-                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/VSTAR/EcucDefs/Dem/DemConfigSet/DemEventParameter/DemStorageConditionGroupRef</DEFINITION-REF>
-                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dem/Dem/DemGeneral/DemStorageConditionGroup</VALUE-REF>
                     </ECUC-REFERENCE-VALUE>
                   </REFERENCE-VALUES>
                   <SUB-CONTAINERS>
@@ -678,9 +672,6 @@
                   <SDG GID="DemNvMSupport">
                     <SD GID="status">NOTGENERATED;UI</SD>
                   </SDG>
-                  <SDG GID="DemMaxNumberFreezeFramesPerEvent">
-                    <SD GID="status">NOTGENERATED;NONE</SD>
-                  </SDG>
                 </SDGS>
               </ADMIN-DATA>
               <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/VSTAR/EcucDefs/Dem/DemGeneral</DEFINITION-REF>
@@ -815,10 +806,6 @@
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
                   <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemNvMSupport</DEFINITION-REF>
-                  <VALUE>1</VALUE>
-                </ECUC-NUMERICAL-PARAM-VALUE>
-                <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/VSTAR/EcucDefs/Dem/DemGeneral/DemMaxNumberFreezeFramesPerEvent</DEFINITION-REF>
                   <VALUE>1</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
               </PARAMETER-VALUES>
