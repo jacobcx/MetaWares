@@ -5398,3 +5398,23 @@ For input string: "FlsMainFunctionPeriod"
 !MESSAGE Value 'FeeMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fee_Impl.arxml, 165, 65)
 The value 'FeeMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FeeMainFunctionPeriod"
 For input string: "FeeMainFunctionPeriod"
+!SESSION 2018-08-13 14:57:27.805 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CN
+Framework arguments:  -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -showlocation
+
+!ENTRY com.mentor.vsx.model.handling 4 4 2018-08-13 14:58:02.274
+!MESSAGE Value 'FlsMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fls_Impl.arxml, 149, 65)
+The value 'FlsMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FlsMainFunctionPeriod"
+For input string: "FlsMainFunctionPeriod"
+
+!ENTRY com.mentor.vsx.model.handling 4 4 2018-08-13 14:58:02.334
+!MESSAGE Value 'FeeMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fee_Impl.arxml, 165, 65)
+The value 'FeeMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FeeMainFunctionPeriod"
+For input string: "FeeMainFunctionPeriod"
+
+!ENTRY com.mentor.vsx.base.utils 4 4 2018-08-13 14:58:04.339
+!MESSAGE Cannot start plugin: com.mentor.bsw.fee.generator. Incorrect VSC version. Found version:2.5.4.20170301-1400 needed version:[2.2.1,2.4.0)
