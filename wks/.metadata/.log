@@ -6534,3 +6534,197 @@ For input string: "FlsMainFunctionPeriod"
 !MESSAGE Value 'FeeMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fee_Impl.arxml, 165, 65)
 The value 'FeeMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FeeMainFunctionPeriod"
 For input string: "FeeMainFunctionPeriod"
+!SESSION 2018-09-12 15:45:00.418 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CN
+Framework arguments:  -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -showlocation
+
+!ENTRY com.mentor.bsw.fee.generator 4 0 2018-09-12 15:45:01.500
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.mentor.bsw.fee.generator [2131]
+  Unresolved requirement: Require-Bundle: com.mentor.vsc; bundle-version="[2.2.1,2.4.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.SystemModule.startWorker(SystemModule.java:242)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.container.SystemModule.start(SystemModule.java:172)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:393)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:412)
+	at org.eclipse.osgi.launch.Equinox.start(Equinox.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:318)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:231)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.equinox.ds 2 0 2018-09-12 15:45:31.946
+!MESSAGE [SCR - WorkThread] Timeout occurred! Thread was blocked on processing [QueuedJob] WorkPerformer: org.eclipse.equinox.internal.ds.SCRManager@7899a3dd; actionType 1
+
+!ENTRY org.eclipse.equinox.ds 2 0 2018-09-12 15:45:31.955
+!MESSAGE [SCR] Enabling components of bundle org.eclipse.ui.trace did not complete in 30000 ms 
+
+!ENTRY com.mentor.vsx.model.handling 4 4 2018-09-12 15:47:42.787
+!MESSAGE Value 'FlsMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fls_Impl.arxml, 149, 65)
+The value 'FlsMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FlsMainFunctionPeriod"
+For input string: "FlsMainFunctionPeriod"
+
+!ENTRY com.mentor.vsx.model.handling 4 4 2018-09-12 15:47:42.857
+!MESSAGE Value 'FeeMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fee_Impl.arxml, 165, 65)
+The value 'FeeMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FeeMainFunctionPeriod"
+For input string: "FeeMainFunctionPeriod"
+
+!ENTRY com.mentor.vsx.base.utils 4 4 2018-09-12 15:47:43.876
+!MESSAGE Cannot start plugin: com.mentor.bsw.fee.generator. Incorrect VSC version. Found version:2.5.4.20170301-1400 needed version:[2.2.1,2.4.0)
+!SESSION 2018-09-12 16:09:55.844 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CN
+Framework arguments:  -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -showlocation
+
+!ENTRY com.mentor.bsw.fee.generator 4 0 2018-09-12 16:09:56.613
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.mentor.bsw.fee.generator [2167]
+  Unresolved requirement: Require-Bundle: com.mentor.vsc; bundle-version="[2.2.1,2.4.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.SystemModule.startWorker(SystemModule.java:242)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.container.SystemModule.start(SystemModule.java:172)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:393)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:412)
+	at org.eclipse.osgi.launch.Equinox.start(Equinox.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:318)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:231)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.mentor.vsx.base.utils 4 4 2018-09-12 16:10:45.834
+!MESSAGE Cannot start plugin: com.mentor.bsw.fee.generator. Incorrect VSC version. Found version:2.5.4.20170301-1400 needed version:[2.2.1,2.4.0)
+
+!ENTRY com.mentor.vsx.model.handling 4 4 2018-09-12 16:10:50.064
+!MESSAGE Value 'FlsMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fls_Impl.arxml, 149, 65)
+The value 'FlsMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FlsMainFunctionPeriod"
+For input string: "FlsMainFunctionPeriod"
+
+!ENTRY com.mentor.vsx.model.handling 4 4 2018-09-12 16:10:50.077
+!MESSAGE Value 'FeeMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fee_Impl.arxml, 165, 65)
+The value 'FeeMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FeeMainFunctionPeriod"
+For input string: "FeeMainFunctionPeriod"
+!SESSION 2018-09-13 09:57:28.679 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CN
+Framework arguments:  -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -showlocation
+
+!ENTRY com.mentor.bsw.fee.generator 4 0 2018-09-13 09:57:29.640
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.mentor.bsw.fee.generator [2203]
+  Unresolved requirement: Require-Bundle: com.mentor.vsc; bundle-version="[2.2.1,2.4.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.SystemModule.startWorker(SystemModule.java:242)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.container.SystemModule.start(SystemModule.java:172)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:393)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:412)
+	at org.eclipse.osgi.launch.Equinox.start(Equinox.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:318)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:231)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.mentor.vsx.base.utils 4 4 2018-09-13 09:58:19.487
+!MESSAGE Cannot start plugin: com.mentor.bsw.fee.generator. Incorrect VSC version. Found version:2.5.4.20170301-1400 needed version:[2.2.1,2.4.0)
+
+!ENTRY com.mentor.vsx.model.handling 4 4 2018-09-13 09:58:22.440
+!MESSAGE Value 'FlsMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fls_Impl.arxml, 149, 65)
+The value 'FlsMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FlsMainFunctionPeriod"
+For input string: "FlsMainFunctionPeriod"
+
+!ENTRY com.mentor.vsx.model.handling 4 4 2018-09-13 09:58:22.450
+!MESSAGE Value 'FeeMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fee_Impl.arxml, 165, 65)
+The value 'FeeMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FeeMainFunctionPeriod"
+For input string: "FeeMainFunctionPeriod"
+!SESSION 2018-09-13 16:28:07.692 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CN
+Framework arguments:  -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -showlocation
+
+!ENTRY com.mentor.bsw.fee.generator 4 0 2018-09-13 16:28:08.502
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.mentor.bsw.fee.generator [2239]
+  Unresolved requirement: Require-Bundle: com.mentor.vsc; bundle-version="[2.2.1,2.4.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.SystemModule.startWorker(SystemModule.java:242)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.container.SystemModule.start(SystemModule.java:172)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:393)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:412)
+	at org.eclipse.osgi.launch.Equinox.start(Equinox.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:318)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:231)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.mentor.vsx.base.utils 4 4 2018-09-13 16:28:30.251
+!MESSAGE Cannot start plugin: com.mentor.bsw.fee.generator. Incorrect VSC version. Found version:2.5.4.20170301-1400 needed version:[2.2.1,2.4.0)
+
+!ENTRY com.mentor.vsx.model.handling 4 4 2018-09-13 16:28:34.132
+!MESSAGE Value 'FlsMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fls_Impl.arxml, 149, 65)
+The value 'FlsMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FlsMainFunctionPeriod"
+For input string: "FlsMainFunctionPeriod"
+
+!ENTRY com.mentor.vsx.model.handling 4 4 2018-09-13 16:28:34.142
+!MESSAGE Value 'FeeMainFunctionPeriod' is not legal. (platform:/resource/BSW_LIB/Fee_Impl.arxml, 165, 65)
+The value 'FeeMainFunctionPeriod' is invalid. java.lang.NumberFormatException: For input string: "FeeMainFunctionPeriod"
+For input string: "FeeMainFunctionPeriod"
