@@ -2,6 +2,7 @@
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_-Y1EYJfAEeiBI-Qgs9Ilrg" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_-Y1EYZfAEeiBI-Qgs9Ilrg" bindingContexts="_-Y26n5fAEeiBI-Qgs9Ilrg">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsa.ecuc.editors.dcm.autosar40.DCMEditor&quot; name=&quot;ECU&quot; tooltip=&quot;Project: Demo - File(s): os_ecuc.arxml - Object Path: /os_ecuc/ECU&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;Demo;platform:/resource/Demo/os_ecuc.arxml;ar:/#/os_ecuc/ECU?type=EcucValueCollection;org.artop.aal.autosar40&quot; project_name=&quot;Demo&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsa.ecuc.editors.modulecfg.ModuleCfgParameterEditor&quot; name=&quot;Dcm&quot; tooltip=&quot;Project: Demo - File(s): Appl_Dcm.arxml - Object Path: /Dcm/Dcm&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;Demo;platform:/resource/Demo/Appl_Dcm.arxml;ar:/#/Dcm/Dcm?type=EcucModuleConfigurationValues;org.artop.aal.autosar40&quot; project_name=&quot;Demo&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsa.ecuc.editors.modulecfg.ModuleCfgParameterEditor&quot; name=&quot;Spi&quot; tooltip=&quot;Project: Demo - File(s): Appl_SPi.arxml - Object Path: /Spi/Spi&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;Demo;platform:/resource/Demo/Appl_SPi.arxml;ar:/#/Spi/Spi?type=EcucModuleConfigurationValues;org.artop.aal.autosar40&quot; project_name=&quot;Demo&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsx.editors.swc.ifc.IfcEditor&quot; name=&quot;Demo&quot; tooltip=&quot;Project: Demo&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;Demo;;;org.artop.aal.autosar40&quot; project_name=&quot;Demo&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsx.editor.base.VsxBaseEditor&quot; name=&quot;AUTOSAR&quot; tooltip=&quot;Project: BSW_LIB - File(s): EcuM_MGC_SWCD.arxml, WdgM_MGC_SWCD.arxml, Ea_MGC_SWCD.arxml - Object Path: /AUTOSAR&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;BSW_LIB;platform:/resource/BSW_LIB/EcuM_MGC_SWCD.arxml;ar:/#/AUTOSAR?type=ARPackage;org.artop.aal.autosar40&quot; project_name=&quot;BSW_LIB&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsa.ecuc.editors.moduledefinition.editor.ModuleDefinitionEditor&quot; name=&quot;Dcm&quot; tooltip=&quot;Project: BSW_LIB - File(s): AUTOSAR_MOD_ECUConfigurationParameters_422.arxml - Object Path: /AUTOSAR/EcucDefs/Dcm&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;BSW_LIB;platform:/resource/BSW_LIB/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml;ar:/#/AUTOSAR/EcucDefs/Dcm?type=EcucModuleDef;org.artop.aal.autosar40&quot; project_name=&quot;BSW_LIB&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsx.editor.base.VsxBaseEditor&quot; name=&quot;EcucDefs&quot; tooltip=&quot;Project: BSW_LIB - File(s): AUTOSAR_MOD_ECUConfigurationParameters_422.arxml - Object Path: /AUTOSAR/EcucDefs&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;BSW_LIB;platform:/resource/BSW_LIB/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml;ar:/#/AUTOSAR/EcucDefs?type=ARPackage;org.artop.aal.autosar40&quot; project_name=&quot;BSW_LIB&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;AUTOSAR_MOD_ECUConfigurationParameters_422.arxml&quot; tooltip=&quot;BSW_LIB/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/BSW_LIB/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsx.editor.base.VsxBaseEditor&quot; name=&quot;EcucDefs&quot; tooltip=&quot;Project: BSW_LIB - File(s): FiM_MGC_MD.arxml, CanSM_MGC_MD.arxml, BswM_MGC_MD.arxml - Object Path: /VSTAR/EcucDefs&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;BSW_LIB;platform:/resource/BSW_LIB/FiM_MGC_MD.arxml;ar:/#/VSTAR/EcucDefs?type=ARPackage;org.artop.aal.autosar40&quot; project_name=&quot;BSW_LIB&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsa.ecuc.editors.moduledefinition.editor.ModuleDefinitionEditor&quot; name=&quot;Dcm&quot; tooltip=&quot;Project: BSW_LIB - File(s): Dcm_MGC_MD.arxml - Object Path: /VSTAR/EcucDefs/Dcm&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;BSW_LIB;platform:/resource/BSW_LIB/Dcm_MGC_MD.arxml;ar:/#/VSTAR/EcucDefs/Dcm?type=EcucModuleDef;org.artop.aal.autosar40&quot; project_name=&quot;BSW_LIB&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
@@ -9,11 +10,16 @@
 =======
 =======
 >>>>>>> parent of 6e97b88... success intergrated 0911
+=======
+>>>>>>> parent of 6e97b88... success intergrated 0911
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsa.ecuc.editors.modulecfg.ModuleCfgParameterEditor&quot; name=&quot;Dcm&quot; tooltip=&quot;Project: Demo - File(s): Appl_Dcm.arxml - Object Path: /Dcm/Dcm&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;Demo;platform:/resource/Demo/Appl_Dcm.arxml;ar:/#/Dcm/Dcm?type=EcucModuleConfigurationValues;org.artop.aal.autosar40&quot; project_name=&quot;Demo&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsx.editors.swc.ifc.IfcEditor&quot; name=&quot;Demo&quot; tooltip=&quot;Project: Demo&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;Demo;;;org.artop.aal.autosar40&quot; project_name=&quot;Demo&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsx.editor.base.VsxBaseEditor&quot; name=&quot;AUTOSAR&quot; tooltip=&quot;Project: BSW_LIB - File(s): EcuM_MGC_SWCD.arxml, WdgM_MGC_SWCD.arxml, Ea_MGC_SWCD.arxml - Object Path: /AUTOSAR&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;BSW_LIB;platform:/resource/BSW_LIB/EcuM_MGC_SWCD.arxml;ar:/#/AUTOSAR?type=ARPackage;org.artop.aal.autosar40&quot; project_name=&quot;BSW_LIB&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsa.ecuc.editors.dcm.autosar40.DCMEditor&quot; name=&quot;ECU&quot; tooltip=&quot;Project: Demo - File(s): os_ecuc.arxml - Object Path: /os_ecuc/ECU&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;Demo;platform:/resource/Demo/os_ecuc.arxml;ar:/#/os_ecuc/ECU?type=EcucValueCollection;org.artop.aal.autosar40&quot; project_name=&quot;Demo&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsa.ecuc.editors.moduledefinition.editor.ModuleDefinitionEditor&quot; name=&quot;Dcm&quot; tooltip=&quot;Project: BSW_LIB - File(s): AUTOSAR_MOD_ECUConfigurationParameters_422.arxml - Object Path: /AUTOSAR/EcucDefs/Dcm&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;BSW_LIB;platform:/resource/BSW_LIB/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml;ar:/#/AUTOSAR/EcucDefs/Dcm?type=EcucModuleDef;org.artop.aal.autosar40&quot; project_name=&quot;BSW_LIB&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsx.editor.base.VsxBaseEditor&quot; name=&quot;EcucDefs&quot; tooltip=&quot;Project: BSW_LIB - File(s): AUTOSAR_MOD_ECUConfigurationParameters_422.arxml - Object Path: /AUTOSAR/EcucDefs&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;BSW_LIB;platform:/resource/BSW_LIB/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml;ar:/#/AUTOSAR/EcucDefs?type=ARPackage;org.artop.aal.autosar40&quot; project_name=&quot;BSW_LIB&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;AUTOSAR_MOD_ECUConfigurationParameters_422.arxml&quot; tooltip=&quot;BSW_LIB/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/BSW_LIB/AUTOSAR_MOD_ECUConfigurationParameters_422.arxml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsx.editor.base.VsxBaseEditor&quot; name=&quot;EcucDefs&quot; tooltip=&quot;Project: BSW_LIB - File(s): FiM_MGC_MD.arxml, CanSM_MGC_MD.arxml, BswM_MGC_MD.arxml - Object Path: /VSTAR/EcucDefs&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;BSW_LIB;platform:/resource/BSW_LIB/FiM_MGC_MD.arxml;ar:/#/VSTAR/EcucDefs?type=ARPackage;org.artop.aal.autosar40&quot; project_name=&quot;BSW_LIB&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;com.mentor.vsx.editor.VsxEditorInputFactory&quot; id=&quot;com.mentor.vsa.ecuc.editors.moduledefinition.editor.ModuleDefinitionEditor&quot; name=&quot;Dcm&quot; tooltip=&quot;Project: BSW_LIB - File(s): Dcm_MGC_MD.arxml - Object Path: /VSTAR/EcucDefs/Dcm&quot;>&#xD;&#xA;&lt;persistable input_id=&quot;BSW_LIB;platform:/resource/BSW_LIB/Dcm_MGC_MD.arxml;ar:/#/VSTAR/EcucDefs/Dcm?type=EcucModuleDef;org.artop.aal.autosar40&quot; project_name=&quot;BSW_LIB&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_-Y1EYZfAEeiBI-Qgs9Ilrg" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_-Y1EYpfAEeiBI-Qgs9Ilrg" label="%trimmedwindow.label.eclipseSDK" x="0" y="0" width="1024" height="768">
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 6e97b88... success intergrated 0911
+=======
 >>>>>>> parent of 6e97b88... success intergrated 0911
 =======
 >>>>>>> parent of 6e97b88... success intergrated 0911
@@ -24,7 +30,10 @@
     <tags>topLevel</tags>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <tags>shellMaximized</tags>
+=======
+>>>>>>> parent of 6e97b88... success intergrated 0911
 =======
 >>>>>>> parent of 6e97b88... success intergrated 0911
 =======
@@ -66,7 +75,11 @@
           <tags>persp.viewSC:com.mentor.vsa.ecuc.editors.pdur.autosar40.routingpathview.PduRouterView</tags>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           <children xsi:type="basic:PartSashContainer" xmi:id="_-Y1EZZfAEeiBI-Qgs9Ilrg" selectedElement="_-Y1EZpfAEeiBI-Qgs9Ilrg" horizontal="true">
+=======
+          <children xsi:type="basic:PartSashContainer" xmi:id="_-Y1EZZfAEeiBI-Qgs9Ilrg" selectedElement="_-Y1EcZfAEeiBI-Qgs9Ilrg" horizontal="true">
+>>>>>>> parent of 6e97b88... success intergrated 0911
 =======
           <children xsi:type="basic:PartSashContainer" xmi:id="_-Y1EZZfAEeiBI-Qgs9Ilrg" selectedElement="_-Y1EcZfAEeiBI-Qgs9Ilrg" horizontal="true">
 >>>>>>> parent of 6e97b88... success intergrated 0911
@@ -93,7 +106,11 @@
             <children xsi:type="basic:PartSashContainer" xmi:id="_-Y1EcZfAEeiBI-Qgs9Ilrg" containerData="8000" selectedElement="_-Y1EcpfAEeiBI-Qgs9Ilrg" horizontal="true">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               <children xsi:type="basic:PartSashContainer" xmi:id="_-Y1EcpfAEeiBI-Qgs9Ilrg" containerData="7500" selectedElement="_-Y1Ec5fAEeiBI-Qgs9Ilrg">
+=======
+              <children xsi:type="basic:PartSashContainer" xmi:id="_-Y1EcpfAEeiBI-Qgs9Ilrg" containerData="7500" selectedElement="_-Y1EdJfAEeiBI-Qgs9Ilrg">
+>>>>>>> parent of 6e97b88... success intergrated 0911
 =======
               <children xsi:type="basic:PartSashContainer" xmi:id="_-Y1EcpfAEeiBI-Qgs9Ilrg" containerData="7500" selectedElement="_-Y1EdJfAEeiBI-Qgs9Ilrg">
 >>>>>>> parent of 6e97b88... success intergrated 0911
@@ -160,6 +177,9 @@
 =======
         <tags>noFocus</tags>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 6e97b88... success intergrated 0911
+=======
 >>>>>>> parent of 6e97b88... success intergrated 0911
 =======
 >>>>>>> parent of 6e97b88... success intergrated 0911
@@ -474,7 +494,11 @@
         <tags>Draggable</tags>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <children xsi:type="menu:HandledToolItem" xmi:id="_dN_4prb4EeiqBJOzjh9EIg" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_-Y4xfJfAEeiBI-Qgs9Ilrg"/>
+=======
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Odkxl7WVEeixd8Epw6O-Bw" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_-Y4xfJfAEeiBI-Qgs9Ilrg"/>
+>>>>>>> parent of 6e97b88... success intergrated 0911
 =======
         <children xsi:type="menu:HandledToolItem" xmi:id="_Odkxl7WVEeixd8Epw6O-Bw" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_-Y4xfJfAEeiBI-Qgs9Ilrg"/>
 >>>>>>> parent of 6e97b88... success intergrated 0911
@@ -496,6 +520,7 @@
         <tags>toolbarSeparator</tags>
         <children xsi:type="menu:ToolBarSeparator" xmi:id="_-Y2Sn5fAEeiBI-Qgs9Ilrg" elementId="group.nav" toBeRendered="false"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-Y2SoJfAEeiBI-Qgs9Ilrg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
@@ -505,6 +530,13 @@
         <children xsi:type="menu:HandledToolItem" xmi:id="_Odq4ObWVEeixd8Epw6O-Bw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_-Y4xL5fAEeiBI-Qgs9Ilrg"/>
 >>>>>>> parent of 6e97b88... success intergrated 0911
       </children>
+=======
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_-Y2SoJfAEeiBI-Qgs9Ilrg" elementId="org.eclipse.ui.workbench.navigate">
+        <tags>Draggable</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Odq4ObWVEeixd8Epw6O-Bw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_-Y4xL5fAEeiBI-Qgs9Ilrg"/>
+      </children>
+>>>>>>> parent of 6e97b88... success intergrated 0911
 =======
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-Y2SoJfAEeiBI-Qgs9Ilrg" elementId="org.eclipse.ui.workbench.navigate">
